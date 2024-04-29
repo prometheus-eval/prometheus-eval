@@ -2,9 +2,10 @@
   <img src="assets/logo.png" alt="Prometheus-Logo" style="width: 15%; display: block; margin: auto;">
 </p>
 
-<h1 align="center">🔥 Prometheus</h1>
+<h1 align="center">🔥 Prometheus-Eval</h1>
 
 <p align="center">
-  ⚡ An Open Source Language Model for Evaluating Other Language Models 🚀 ⚡
+  ⚡ A repository for evaluating large language model evaluation in generation tasks 🚀 ⚡
+  ⚡ Supports GPT-4 evaluation, Claude-3 evaluation, and Prometheus evaluation 🚀 ⚡
 </p>
 
