@@ -14,7 +14,7 @@ class PrometheusEval:
 
         if "###Reference Answer (Score 5):" not in absolute_grade_template:
             warnings.warn("Reference answer was not given in Absolute Grading mode. This might lead to nonoptimal performances.")
-        if "###Reference Answer (Score 5):" not in relative_grade_template:
+        if "###Reference Answer:" not in relative_grade_template:
             warnings.warn("Reference answer was not given in Relative Grading mode. This might lead to nonoptimal performances.")
         self.absolute_grade_template = absolute_grade_template
         self.relative_grade_template = relative_grade_template
