@@ -7,6 +7,7 @@ from .prompts import (ABS_SYSTEM_PROMPT, ABSOLUTE_PROMPT_WO_REF,
 from .utils import (batch_absolute_grade, batch_completions_with_retries,
                     batch_relative_grade)
 from .vllm import VLLM, MockVLLM
+import warnings
 
 
 class PrometheusEval:
@@ -22,7 +23,11 @@ class PrometheusEval:
         self.model_id = model_id
         self.num_gpus = num_gpus
         self.download_dir = download_dir
-        # TODO: Add warning message for not using reference answer
+        if "###Reference Answer (Score 5):" not in absolute_grade_template:
+            warnings.warn("Reference answer was not given in Absolute Grading mode. This might lead to nonoptimal performances.")
+        if "###Reference Answer:" not in relative_grade_template:
+            warnings.warn("Reference answer was not given in Relative Grading mode. This might lead to nonoptimal performances.")
+
         self.absolute_grade_template = absolute_grade_template
         self.relative_grade_template = relative_grade_template
         self.model = (
@@ -47,7 +52,45 @@ class PrometheusEval:
         prompt = conv.get_prompt()
         return prompt
 
-    # TODO: Implement single absolute grade and relative grade
+
+    def single_absolute_grade(self, instruction: str, response: str, rubric: str, reference_answer: str|None) -> Tuple[str, int]:
+        content = self.absolute_grade_template.format(
+                instruction=instruction,
+                response=response,
+                score_rubric=rubric_,
+                reference_answer=reference_answer
+            )
+
+        messages = [
+            {"role": "user", "content": ABS_SYSTEM_PROMPT + "\n\n" + content},
+        ]
+        input_ = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+
+        feedbacks, scores = batch_completions_with_retries(
+            self.model, [input_], mode="absolute", params=None
+        )
+        
+        return feedbacks, scores
+
+    def single_relative_grade(self, instruction: str, response_A: str, response_B: str, rubric: str, reference_answer: str|None) -> Tuple[str, int]:
+        content = self.relative_grade_template.format(
+            instruction=instruction,
+            response_A=response_a,
+            response_B=response_b,
+            score_rubric=rubric_,
+            reference_answer=reference_answer
+        )
+
+        messages = [
+            {"role": "user", "content": REL_SYSTEM_PROMPT + "\n\n" + content},
+        ]
+        input_ = self.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+
+        feedbacks, scores = batch_completions_with_retries(
+            self.model, [inputs], mode="relative", params=None
+        )
+
+        return feedbacks, scores
 
     def absolute_grade(
         self,
