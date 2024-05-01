@@ -145,9 +145,12 @@ def _parse_output(outputs, mode: str):
 
 
 def batch_completions_with_retries(
-    model: VLLM, inputs, mode: str, max_retries: int = 20, params: dict = None,
+    model: VLLM,
+    inputs,
+    mode: str,
+    max_retries: int = 10,
+    params: dict = None,
 ):
-    
     if params is None:
         params = {
             "max_tokens": 2048,
