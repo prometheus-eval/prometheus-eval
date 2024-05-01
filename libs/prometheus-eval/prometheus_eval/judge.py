@@ -25,7 +25,7 @@ class PrometheusEval:
         download_dir: str = None,
         absolute_grade_template: str = ABSOLUTE_PROMPT_WO_REF,
         relative_grade_template: str = RELATIVE_PROMPT_WO_REF,
-        is_test: bool = False,
+        is_test: bool = False, # For debugging purposes
         dtype: str = "auto",
         **kwargs,
     ):

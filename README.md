@@ -17,6 +17,10 @@
 
 ---
 
+<p align="center">
+<img align="center" alt="finegrained-eval" src="assets/finegrained_eval.png" width="550"/>
+</p>
+
 **Prometheus**🔥 is a family of open-source language models specialized in evaluating other language models. By effectively simulating human judgments and proprietary LM-based evaluations, we aim to resolve the following issues:
 
 * *Fairness*: Not relying on close-source models for evaluations!
@@ -32,6 +36,7 @@
 </h3>
 
 - **Prometheus 2 (8x7B)** is an open-source state-of-the-art evaluator language model!
+  - Compared to Prometheus 1 (13B), the Prometheus 2 (8x7B) shows improved evaluation performances & supports assessing in pairwise ranking (relative grading) formats as well!
   - It achieves a Pearson correlation of 0.6 to 0.7 with GPT-4-1106 on a 5-point Likert scale across multiple direct assessment benchmarks, including [VicunaBench](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge/data/vicuna_bench), [MT-Bench](https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge/data/mt_bench), and [FLASK](https://github.com/kaistAI/FLASK). 
   - It also scores a 72% to 85% agreement with human judgments across multiple pairwise ranking benchmarks, including [HHH Alignment](https://github.com/google/BIG-bench/tree/main/bigbench/benchmark_tasks/hhh_alignment), [MT Bench Human Judgment](https://huggingface.co/datasets/lmsys/mt_bench_human_judgments), and [Auto-J Eval](https://github.com/GAIR-NLP/auto-j/blob/main/data/test/testdata_pairwise.jsonl). 
 
@@ -43,14 +48,14 @@ Here's a quick overview of comparing with other possible evaluator LMs in terms 
 
 | Evaluator LMs | Speed | Cost | Mininal GPU Requirement | Eval Performances |
 |----------|----------|----------|----------|----------|
-| Llama-2-Chat 70B | | Row2-Col3| 154GB| 👎 (Bad) |
-| Mistral 7B | 20 mins (with 1 A100(40GB))| Row2-Col3| 16GB| 👎 (Bad) |
-| Mixtral 8x7B | 20 mins (with 4 A100(40GB))| Row1-Col3| 105GB| 👌 (Moderate) |
-| Prometheus 2 7B | 20 mins (with 1 A100(40GB))| d| 16GB| 👌 (Moderate)|
-| Prometheus 2 8x7B | 20 mins (with 4 A100(40GB))| Row1-Col3| 105GB| 👍 (Good) |
-| GPT-3.5| Row3-Col2| Row3-Col3| None| 👎 (Bad) |
-| GPT-4| Row3-Col2| Row3-Col3| None|👍 (Good)|
-| Claude-3-Opus| Row4-Col2| Row4-Col3| None|👍 (Good) |
+| Llama-2-Chat 70B | TODO | TODO | 154GB| 👎 (Bad) |
+| Mistral 7B | TODO | TODO | 16GB| 👎 (Bad) |
+| Mixtral 8x7B | TODO | TODO | 105GB| 👌 (Moderate) |
+| Prometheus 2 7B | TODO | TODO| 16GB| 👌 (Moderate)|
+| Prometheus 2 8x7B | TODO| TODO| 105GB| 👍 (Good) |
+| GPT-3.5| TODO| (at least) $50| None| 👎 (Bad) |
+| GPT-4| TODO| (at least) $200| None|👍 (Good)|
+| Claude-3-Opus| TODO| (at least) $300| None|👍 (Good) |
 
 ---
 
@@ -74,6 +79,11 @@ Here's a quick overview of comparing with other possible evaluator LMs in terms 
 
 
 # Overview
+
+<p align="center">
+<img align="center" alt="formats" src="assets/formats.png" width="700"/>
+</p>
+
 Compared to the Prometheus 1 models, the Prometheus 2 models support both **direct assessment** (absolute grading) and **pairwise ranking** (relative grading). 
 
 You could switch modes by providing a different input prompt format and system prompt.
@@ -241,7 +251,7 @@ pip install -r ./train/requirements.txt
 ```
 
 ## Eval Data Preparation
-In order to use either Prometheus or proprietary LMs to function as evaluators on your custom data, you should prepare a JSON file in the following format:
+In order to use either Prometheus or proprietary LMs to function as evaluators on your custom data, you should prepare a JSON file that contains a list of dictionaries. Each dictionary should be consisted as follows:
 
 ### Direct Assessment Evaluation Data Format:
 
@@ -290,7 +300,7 @@ Each dictionary consists of 5 keys: "orig_instruction", "orig_response_A", "orig
 
 ## Train Data Preparation
 
-In order to (1) train a new evaluator LM for scratch or (2) continually train Prometheus on your custom feedback data, prepare a JSON file in the following format:
+In order to (1) replicate Prometheus 2, (2) train a new evaluator LM for scratch or (3) continually train Prometheus on your custom feedback data, you should prepare a JSON file that contains a list of dictionaries. Each dictionary should be consisted as follows:
 
 ### Direct Assessment Training Data Format:
 
@@ -341,68 +351,169 @@ Each dictionary consists of 7 keys: "orig_instruction", "orig_response_A", "orig
 \* To train the Prometheus 2 models, we used the [Preference Collection](https://huggingface.co/datasets/prometheus-eval/Preference-Collection).
 </details>
 
+<br>
+<br>
+
 # A Practitioner's Guide to Use Evaluator LMs
 
+Great to know that you made this far!
 
+Here, we introduce 3 scenarios of how you could make use of this repository: <br>
 
 ## Let me just play around with it
-You 
+You might want to test Prometheus's evaluation capabilities with a few examples and compare it with GPT-4 or Claude-3.
+
+You could do that with the following command:
+
+* Direct Assessment:
 
 ```bash
-export OPENAI_API_KEY=<your_api_key> # for more complex configs, e.g. using Azure or switching clients see client_configs/README.md 
-alpaca_eval --model_outputs 'example/outputs.json' 
+python run_direct_assessment_sample.py \
+--input_file "./inputs/example.txt" \
+--output_file "./outputs/example.txt" \
+--evaluator "prometheus-eval/prometheus-8x7b-v2.0"
+```
+
+* Pairwise Ranking:
+
+```bash
+python run_pairwise_ranking_sample.py \
+--input_file "./inputs/example.txt" \
+--output_file "./outputs/example.txt" \
+--evaluator "prometheus-eval/prometheus-8x7b-v2.0"
+```
+
+
+<details>
+  <summary><code>>>> arguments</code></summary>
+
+```
+input_file
+    Directory to a txt file that will be passed as the input to 
+    evaluators. We have a few pre-built examples for you to 
+    test inside the "./eval/inputs" directory.
+
+output_file
+    Directory to a txt file that will include the feedback and scoring 
+    decision made by the evaluator.
+
+evaluator
+    Evaluator language model to process the evaluation. 
+    Some possible options are "prometheus-eval/prometheus-8x7b-v2.0", 
+    "prometheus-eval/prometheus-7b-v2.0", "gpt-4-1106-preview", and 
+    "claude-3-opus".
+```
+
+</details>
+
+## Let me run my custom dataset on this repository
+You might want to utilize Prometheus or GPT-4 to assess your datasets.
+After you prepared the aforementioned JSON file, you could run the following command:
+
+* Diect Assessment:
+
+```bash
+python3 run_direct_assessment.py \
+--input_file "./inputs/mt_bench.json" \
+--output_file "./outputs/mt_bench.json" \
+--evaluator "prometheus-eval/prometheus-8x7b-v2.0" \
+--evaluatee "meta-llama/Meta-Llama-3-8B-Instruct" \
+--num_gpus 4
+```
+
+* Pairwise Ranking:
+
+```bash
+python3 run_direct_assessment.py \
+--input_file "./inputs/mt_bench.json" \
+--output_file "./outputs/mt_bench.json" \
+--evaluator "prometheus-eval/prometheus-8x7b-v2.0" \
+--evaluatee_A "meta-llama/Meta-Llama-3-8B-Instruct" \
+--evaluatee_B "mistralai/Mistral-7B-Instruct-v0.2" \
+--num_gpus 4 
 ```
 
 <details>
   <summary><code>>>> arguments</code></summary>
 
 ```
-NAME
-    alpaca_eval make_leaderboard - Precompute and save an entire leaderboard for a given dataset / evaluator / set of models generations.
+input_file
+    Directory to a JSON file that will be passed as the input to 
+    evaluators. We have a few pre-built JSON files for you to 
+    refer, including "vicuna-bench.json", "mt-bench.json", 
+    "flask.json" (direct assessment benchmarks), and
+    "hhh_alignment.json", "mt_bench_human_judgment.json", and
+    "auto_j_eval.json" (pairwise ranking benchmarks).
 
-SYNOPSIS
-    alpaca_eval make_leaderboard <flags>
+output_file
+    Directory to a JSON file that will add the feedback and scoring 
+    decision made by the evaluator as a new key. Specifically, in
+    direct assessment, "orig_feedback" and "orig_score" will be added.
+    In pairwise ranking, "orig_feedback" and "orig_preference"
+    will be added.
 
-DESCRIPTION
-    Precompute and save an entire leaderboard for a given dataset / evaluator / set of models generations.
+evaluator
+    Evaluator language model to process the evaluation. 
+    Some possible options are "prometheus-eval/prometheus-8x7b-v2.0", 
+    "prometheus-eval/prometheus-7b-v2.0", "gpt-4-1106-preview", and 
+    "claude-3-opus".
 
-FLAGS
-    --leaderboard_path=LEADERBOARD_PATH
-        Type: Optional[Union]
-        Default: None
-        The path to save the leaderboard to. The leaderboard will be saved as a csv file, if it already exists it will
-    --annotators_config=ANNOTATORS_CONFIG
-        Type: Union
-        Default: 'alpaca_eval_gpt4_turbo_fn'
-        The path the (or list of dict of) the annotator's config file.
-    --all_model_outputs=ALL_MODEL_OUTPUTS
-        Type: Union
-        Default: <fu...
-        The outputs of all models to add to the leaderboard. Accepts data (list of dictionary, pd.dataframe, datasets.Dataset) or a path to read those (json, csv, tsv potentially with globbing) or a function to generate those. If the path contains a globbing pattern, we will read all files matching the pattern and concatenate them. Each dictionary (or row of dataframe) should contain the keys that are formatted in the prompts. E.g. by default `instruction` and `output` with optional `input`. It should also contain a column `generator` with the name of the current model.
-    -r, --reference_outputs=REFERENCE_OUTPUTS
-        Type: Union
-        Default: <func...
-        The outputs of the reference model. Same format as `all_model_outputs` but without needing `generator`. By default, the reference outputs are the 003 outputs on AlpacaEval set.
-    -f, --fn_add_to_leaderboard=FN_ADD_TO_LEADERBOARD
-        Type: Callable
-        Default: 'evaluate'
-        The function to use to add a model to the leaderboard. If a string, it should be the name of a function in `main.py`. The function should take the arguments: `model_outputs`, `annotators_config`, `name`, `precomputed_leaderboard`, `is_return_instead_of_print`, `reference_outputs`.
-    --leaderboard_mode=LEADERBOARD_MODE
-        Type: str
-        Default: 'verified'
-        The mode of the leaderboard to save all new entries with.
-    -i, --is_return_instead_of_print=IS_RETURN_INSTEAD_OF_PRINT
-        Type: bool
-        Default: False
-        Whether to return the metrics instead of printing the results.
-    Additional flags are accepted.
-        Additional arguments to pass to `fn_add_to_leaderboard`.
+evaluatee / evaluatee_A / evaluatee_B
+    Language models that will be evaluated. For direct assessment,
+    use "evaluatee" and for pairwise ranking, use "evaluatee_A" and
+    "evaluatee_B". The order of the responses will be randomly
+    ordered to avoid unintended biases.
+
+num_gpus
+    Number of gpus to utilize. VLLM will utilize the memory in an
+    efficient manner.
 ```
-
 </details>
 
+## I want to grab useful stuff from this repository and integrate in my custom code
 
-<p align="center">
-<img align="center" alt="verified.png" src="figures/verified.png" width="500"/>
-</p>
+For some use cases, you might want to write your own code and only utilize prometheus.
 
+To support various usages, we have built a wrapper function that you could use.
+
+The class "PrometheusEval" in "./libs/prometheus-eval/prometheus_eval/judge.py" serves this purpose.
+
+
+An example code:
+
+```python
+import json
+from prometheus-eval import PrometheusEval
+
+with open("./data.json","r") as f:
+  data = json.load(f)
+
+with open("./readability.txt","r") as f:
+  rubric = f.read()
+
+judge = PrometheusEval(
+  model_id = "prometheus-eval/prometheus-7b-v2.0",
+  num_gpus = 4,
+  download_dir = "./checkpoints",
+  dtype = "bf16"
+)
+
+feedback_list, score_list = judge.absolute_grade(
+  data = data,
+  rubric = rubric,
+  reference_answers = ref_answs
+)
+
+```
+
+<br>
+<br>
+
+# Training Evaluator LMs
+
+Lastly, some might be interested in training their own evaluator language models for various purposes.
+
+The following code serves this purpose:
+```python
+TODO
+```
