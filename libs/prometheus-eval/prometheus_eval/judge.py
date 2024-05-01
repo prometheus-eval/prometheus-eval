@@ -26,6 +26,8 @@ class PrometheusEval:
         absolute_grade_template: str = ABSOLUTE_PROMPT_WO_REF,
         relative_grade_template: str = RELATIVE_PROMPT_WO_REF,
         is_test: bool = False,
+        dtype: str = "auto",
+        **kwargs,
     ):
         self.model_id = model_id
         self.num_gpus = num_gpus
@@ -42,7 +44,7 @@ class PrometheusEval:
         self.absolute_grade_template = absolute_grade_template
         self.relative_grade_template = relative_grade_template
         self.model = (
-            VLLM(model_id, num_gpus=num_gpus, download_dir=download_dir)
+            VLLM(model_id, num_gpus=num_gpus, download_dir=download_dir, dtype=dtype, **kwargs)
             if not is_test
             else MockVLLM()
         )

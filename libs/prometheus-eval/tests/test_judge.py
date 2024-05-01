@@ -7,7 +7,7 @@ from prometheus_eval import PrometheusEval  # Adjust the import path as necessar
 def judge():
     # Initialize PrometheusEval once for all tests in this module
     print("Setting up PrometheusEval")
-    judge_instance = PrometheusEval(is_test=True)
+    judge_instance = PrometheusEval(is_test=True, dtype="auto")
     yield judge_instance
     # If there's any cleanup needed, it can be done here
     print("Tearing down PrometheusEval")
