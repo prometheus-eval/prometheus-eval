@@ -1,7 +1,6 @@
 import pytest
 
-from prometheus_eval import \
-    PrometheusEval  # Adjust the import path as necessary
+from prometheus_eval import PrometheusEval  # Adjust the import path as necessary
 
 
 @pytest.fixture(scope="module")
