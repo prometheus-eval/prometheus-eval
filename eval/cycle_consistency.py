@@ -6,8 +6,8 @@ from pathlib import Path
 import pandas as pd
 from tqdm import tqdm
 
-from src.evaluation.benchmark import EvalDataLoader
-from src.evaluation.utils import parse_filename
+from eval.benchmark import EvalDataLoader
+from eval.utils import parse_filename
 
 loader = EvalDataLoader("feedback_collection_ood_test")
 records = loader.get_records()

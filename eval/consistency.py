@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 from tqdm import tqdm
 
-from src.evaluation.utils import parse_filename
+from eval.utils import parse_filename
 
 
 def read_data_from_file(output_file_path):

@@ -1,13 +1,25 @@
 [tool.poetry]
 name = "prometheus-eval"
-version = "0.1.0"
-description = ""
-authors = ["Scott Suk <scottsuk0306@gmail.com>"]
+version = "0.1.8"
+description = "A package for evaluating the performance of language models with Prometheus"
+authors = ["Juyoung Suk <juyoung@kaist.ac.kr>", "Seungone Kim <seungone@cmu.edu>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
+vllm = "<0.4.0"
+fastchat = "^0.1.0"
 
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.4.2"
+isort = "^5.13.2"
+autoflake = "^2.3.1"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.2.0"
+pytest-cov = "^5.0.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -11,16 +11,16 @@ An instruction (might include an Input inside it), a response to evaluate, a ref
 4. Please do not generate any other opening, closing, and explanations.
 
 ###The instruction to evaluate:
-{orig_instruction}
+{instruction}
 
 ###Response to evaluate:
-{orig_response}
+{response}
 
 ###Reference Answer (Score 5):
-{orig_reference_answer}
+{reference_answer}
 
 ###Score Rubrics:
-{score_rubric}
+{rubric}
 
 ###Feedback: """
 
@@ -34,13 +34,13 @@ An instruction (might include an Input inside it), a response to evaluate, and a
 4. Please do not generate any other opening, closing, and explanations.
 
 ###The instruction to evaluate:
-{orig_instruction}
+{instruction}
 
 ###Response to evaluate:
-{orig_response}
+{response}
 
 ###Score Rubrics:
-{score_rubric}
+{rubric}
 
 ###Feedback: """
 
@@ -54,7 +54,7 @@ An instruction (might include an Input inside it), a response to evaluate, and a
 4. Please do not generate any other opening, closing, and explanations.
 
 ###Instruction:
-{orig_instruction}
+{instruction}
 
 ###Response A:
 {response_A}
@@ -63,7 +63,7 @@ An instruction (might include an Input inside it), a response to evaluate, and a
 {response_B}
 
 ###Score Rubric:
-{score_rubric}
+{rubric}
 
 ###Feedback: """
 
@@ -78,7 +78,7 @@ An instruction (might include an Input inside it), a response to evaluate, a ref
 4. Please do not generate any other opening, closing, and explanations.
 
 ###Instruction:
-{orig_instruction}
+{instruction}
 
 ###Response A:
 {response_A}
@@ -87,10 +87,10 @@ An instruction (might include an Input inside it), a response to evaluate, a ref
 {response_B}
 
 ###Reference Answer:
-{orig_reference_answer}
+{reference_answer}
 
 ###Score Rubric:
-{score_rubric}
+{rubric}
 
 ###Feedback: """
 
@@ -145,7 +145,7 @@ def load_rubric(criteria: str, grading_format: str) -> str:
     """
 
     rubric = None
-    
+
     if criteria == "helpfulness":
         rubric = HELPFULNESS_RUBRIC
     elif criteria == "harmlessness":
@@ -156,7 +156,7 @@ def load_rubric(criteria: str, grading_format: str) -> str:
         rubric = FACTUAL_VALIDITY_RUBRIC
     else:
         raise ValueError("Invalid criteria for score rubric.")
-    
+
     if grading_format == "absolute":
         return rubric
     elif grading_format == "relative":

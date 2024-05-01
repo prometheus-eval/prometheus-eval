@@ -1,7 +1,7 @@
 import random
 from typing import List
 
-from src.llms.vllm_utils import VLLM
+from eval.llms.vllm_utils import VLLM
 
 
 def _get_logprob_of_token(data, target_token):
