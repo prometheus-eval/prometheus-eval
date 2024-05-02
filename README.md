@@ -13,7 +13,7 @@
   ⚡ Supports GPT-4 evaluation, Claude-3 evaluation, and Prometheus evaluation 🚀 ⚡
 </p>
 
-*Acknowledgements*: The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [VLLM](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Lastly, we referred to the [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval) repository to write this README file. Huge thanks to all the contributors for these awesome repositories!! 🙌
+*Acknowledgements*: The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [vllm](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Lastly, we referred to the [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval) repository to write this README file. Huge thanks to all the contributors for these awesome repositories!! 🙌
 
 ---
 
@@ -88,142 +88,151 @@ Compared to the Prometheus 1 models, the Prometheus 2 models support both **dire
 
 You could switch modes by providing a different input prompt format and system prompt.
 
-Within the prompt, you should fill in the instruction, response(s), and score rubrics with your own data. Optionally, you could also add a reference answer which leads to better performance!
+Within the prompt, you should fill in the instruction, response(s), and score rubrics with your own data. Optionally, you could also add a reference answer which leads to better performance! Click on the appropriate sections below to expand the templates and see detailed examples of how to correctly format your input data. This will help ensure that the evaluations are accurate and reflect the true capabilities of the models being tested.
 
-## Direct Assessment Prompt
+### Direct Assessment
 
-### System Prompt:
-```
-You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance.
-```
+<details>
+    <summary><strong>Direct Assessment Prompt</strong></summary>
 
-### Prompt Template With Reference Answer:
+  ### System Prompt:
+  ```
+  You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance.
+  ```
+  ### Prompt Template With Reference Answer:
 
-```
-###Task Description:
-An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
-1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
-2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
-3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
-4. Please do not generate any other opening, closing, and explanations.
+  ```
+  ###Task Description:
+  An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
+  1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
+  2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
+  3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
+  4. Please do not generate any other opening, closing, and explanations.
 
-###The instruction to evaluate:
-{orig_instruction}
+  ###The instruction to evaluate:
+  {orig_instruction}
 
-###Response to evaluate:
-{orig_response}
+  ###Response to evaluate:
+  {orig_response}
 
-###Reference Answer (Score 5):
-{orig_reference_answer}
+  ###Reference Answer (Score 5):
+  {orig_reference_answer}
 
-###Score Rubrics:
-[{orig_criteria}]
-Score 1: {orig_score1_description}
-Score 2: {orig_score2_description}
-Score 3: {orig_score3_description}
-Score 4: {orig_score4_description}
-Score 5: {orig_score5_description}
+  ###Score Rubrics:
+  [{orig_criteria}]
+  Score 1: {orig_score1_description}
+  Score 2: {orig_score2_description}
+  Score 3: {orig_score3_description}
+  Score 4: {orig_score4_description}
+  Score 5: {orig_score5_description}
 
-###Feedback: 
-```
+  ###Feedback: 
+  ```
 
-### Prompt Template Without Reference Answer:
+  ### Prompt Template Without Reference Answer:
 
-```
-###Task Description:
-An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
-1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
-2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
-3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
-4. Please do not generate any other opening, closing, and explanations.
+  ```
+  ###Task Description:
+  An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
+  1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
+  2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
+  3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
+  4. Please do not generate any other opening, closing, and explanations.
 
-###The instruction to evaluate:
-{orig_instruction}
+  ###The instruction to evaluate:
+  {orig_instruction}
 
-###Response to evaluate:
-{orig_response}
+  ###Response to evaluate:
+  {orig_response}
 
-###Score Rubrics:
-[{orig_criteria}]
-Score 1: {orig_score1_description}
-Score 2: {orig_score2_description}
-Score 3: {orig_score3_description}
-Score 4: {orig_score4_description}
-Score 5: {orig_score5_description}
+  ###Score Rubrics:
+  [{orig_criteria}]
+  Score 1: {orig_score1_description}
+  Score 2: {orig_score2_description}
+  Score 3: {orig_score3_description}
+  Score 4: {orig_score4_description}
+  Score 5: {orig_score5_description}
 
-###Feedback: 
-```
+  ###Feedback: 
+  ```
 
-### Direct Assessment Output Format:
-```
-{orig_feedback} [RESULT] {orig_score}
-```
+  ### Direct Assessment Output Format:
+  ```
+  {orig_feedback} [RESULT] {orig_score}
+  ```
 
-where "orig_score" is an integer between 1 and 5.
+  where "orig_score" is an integer between 1 and 5.
+</details>
 
-## Pairwise Ranking Prompt
+### Pairwise Ranking
 
-### System Prompt:
-```
-You are a fair judge assistant assigned to deliver insightful feedback that compares individual performances, highlighting how each stands relative to others within the same cohort.
-```
+<details>
+    <summary><strong>Pairwise Ranking Prompt</strong></summary>
+  ### System Prompt:
+  ```
+  You are a fair judge assistant assigned to deliver insightful feedback that compares individual performances, highlighting how each stands relative to others within the same cohort.
+  ```
 
-### Prompt Template With Reference Answer:
-```
-###Task Description:
-An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
-1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
-2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
-3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
-4. Please do not generate any other opening, closing, and explanations.
+  ### Prompt Template With Reference Answer:
+  ```
+  ###Task Description:
+  An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
+  1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
+  2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
+  3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
+  4. Please do not generate any other opening, closing, and explanations.
 
-###Instruction:
-{orig_instruction}
+  ###Instruction:
+  {orig_instruction}
 
-###Response A:
-{orig_response_A}
+  ###Response A:
+  {orig_response_A}
 
-###Response B:
-{orig_response_B}
+  ###Response B:
+  {orig_response_B}
 
-###Reference Answer:
-{orig_reference_answer}
+  ###Reference Answer:
+  {orig_reference_answer}
 
-###Score Rubric:
-{orig_criteria}
+  ###Score Rubric:
+  {orig_criteria}
 
-###Feedback: 
-```
+  ###Feedback: 
+  ```
 
-### Prompt Template Without Reference Answer:
-```###Task Description:
-An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
-1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
-2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
-3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
-4. Please do not generate any other opening, closing, and explanations.
+  ### Prompt Template Without Reference Answer:
+  ```###Task Description:
+  An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
+  1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
+  2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
+  3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
+  4. Please do not generate any other opening, closing, and explanations.
 
-###Instruction:
-{orig_instruction}
+  ###Instruction:
+  {orig_instruction}
 
-###Response A:
-{orig_response_A}
+  ###Response A:
+  {orig_response_A}
 
-###Response B:
-{orig_response_B}
+  ###Response B:
+  {orig_response_B}
 
-###Score Rubric:
-{orig_criteria}
+  ###Score Rubric:
+  {orig_criteria}
 
-###Feedback: 
-```
+  ###Feedback: 
+  ```
 
-### Pairwise Ranking Output Format:
-```
-{orig_feedback} [RESULT] {orig_score}
-```
+  ### Pairwise Ranking Output Format:
+  ```
+  {orig_feedback} [RESULT] {orig_score}
+  ```
 
-where "orig_score" is either "A" or "B".
+  where "orig_score" is either "A" or "B".
+
+</details>
+
+ 
 
 # Quick Start
 
