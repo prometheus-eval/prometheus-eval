@@ -37,12 +37,12 @@ Installation with pip:
 pip install prometheus-eval
 ```
 
-> **With `prometheus-eval` evaluating *any* instruction and response pair is as simple as:**
+> **With `prometheus-eval`, evaluating *any* instruction and response pair is as simple as:**
 
 ```python
 from prometheus_eval import PrometheusEval
 
-judge = PrometheusEval()
+judge = PrometheusEval(model_id="prometheus-eval/prometheus-7b-v2.0")
 
 instruction = "What are the key components of a neural network?"
 response_A = "Neurons, weights, and activation functions are the key components."
