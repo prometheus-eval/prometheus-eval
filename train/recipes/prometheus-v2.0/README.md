@@ -1,32 +1,42 @@
 
-# Instructions to Replicate Zephyr-7b-β
+# Instructions to Replicate Prometheus-v2.0
 
-As described in the Zephyr [technical report](https://huggingface.co/papers/2310.16944), training this model proceeds in two steps:
+This document provides instructions to replicate the Prometheus-v2.0 models. The Prometheus-v2.0 models are made by training absolute and relative grading expert models, and then merging them. 
 
-1. Apply SFT to fine-tune Mistral 7B on a filtered version of the UltraChat dataset ([link](https://huggingface.co/datasets/HuggingFaceH4/ultrachat_200k)). The result is an SFT model like [`zephyr-7b-sft-full`](https://huggingface.co/alignment-handbook/zephyr-7b-sft-full) or [`zephyr-7b-sft-qlora`](https://huggingface.co/alignment-handbook/zephyr-7b-sft-qlora).
-2. Align the SFT model to AI feedback via DPO on a preprocessed version of the UltraFeedback dataset ([link](https://huggingface.co/datasets/HuggingFaceH4/ultrafeedback_binarized)). The result is an DPO model like [`zephyr-7b-dpo-full`](https://huggingface.co/alignment-handbook/zephyr-7b-dpo-full) or [`zephyr-7b-dpo-qlora`](https://huggingface.co/alignment-handbook/zephyr-7b-dpo-qlora).
+Running the following commands will train the Prometheus-v2.0 models. Make sure to execute these commands in `prometheus-eval/train/recipes/prometheus-v2.0` and to have required environment set up before running the commands. 
 
-**Note:** after the release of Zephyr, the team at [Argilla](https://argilla.io) found that the source UltraFeedback dataset had a few thousand incorrect preference labels from GPT-4. Additionally, TRL's `SFTTrainer` had a bug in the learning rate scheduler which terminated training early. Accounting for these changes led us to find a better set of hyperparameters from those described in the technical report. In particular, for DPO training we found that training for 1 epoch with `beta=0.01` was suffucient to achieve comparable performance to `zephyr-7b-beta` (vs. 3 epochs with `beta=0.1`).
+## Prometheus-7B-v2.0 training examples
 
-See below for commands to train these models using either DeepSpeed ZeRO-3 or LoRA.
-
-## Full training examples
-
-You will require 8 GPUs (80GB of VRAM) to train the full model.
 ```shell
-# Step 1 - SFT
-ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml scripts/run_sft.py recipes/zephyr-7b-beta/sft/config_full.yaml
+# Step 1 - Prepare Dataset
+python prepare_dataset.py
 
-# Step 2 - DPO
-ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml scripts/run_dpo.py recipes/zephyr-7b-beta/dpo/config_full.yaml
+# Step 2 - Train absolute grading expert model
+ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml scripts/run_sft.py recipes/prometheus-v2.0/sft/config_full_1.yaml
+
+# Step 3 - Train relative grading expert model
+ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml scripts/run_sft.py recipes/prometheus-v2.0/sft/config_full_2.yaml
+
+# Step 4 - Merge the two expert models to get the final model
+# TBA
 ```
 
-## QLoRA training examples
+## Prometheus-8x7B-v2.0 training examples
 
 ```shell
-# Step 1 - SFT
-ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/multi_gpu.yaml --num_processes=1 scripts/run_sft.py recipes/zephyr-7b-beta/sft/config_qlora.yaml --load_in_4bit=true
+# Step 1 - Prepare Dataset
+python prepare_dataset.py
 
-# Step 2 - DPO
-ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/multi_gpu.yaml --num_processes=1 scripts/run_dpo.py recipes/zephyr-7b-beta/dpo/config_qlora.yaml
+# Step 2 - Train absolute grading expert model with LoRA
+ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml scripts/run_sft.py recipes/prometheus-v2.0/sft/config_full_10.yaml
+
+# Step 3 - Train relative grading expert model with LoRA
+ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml  scripts/run_sft.py recipes/prometheus-v2.0/sft/config_full_11.yaml
+
+# Step 4 - Merge LoRA adapters
+# TBA
+
+# Step 5 - Merge the two expert models to get the final model
+# TBA
+
 ```

@@ -511,4 +511,4 @@ feedback_list, score_list = judge.absolute_grade(
 
 # Training Evaluator LMs
 
-Lastly, some might be interested in training their own evaluator language models for various purposes. Our training code is baed on `alignment-handbook` respoitory and located in the `train` directory. Please refer to [train/README.md](train/README.md) for more details.
+Lastly, some might be interested in training their own evaluator language models for various purposes. Our training code is baed on `alignment-handbook` respoitory and located in the `train` directory. Please refer to [Installation Instructions](train/README.md/#installation-instructions) for environment setup and [Instructions to Replicate Prometheus-v2.0](train/recipes/prometheus-v2.0/README.md) for training commands.
