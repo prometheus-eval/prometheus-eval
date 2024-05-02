@@ -320,8 +320,6 @@ feedback_list, score_list = judge.absolute_grade(
 )
 
 ```
-
-<br>
 <br>
 
 ## Training Evaluator LMs
@@ -382,8 +380,6 @@ Each dictionary consists of 7 keys: "orig_instruction", "orig_response_A", "orig
 </details>
 
 <br>
-<br>
-
 
 ## 👏 Acknowledgements
 
