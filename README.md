@@ -59,7 +59,7 @@ feedback, score = judge.relative_grade(
 )
 ```
 
-# 🤔 What is Prometheus-Eval?
+## 🤔 What is Prometheus-Eval?
 
 **Prometheus-Eval**🔥 is a repository that provides a collection of tools for training, evaluating, and using language models specialized in evaluating other language models. The repository includes the following components:
 
@@ -67,7 +67,7 @@ feedback, score = judge.relative_grade(
 2. Collection of evaluation datasets for training and evaluating Prometheus models.
 3. Scripts for training Prometheus models or fine-tuning on custom datasets.
 
-## Prometheus
+### Prometheus 
 
 **Prometheus**🔥 is a family of open-source language models specialized in evaluating other language models. By effectively simulating human judgments and proprietary LM-based evaluations, we aim to resolve the following issues:
 
@@ -82,7 +82,7 @@ feedback, score = judge.relative_grade(
 </p>
 
 
-# 🚀 What's special about Prometheus?
+## 🚀 What's special about Prometheus?
 
 Compared to the Prometheus 1 models, the Prometheus 2 models support both **direct assessment** (absolute grading) and **pairwise ranking** (relative grading). 
 
@@ -95,181 +95,34 @@ Within the prompt, you should fill in the instruction, response(s), and score ru
 <img align="center" alt="formats" src="assets/formats.png" width="700"/>
 </p>
 
-
-### Direct Assessment
-
-<details>
-    <summary><strong>Direct Assessment Prompt</strong></summary>
-
-
-  #### System Prompt
-
-  ```
-  You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance.
-  ```
-  
-  #### Prompt Template With Reference Answer
-
-  ```
-  ###Task Description:
-  An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
-  1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
-  2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
-  3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
-  4. Please do not generate any other opening, closing, and explanations.
-
-  ###The instruction to evaluate:
-  {orig_instruction}
-
-  ###Response to evaluate:
-  {orig_response}
-
-  ###Reference Answer (Score 5):
-  {orig_reference_answer}
-
-  ###Score Rubrics:
-  [{orig_criteria}]
-  Score 1: {orig_score1_description}
-  Score 2: {orig_score2_description}
-  Score 3: {orig_score3_description}
-  Score 4: {orig_score4_description}
-  Score 5: {orig_score5_description}
-
-  ###Feedback: 
-  ```
-
-  #### Prompt Template Without Reference Answer
-
-  ```
-  ###Task Description:
-  An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
-  1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
-  2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
-  3. The output format should look as follows: \"Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)\"
-  4. Please do not generate any other opening, closing, and explanations.
-
-  ###The instruction to evaluate:
-  {orig_instruction}
-
-  ###Response to evaluate:
-  {orig_response}
-
-  ###Score Rubrics:
-  [{orig_criteria}]
-  Score 1: {orig_score1_description}
-  Score 2: {orig_score2_description}
-  Score 3: {orig_score3_description}
-  Score 4: {orig_score4_description}
-  Score 5: {orig_score5_description}
-
-  ###Feedback: 
-  ```
-
-  #### Direct Assessment Output Format
-  ```
-  {orig_feedback} [RESULT] {orig_score}
-  ```
-
-  where "orig_score" is an integer between 1 and 5.
-</details>
-
-### Pairwise Ranking
-
-<details>
-    <summary><strong>Pairwise Ranking Prompt</strong></summary>
-
-  #### System Prompt:
-  ```
-  You are a fair judge assistant assigned to deliver insightful feedback that compares individual performances, highlighting how each stands relative to others within the same cohort.
-  ```
-
-  #### Prompt Template With Reference Answer:
-  ```
-  ###Task Description:
-  An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
-  1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
-  2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
-  3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
-  4. Please do not generate any other opening, closing, and explanations.
-
-  ###Instruction:
-  {orig_instruction}
-
-  ###Response A:
-  {orig_response_A}
-
-  ###Response B:
-  {orig_response_B}
-
-  ###Reference Answer:
-  {orig_reference_answer}
-
-  ###Score Rubric:
-  {orig_criteria}
-
-  ###Feedback: 
-  ```
-
-  #### Prompt Template Without Reference Answer:
-  ```###Task Description:
-  An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
-  1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
-  2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
-  3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
-  4. Please do not generate any other opening, closing, and explanations.
-
-  ###Instruction:
-  {orig_instruction}
-
-  ###Response A:
-  {orig_response_A}
-
-  ###Response B:
-  {orig_response_B}
-
-  ###Score Rubric:
-  {orig_criteria}
-
-  ###Feedback: 
-  ```
-
-  #### Pairwise Ranking Output Format:
-  ```
-  {orig_feedback} [RESULT] {orig_score}
-  ```
-
-  where "orig_score" is either "A" or "B".
-
-</details>
-
  
- # 🏃 Running Prometheus-Eval
+## 🏃 Running Prometheus-Eval
 
- ## Using the package `prometheus-eval`
+### Using the package `prometheus-eval`
 
-  The `prometheus-eval` package provides a simple interface for evaluating instruction-response pairs using Prometheus. The package includes the following methods:
+The `prometheus-eval` package provides a simple interface for evaluating instruction-response pairs using Prometheus. The package includes the following methods:
 
-  - `relative_grade`: Evaluates two responses based on a given instruction and score rubric. Outputs 'A' or 'B' based on the better response.
-  - `absolute_grade`: Evaluates a single response based on a given instruction, reference answer, and score rubric. Outputs a score between 1 and 5.
+- `relative_grade`: Evaluates two responses based on a given instruction and score rubric. Outputs 'A' or 'B' based on the better response.
+- `absolute_grade`: Evaluates a single response based on a given instruction, reference answer, and score rubric. Outputs a score between 1 and 5.
 
 
-## Custom Data Evaluation
+### Custom Data Evaluation
 
 *Note*: Custom data evaluation will be available in the next release. Stay tuned!
 
 If you have a custom dataset that you would like to evaluate using Prometheus and prepared in correct format, you can use the `eval` directory to evaluate your data. The `run_direct_assessment.py` and `run_pairwise_ranking.py` scripts can be used to evaluate direct assessment and pairwise ranking data, respectively.
 
 
-## Evaluation of Evaluator LMs
+### Evaluation of Evaluator LMs
 
 *Note*: Evaluation of evaluator LMs will be available in the next release. Stay tuned!
 
 Prometheus-Eval supports evaluating the performance of evaluator language models (LLMs) using direct assessment and pairwise ranking evaluation formats. Supported benchmarks include VicunaBench, MT-Bench, and FLASK for direct assessment, and HHH Alignment, MT Bench Human Judgment, and Auto-J Eval for pairwise ranking. The evaluation results are reported in terms of Pearson correlation and agreement with human judgments.
 
-### Eval Data Preparation
+#### Eval Data Preparation
 In order to use either Prometheus or proprietary LMs to function as evaluators on your custom data, you should prepare a JSON file that contains a list of dictionaries. Each dictionary should be consisted as follows:
 
-### Direct Assessment Evaluation Data Format:
+#### Direct Assessment Evaluation Data Format:
 
 <details open>
   <summary><code>>>> Direct Assessment Evaluation Data Format (JSON)</code></summary>
@@ -293,7 +146,7 @@ Each dictionary consists of 9 keys: "orig_instruction", "orig_response", "orig_r
 \* Note that you could omit the "orig_reference_answer" in case you don't have it, but this might potentially lead to nonoptimal performances.
 </details>
 
-### Pairwise Ranking Evaluation Data Format:
+#### Pairwise Ranking Evaluation Data Format:
 
 <details open>
   <summary><code>>>> Pairwise Ranking Evaluation Data Format (JSON)</code></summary>
@@ -316,13 +169,13 @@ Each dictionary consists of 5 keys: "orig_instruction", "orig_response_A", "orig
 
 
 
-# A Practitioner's Guide to Use Evaluator LMs
+## A Practitioner's Guide to Use Evaluator LMs
 
 Great to know that you made this far!
 
 Here, we introduce 3 scenarios of how you could make use of this repository: <br>
 
-## Let me just play around with it
+### Let me just play around with it
 You might want to test Prometheus's evaluation capabilities with a few examples and compare it with GPT-4 or Claude-3.
 
 You could do that with the following command:
@@ -368,7 +221,7 @@ evaluator
 
 </details>
 
-## Let me run my custom dataset on this repository
+### Let me run my custom dataset on this repository
 You might want to utilize Prometheus or GPT-4 to assess your datasets.
 After you prepared the aforementioned JSON file, you could run the following command:
 
@@ -471,15 +324,15 @@ feedback_list, score_list = judge.absolute_grade(
 <br>
 <br>
 
-# Training Evaluator LMs
+## Training Evaluator LMs
 
 Lastly, some might be interested in training their own evaluator language models for various purposes. Our training code is baed on `alignment-handbook` respoitory and located in the `train` directory. Please refer to [Installation Instructions](train/README.md/#installation-instructions) for environment setup and [Instructions to Replicate Prometheus-v2.0](train/recipes/prometheus-v2.0/README.md) for training commands.
 
-## Train Data Preparation
+### Train Data Preparation
 
 In order to (1) replicate Prometheus 2, (2) train a new evaluator LM for scratch or (3) continually train Prometheus on your custom feedback data, you should prepare a JSON file that contains a list of dictionaries. Each dictionary should be consisted as follows:
 
-### Direct Assessment Training Data Format:
+#### Direct Assessment Training Data Format:
 
 <details open>
   <summary><code>>>> Data Format to Train Evaluator LMs on Direct Assessment (JSON)</code></summary>
@@ -506,7 +359,7 @@ Each dictionary consists of 11 keys: "orig_instruction", "orig_response", "orig_
 \* To train the Prometheus 2 models, we used the [Feedback Collection](https://huggingface.co/datasets/prometheus-eval/Feedback-Collection).
 </details>
 
-### Pairwise Ranking Training Data Format:
+#### Pairwise Ranking Training Data Format:
 
 <details open>
   <summary><code>>>> Data Format to Train Evaluator LMs on Pairwise Ranking (JSON)</code></summary>
@@ -532,6 +385,6 @@ Each dictionary consists of 7 keys: "orig_instruction", "orig_response_A", "orig
 <br>
 
 
-# Acknowledgements
+## 👏 Acknowledgements
 
 The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [vllm](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Lastly, we referred to the [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval) repository to write this README file. Huge thanks to all the contributors for these awesome repositories!! 🙌
