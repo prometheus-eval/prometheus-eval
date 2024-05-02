@@ -511,9 +511,4 @@ feedback_list, score_list = judge.absolute_grade(
 
 # Training Evaluator LMs
 
-Lastly, some might be interested in training their own evaluator language models for various purposes.
-
-The following code serves this purpose:
-```python
-TODO
-```
+Lastly, some might be interested in training their own evaluator language models for various purposes. Our training code is baed on `alignment-handbook` respoitory and located in the `train` directory. Please refer to [train/README.md](train/README.md) for more details.
