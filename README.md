@@ -101,11 +101,14 @@ Within the prompt, you should fill in the instruction, response(s), and score ru
 <details>
     <summary><strong>Direct Assessment Prompt</strong></summary>
 
-  ### System Prompt:
+
+  #### System Prompt
+
   ```
   You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance.
   ```
-  ### Prompt Template With Reference Answer:
+  
+  #### Prompt Template With Reference Answer
 
   ```
   ###Task Description:
@@ -135,7 +138,7 @@ Within the prompt, you should fill in the instruction, response(s), and score ru
   ###Feedback: 
   ```
 
-  ### Prompt Template Without Reference Answer:
+  #### Prompt Template Without Reference Answer
 
   ```
   ###Task Description:
@@ -162,7 +165,7 @@ Within the prompt, you should fill in the instruction, response(s), and score ru
   ###Feedback: 
   ```
 
-  ### Direct Assessment Output Format:
+  #### Direct Assessment Output Format
   ```
   {orig_feedback} [RESULT] {orig_score}
   ```
@@ -175,12 +178,12 @@ Within the prompt, you should fill in the instruction, response(s), and score ru
 <details>
     <summary><strong>Pairwise Ranking Prompt</strong></summary>
 
-  ### System Prompt:
+  #### System Prompt:
   ```
   You are a fair judge assistant assigned to deliver insightful feedback that compares individual performances, highlighting how each stands relative to others within the same cohort.
   ```
 
-  ### Prompt Template With Reference Answer:
+  #### Prompt Template With Reference Answer:
   ```
   ###Task Description:
   An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
@@ -207,7 +210,7 @@ Within the prompt, you should fill in the instruction, response(s), and score ru
   ###Feedback: 
   ```
 
-  ### Prompt Template Without Reference Answer:
+  #### Prompt Template Without Reference Answer:
   ```###Task Description:
   An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
   1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
@@ -230,7 +233,7 @@ Within the prompt, you should fill in the instruction, response(s), and score ru
   ###Feedback: 
   ```
 
-  ### Pairwise Ranking Output Format:
+  #### Pairwise Ranking Output Format:
   ```
   {orig_feedback} [RESULT] {orig_score}
   ```
