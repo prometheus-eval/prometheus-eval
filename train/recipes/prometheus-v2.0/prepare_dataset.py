@@ -22,7 +22,10 @@ def prepare_dataset_properly():
 
     def add_messages_column(row, system_prompt: str):
         # system_msg = {"content": system_prompt, "role": "system"}
-        user_msg = {"content": system_prompt + "\n\n" + row["instruction"], "role": "user"}
+        user_msg = {
+            "content": system_prompt + "\n\n" + row["instruction"],
+            "role": "user",
+        }
         assistant_msg = {"content": row["output"], "role": "assistant"}
         messages = [user_msg, assistant_msg]
         row["messages"] = messages

@@ -2,7 +2,9 @@ from prometheus_eval import PrometheusEval
 
 judge = PrometheusEval(dtype="float16")
 
-import pdb; pdb.set_trace()
+import pdb
+
+pdb.set_trace()
 
 data = [
     {
@@ -12,7 +14,10 @@ data = [
     }
 ]
 rubric = "Are the components accurately identified?"
-reference_answers = ["Neurons, weights, and activation functions are fundamental to neural networks.", "Layers, nodes, and input data are essential parts of neural network architecture."]
+reference_answers = [
+    "Neurons, weights, and activation functions are fundamental to neural networks.",
+    "Layers, nodes, and input data are essential parts of neural network architecture.",
+]
 
 feedbacks, scores = judge.relative_grade(
     data=data, rubric=rubric, reference_answers=reference_answers, params={}

@@ -234,7 +234,7 @@ def collect_and_zip_feedbacks_and_scores(
     elif mode == "r2r":
         pass
     else:
-        raise ValueError( "Invalid mode. Must be 'a2a', 'a2r', or 'r2r'.")
+        raise ValueError("Invalid mode. Must be 'a2a', 'a2r', or 'r2r'.")
 
     return combined_feedbacks, combined_scores
 
