@@ -200,10 +200,9 @@ def main():
     )
     column_names = list(raw_datasets["train"].features)
     column_names_test = list(raw_datasets["test"].features)
-        
+
     intersection = set(column_names) & set(column_names_test)
     column_names = list(intersection)
-
 
     ################
     # Load tokenizer

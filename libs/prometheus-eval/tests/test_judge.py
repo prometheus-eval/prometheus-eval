@@ -25,57 +25,69 @@ def test_init(judge):
 
 
 def test_absolute_grade_with_valid_input(judge):
-    data = [
-        {
-            "instruction": "Describe the process of photosynthesis.",
-            "response": "Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods.",
-        }
+    instructions = ["Describe the process of photosynthesis."]
+    responses = [
+        "Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods."
     ]
     rubric = "Detailed explanation of biological processes."
     reference_answers = None
 
     feedbacks, scores = judge.absolute_grade(
-        data=data, rubric=rubric, reference_answers=reference_answers, params={}
+        instructions=instructions,
+        responses=responses,
+        rubric=rubric,
+        reference_answers=reference_answers,
+        params={},
     )
-    assert len(feedbacks) == len(data)
+    assert len(feedbacks) == len(responses)
     assert all(isinstance(score, int) for score in scores)
 
 
 def test_absolute_grade_with_invalid_input(judge):
-    data = [{"instruction": "Explain quantum mechanics."}]  # Missing 'response' key
+    instructions = ["Explain quantum mechanics."]
+    responses = []  # No corresponding response
+
     rubric = "Accuracy and completeness of scientific concepts."
 
     with pytest.raises(ValueError):
         _ = judge.absolute_grade(
-            data=data, rubric=rubric, reference_answers=None, params={}
+            instructions=instructions,
+            responses=responses,
+            rubric=rubric,
+            reference_answers=None,
+            params={},
         )
 
 
 def test_relative_grade_with_valid_input(judge):
-    data = [
-        {
-            "instruction": "Evaluate these AI responses.",
-            "response_A": "AI can think like humans.",
-            "response_B": "AI uses algorithms to simulate human thinking.",
-        }
-    ]
+    instructions = ["Evaluate these AI responses."]
+    responses_A = ["AI can think like humans."]
+    responses_B = ["AI uses algorithms to simulate human thinking."]
     rubric = "Assessment of AI capabilities."
-    reference_answers = ("AI uses data.", "AI mimics human cognition.")
+    reference_answers = ["AI uses data. AI mimics human cognition."]
 
     feedbacks, scores = judge.relative_grade(
-        data=data, rubric=rubric, reference_answers=reference_answers, params={}
+        instructions=instructions,
+        responses_A=responses_A,
+        responses_B=responses_B,
+        rubric=rubric,
+        reference_answers=reference_answers,
+        params={},
     )
-    assert len(feedbacks) == len(data) and len(scores) == len(data)
+    assert len(feedbacks) == len(responses_A) and len(scores) == len(responses_A)
 
 
 def test_relative_grade_with_missing_keys(judge):
-    data = [
-        {
-            "instruction": "Discuss blockchain technology.",
-            "response_A": "Blockchain is a distributed ledger technology.",
-        }  # Missing 'response_B'
-    ]
+    instructions = ["Discuss blockchain technology."]
+    responses_A = ["Blockchain is a distributed ledger technology."]
+    responses_B = []  # Missing a corresponding response_B
     rubric = "Explanation of technology principles."
 
     with pytest.raises(ValueError):
-        _ = judge.relative_grade(data=data, rubric=rubric, params={})
+        _ = judge.relative_grade(
+            instructions=instructions,
+            responses_A=responses_A,
+            responses_B=responses_B,
+            rubric=rubric,
+            params={},
+        )

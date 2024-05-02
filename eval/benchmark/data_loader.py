@@ -84,7 +84,7 @@ class EvalDataLoader:
                     record["instruction"] = record["instruction"].strip().rstrip('",')
                     extracted_sections = extract_sections(record["instruction"])
                     record.update(extracted_sections)
-            
+
         elif self.data_name in [
             "hhh_alignment_eval",
             "mt_bench_human_judgement_eval",
@@ -99,7 +99,7 @@ class EvalDataLoader:
                 record["rejected_instruction"] = (
                     record["rejected_instruction"].strip().rstrip('",')
                 )
-            
+
                 chosen_sections = extract_sections(record["chosen_instruction"])
                 rejected_sections = extract_sections(record["rejected_instruction"])
 

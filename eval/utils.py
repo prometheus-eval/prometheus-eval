@@ -280,8 +280,10 @@ def extract_sections(prompt):
         elif "Feedback:" in section:
             extracted["feedback"] = section.split("Feedback:")[1].strip()
         elif "Reference Answer (Score 5):" in section:
-            extracted["reference_answer"] = section.split("Reference Answer (Score 5):")[1].strip()
-    
+            extracted["reference_answer"] = section.split(
+                "Reference Answer (Score 5):"
+            )[1].strip()
+
     return extracted
 
 

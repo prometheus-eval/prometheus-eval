@@ -19,7 +19,13 @@ import pytest
 from datasets import Dataset
 from transformers import AutoTokenizer
 
-from alignment import DataArguments, ModelArguments, apply_chat_template, get_datasets, get_tokenizer
+from alignment import (
+    DataArguments,
+    ModelArguments,
+    apply_chat_template,
+    get_datasets,
+    get_tokenizer,
+)
 from alignment.data import maybe_insert_system_message
 
 

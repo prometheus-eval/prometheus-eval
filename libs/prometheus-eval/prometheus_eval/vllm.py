@@ -21,14 +21,14 @@ class VLLM:
             dtype=dtype,
             gpu_memory_utilization=gpu_memory_utilization,
             download_dir=download_dir,
-            **kwargs
+            **kwargs,
         )
 
     def completions(
         self,
         prompts: List[str],
         use_tqdm: bool = False,
-        **kwargs: Union[int, float, str]
+        **kwargs: Union[int, float, str],
     ) -> List[str]:
         prompts = [prompt.strip() for prompt in prompts]
         params = SamplingParams(**kwargs)
@@ -41,7 +41,7 @@ class VLLM:
         self,
         prompts: List[str],
         use_tqdm: bool = False,
-        **kwargs: Union[int, float, str]
+        **kwargs: Union[int, float, str],
     ) -> List[str]:
         params = SamplingParams(**kwargs)
         return self.model.generate(prompts, params, use_tqdm=use_tqdm)
