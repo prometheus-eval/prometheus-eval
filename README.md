@@ -28,7 +28,7 @@
     - It requires only 16 GB of VRAM, making it suitable for running on consumer GPUs.
 
 
-# Quick Start
+## ⏩ Quick Start
 
 *Note*: `prometheus-eval` library is currently in the beta stage. If you encounter any issues, please let us know by creating an issue on the repository.
 
