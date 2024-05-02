@@ -37,7 +37,7 @@ Installation with pip:
 pip install prometheus-eval
 ```
 
-Evaluating any instruction and response pair is as simple as:
+> **With `prometheus-eval` evaluating *any* instruction and response pair is as simple as:**
 
 ```python
 from prometheus_eval import PrometheusEval
