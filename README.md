@@ -7,6 +7,25 @@
 <p align="center">
   ⚡ A repository for evaluating LLMs in generation tasks 🚀 ⚡ <br>
 </p>
+<p align="center">
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2405.01535">
+    <img src="https://img.shields.io/badge/arXiv-2405.01535-b31b1b.svg" alt="arXiv">
+  </a>
+  <a href="https://huggingface.co/datasets/prometheus-eval/Preference-Collection">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Dataset-ffd21e" alt="Hugging Face Datasets">
+  </a>
+  <a href="https://huggingface.co/prometheus-eval/prometheus-8x7b-v2.0">
+    <img src="https://img.shields.io/badge/Hugging%20Face-Model-ff9d00" alt="Hugging Face Model">
+  </a>
+  <a href="https://github.com/prometheus-eval/prometheus-eval/blob/main/LICENSE">
+    <img src="https://img.shields.io/github/license/prometheus-eval/prometheus-eval.svg" alt="License">
+  </a>
+  <a href="https://pypi.org/project/prometheus-eval/">
+    <img src="https://badge.fury.io/py/prometheus-eval.svg" alt="PyPI version">
+  </a>
+</p>
 
 
 **Latest News** 🔥
