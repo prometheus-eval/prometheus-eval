@@ -153,7 +153,7 @@ def batch_completions_with_retries(
 ):
     if params is None or params == {}:
         params = {
-            "max_tokens": 2048,
+            "max_tokens": 1024,
             "repetition_penalty": 1.03,
             "best_of": 1,
             "temperature": 1.0,
@@ -198,6 +198,7 @@ def batch_completions_with_retries(
     if outputs_len < total_len:
         warnings.warn("Some instances failed to generate feedback.")
         warnings.warn("They will be written as None in the output file.")
+        warnings.warn("Try increasing `max_model_len` to avoid parsing failures.")
 
     feedbacks = []
     scores = []
