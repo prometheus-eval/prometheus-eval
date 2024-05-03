@@ -106,12 +106,16 @@ The `prometheus-eval` package provides a simple interface for evaluating instruc
 - `relative_grade`: Evaluates two responses based on a given instruction and score rubric. Outputs 'A' or 'B' based on the better response.
 
 
-### Directly using weights from Huggingface Hub
+### Using the weights from Huggingface Hub 🤗
 
-WIP
+If you prefer directly working with the weights uploaded in Huggingface Hub, you can directly download the model weights! 
 
+```python
+# Example code for transformers
+# TBA
+```
 
-## Learn more about Prometheus!
+## 📚 Learn more
 
 | Section | Description |
 |-|-|
@@ -125,3 +129,19 @@ WIP
 ## 👏 Acknowledgements
 
 The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [vllm](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Lastly, we referred to the [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval) repository to write this README file. Huge thanks to all the contributors for these awesome repositories!! 🙌
+
+
+## Citation
+
+If you find our work useful, please consider citing our paper!
+
+```bibtex
+@misc{kim2024prometheus,
+      title={Prometheus 2: An Open Source Language Model Specialized in Evaluating Other Language Models}, 
+      author={Seungone Kim and Juyoung Suk and Shayne Longpre and Bill Yuchen Lin and Jamin Shin and Sean Welleck and Graham Neubig and Moontae Lee and Kyungjae Lee and Minjoon Seo},
+      year={2024},
+      eprint={2405.01535},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
