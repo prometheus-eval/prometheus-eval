@@ -200,10 +200,14 @@ print(decoded[0])
 | [Training Prometheus](docs/train_prometheus.md) | WIP |
 | [Collection of Prompts](docs/prompts.md) | WIP |
 
-
 ## 👏 Acknowledgements
 
-The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [vllm](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Lastly, we referred to the [AlpacaEval](https://github.com/tatsu-lab/alpaca_eval) repository to write this README file. Huge thanks to all the contributors for these awesome repositories!! 🙌
+The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [vllm](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Huge thanks to all the contributors for these awesome repositories!! 🙌
+
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=prometheus-eval/prometheus-eval&type=Date)](https://star-history.com/#prometheus-eval/prometheus-eval&Date)
 
 
 ## Citation
