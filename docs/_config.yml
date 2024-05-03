@@ -6,3 +6,6 @@ url: https://just-the-docs.github.io
 
 aux_links:
   Github: https://github.com/prometheus-eval/prometheus-eval
+
+enable_copy_code_button: true
+
