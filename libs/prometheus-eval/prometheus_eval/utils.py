@@ -151,7 +151,7 @@ def batch_completions_with_retries(
     max_retries: int = 10,
     params: dict = None,
 ):
-    if params is None:
+    if params is None or params == {}:
         params = {
             "max_tokens": 2048,
             "repetition_penalty": 1.03,

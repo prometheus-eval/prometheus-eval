@@ -104,7 +104,7 @@ class PrometheusEval:
         response_A: str,
         response_B: str,
         rubric: str,
-        reference_answers: Tuple[str, str] = (None, None),
+        reference_answer: str = None,
         params: Dict[str, Any] = {},
     ) -> Tuple[str, int]:
         """
@@ -123,7 +123,7 @@ class PrometheusEval:
             responses_A=[response_A],
             responses_B=[response_B],
             rubric=[rubric],
-            reference_answers=list(reference_answers),
+            reference_answers=[reference_answer] if reference_answer else [None],
             params=params,
         )
         return feedbacks[0], scores[0]
@@ -186,7 +186,7 @@ class PrometheusEval:
             ]
             input_ = self._get_conversation_prompt(messages)
             inputs.append(input_)
-
+        
         feedbacks, scores = batch_completions_with_retries(
             self.model,
             inputs,
