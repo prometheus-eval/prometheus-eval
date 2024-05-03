@@ -29,6 +29,7 @@
 
 Installation with pip:
 ```shell
+pip install flash-attn --no-build-isolation # (Optional) Install flash attention for efficient inference
 pip install prometheus-eval
 ```
 
@@ -121,9 +122,7 @@ print("Score:", score)
 
 Compared to the Prometheus 1 models, the Prometheus 2 models support both **direct assessment** (absolute grading) and **pairwise ranking** (relative grading). 
 
-You could switch modes by providing a different input prompt format and system prompt.
-
-Within the prompt, you should fill in the instruction, response(s), and score rubrics with your own data. Optionally, you could also add a reference answer which leads to better performance! Click on the appropriate sections below to expand the templates and see detailed examples of how to correctly format your input data. This will help ensure that the evaluations are accurate and reflect the true capabilities of the models being tested.
+You could switch modes by providing a different input prompt format and system prompt. Within the prompt, you should fill in the instruction, response(s), and score rubrics with your own data. Optionally, you could also add a reference answer which leads to better performance!
 
 
 <p align="center">

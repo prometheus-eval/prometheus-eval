@@ -153,7 +153,7 @@ def batch_completions_with_retries(
 ):
     if params is None or params == {}:
         params = {
-            "max_tokens": 2048,
+            "max_tokens": 1024,
             "repetition_penalty": 1.03,
             "best_of": 1,
             "temperature": 1.0,
