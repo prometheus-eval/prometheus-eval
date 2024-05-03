@@ -198,6 +198,7 @@ def batch_completions_with_retries(
     if outputs_len < total_len:
         warnings.warn("Some instances failed to generate feedback.")
         warnings.warn("They will be written as None in the output file.")
+        warnings.warn("Try increasing `max_model_len` to avoid parsing failures.")
 
     feedbacks = []
     scores = []

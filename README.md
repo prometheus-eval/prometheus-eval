@@ -27,9 +27,13 @@
 
 *Note*: `prometheus-eval` library is currently in the beta stage. If you encounter any issues, please let us know by creating an issue on the repository.
 
+
 Installation with pip:
+
+- (Optional) We encourage you to install [flash attention](https://github.com/Dao-AILab/flash-attention) for efficient inference.
+
 ```shell
-pip install flash-attn --no-build-isolation # (Optional) Install flash attention for efficient inference
+pip install flash-attn --no-build-isolation
 pip install prometheus-eval
 ```
 
@@ -67,6 +71,10 @@ feedback, score = judge.single_absolute_grade(
 
 print("Feedback:", feedback)
 print("Score:", score)
+
+# Output
+# Feedback: The response provided shows a high level of empathy and emotional intelligence. It effectively addresses the emotional distress expressed by the user. It acknowledges the user's pain and validates their feelings of loneliness and sadness, which is a crucial aspect of providing empathetic advice. The response also suggests practical steps for coping, such as embracing emotions, practicing self-care, and seeking support from friends, family, or professionals. Furthermore, the response reassures the user that healing is a personal process with no fixed timeline, offering comfort and understanding. It emphasizes the user's worth and potential to overcome the situation, which demonstrates a profound comprehension of the user's emotions and situation. By comparing the score rubric with the provided response, it is clear that the model exhibits an excellent ability to apply empathy and emotional intelligence. The response does not have any deficiencies in emotional depth and successfully meets the criteria for a score of 5.
+# Score: 5
 ```
 
 ```python
@@ -92,6 +100,9 @@ feedback, score = judge.single_relative_grade(**data)
 print("Feedback:", feedback)
 print("Score:", score)
 
+# Output
+# Feedback: Both Response A and Response B correctly identify economic troubles and overreliance on slave labor as significant contributing factors to the fall of the Roman Empire. However, Response B is more effective in presenting the historian's argument due to its inclusion of scholarly sources to back up its claims. Specifically, it references works by Harper, Scheidel, and Temin, which adds credibility to the historian's argument and aligns well with the score rubric's emphasis on evidence and citations. While Response A provides a similar argument, it lacks any form of citations or attributions, which lessens the strength of the evidence presented. Therefore, based on the provided rubric, Response B is the superior response due to its use of scholarly evidence to support the historian's claims.
+# Score: B
 ```
 
 
