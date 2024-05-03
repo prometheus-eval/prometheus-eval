@@ -5,12 +5,7 @@
 <h1 align="center">🔥 Prometheus-Eval 🔥</h1>
 
 <p align="center">
-  <u>Open-source Language Models specialized in evaluating other Language Models</u>
-</p>
-
-<p align="center">
   ⚡ A repository for evaluating LLMs in generation tasks 🚀 ⚡ <br>
-  ⚡ Supports Prometheus evaluation, GPT-4 evaluation, and Claude-3 evaluation 🚀 ⚡
 </p>
 
 
