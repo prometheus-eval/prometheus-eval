@@ -9,3 +9,5 @@ from .prompts import (
     get_prompt_template,
     load_rubric,
 )
+
+__version__ = "0.1.11"
