@@ -21,7 +21,7 @@ ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_con
 # Read the instruction below.
 ```
 
-- For merging the two expert 7B models, we utilized [LazyMergekit.ipynb](https://colab.research.google.com/drive/1obulZ1ROXHjYLn6PPZJwRR6GzgQogxxb?usp=sharing), which allows easy merge between multiple models and also supports uploading to Huggingface Hub. Special thanks to Maxime Labonne for releasing such a useful notebook!
+- For merging the two expert 7B models, we utilized [LazyMergekit.ipynb](https://colab.research.google.com/drive/1obulZ1ROXHjYLn6PPZJwRR6GzgQogxxb?usp=sharing), which facilitates easy merging between multiple models and also supports uploading to the Hugging Face Hub. Special thanks to Maxime Labonne for releasing such a useful notebook!
 - We used the mergekit argument below.
 
 ```
