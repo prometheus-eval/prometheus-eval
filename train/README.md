@@ -8,6 +8,14 @@
 
 # The Alignment Handbook
 
+
+## Prometheus Alignment Handbook
+
+1. Follow the [installation instructions](#installation-instructions) in this file to make the environment `alignment-handbook`.
+
+2. Move to our [recipe README](./recipes/prometheus-v2.0/README.md) and follow the instructions.
+
+
 Robust recipes to align language models with human and AI preferences.
 
 ## What is this?

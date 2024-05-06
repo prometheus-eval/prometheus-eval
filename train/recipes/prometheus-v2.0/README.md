@@ -49,8 +49,30 @@ ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_con
 ACCELERATE_LOG_LEVEL=info accelerate launch --config_file recipes/accelerate_configs/deepspeed_zero3.yaml  scripts/run_sft.py recipes/prometheus-v2.0/sft/config_full_11.yaml
 
 # Step 4 - Merge LoRA adapters
-# TBA
+python -m merge_adapter --base_model_path "mistralai/Mixtral-8x7B-Instruct-v0.1" --target_model_path ABSOLUTE_OUTPUT_PATH --adapter_path YOUR_ABSOLUTE_MODEL_ADAPTER
+
+python -m push_to_hub --target_model_path ABSOLUTE_OUTPUT_PATH --hf_token YOUR_HF_TOKEN --repo_id HF_REPO_ID
+
+python -m merge_adapter --base_model_path "mistralai/Mixtral-8x7B-Instruct-v0.1" --target_model_path RELATIVE_OUTPUT_PATH --adapter_path YOUR_RELATIVE_MODEL_ADAPTER
+
+python -m push_to_hub --target_model_path RELATIVE_OUTPUT_PATH --hf_token YOUR_HF_TOKEN --repo_id HF_REPO_ID
+
 
 # Step 5 - Merge the two expert models to get the final model
-# TBA
+# Read the instruction below.
+```
+
+- Due to the size of the models, we couln't use LazyMergekit in free Colab instance. We used [safetensor-merge-supermario](https://github.com/martyn/safetensors-merge-supermario) for merging two 8x7B models.
+
+```shell
+git clone https://github.com/martyn/safetensors-merge-supermario.git
+cd safetensors-merge-supermario
+
+# Create mergelist.txt and add the content
+echo "mistralai/Mixtral-8x7B-Instruct-v0.1" > mergelist.txt
+echo "ABSOLUTE_GRADING_MODEL" >> mergelist.txt
+echo "RELATIVE_GRADING_MODEL" >> mergelist.txt
+
+# Now run the Python script with the mergelist.txt
+python hf_merge.py mergelist.txt OUTPUT_PATH -p 0.1 -lambda 1.95
 ```
