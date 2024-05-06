@@ -2,8 +2,7 @@ ABS_SYSTEM_PROMPT = "You are a fair judge assistant tasked with providing clear,
 REL_SYSTEM_PROMPT = "You are a fair judge assistant assigned to deliver insightful feedback that compares individual performances, highlighting how each stands relative to others within the same cohort."
 
 
-ABSOLUTE_PROMPT = """
-###Task Description:
+ABSOLUTE_PROMPT = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
@@ -25,8 +24,7 @@ An instruction (might include an Input inside it), a response to evaluate, a ref
 ###Feedback: """
 
 
-ABSOLUTE_PROMPT_WO_REF = """
-###Task Description:
+ABSOLUTE_PROMPT_WO_REF = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
@@ -45,9 +43,7 @@ An instruction (might include an Input inside it), a response to evaluate, and a
 ###Feedback: """
 
 
-# TODO: Adjust the reference answer description
-RELATIVE_PROMPT = """
-###Task Description:
+RELATIVE_PROMPT = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, a reference answer, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
@@ -73,8 +69,7 @@ An instruction (might include an Input inside it), a response to evaluate, a ref
 """
 
 
-RELATIVE_PROMPT_WO_REF = """
-###Task Description:
+RELATIVE_PROMPT_WO_REF = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
@@ -103,7 +98,7 @@ Score 2: {score2_description}
 Score 3: {score3_description}
 Score 4: {score4_description}
 Score 5: {score5_description}
-"""
+""".strip()
 
 # TODO: Add predefined score rubrics: helpfulness, harmlessness, honesty, factual validity, etc
 
