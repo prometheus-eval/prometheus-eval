@@ -172,10 +172,33 @@ device = "cuda" # the device to load the model onto
 model = AutoModelForCausalLM.from_pretrained("prometheus-eval/prometheus-7b-v2.0")
 tokenizer = AutoTokenizer.from_pretrained("prometheus-eval/prometheus-7b-v2.0")
 
+ABS_SYSTEM_PROMPT = "You are a fair judge assistant tasked with providing clear, objective feedback based on specific criteria, ensuring each assessment reflects the absolute standards set for performance."
+
+ABSOLUTE_PROMPT = """###Task Description:
+An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
+1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
+2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
+3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)"
+4. Please do not generate any other opening, closing, and explanations.
+
+###The instruction to evaluate:
+{instruction}
+
+###Response to evaluate:
+{response}
+
+###Reference Answer (Score 5):
+{reference_answer}
+
+###Score Rubrics:
+{rubric}
+
+###Feedback: """
+
+user_content = ABS_SYSTEM_PROMPT + "\n\n" + ABSOLUTE_PROMPT.format(...) # Fill the prompt with your data
+
 messages = [
-    {"role": "user", "content": "What is your favourite condiment?"},
-    {"role": "assistant", "content": "Well, I'm quite partial to a good squeeze of fresh lemon juice. It adds just the right amount of zesty flavour to whatever I'm cooking up in the kitchen!"},
-    {"role": "user", "content": "Do you have mayonnaise recipes?"}
+    {"role": "user", "content": user_content},
 ]
 
 encodeds = tokenizer.apply_chat_template(messages, return_tensors="pt")
