@@ -45,31 +45,8 @@ An instruction (might include an Input inside it), a response to evaluate, and a
 ###Feedback: """
 
 
-RELATIVE_PROMPT = """
-###Task Description:
-An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
-1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
-2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
-3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
-4. Please do not generate any other opening, closing, and explanations.
-
-###Instruction:
-{instruction}
-
-###Response A:
-{response_A}
-
-###Response B:
-{response_B}
-
-###Score Rubric:
-{rubric}
-
-###Feedback: """
-
-
 # TODO: Adjust the reference answer description
-RELATIVE_PROMPT_WO_REF = """
+RELATIVE_PROMPT = """
 ###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, a reference answer, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
@@ -88,6 +65,30 @@ An instruction (might include an Input inside it), a response to evaluate, a ref
 
 ###Reference Answer:
 {reference_answer}
+
+###Score Rubric:
+{rubric}
+
+###Feedback: 
+"""
+
+
+RELATIVE_PROMPT_WO_REF = """
+###Task Description:
+An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
+1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
+2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
+3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
+4. Please do not generate any other opening, closing, and explanations.
+
+###Instruction:
+{instruction}
+
+###Response A:
+{response_A}
+
+###Response B:
+{response_B}
 
 ###Score Rubric:
 {rubric}
