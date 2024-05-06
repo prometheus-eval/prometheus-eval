@@ -5,16 +5,16 @@ nav_order: 2
 has_children: false
 ---
 
-## 2. Installation
+# 2. Installation
 
-### 2.1. Prerequisites
+## 2.1. Prerequisites
 
 Before installing PrometheusEval, ensure that you have the following prerequisites:
 
-- Python 3.11 or higher
-- pip package installer
+- `Python 3.11` or higher
+- `pip` package installer
 
-2.2. Installing the Package
+## 2.2. Installing the Package
 
 To install PrometheusEval, follow these steps:
 
@@ -43,6 +43,5 @@ To install PrometheusEval, follow these steps:
 
 That's it! You have now successfully installed PrometheusEval. You're ready to start using the package to evaluate and grade AI-generated responses.
 
-If you encounter any issues during the installation process or have any questions, please refer to the Troubleshooting section of the documentation or reach out to our support team for assistance.
 
-Note: It is recommended to use a virtual environment to isolate the package dependencies and avoid conflicts with other packages in your Python environment. You can create a virtual environment using tools like `virtualenv`, `poetry` or `conda` before installing PrometheusEval.
+***Note***: It is recommended to use a virtual environment to isolate the package dependencies and avoid conflicts with other packages in your Python environment. You can create a virtual environment using tools like `virtualenv`, `poetry` or `conda` before installing PrometheusEval.

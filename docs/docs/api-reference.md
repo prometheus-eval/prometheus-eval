@@ -5,15 +5,15 @@ nav_order: 4
 has_children: false
 ---
 
-## 4. API Reference
+# 4. API Reference
 
 This section provides detailed information about the classes, methods, and functions available in the PrometheusEval package.
 
-### 4.1. PrometheusEval
+## 4.1. PrometheusEval
 
 The `PrometheusEval` class is the main entry point for using the package. It provides methods for absolute and relative grading of responses.
 
-#### 4.1.1. Initialization
+### 4.1.1. Initialization
 
 To initialize the `PrometheusEval` class, you need to provide the following parameters:
 
@@ -33,7 +33,7 @@ from prometheus_eval import PrometheusEval
 judge = PrometheusEval(model_id="prometheus-eval/prometheus-7b-v2.0", num_gpus=1)
 ```
 
-#### 4.1.2. Methods
+### 4.1.2. Methods
 
 The `PrometheusEval` class provides the following methods:
 
@@ -49,21 +49,21 @@ The `PrometheusEval` class provides the following methods:
 - `relative_grade(instructions, responses_A, responses_B, params, rubric, reference_answers=None)`: Grades a batch of responses relatively based on the provided instructions, paired responses, parameters, rubric, and optional reference answers.
   - Returns a tuple containing lists of feedbacks (List[str]) and scores (List[int]).
 
-### 4.2. Prompts
+## 4.2. Prompts
 
 The `prompts` module contains templates for absolute and relative grading, as well as score rubric templates.
 
-#### 4.2.1. Absolute Grading Templates
+### 4.2.1. Absolute Grading Templates
 
 - `ABSOLUTE_PROMPT`: The template for absolute grading with a reference answer.
 - `ABSOLUTE_PROMPT_WO_REF`: The template for absolute grading without a reference answer.
 
-#### 4.2.2. Relative Grading Templates
+### 4.2.2. Relative Grading Templates
 
 - `RELATIVE_PROMPT`: The template for relative grading with a reference answer.
 - `RELATIVE_PROMPT_WO_REF`: The template for relative grading without a reference answer.
 
-#### 4.2.3. Score Rubric Templates
+### 4.2.3. Score Rubric Templates
 
 - `SCORE_RUBRIC_TEMPLATE`: The template for defining score rubrics.
 - `HELPFULNESS_RUBRIC`: A predefined rubric for evaluating the helpfulness of responses.
@@ -73,7 +73,7 @@ The `prompts` module contains templates for absolute and relative grading, as we
 - `REASONING_RUBRIC`: A predefined rubric for evaluating the reasoning in responses.
 
 
-#### 4.2.4. Utility Functions
+### 4.2.4. Utility Functions
 
 - `get_prompt_template(grading_format, include_reference)`: Get the prompt template based on grading format and whether to include a reference answer.
   - `grading_format` (str): The grading format, either 'absolute' or 'relative'.
@@ -109,13 +109,15 @@ The `load_rubric` function takes the `criteria` (e.g., 'helpfulness', 'harmlessn
 
 These functions enhance the flexibility and usability of the PrometheusEval package by allowing users to easily retrieve the appropriate prompt templates and score rubrics based on their specific grading requirements.
 
-### 4.3. Utils
+## 4.3. Utils
 
 The `utils` module contains utility functions for batch processing and output parsing. It is used inside the `PrometheusEval` class.
 
-#### 4.3.1. Batch Processing Functions
+### 4.3.1. Batch Processing Functions
 
 - `batch_completions_with_retries(model, inputs, mode, max_retries=10, params=None)`: Performs batch completions with retries for failed instances.
 
+
+---
 
 These are the main components of the PrometheusEval package API. For more detailed information about each class, method, and function, please refer to the docstrings and type annotations in the source code.

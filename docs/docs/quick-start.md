@@ -5,11 +5,11 @@ nav_order: 3
 has_children: false
 ---
 
-## 3. Quick Start
+# 3. Quick Start
 
 This section provides a quick introduction to using PrometheusEval for evaluating AI-generated responses. We'll cover two examples: absolute grading and relative grading.
 
-### 3.1. Absolute Grading Example
+## 3.1. Absolute Grading Example
 
 Absolute grading involves evaluating a response individually based on predefined criteria and rubrics. Here's an example of how to use PrometheusEval for absolute grading:
 
@@ -54,7 +54,7 @@ The `score_rubric` is created using the `SCORE_RUBRIC_TEMPLATE` and populated wi
 
 Finally, we call the `single_absolute_grade` method, passing in the required parameters, to obtain the feedback and score for the response.
 
-### 3.2. Relative Grading Example
+## 3.2. Relative Grading Example
 
 Relative grading involves comparing and evaluating responses against each other based on predefined criteria. Here's an example of how to use PrometheusEval for relative grading:
 
@@ -84,7 +84,3 @@ print("Score:", score)
 In this example, we initialize the `PrometheusEval` class with the desired model ID and relative grading template. We then define a `data` dictionary that includes the `instruction`, `response_A`, `response_B`, `reference_answer`, and `rubric`.
 
 We call the `single_relative_grade` method, passing in the `data` dictionary as keyword arguments, to obtain the feedback and score for the relative grading.
-
-These examples demonstrate the basic usage of PrometheusEval for absolute and relative grading. You can customize the prompts, rubrics, and evaluation criteria based on your specific requirements.
-
-For more advanced usage and detailed information about the API, please refer to the API Reference section of the documentation.
