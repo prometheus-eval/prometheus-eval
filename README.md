@@ -127,7 +127,6 @@ rubric = "..."  # Rubric string
 feedbacks, scores = judge.absolute_grade(
     instructions=instructions,
     responses=responses,
-    params={},
     rubric=rubric,
     reference_answers=reference_answers
 )
