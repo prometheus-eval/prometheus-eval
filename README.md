@@ -114,6 +114,22 @@ print("Score:", score)
 # Score: B
 ```
 
+***Note***: If you have multiple responses to grade, don't use `single_absolute_grade` / `single_relative_grade` - use `absolute_grade` and `relative_grade`! It will give you more than 10x speedup. Refer to the documentation [here](https://prometheus-eval.github.io/prometheus-eval/docs/advanced-usage.html#53-handling-large-datasets)! 
+
+```python
+instructions = [...]  # List of instructions
+responses = [...]  # List of responses
+reference_answers = [...]  # List of reference answers
+rubric = "..."  # Rubric string
+
+feedbacks, scores = judge.absolute_grade(
+    instructions=instructions,
+    responses=responses,
+    params={},
+    rubric=rubric,
+    reference_answers=reference_answers
+)
+```
 
 ## 🤔 What is Prometheus-Eval?
 
