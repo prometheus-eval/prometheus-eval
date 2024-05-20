@@ -272,3 +272,13 @@ If you find our work useful, please consider citing our paper!
   year={2023}
 }
 ```
+```bibtex
+@misc{lee2024prometheusvision,
+      title={Prometheus-Vision: Vision-Language Model as a Judge for Fine-Grained Evaluation}, 
+      author={Seongyun Lee and Seungone Kim and Sue Hyun Park and Geewook Kim and Minjoon Seo},
+      year={2024},
+      eprint={2401.06591},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
