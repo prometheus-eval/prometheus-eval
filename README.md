@@ -264,3 +264,11 @@ If you find our work useful, please consider citing our paper!
       primaryClass={cs.CL}
 }
 ```
+```bibtex
+@article{kim2023prometheus,
+  title={Prometheus: Inducing Fine-grained Evaluation Capability in Language Models},
+  author={Kim, Seungone and Shin, Jamin and Cho, Yejin and Jang, Joel and Longpre, Shayne and Lee, Hwaran and Yun, Sangdoo and Shin, Seongjin and Kim, Sungdong and Thorne, James and others},
+  journal={arXiv preprint arXiv:2310.08491},
+  year={2023}
+}
+```
