@@ -270,7 +270,7 @@ def main():
     elif "gemma" in model_name_or_path:
         response_template_context = "<start_of_turn>model\n"
     elif "llama-3" in model_name_or_path:
-        response_template_context = "<|begin_of_text|>"
+        response_template_context = "assistant<|end_header_id|>\n"
     
     response_template_ids = tokenizer.encode(
         response_template_context, add_special_tokens=False
