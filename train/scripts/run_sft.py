@@ -262,13 +262,16 @@ def main():
     ), "The tokenizer's pad token id and eos token id should not be the same."
 
     response_template_context = "[/INST]"
-    if "zephyr" in model_args.model_name_or_path:
+    model_name_or_path = model_args.model_name_or_path
+    if "zephyr" in model_name_or_path:
         response_template_context = "<|assistant|>\n"
-    elif "Hermes" in model_args.model_name_or_path:
+    elif "Hermes" in model_name_or_path:
         response_template_context = "<|im_start|>assistant\n"
-    elif "gemma" in model_args.model_name_or_path:
+    elif "gemma" in model_name_or_path:
         response_template_context = "<start_of_turn>model\n"
-
+    elif "llama-3" in model_name_or_path:
+        response_template_context = "<|begin_of_text|>"
+    
     response_template_ids = tokenizer.encode(
         response_template_context, add_special_tokens=False
     )
