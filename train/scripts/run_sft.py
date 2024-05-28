@@ -194,7 +194,11 @@ def main():
     ###############
     # Load datasets
     ###############
-    raw_datasets = get_datasets(data_args, splits=data_args.dataset_splits)
+    raw_datasets = get_datasets(
+        data_args, 
+        splits=data_args.dataset_splits,
+        columns_to_keep=['instruction', 'output', 'input', 'messages'],
+    )
     logger.info(
         f"Training on the following datasets and their proportions: {[split + ' : ' + str(dset.num_rows) for split, dset in raw_datasets.items()]}"
     )
