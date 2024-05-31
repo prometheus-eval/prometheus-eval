@@ -1,0 +1,248 @@
+[
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 0,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Schedule a daily plan of my day considering my schedule and priorities.\n\nTasks: Prepare presentation for Friday's meeting, respond to emails, review quarterly financial report.\n\nAppointments: Dentist appointment at 2 PM, team meeting at 10 AM.\n\nPreferences: Prefers to work on creative tasks in the morning, likes to take a lunch break at 1 PM, enjoys a short walk in the early evening.\n\nExercise: 30-minute jog, preferably in the morning.\n\nConstraints: Must pick up children from school at 4 PM.\n\nAdditional Information: Prefers not to schedule work-related tasks after 6 PM.",
+        "reference_answer": "7:00 AM - 7:30 AM: Morning jog (exercise)\n7:30 AM - 8:00 AM: Breakfast and preparation for the day \n8:00 AM - 9:30 AM: Work on presentation for Friday's meeting (task, preference)\n9:30 AM - 10:00 AM: Respond to urgent emails (task)\n10:00 AM - 11:00 AM: Team meeting (appointment)\n11:00 AM - 12:00 PM: Continue working on presentation (task)\n12:00 PM - 1:00 PM: Review quarterly financial report (task)\n1:00 PM - 1:30 PM: Lunch break (preference)\n1:30 PM - 2:00 PM: Travel to dentist appointment \n2:00 PM - 3:00 PM: Dentist appointment (appointment)\n3:00 PM - 3:30 PM: Travel back from dentist\n3:30 PM - 4:00 PM: Prepare for school pick-up \n4:00 PM - 4:30 PM: Pick up children from school (constraint)\n4:30 PM - 5:30 PM: Family time / Leisure activities\n5:30 PM - 6:00 PM: Evening walk (preference)\n6:00 PM onwards: Personal time (additional information)",
+        "score_rubric": {
+            "criteria": "Does the response effectively organize the user's tasks, appointments, and preferences into a coherent daily plan that respects the specified constraints and preferences?",
+            "score1_description": "The response attempts to create a schedule but significantly misunderstands the user's priorities or constraints, leading to a plan that overlooks critical tasks or appointments (for example, it schedules work-related tasks after 6 PM despite the user's preference).",
+            "score2_description": "The response creates a basic schedule that includes some tasks and appointments but overlooks others or sequences them in a way that conflicts with the user's preferences or constraints (for example, it schedules the jog in the evening despite the preference for morning exercise).",
+            "score3_description": "The response constructs a mostly functional schedule that incorporates most tasks, appointments, and preferences but contains minor timing or sequencing errors (for example, it provides insufficient time for lunch or schedules the jog but cuts it shorter than 30 minutes).",
+            "score4_description": "The response designs a well-considered schedule that is nearly optimal, with minor oversights or slight inefficiencies (for example, it includes all tasks and appointments but does not fully optimize for the user's creative task preference in the morning).",
+            "score5_description": "The response delivers a comprehensive and optimal schedule, efficiently organizing all tasks, appointments, and preferences within the constraints, with no unnecessary time allocations or overlooks."
+        },
+        "atomic_checklist": [
+            "Does the response schedule the morning jog and allocate the full 30 minutes for it?",
+            "Is the creative task of preparing the presentation scheduled in the morning hours?",
+            "Does the response include a lunch break at 1 PM as per the user's preference?",
+            "Are all appointments, including the dentist at 2 PM and the team meeting at 10 AM, accounted for in the schedule?",
+            "Does the response respect the constraint of picking up children from school at 4 PM and avoid scheduling work-related tasks after 6 PM?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 1,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Schedule a daily plan of my day considering my schedule and priorities.\n\nTasks: Research and brainstorm ideas for a new project; Draft a creative proposal for a potential client; Work on a personal side project.\n\nAppointments: Meeting with a potential client at 10:30 AM; Attend a networking event at 6:00 PM.\n\nPreferences: I'm most creative in the late morning; I prefer a leisurely lunch at 1 PM; A short break for meditation or relaxation in the afternoon helps me focus.\n\nAdditional Information: Avoid scheduling work-related tasks after 8 PM.",
+        "reference_answer": "8:30 AM - 9:30 AM: Morning brainstorming and idea generation for the new project (task, preference)\n9:30 AM - 10:30 AM: Meeting with the potential client (appointment)\n10:30 AM - 11:30 AM: Continue working on project ideas (task, preference)\n11:30 AM - 1:00 PM: Draft a proposal for the client (task)\n1:00 PM - 2:00 PM: Leisurely lunch break (preference)\n2:00 PM - 5:30 PM: Personal side project-longer slot (preference, task)\n5:00 PM - 6:00 PM: Prepare for the networking event\n6:00 PM - 8:00 PM: Attend the networking event (appointment)",
+        "score_rubric": {
+            "criteria": "Does the response effectively design a daily plan that aligns with the user's schedule, tasks, appointments, and preferences, while avoiding work-related tasks post 8 PM?",
+            "score1_description": "The response attempts a schedule but largely disregards the user's preferences or constraints, resulting in an impractical plan (for example, it schedules work-related tasks after 8 PM or overlooks the leisurely lunch preference).",
+            "score2_description": "The response outlines a basic plan that includes some tasks and appointments but either overlooks some user preferences or sequences activities in a manner that conflicts with the user's specified times (for example, it schedules the brainstorming session in the early morning despite the late morning creativity peak).",
+            "score3_description": "The response proposes a fairly coherent plan that accounts for most tasks, appointments, and preferences but includes minor timing or sequencing inaccuracies (for example, it schedules the meditation break at an unspecified time in the afternoon without a clear slot).",
+            "score4_description": "The response crafts a well-thought-out schedule that nearly optimally incorporates all specified elements but may contain slight inefficiencies or minor overlooks (for example, it schedules a work-related task close to 8 PM, risking overlap).",
+            "score5_description": "The response delivers an optimal and comprehensive schedule, effectively organizing all tasks, appointments, and preferences within the constraints, with each activity thoughtfully placed according to the user's optimal times and no work-related tasks post 8 PM."
+        },
+        "atomic_checklist": [
+            "Does the response schedule the brainstorming session in the late morning to align with the user's peak creativity time?",
+            "Is the leisurely lunch break scheduled at 1 PM as per the user's preference?",
+            "Does the response allocate a specific time for a meditation or relaxation break in the afternoon?",
+            "Are both the meeting with the potential client at 10:30 AM and the networking event at 6:00 PM included in the plan?",
+            "Does the response avoid scheduling any work-related tasks after 8 PM as specified?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 2,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Schedule a daily plan of my day considering my schedule and priorities.\n\nTasks: Attend Math class at 9:00 AM; Study for History\n\nAppointments: Chat with friends at 3:30 PM; Tutoring session at 6:00 PM.\n\nPreferences: Most productive for studying in the afternoon; Prefer a quick lunch at 12:30 PM.\n\nAdditional Information: Having a history exam",
+        "reference_answer": "9:00 AM - 10:30 AM: Preparation\n9:00 AM - 10:30 AM: Attend Math class (task)\n10:30 AM - 12:00 PM: Study for History (task)\n12:00-12:30: Going to the lunch place\n12:30 PM - 1:00 PM: Lunch break (preference)\n1:00 PM - 3:00 PM: Continue studying for History (task)\n3:00 PM - 3:30 PM: Prepare for a chat with friends \n3:30 PM - 4:30 PM: Chat with friends (appointment)\n4:30 PM - 5:30 PM: Break/Relaxation (preference)\n5:30 PM - 6:00 PM: Prepare for tutoring session (additional information)\n6:00 PM - 7:00 PM: Tutoring session (appointment)\n7:00 PM - 8:00 PM: Dinner\n8:00 PM - 8:30 PM: Dinner break\n8:30 PM - 10:00 PM: Continue studying for History (task)",
+        "score_rubric": {
+            "criteria": "Does the response construct a detailed daily plan that accommodates the user's tasks, appointments, and study needs, while adhering to their preferences and preparing for the history exam?",
+            "score1_description": "The response attempts to create a schedule but significantly misunderstands the user's needs or preferences, resulting in a plan that neglects important tasks or appointments (for example, it omits the Math class or schedules the tutoring session during the user's preferred study time).",
+            "score2_description": "The response outlines a basic schedule that includes key tasks and appointments but either overlooks some preferences or sequences activities in a manner that conflicts with optimal study times (for example, it schedules study time for History in the morning despite the user's afternoon productivity preference).",
+            "score3_description": "The response proposes a mostly coherent schedule that incorporates most tasks, appointments, and preferences but contains minor timing or sequencing inaccuracies (for example, it schedules a shorter lunch than preferred or places the chat with friends too close to the tutoring session).",
+            "score4_description": "The response designs a well-considered schedule that nearly optimally incorporates all specified elements but may contain slight inefficiencies or minor overlooks (for example, it includes all tasks and appointments but does not fully optimize study breaks or relaxation time).",
+            "score5_description": "The response delivers an optimal and comprehensive schedule, effectively organizing all tasks, appointments, and study sessions within the constraints, with each activity thoughtfully placed according to the user's optimal times and preferences, ensuring ample preparation for the history exam."
+        },
+        "atomic_checklist": [
+            "Does the response schedule the Math class at 9:00 AM and allocate appropriate time for it?",
+            "Is study time for History scheduled in the afternoon to align with the user's most productive time?",
+            "Does the response include a lunch break at 12:30 PM as per the user's preference?",
+            "Are both the chat with friends at 3:30 PM and the tutoring session at 6:00 PM included in the plan?",
+            "Does the response provide adequate preparation time for the history exam within the study sessions?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 3,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Tasks:\n- Attend school from 8:00 AM to 3:00 PM.\n- Finish homework before dinner at 6:00 PM.\n\nAppointments:\n- None.\n\nPreferences:\n- Enjoy playtime with toys in the afternoon.\n- Ensure enough time for homework before dinner.",
+        "reference_answer": "7:00AM: Wake-up\n7:00-7:30AM: Preparation\n7:30AM-8:00AM: Go to school\n8:00 AM - 3:00 PM: Attend school (task)\n3:00 PM - 5:00 PM: Enjoy playtime with toys (Preference for afternoon playtime)\n5:00 PM - 6:00 PM: Finish homework (Ensure enough time for homework before dinner)\n6:00 PM: Dinner",
+        "score_rubric": {
+            "criteria": "Does the response efficiently organize the user's day to include school, homework, and playtime, adhering to the specified preferences and ensuring homework completion before dinner?",
+            "score1_description": "The response attempts to schedule the day but overlooks critical elements or mismanages time, resulting in an unrealistic plan (for example, it allocates no time for playtime or schedules homework after dinner).",
+            "score2_description": "The response outlines a basic schedule that includes school and homework but either neglects the preference for playtime or misallocates the time for these activities, making the plan only partially aligned with the user's needs (for example, it schedules playtime during school hours).",
+            "score3_description": "The response proposes a mostly coherent schedule that accommodates school, homework, and some playtime but contains minor timing or sequencing inaccuracies (for example, it schedules playtime but cuts into the time allocated for homework).",
+            "score4_description": "The response designs a well-considered schedule that nearly optimally incorporates school, homework, and playtime but may contain slight inefficiencies or minor overlooks (for example, it includes all activities but does not fully optimize for the user's preference for afternoon playtime).",
+            "score5_description": "The response delivers an optimal and comprehensive schedule, effectively organizing school, homework, and playtime within the constraints, with each activity thoughtfully placed according to the user's preferences and ensuring homework completion before dinner."
+        },
+        "atomic_checklist": [
+            "Does the response schedule school attendance from 8:00 AM to 3:00 PM?",
+            "Is playtime with toys scheduled in the afternoon, adhering to the user's preference?",
+            "Does the response allocate sufficient time for homework completion before the 6:00 PM dinner?",
+            "Does the plan include a morning routine before school?",
+            "Does the response ensure that no appointments or tasks conflict with the school schedule?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 4,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Today is Tuesday.\n\nTasks:\n- Attend school from 9:00 AM to 3:00 PM.\n- Finish homework before dinner at 6:30 PM.\n- Practice piano for 30 minutes after school.\n- Read a chapter of my favorite book before bedtime at 10:00 PM.\n\nAppointments:\n- Piano lesson at 4:00 PM (Please schedule this after school on Wednesday).\n\nPreferences:\n- Ensure enough time for homework before dinner.\n- Schedule a short break for a snack and playtime after school.\n- Allow some free time to relax in the evening before bedtime.\n\nAdditional Information:\n- I have a soccer practice on Tuesdays and Thursdays from 5:15 PM to 6:15 PM.\n- Usually, I have a lot of homework on Tuesday",
+        "reference_answer": "9:00 AM - 3:00 PM: School (task)\n3:00 PM - 3:30 PM: Short break for a snack and playtime (preference)\n3:30 PM - 4:30 PM: Finish homework (task, preference)\n4:30 PM - 5:00 PM: Practice piano (task)\n5:15 PM - 6:15 PM: Soccer practice (additional information)\n6:30 PM - 7:00 PM: Dinner (constraint)\n7:00 PM - 9:00 PM: Free time to relax or read (preference)\n9:30 PM - 10:00 PM: Read a book (task)\n9:30 PM - 10:00 PM: Prepare for bedtime \n10:00 PM: Bedtime (task)",
+        "score_rubric": {
+            "criteria": "Does the response effectively organize the user's Tuesday schedule to accommodate school, homework, piano practice, soccer practice, and relaxation, considering the specified preferences and additional information?",
+            "score1_description": "The response attempts to create a schedule but significantly mismanages the user's time or overlooks critical tasks, resulting in a plan that neglects important activities (for example, it omits soccer practice or schedules piano practice during school hours).",
+            "score2_description": "The response outlines a basic schedule that includes key tasks but either neglects some preferences or misallocates time for activities, making the plan only partially aligned with the user's needs (for example, it schedules homework after dinner despite the preference for completing it beforehand).",
+            "score3_description": "The response proposes a mostly coherent schedule that incorporates school, homework, and some preferences but contains minor timing or sequencing inaccuracies (for example, it allocates insufficient time for piano practice or schedules the snack break immediately after soccer practice without allowing time to transition).",
+            "score4_description": "The response designs a well-considered schedule that nearly optimally incorporates all specified tasks and preferences but may contain slight inefficiencies or minor overlooks (for example, it includes a free time slot but does not specify activities during this period, leaving the user's relaxation preference only partially addressed).",
+            "score5_description": "The response delivers an optimal and comprehensive schedule, effectively organizing school, homework, piano practice, soccer practice, and relaxation within the constraints, with each activity thoughtfully placed according to the user's preferences and ensuring a balanced distribution of tasks and leisure."
+        },
+        "atomic_checklist": [
+            "Does the response schedule school attendance from 9:00 AM to 3:00 PM?",
+            "Is there a scheduled short break for a snack and playtime immediately after school?",
+            "Does the response allocate time for homework completion before dinner, considering the user's preference and the soccer practice?",
+            "Is piano practice scheduled outside of school hours and before the soccer practice?",
+            "Does the plan include free time to relax in the evening, ensuring relaxation before bedtime?",
+            "Is reading a chapter of the book scheduled before the 10:00 PM bedtime?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 5,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Organize a balanced daily plan that factors in my study schedule, personal tasks, and relaxation time.\n\nTasks:\n- Study for chemistry test for 2 hours.\n- Complete art project submission due by 5 PM.\n\nAppointments:\n- Tutoring session for math at 1 PM; lasts for 1 hour.\n\nPreferences:\n- Prefers studying in the late morning to early afternoon.\n- Likes to have periods of short breaks between tasks for refreshment.\n- Enjoys a long walk as a form of relaxation late in the evening.\n\nConstraints:\n- Must have dinner with family at 7 PM.\n- Avoid any academic tasks after 8 PM for relaxation time.\n\nAdditional Information:\n- The art project requires at least 1.5 hours of focused, uninterrupted work.",
+        "reference_answer": "8:00 AM - 9:00 AM: Morning routine\n9:00 AM - 11:00 AM: Chemistry study session (2 hours as preferred)\n11:00 AM - 11:15 AM: Short break (refreshment)\n11:15 AM - 12:45 PM: Work on art project (1.5 hours of focused work)\n12:45 PM - 1:00 PM: Preparation/Transition for tutoring\n1:00 PM - 2:00 PM: Math tutoring session (appointment)\n2:00 PM - 2:30 PM: Lunch break\n2:30 PM - 3:30 PM: Continue art project if necessary or take a leisurely break\n3:30 PM - 3:45 PM: Short break\n3:45 PM - 5:45 PM: Free study or catch-up on minor tasks\n6:00 PM - 6:30 PM: Prepare for dinner\n7:00 PM: Dinner with family (constraint)\n8:00 PM onwards: Relaxation - long walk (preference and relaxation)",
+        "score_rubric": {
+            "criteria": "Does the response adeptly map out the user's day to accommodate study sessions, personal tasks, appointments, and relaxation while adhering to specified preferences and constraints?",
+            "score1_description": "The response fails to effectively plan the day, overlooking major tasks or mismanaging available time, resulting in significant omissions like missing the tutoring session or scheduling academic tasks after 8 PM.",
+            "score2_description": "The response crafts a schedule that roughly aligns with specified tasks and appointments but neglects some preferences, such as studying time or relaxation, making the day's plan somewhat aligned but not optimal.",
+            "score3_description": "The response details a well-structured plan that incorporates tasks, appointments, and adheres to most preferences but may schedule too few breaks or slightly misalign relaxation time.",
+            "score4_description": "The plan thoughtfully organizes the day, balancing tasks, appointments, and relaxation well, with minor deviations from preferences or slightly inefficient allocation of break times.",
+            "score5_description": "The response delivers an optimal and comprehensive daily plan, perfectly organizing study sessions, tasks, appointments, and relaxation, fully respecting the preferences, constraints, and ensuring efficient use of breaks."
+        },
+        "atomic_checklist": [
+            "Does the response allocate a dedicated 2-hour slot for studying chemistry in the preferred late morning to early afternoon?",
+            "Is the math tutoring session at 1 PM included with adequate preparation or transition time?",
+            "Does the plan allow for 1.5 hours of focused work on the art project, considering uninterrupted work preference?",
+            "Are short breaks included between major tasks for refreshment as preferred?",
+            "Is a long walk scheduled for relaxation in the late evening?",
+            "Does the plan respect the dinner with family at 7 PM and avoid academic tasks after 8 PM?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 6,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Devise a day's schedule that incorporates my professional tasks, fitness routine, and social activities.\n\nTasks:\n- Work on a project proposal for at least 3 hours.\n- Review and respond to important emails.\n\nAppointments:\n- Gym session with a personal trainer at 6 AM.\n- Lunch meeting with a colleague at 12 PM.\n- Virtual team meeting at 4 PM; expected to last 1 hour.\n\nPreferences:\n- Prefers to tackle the most challenging tasks in the morning.\n- Aims to complete work-related tasks before 5 PM to have the evening free.\n- Enjoys having a short, relaxing break after lunch.\n\nConstraints:\n- Cannot do heavy mental work after the gym session.\n- Dinner date scheduled at 7 PM.\n\nAdditional Information:\n- Likes to end the day with light reading or a hobby activity.",
+        "reference_answer": "5:30 AM: Wake-up and prepare for the gym\n6:00 AM - 7:00 AM: Gym session with personal trainer (appointment)\n7:00 AM - 8:00 AM: Breakfast and recovery\n8:00 AM - 11:00 AM: Work on project proposal (task, preference for challenging tasks in the morning)\n11:00 AM - 11:30 AM: Review and respond to important emails (task)\n12:00 PM - 1:00 PM: Lunch meeting with a colleague (appointment)\n1:00 PM - 1:30 PM: Relaxing break (preference)\n1:30 PM - 3:30 PM: Continue work on emails or project adjustments\n4:00 PM - 5:00 PM: Virtual team meeting (appointment)\n5:00 PM onwards: Free time for light reading or hobby activity before dinner date at 7 PM (additional information)",
+        "score_rubric": {
+            "criteria": "Does the response effectively outline a daily plan that balances professional tasks, fitness routine, and social engagements, within the framework of the user's preferences and constraints?",
+            "score1_description": "The plan significantly mismanages the user's preferences or overlooks critical tasks, leading to an impractical schedule (e.g., schedules intensive mental work right after the gym session or fails to allocate enough time for the project proposal).",
+            "score2_description": "The plan includes most tasks and appointments but either neglects some preferences or misallocates time (e.g., places the relaxing break at an inappropriate time or extends professional tasks into the evening).",
+            "score3_description": "The plan is mostly coherent, accommodating all appointments and most tasks, while adhering to some preferences. However, it may overlook the optimal time distribution for tasks (e.g., allocates less than 3 hours for the project proposal).",
+            "score4_description": "The plan nearly optimally organizes the day, incorporating tasks, fitness, and social activities but may have slight timeliness issues or minor deviations from preferences (e.g., the evening is mostly free but slightly encroaches on hobby time).",
+            "score5_description": "Delivers an optimal schedule, expertly structuring professional tasks, fitness, and social engagements, respecting all preferences and constraints, with thoughtful consideration to the distribution of challenging tasks and relaxation."
+        },
+        "atomic_checklist": [
+            "Is the gym session with a personal trainer at 6 AM correctly included and accounted for?",
+            "Does the plan allocate at least 3 hours for working on the project proposal during the optimal morning hours?",
+            "Are all appointments, including the lunch meeting at 12 PM and the virtual team meeting at 4 PM, included in the schedule?",
+            "Does the response include a short, relaxing break after lunch as per the user's preference?",
+            "Are professional tasks completed before 5 PM, allowing the evening free for personal time?",
+            "Does the plan avoid scheduling heavy mental work immediately after the gym session, respecting the user\u2019s constraint?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 7,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Plan an effective daily schedule that blends academic obligations, workout sessions, and leisure activities considering my preferences.\n\nTasks:\n- Attend online lectures from 9 AM to 12 PM.\n- Study for upcoming exams for 3 hours.\n- Work on research paper for 2 hours.\n\nAppointments:\n- Gym workout at 5 PM; approximately 1.5 hours including commute.\n\nPreferences:\n- Prefers to study in one block without interruptions.\n- Enjoys leisure reading or gaming after dinner.\n- Likes to have a short mid-morning coffee break.\n\nConstraints:\n- Dinner with family every day at 7 PM.\n- Avoid intellectual tasks after 9 PM for relaxation.\n\nAdditional Information:\n- Trying to incorporate more outdoor activities for wellness.",
+        "reference_answer": "8:00 AM - 8:30 AM: Morning routine\n9:00 AM - 12:00 PM: Online lectures (task)\n12:00 PM - 12:15 PM: Coffee break (preference)\n12:15 PM - 3:15 PM: Study for exams in one block (task, preference)\n3:15 PM - 4:00 PM: Lunch and rest\n4:00 PM - 4:45 PM: Work on research paper (task)\n5:00 PM - 6:30 PM: Gym workout, including commute (appointment)\n7:00 PM: Dinner with family (constraint)\n8:00 PM - 9:00 PM: Leisure walk outdoors (additional information, preference)\n9:00 PM onwards: Leisure reading or gaming (preference)",
+        "score_rubric": {
+            "criteria": "Does the response efficiently arrange the user's day to balance academic work, physical exercise, and relaxation, adhering to their preferences and time constraints?",
+            "score1_description": "The plan significantly mismanages user's time or neglects key activities, leading to an unfeasible schedule (e.g., misses scheduled lectures or places study time during gym hours).",
+            "score2_description": "The plan includes key activities but may misallocate time or disregard preferences (e.g., breaks the study session into multiple short segments or schedules intellectual tasks late in the evening).",
+            "score3_description": "The response outlines a cohesive schedule fitting most tasks, workout, and leisure, but with minor deviations in timing or slight neglect of outdoor activity preference.",
+            "score4_description": "The schedule adequately accommodates academic obligations, workout, and preferred relaxation activities, with minor inefficiencies or slightly less outdoor time than ideal.",
+            "score5_description": "Delivers an optimal daily plan, expertly organizing lectures, study sessions, gym workout, and leisure activities, fully respecting study preferences, dinner constraint, and encouraging outdoor leisure."
+        },
+        "atomic_checklist": [
+            "Are the online lectures from 9 AM to 12 PM scheduled without interruptions?",
+            "Is there a single uninterrupted block of 3 hours allocated for study?",
+            "Does the plan include a gym workout at 5 PM including commute time?",
+            "Is a short mid-morning coffee break included as per user's preference?",
+            "Are leisure activities like reading or gaming scheduled after dinner?",
+            "Does the schedule accommodate dinner with the family at 7 PM without pushing academic work post-dinner?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 8,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Design a schedule blending work obligations, culinary passion, and social engagements for an optimal day.\n\nTasks:\n- Finish a business proposal by 10 AM.\n- Cook a complex meal for dinner, spending at least 2 hours in preparation.\n\nAppointments:\n- Client call at 2 PM; expected to last for 1 hour.\n- Book club meeting at 7:30 PM, lasting around 2 hours.\n\nPreferences:\n- Prefers to work on demanding cognitive tasks early in the morning.\n- Wishes to incorporate a midday break for a quick outdoor walk.\n- Aims to avoid work-related tasks after 6 PM to focus on personal interests and relaxation.\n\nConstraints:\n- Needs at least 1 hour to prepare and decompress before the book club meeting.\n- Must have dinner ready by 6:30 PM to accommodate family's schedule.\n\nAdditional Information:\n- Interested in dedicating time to read or research culinary techniques in the afternoon.",
+        "reference_answer": "6:00 AM - 6:30 AM: Morning routine\n6:30 AM - 10:00 AM: Work on and complete the business proposal (task)\n10:00 AM - 10:30 AM: Mid-morning break, outdoor walk (preference)\n10:30 AM - 12:00 PM: Email correspondence and minor work tasks\n12:00 PM - 1:00 PM: Lunch break\n1:00 PM - 2:00 PM: Preparation for client call\n2:00 PM - 3:00 PM: Client call (appointment)\n3:00 PM - 4:00 PM: Culinary research or reading (additional information, preference)\n4:00 PM - 6:30 PM: Cook complex meal for dinner (task, constraint)\n6:30 PM: Dinner with family (constraint)\n7:00 PM - 7:30 PM: Decompression and preparation for book club meeting\n7:30 PM - 9:30 PM: Book club meeting (appointment)\n9:30 PM onwards: Leisure or personal time",
+        "score_rubric": {
+            "criteria": "Does the response effectively design a daily schedule that integrates work responsibilities, culinary activities, personal interests, and social commitments while aligning with the user's preferences and constraints?",
+            "score1_description": "The plan significantly mismanages the user's priorities, leading to overlooked tasks or appointments (e.g., schedules cooking during the client call or omits the outdoor walk).",
+            "score2_description": "The plan includes key responsibilities and appointments but either overlooks preferences (like the midday walk) or misallocates time (e.g., allocates less than 2 hours for cooking or schedules work tasks late).",
+            "score3_description": "The plan is mostly coherent, incorporating tasks, appointments, and adheres to most preferences. However, it might schedule activities back-to-back without sufficient breaks or slightly misalign with the dinner preparation timing.",
+            "score4_description": "The schedule well accommodates the user's detailed requirements and timing but could mildly improve in optimizing personal interests time (e.g., provides less than desired time for culinary research).",
+            "score5_description": "Delivers an optimal schedule, expertly orchestrating work obligations, culinary passion, and social engagements, meticulously respecting all stated preferences and constraints, ensuring a balanced and fulfilling day."
+        },
+        "atomic_checklist": [
+            "Is the business proposal scheduled to finish by 10 AM as per the user's early working preference?",
+            "Does the plan allocate at least 2 hours for cooking a complex meal, ready by 6:30 PM?",
+            "Is the client call at 2 PM included, with preliminary preparation considered?",
+            "Does the schedule incorporate a midday break for an outdoor walk?",
+            "Is adequate decompression time scheduled before the 7:30 PM book club meeting?",
+            "Are personal interests like reading or culinary research accommodated in the afternoon?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "personal_assistant",
+        "instance_idx": 9,
+        "system_prompt": "You are an agent that is aware of user's schedule and priorities. You are responsible for scheduling a daily plan of user's day.",
+        "input": "Construct a daily itinerary that incorporates academic studies, part-time work, and wellbeing activities, with attention to personal priorities.\n\nTasks:\n- Attend two online biology lectures, each 1.5 hours long, starting at 9 AM.\n- Complete and submit a psychology assignment by 8 PM.\n\nAppointments:\n- Part-time job at the local library from 3 PM to 6 PM.\n\nPreferences:\n- Prefers to engage in physical exercises in the morning before academic activities.\n- Enjoys short meditation sessions for mental wellbeing before starting work.\n- Aims to have a dedicated slot for leisure reading in the evening.\n\nConstraints:\n- Not available for any tasks or activities from 3 PM to 6 PM due to part-time work.\n- Dinner with housemates planned for 7 PM.\n\nAdditional Information:\n- Hopes to incorporate study periods for both lectures and assignment with breaks in between to avoid burnout.",
+        "reference_answer": "6:30 AM: Wake-up\n6:45 AM - 7:45 AM: Physical exercise (preference)\n7:45 AM - 8:30 AM: Breakfast and preparation for lectures\n9:00 AM - 12:00 PM: Attend online biology lectures (9:00 AM - 10:30 AM, 10:30 AM - 12:00 PM)\n12:00 PM - 1:00 PM: Break / Lunch\n1:00 PM - 2:30 PM: Study period for psychology assignment, with a short break (task, preference for breaks)\n2:30 PM - 2:45 PM: Meditation session (preference)\n3:00 PM - 6:00 PM: Part-time job at the library (appointment)\n6:15 PM - 7:00 PM: Prepare for and have dinner with housemates (constraint)\n7:30 PM - 8:30 PM: Finalize and submit psychology assignment (task)\n8:30 PM onwards: Leisure reading (preference for evening relaxation)",
+        "score_rubric": {
+            "criteria": "Does the schedule effectively intertwine academic responsibilities, part-time work, and wellbeing activities, respecting the user\u2019s preferences, constraints, and ensuring the psychology assignment's submission?",
+            "score1_description": "The plan drastically misaligns with the user's preferences or overlooks significant commitments, resulting in key tasks or preferences being neglected (for example, schedules physical exercises after academic activities or forgets the part-time job).",
+            "score2_description": "The plan outlines primary activities but either sequences them improperly or omits important preferences (such as missing the meditation session or scheduling leisure reading during part-time work hours).",
+            "score3_description": "The schedule reasonably balances most tasks, work, and wellbeing activities but might allocate insufficient time for breaks or slightly misalign with preferred activity times (for example, places exercise too close to academic activities).",
+            "score4_description": "The plan thoughtfully organizes the day to include all tasks, part-time work, and preferred activities but with minor timing inaccuracies or somewhat insufficient consideration for relaxation and breaks.",
+            "score5_description": "Delivers an optimal day plan, skillfully integrating academic studies, part-time work, and wellbeing activities, meticulously adhering to the user's preferences and time constraints, providing ample time for breaks and leisure."
+        },
+        "atomic_checklist": [
+            "Is physical exercise scheduled in the early morning before academic lectures?",
+            "Are both online biology lectures scheduled back-to-back starting at 9 AM without interruption?",
+            "Does the plan include a short meditation session before the part-time job begins?",
+            "Is there a structured study period for the psychology assignment with breaks to prevent burnout?",
+            "Does the schedule accommodate dinner with housemates at 7 PM, avoiding any clash with part-time work?",
+            "Is leisure reading time allocated in the evening, post-dinner, as per preference?"
+        ],
+        "background_knowledge": []
+    }
+]

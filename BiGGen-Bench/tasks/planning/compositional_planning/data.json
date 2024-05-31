@@ -1,0 +1,269 @@
+[
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 0,
+        "system_prompt": "You are an expert agent in hierarchical and compositional planning using foundation models.",
+        "input": "In a scenario where a robot must clean and organize a cluttered room, devise a high-level plan composed of several low-level tasks. The tasks include picking up toys, vacuuming the floor, and arranging books on a shelf.\n\nInitial State: The room is cluttered with toys on the floor, a dirty carpet, and books scattered around.\n\nGoal: Clean and organize the room with toys in the toy box, a vacuumed carpet, and books arranged on the shelf.",
+        "reference_answer": "To clean and organize the room, the robot should execute the following high-level plan composed of low-level tasks:\n\n1. Start by picking up toys from the floor and placing them in the toy box.\n2. Vacuum the carpet thoroughly to clean it.\n3. Arrange the scattered books in a specific order on the shelf.\n\nThis plan demonstrates the robot's ability to break down the complex task of room organization into manageable sub-tasks, efficiently allocating resources and time for each task.",
+        "atomic_checklist": [
+            "Does the response list all essential actions needed to clean and organize the room (e.g., picking up toys, vacuuming, arranging books)?",
+            "Is each action described with enough detail to understand what the robot will do?",
+            "Does the plan present a logical order of actions, showing an understanding of task prioritization?",
+            "Does the response specify how much time or other resources each action will require, indicating thoughtful planning?",
+            "Are there clear explanations for why each action is necessary and how it contributes to the overall goal of cleaning and organizing the room?",
+            "Is the plan realistic, considering the robot's capabilities and the room's condition?",
+            "Does the plan efficiently address the goal, suggesting no unnecessary actions or wasted resources?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response effectively break down the complex task of cleaning and organizing a cluttered room into specific, manageable actions, and does it allocate resources and time logically for each action?",
+            "score1_description": "The response provides a general or vague plan without identifying specific actions, showing no clear structure or thought process in organizing tasks or allocating resources.",
+            "score2_description": "The response lists some actions like picking up toys or vacuuming but without a clear sequence or logic. There is minimal or no mention of how resources (like time, robot's battery, etc.) are allocated, making the plan appear haphazard.",
+            "score3_description": "The response identifies key actions and shows a basic sequence (e.g., first toys, then vacuuming), but details on how resources are allocated are either too vague or only implied, lacking depth in planning.",
+            "score4_description": "The response outlines a structured plan with a logical sequence of actions and some consideration for resource allocation (e.g., time for vacuuming, order of tasks), but the explanations are not fully detailed or there might be minor gaps in the logic.",
+            "score5_description": "The response presents a detailed and logical plan that clearly identifies each action, explains the sequence of these actions, and provides specific details on resource allocation (e.g., time estimates for each task, energy usage considerations), demonstrating a well-thought-out approach."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 1,
+        "system_prompt": "You are an expert agent in advanced hierarchical and compositional planning using foundation models.",
+        "input": "Plan a detailed mission for a Mars rover involving geological surveying and sample collection. The rover has to navigate the terrain, identify geological features of interest, collect samples, and transmit data back to Earth.\n\nInitial State: The rover is landed on a predetermined site on Mars with varied terrain features and geological diversity. It is equipped with navigation, sampling, and communication tools.\n\nGoal: Conduct a comprehensive geological survey of the area and collect samples from at least three distinct geological features, then prepare and transmit a detailed report of findings back to Earth.",
+        "reference_answer": "To conduct the Mars mission, the rover should execute the following high-level plan composed of intricate low-level tasks:\n\n1. Use onboard navigation tools to map the terrain and plan a route that covers diverse geological features.\n2. Identify and approach the first geological feature. Analyze its composition using onboard sensors and collect a sample.\n3. Navigate to the second geological feature. Perform a detailed photographic survey and collect another sample.\n4. At the third geological feature, use a drill to collect a subsurface sample.\n5. Throughout the mission, continuously collect and log environmental data such as temperature and atmospheric composition.\n6. After collecting all samples, compile and analyze the data, generating a comprehensive report.\n7. Use the communication system to transmit the report and sample analysis results back to Earth.\n\nThis plan requires the rover to perform complex navigation, sampling, and data analysis tasks, demonstrating an advanced level of compositional and hierarchical planning.",
+        "atomic_checklist": [
+            "Does the response outline a clear plan for mapping the terrain using navigation tools?",
+            "Is there a detailed approach for identifying and analyzing geological features?",
+            "Does the plan specify methods for collecting samples from distinct features?",
+            "Are there steps included for continuous environmental data logging?",
+            "Does the response detail how the collected data and samples will be analyzed?",
+            "Is there a clear process for compiling a comprehensive report of findings?",
+            "Does the plan include a strategy for transmitting the report and data back to Earth?",
+            "Is each task described in a way that shows an understanding of the rover's capabilities and the mission's objectives?",
+            "Does the plan demonstrate efficient sequencing and integration of tasks?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response provide a well-structured plan for the Mars rover mission that logically sequences navigation, identification, sampling, and data transmission tasks?",
+            "score1_description": "The response outlines a basic or vague mission plan with minimal detail, failing to distinguish between the different tasks required for navigation, identification, sampling, and data transmission.",
+            "score2_description": "The response provides an outline of the mission tasks but with limited detail or logical sequencing. Key tasks such as terrain mapping or sample analysis are either not mentioned or not clearly defined.",
+            "score3_description": "The response includes a sequence of mission tasks including navigation, identification, and sampling, but the plan lacks detail in the execution of these tasks or how data will be transmitted back to Earth.",
+            "score4_description": "The response presents a structured plan with clear steps for navigating the terrain, identifying features, collecting samples, and preparing data for transmission, but some details on task integration or efficiency might be lacking.",
+            "score5_description": "The response delivers a comprehensive and detailed mission plan that includes efficient navigation, thorough feature identification, careful sample collection, detailed data analysis, and effective communication with Earth, showcasing a high level of planning and task integration."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 2,
+        "system_prompt": "You are an expert agent in large-scale disaster management and compositional planning.",
+        "input": "Plan a comprehensive disaster relief operation in response to a major earthquake affecting a large metropolitan area. The operation involves coordinating search and rescue, providing medical aid, ensuring food and water supply, and restoring communication.\n\nInitial State: The city has multiple collapsed buildings, disrupted roads, overwhelmed hospitals, and broken communication lines. The population is in urgent need of assistance.\n\nGoal: Effectively manage and execute a disaster relief operation to provide immediate aid and start the recovery process for the affected population.",
+        "reference_answer": "To manage the disaster relief operation, the following high-level plan composed of intricate low-level tasks should be executed:\n\n1. Deploy search and rescue teams to locate and assist trapped individuals in collapsed buildings.\n2. Set up emergency medical camps near affected areas and triage patients based on injury severity.\n3. Establish food and water distribution points throughout the city, prioritizing the most affected neighborhoods.\n4. Work with engineers to assess and repair critical infrastructure, beginning with main roads and communication lines.\n5. Coordinate with local and international agencies for additional resources and expertise.\n6. Implement a real-time information sharing system to keep all teams and the public informed.\n7. Plan for medium to long-term recovery efforts, including mental health services and rebuilding strategies.\n\nThis plan demonstrates a comprehensive approach to disaster relief, addressing immediate needs while laying the groundwork for recovery.",
+        "atomic_checklist": [
+            "Does the response provide a clear plan for deploying search and rescue teams to assist trapped individuals?",
+            "Is there a detailed strategy for setting up emergency medical camps and triaging patients?",
+            "Does the plan include establishing food and water distribution points with priority for the most affected areas?",
+            "Are there steps to assess and repair critical infrastructure, starting with main roads and communication lines?",
+            "Does the response outline coordination with local and international agencies for resources and expertise?",
+            "Is there a mechanism for real-time information sharing among teams and with the public?",
+            "Does the plan consider medium to long-term recovery efforts, such as mental health services and rebuilding strategies?",
+            "Is each component of the plan actionable and does it show an understanding of the complexities of disaster relief operations?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response outline a thorough and actionable disaster relief operation plan, addressing key aspects such as search and rescue, medical aid, food and water supply, and communication restoration?",
+            "score1_description": "The response provides a generic or incomplete plan, missing critical components like search and rescue or medical aid, showing a lack of understanding of disaster relief operations.",
+            "score2_description": "The response mentions some essential components of disaster relief like search and rescue and medical aid but lacks detail or a clear action plan for implementation and coordination of these components.",
+            "score3_description": "The response includes a basic plan covering key aspects such as search and rescue, medical aid, and supply distribution, but the plan lacks depth in execution strategies or coordination among different tasks.",
+            "score4_description": "The response presents a detailed plan with strategies for search and rescue, medical aid, supply distribution, and communication restoration, but there might be minor gaps in logistics, coordination, or long-term recovery planning.",
+            "score5_description": "The response offers a comprehensive and detailed disaster relief operation plan that efficiently addresses search and rescue, medical aid, supply distribution, and communication, with clear logistics, coordination among tasks, and considerations for long-term recovery."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 3,
+        "system_prompt": "You are an expert agent in disaster response and recovery planning.",
+        "input": "Design a detailed response and recovery plan for a city hit by a severe hurricane. The plan should cover immediate rescue operations, provision of essential services, infrastructure repair, and long-term rehabilitation.\n\nInitial State: The city has widespread flooding, power outages, damaged buildings, and disrupted transportation networks. Thousands of residents are affected, requiring immediate assistance.\n\nGoal: Restore normalcy in the city by managing the disaster's immediate aftermath and planning for long-term recovery.",
+        "reference_answer": "To address the hurricane's impact, the following detailed plan should be implemented:\n\n1. Deploy rescue teams to evacuate residents from high-risk areas and provide immediate medical assistance.\n2. Establish temporary shelters equipped with essential supplies like food, water, and medical kits.\n3. Assess and repair critical infrastructure, prioritizing power restoration and clearing transportation routes.\n4. Coordinate with utility companies for the swift restoration of water, electricity, and communication services.\n5. Implement a debris removal plan to clear roads and public spaces.\n6. Launch a public health initiative to prevent disease outbreaks, focusing on clean water supply and sanitation.\n7. Develop a long-term rehabilitation plan that includes housing reconstruction, economic support, and psychological counseling for affected residents.\n8. Strengthen the city's disaster preparedness measures to mitigate future hurricane impacts.\n\nThis plan requires strategic coordination across various sectors and levels of government, ensuring both immediate relief and sustainable recovery.",
+        "atomic_checklist": [
+            "Does the response outline specific actions for deploying rescue teams to evacuate and assist residents?",
+            "Is there a plan for establishing temporary shelters with essential supplies?",
+            "Does the plan include a detailed assessment and repair strategy for critical infrastructure?",
+            "Are there coordinated efforts with utility companies for restoring essential services?",
+            "Is a debris removal plan included to facilitate transportation and public safety?",
+            "Does the plan propose a public health initiative to prevent disease outbreaks post-disaster?",
+            "Is there a long-term rehabilitation plan focusing on housing, economic support, and psychological counseling?",
+            "Does the plan suggest measures to strengthen disaster preparedness for future incidents?",
+            "Are all components of the plan actionable and integrated, reflecting a deep understanding of disaster recovery?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response construct a detailed and systematic response and recovery plan for a city affected by a severe hurricane, covering rescue operations, essential services, infrastructure repair, and long-term rehabilitation?",
+            "score1_description": "The response offers a vague or incomplete plan, missing significant aspects such as rescue operations, infrastructure repair, or long-term rehabilitation, indicating a lack of comprehensive disaster recovery planning.",
+            "score2_description": "The response outlines some elements of disaster recovery, like rescue operations or temporary shelters, but lacks detail and coherence in planning for infrastructure repair and long-term rehabilitation.",
+            "score3_description": "The response presents a basic plan addressing immediate rescue operations and some essential services, but the strategies for infrastructure repair and long-term rehabilitation are not fully developed or integrated.",
+            "score4_description": "The response provides a structured plan with clear strategies for rescue operations, essential services, and infrastructure repair, but the plan for long-term rehabilitation and integration of all phases could be more detailed.",
+            "score5_description": "The response delivers a comprehensive and well-integrated response and recovery plan, meticulously covering rescue operations, essential services, infrastructure repair, and long-term rehabilitation, demonstrating expert-level disaster recovery planning."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 4,
+        "system_prompt": "You are an expert agent in interstellar mission planning and resource allocation.",
+        "input": "Design a comprehensive plan for a manned mission to establish a self-sustaining colony on Mars. The plan should cover transportation, habitat construction, resource management, and scientific research.\n\nInitial State: The mission has access to advanced space travel technology, modular habitat units, equipment for resource extraction and processing, and scientific instruments for research.\n\nGoal: Successfully establish a fully operational and self-sustaining colony on Mars, capable of supporting human life and conducting significant scientific research.",
+        "reference_answer": "To establish the Mars colony, the following detailed plan should be implemented:\n\n1. Launch multiple missions to transport modular habitat units, equipment, and initial supplies to Mars.\n2. Assemble the habitats using robotic systems and establish a base camp.\n3. Initiate resource extraction processes for water, oxygen, and essential minerals using Martian resources.\n4. Set up renewable energy systems, including solar panels and possibly wind turbines, for sustainable power.\n5. Develop agricultural modules for food production, utilizing hydroponic systems.\n6. Establish a scientific research center, equipped with instruments to study Martian geology, climate, and potential for life.\n7. Implement advanced communication systems for data transmission to Earth and within the colony.\n8. Plan for the gradual expansion of the colony, including additional habitats and enhanced life support systems.\n\nThis plan requires careful coordination of transportation, construction, resource management, and scientific exploration, ensuring the colony's long-term sustainability and scientific productivity.",
+        "atomic_checklist": [
+            "Does the response detail the transportation of modular habitat units, equipment, and supplies to Mars?",
+            "Is there a clear plan for assembling habitats using robotic systems?",
+            "Does the plan include strategies for extracting and processing essential resources like water and oxygen from Martian resources?",
+            "Are there detailed provisions for setting up renewable energy systems for power?",
+            "Does the response outline the development of agricultural modules for food production?",
+            "Is there a plan for establishing a scientific research center with specific research goals?",
+            "Does the plan incorporate advanced communication systems for data transmission to Earth?",
+            "Are there considerations for the gradual expansion of the colony, including infrastructure and life support enhancements?",
+            "Does the plan demonstrate an understanding of the logistical, technological, and scientific challenges of establishing a self-sustaining Mars colony?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response provide a comprehensive and detailed plan for establishing a self-sustaining Mars colony, covering aspects such as transportation, habitat construction, resource management, and scientific research?",
+            "score1_description": "The response offers a vague or incomplete plan, lacking significant details on key aspects like transportation logistics, habitat assembly, or resource management, showing a limited understanding of the complexities involved in establishing a Mars colony.",
+            "score2_description": "The response outlines basic elements of the mission, such as transporting materials and constructing habitats, but lacks coherence and detail in planning for resource management and scientific research, indicating a superficial approach.",
+            "score3_description": "The response includes a plan that addresses transportation, habitat construction, and initial resource management, but the strategies for sustainable living and scientific research are not fully developed or integrated.",
+            "score4_description": "The response presents a well-structured plan with clear strategies for transportation, habitat assembly, resource management, and initial scientific research, but some aspects of sustainability and long-term colony expansion could be more detailed.",
+            "score5_description": "The response delivers an exhaustive and integrated plan, meticulously covering transportation logistics, habitat construction, comprehensive resource management, sustainable living, and scientific research, demonstrating expert-level understanding of the challenges and requirements for establishing a Mars colony."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 5,
+        "system_prompt": "You are an expert agent in comprehensive health crisis management and policy development.",
+        "input": "Develop a detailed strategy for dealing with a future pandemic that places an emphasis on prevention, rapid response, efficient healthcare system management, and global cooperation.\n\nInitial State: The world lacks a unified strategy for pandemic prevention and response, leading to delayed reactions, overwhelmed healthcare systems, and insufficient global cooperation during health crises.\n\nGoal: Create a robust framework for preventing future pandemics, ensuring a swift and coordinated response, optimizing healthcare systems for surge capacity, and fostering global collaboration to combat health threats effectively.",
+        "reference_answer": "To effectively manage future pandemics, the following comprehensive strategy should be executed:\n\n1. Implement global surveillance systems for early detection of outbreaks, coupled with extensive vaccination and public health education programs to prevent spread.\n2. Establish rapid response teams and protocols, stockpiling essential medical supplies and setting up emergency operations centers worldwide.\n3. Optimize healthcare systems by enhancing surge capacity through flexible resource allocation, training, and infrastructure adjustments to handle increased patient loads.\n4. Foster international cooperation through frameworks that ensure sharing of vital research findings, medical resources, and real-time data on health threats.\n5. Incorporate socio-economic support measures to mitigate the impact of pandemics, ensuring access to healthcare and financial support for affected populations.\n6. Leverage technology such as AI and big data for predictive analytics, real-time monitoring, and efficient management of health crises.\n\nThis strategy requires a multifaceted approach involving prevention, readiness, and global collaboration, ensuring a robust defense against future pandemics.",
+        "score_rubric": {
+            "criteria": "Does the response provide a comprehensive and actionable pandemic preparedness and response plan, covering aspects such as prevention strategies, rapid response mechanisms, healthcare system optimization, and international cooperation?",
+            "score1_description": "The response offers a vague or incomplete plan, missing significant elements such as prevention strategies, details on rapid response, or mechanisms for optimizing healthcare systems, showing a limited understanding of health crisis management.",
+            "score2_description": "The response outlines some elements of the plan, such as basic prevention strategies or healthcare system improvements, but lacks coherent detail in planning for rapid response and international cooperation, indicating a superficial approach.",
+            "score3_description": "The response includes a strategy that covers most components such as prevention, initial rapid response plans, and some aspects of healthcare system optimization, but the plans for global cooperation and comprehensive healthcare system preparedness are not fully developed or detailed.",
+            "score4_description": "The response presents a well-structured plan with clear strategies for prevention, rapid response, and healthcare system optimization. However, aspects of international cooperation and integration of all elements into a cohesive strategy could be more detailed.",
+            "score5_description": "The response delivers an exhaustive and integrated plan, meticulously covering prevention strategies, rapid response mechanisms, healthcare system optimization for surge capacity, and frameworks for international cooperation, demonstrating an expert-level understanding of comprehensive health crisis management."
+        },
+        "atomic_checklist": [
+            "Does the response outline specific prevention strategies including surveillance and vaccination programs?",
+            "Is there a clear plan for rapid response including stockpiling supplies and setting up emergency protocols?",
+            "Does the plan include methods for optimizing healthcare systems to handle surge capacities?",
+            "Are there detailed strategies for fostering international cooperation in sharing research, resources, and information?",
+            "Does the response consider the socio-economic impacts of pandemics and include measures to mitigate them?",
+            "Is the plan realistic, considering current global health infrastructure and capabilities?",
+            "Does the plan promote the integration of technology for monitoring and managing health crises?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 6,
+        "system_prompt": "You are an expert agent in environmental conservation and sustainable development policy crafting.",
+        "input": "Formulate a comprehensive strategy for achieving net-zero carbon emissions in an industrial region. The strategy should cover renewable energy deployment, efficiency improvements, carbon capture technologies, and societal engagement.\n\nInitial State: The industrial region relies heavily on fossil fuels, resulting in high carbon emissions. There is limited public awareness and engagement in sustainability efforts.\n\nGoal: Transform the region into a sustainable, net-zero carbon emitter through effective policies, technological advancements, and public participation.",
+        "reference_answer": "To achieve net-zero carbon emissions in the industrial region, the following comprehensive strategy should be executed:\n\n1. Implement large-scale deployment of renewable energy sources, including solar farms, wind turbines, and hydroelectric plants, to replace fossil fuel usage.\n2. Institute strict energy efficiency standards for industrial processes, providing incentives for companies that adopt more efficient technologies.\n3. Invest in the development and implementation of carbon capture and storage technologies to mitigate the emissions from remaining fossil fuel sources.\n4. Launch societal engagement campaigns to raise awareness and participation in sustainability efforts, including educational programs and community initiatives.\n5. Establish supportive regulatory and economic frameworks to facilitate the transition, such as carbon pricing and subsidies for clean energy technologies.\n6. Ensure the plan considers environmental justice, aiming to make the transition equitable and inclusive, minimizing negative impacts on vulnerable communities.\n\nThis strategy requires a collaborative effort between government, industries, and the public, leveraging technology and policy to transform the region into a model of sustainable industrial operation.",
+        "score_rubric": {
+            "criteria": "Does the response provide a detailed and actionable net-zero carbon emission strategy, incorporating aspects such as renewable energy implementation, efficiency improvements, carbon capture technology utilization, and societal engagement?",
+            "score1_description": "The response offers a vague or incomplete strategy, missing significant aspects like renewable energy plans, efficiency measures, or details on carbon capture technologies, indicating a limited understanding of sustainable policy development.",
+            "score2_description": "The response outlines basic elements of the net-zero strategy, such as introducing renewable energy or suggesting efficiency improvements, but lacks coherence and detail in planning for carbon capture and societal engagement, indicating a superficial approach.",
+            "score3_description": "The response includes a strategy covering renewable energy deployment, initial efficiency improvements, and some discussion on carbon capture technologies, but plans for comprehensive societal engagement and integration of all components are not fully developed.",
+            "score4_description": "The response presents a structured net-zero emission plan with clear strategies for renewable energy, efficiency improvements, carbon capture initiatives, and some level of societal engagement. However, integration of these components into a cohesive and detailed strategy could be more thoroughly outlined.",
+            "score5_description": "The response delivers an exhaustive and integrated net-zero emission strategy, meticulously covering the deployment of renewable energy sources, comprehensive efficiency measures, advanced carbon capture technologies, and extensive societal engagement, demonstrating an expert-level understanding of the elements necessary for achieving sustainable industrial transformation."
+        },
+        "atomic_checklist": [
+            "Does the response outline comprehensive plans for the deployment of renewable energy sources such as solar, wind, and hydro?",
+            "Is there a clear plan for implementing energy efficiency improvements across industrial processes?",
+            "Does the plan discuss the utilization of advanced carbon capture and storage technologies?",
+            "Are there detailed strategies for engaging society and industries in sustainability efforts?",
+            "Does the response consider the regulatory and economic frameworks needed to support the transition?",
+            "Is the plan realistic, considering current technological and industrial capabilities?",
+            "Does the plan integrate environmental, economic, and social considerations for a holistic approach?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 7,
+        "system_prompt": "You are an expert agent in innovative agricultural practices and sustainable food system planning.",
+        "input": "Develop a comprehensive strategy for transitioning a traditional agricultural region into a model of sustainable agriculture and food system resilience. The strategy should cover soil health restoration, water resource management, crop diversity, and integration of technology for precision farming.\n\nInitial State: The region relies on mono-cropping, leading to soil degradation, water overuse, and vulnerability to climate change effects. There is limited use of advanced farming technologies.\n\nGoal: Transform the agricultural practices to ensure long-term soil health, efficient water use, increased crop diversity, and resilience to climate change, incorporating modern technologies for enhanced productivity and sustainability.",
+        "reference_answer": "To transition the region into sustainable agriculture, the following comprehensive strategy must be implemented:\n\n1. Initiate soil health restoration programs focusing on organic amendments, cover cropping, and crop rotations to rebuild soil organic matter and enhance biodiversity.\n2. Implement advanced water management practices like drip irrigation, scheduling based on crop needs, and rainwater harvesting systems to reduce water use and increase efficiency.\n3. Diversify cropping systems by introducing a variety of resilient crop species to improve ecosystem services, reduce pest pressures, and decrease chemical dependency.\n4. Integrate precision farming technologies, including soil and crop sensors, drones for aerial imaging, and data analytics platforms, to optimize farming operations and reduce resource waste.\n5. Foster partnerships with agricultural research institutions for access to the latest sustainability innovations and continuous improvement of practices.\n6. Engage the farming community through workshops and training sessions to educate on sustainable practices and technology use, ensuring widespread adoption and support.\n\nThis strategy aims at a systemic transformation towards sustainability, enhancing both the productivity and resilience of the region's agriculture through informed management and technological advancement.",
+        "score_rubric": {
+            "criteria": "Does the response provide a detailed and actionable sustainable agriculture transformation plan, addressing soil health, water management, crop diversity, and technology integration?",
+            "score1_description": "The response offers a vague or incomplete plan, missing significant aspects like soil restoration measures, water management strategies, or details on crop diversification, indicating a limited understanding of sustainable agricultural practices.",
+            "score2_description": "The response outlines basic elements of the sustainable agriculture plan, such as mentioning soil improvement or water conservation, but lacks coherence and detail in planning for technology integration and crop diversity, suggesting a superficial approach.",
+            "score3_description": "The response includes a strategy that covers soil health restoration, initial water management plans, and mentions of crop diversity, but the plans for integrating technology for precision farming and comprehensive system changes are not fully developed.",
+            "score4_description": "The response presents a well-structured plan with clear strategies for improving soil health, managing water resources, and diversifying crops. However, aspects of technology integration for enhanced efficiency and sustainability could be more detailed.",
+            "score5_description": "The response delivers an exhaustive and integrated strategy, meticulously covering soil health restoration, efficient water resource management, extensive crop diversity, and advanced technology integration for precision farming, demonstrating an expert-level understanding of sustainable agriculture transformation."
+        },
+        "atomic_checklist": [
+            "Does the response outline specific actions for improving soil health, including organic practices and crop rotations?",
+            "Is there a clear plan for optimizing water use, incorporating modern irrigation techniques and rainwater harvesting?",
+            "Does the plan include steps for increasing crop diversity to enhance resilience and reduce dependency on chemical inputs?",
+            "Are there detailed strategies for adopting precision farming technologies, such as sensors and drones, for real-time data?",
+            "Does the response consider partnerships with research institutions for continuous innovation in sustainable practices?",
+            "Is the plan realistic, considering the current agricultural infrastructure and technological capabilities of the region?",
+            "Does the plan advocate for community involvement and farmer education to ensure successful implementation?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 8,
+        "system_prompt": "You are an expert agent in revitalizing post-industrial cities through sustainable development and innovation.",
+        "input": "Devise a comprehensive revitalization strategy for a post-industrial city transitioning towards a green economy. The strategy should include the redevelopment of industrial sites, community engagement and job creation in sustainable industries, enhancement of public transportation, and the incorporation of green spaces and smart city technologies.\n\nInitial State: The city struggles with abandoned industrial sites, high unemployment rates, limited public transportation options, and few green spaces, impacting the quality of life and environmental health.\n\nGoal: Transform the city into a vibrant, sustainable, and smart urban area that provides a high quality of life, economic opportunities in green industries, and enhanced connectivity and greenery.",
+        "reference_answer": "To revitalize the post-industrial city, the strategy involves:\n\n1. Redesigning abandoned industrial sites into sustainable development projects, like green housing, renewable energy parks, and innovation hubs for green technology.\n2. Launching workforce development programs in partnership with local educational institutions and green industries to provide training and job opportunities in the sustainable sector.\n3. Investing in a modernized public transportation network, with the expansion of electric bus services, bike-sharing programs, and pedestrian-friendly paths to enhance mobility and reduce emissions.\n4. Integrating smart city technologies for efficient resource management, including smart grids for energy, intelligent water management systems, and IoT-enabled environmental monitoring in public spaces.\n5. Developing interconnected green spaces, such as parks, community gardens, and green corridors, to improve air quality, encourage outdoor activities, and foster community well-being.\n6. The plan emphasizes community involvement in planning and decision-making processes, ensuring the equitable distribution of revitalization benefits.\n\nThis strategy combines urban planning, technology, and community engagement to reinvigorate the city's economic, social, and environmental fabric, positioning it as a model for sustainable and smart urban living.",
+        "score_rubric": {
+            "criteria": "Does the response offer a detailed and strategic plan for revitalizing a post-industrial city, incorporating industrial site redevelopment, green economy job creation, improved public transportation, and smart green spaces?",
+            "score1_description": "The response outlines a basic or vague plan, lacking concrete details on redevelopment projects, job creation strategies, or enhancements in transportation and green spaces, showing a limited grasp of urban revitalization.",
+            "score2_description": "The response provides some elements of revitalization, such as ideas for reusing industrial sites or introducing green jobs, but lacks coherence or detailed planning for comprehensive transportation enhancements and smart green spaces, suggesting a superficial treatment.",
+            "score3_description": "The response includes a fair strategy that addresses industrial site redevelopment, mentions green jobs and public transportation improvements, but the detailed integration of smart technologies and interactive green spaces is underdeveloped, lacking a holistic view.",
+            "score4_description": "The response presents a solid plan with clear strategies for repurposing industrial sites, fostering sustainable job markets, upgrading transportation systems, and initiating the development of green spaces, but still misses some details on technology integration for a fully smart urban landscape.",
+            "score5_description": "The response delivers an exhaustive and integrated strategy, meticulously covering the transformation of abandoned industrial areas into vibrant spaces, extensive job creation in the green sector, comprehensive upgrades to public transport, and the introduction of interconnected green spaces and smart city technologies, demonstrating an expert-level understanding of urban renewal in the context of sustainability and innovation."
+        },
+        "atomic_checklist": [
+            "Does the response detail specific revitalization plans for abandoned industrial sites, including types of new sustainable facilities?",
+            "Is there a clear plan for engaging the community and creating jobs in emerging green industries?",
+            "Does the plan include comprehensive improvements to the public transportation system, aiming for accessibility and reduced carbon emissions?",
+            "Are strategies for incorporating smart technologies in public spaces and infrastructure clearly outlined?",
+            "Does the response envision the creation of new green spaces, enhancing urban biodiversity and resident well-being?",
+            "Is the strategy practical, taking into account the city's existing conditions and potential barriers to implementation?",
+            "Does the plan promote inclusive development, ensuring benefits and opportunities reach all community segments?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "compositional_planning",
+        "instance_idx": 9,
+        "system_prompt": "You are an expert agent in facilitating urban wildlife conservation and biodiversity enhancement within city environments.",
+        "input": "Construct a comprehensive strategy for integrating wildlife conservation and biodiversity initiatives into urban planning and development. The strategy should cover habitat creation and restoration, wildlife corridors, pollution reduction, and community engagement and education.\n\nInitial State: The city suffers from declining wildlife populations, reduced green spaces, high pollution levels, and a general lack of awareness among residents about the importance of urban biodiversity.\n\nGoal: Enhance urban biodiversity, create resilient ecosystems within the city, and foster a connection between the community and local wildlife, thereby improving the quality of life and environmental health.",
+        "reference_answer": "To integrate wildlife conservation into urban planning, the strategy involves:\n\n1. Designing and implementing habitat restoration projects in parks, installing green roofs on buildings, and creating water bodies to support diverse urban wildlife.\n2. Establishing green corridors across the city to connect fragmented habitats, enabling safe movement for urban wildlife and enhancing ecological networks.\n3. Implementing stringent pollution control measures, including reducing vehicle emissions, enhancing waste management systems, and using environmentally friendly construction materials to mitigate pollution.\n4. Launching community engagement initiatives like wildlife observatories, educational workshops, and citizen science programs to build awareness and foster a connection between residents and local biodiversity.\n5. Collaborating with urban developers to integrate sustainable materials and green spaces in new developments, ensuring minimal disruption to wildlife.\n6. Forming partnerships with environmental NGOs, government agencies, and the private sector to support conservation activities, share resources, and promote biodiversity-friendly policies.\n\nThis comprehensive approach aims to revitalize urban ecosystems, making the city a haven for wildlife and improving the quality of life for its inhabitants through increased biodiversity and stronger community ties to nature.",
+        "score_rubric": {
+            "criteria": "Does the response offer a detailed and actionable strategy for urban wildlife conservation and biodiversity enhancement, addressing habitat creation, wildlife corridors, pollution reduction, and community involvement?",
+            "score1_description": "The response provides a vague or incomplete strategy, missing critical aspects such as specific habitat creation plans, wildlife corridor designs, pollution reduction measures, or community engagement initiatives, showing a limited understanding of urban biodiversity conservation.",
+            "score2_description": "The response includes some elements of biodiversity enhancement, like generic habitat creation or pollution reduction ideas, but lacks detailed planning and coherence in integrating wildlife corridors and active community involvement, suggesting a superficial approach.",
+            "score3_description": "The response presents a decent starting point for biodiversity strategy, covering basic habitat restoration, initial wildlife corridor proposals, and broad pollution reduction ideas, but lacks comprehensive community engagement plans and detailed execution steps.",
+            "score4_description": "The response outlines a solid strategy with clear proposals for habitat restoration, wildlife corridors, and pollution control. However, the description of community engagement and education initiatives could be enhanced to demonstrate deeper integration and effectiveness.",
+            "score5_description": "The response delivers an exhaustive and integrated conservation strategy, meticulously planning for habitat creation and restoration, thoughtfully designed wildlife corridors, effective pollution reduction measures, and extensive community engagement and education programs, demonstrating an expert-level understanding of urban biodiversity enhancement."
+        },
+        "atomic_checklist": [
+            "Does the response detail specific plans for creating and restoring habitats within urban areas, including parks, green roofs, and water bodies?",
+            "Is there a clear strategy for establishing wildlife corridors that link isolated habitats across the city?",
+            "Does the plan include effective measures for reducing air, water, and soil pollution to support urban wildlife?",
+            "Are there comprehensive initiatives for engaging the community in conservation efforts, including educational programs and citizen science projects?",
+            "Does the response consider the use of sustainable materials and practices in urban development to minimize impacts on wildlife?",
+            "Is the strategy practical, considering the pre-existing urban landscape and potential challenges in implementation?",
+            "Does the plan promote collaborative efforts between government, NGOs, and the private sector for achieving its goals?"
+        ],
+        "background_knowledge": []
+    }
+]

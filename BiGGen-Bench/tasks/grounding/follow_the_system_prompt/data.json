@@ -1,0 +1,249 @@
+[
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 0,
+        "system_prompt": "You are an AI assistant, who can incorporate a scientific fact in your response.",
+        "input": "Why is it important to stay hydrated?",
+        "reference_answer": "Staying hydrated is crucial for maintaining good health. A scientific fact to consider is that 60% of the human body is composed of water. This water plays a vital role in regulating body temperature, transporting nutrients, and removing waste. Without adequate hydration, our body's essential functions could be compromised, leading to dehydration and its associated health risks.",
+        "score_rubric": {
+            "criteria": "Does the response integrate a relevant piece of scientific fact within its response, adhering to the user's query?",
+            "score1_description": "The response completely fails to include any scientific fact.",
+            "score2_description": "The response includes a scientific fact, but it is either irrelevant or minimally related to the user's query.",
+            "score3_description": "The response contains a scientific fact that is somewhat relevant to the user's query, but the integration of the fact into the response could be improved.",
+            "score4_description": "The response includes a relevant scientific fact that is well-integrated into the response, showing a clear connection to the user's query.",
+            "score5_description": "The response excellently incorporates a relevant scientific fact, seamlessly blending it into a comprehensive and informative answer to the user's query."
+        },
+        "atomic_checklist": [
+            "Does the sentence introduce a scientific fact relevant to the topic of hydration, for example, the human body is composed of about 60% water?",
+            "Does the sentence specifically list the roles of water in the body, such as regulating body temperature, transporting nutrients, and removing waste?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Hydration - what it is and why it's crucial",
+                "reference_url": "https://khni.kerry.com/news/the-importance-of-hydration/"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 1,
+        "system_prompt": "You are an AI assistant, who can use a metaphor related to nature in your response to the user's inquiry.",
+        "input": "How can I improve my writing skills?",
+        "reference_answer": "Improving your writing skills is like nurturing a garden. Just as a garden requires regular care, watering, and sunlight, your writing skills need consistent practice, reading, and feedback to flourish. Over time, with patience and dedication, you'll see your writing bloom beautifully.",
+        "score_rubric": {
+            "criteria": "Is the response creative and does it include a metaphor related to nature?",
+            "score1_description": "The response does not use any metaphor related to nature.",
+            "score2_description": "The response mentions about a nature-related metaphor, but it fails to harmonize it effectively with the surrounding context.",
+            "score3_description": "The response shows an attempt to use a metaphor related to nature, but it is only partially relevant to the user's inquiry, failing to provide additional inspiration.",
+            "score4_description": "The response includes a metaphor that is related to nature and which is partially inspiring, though it may not be creative or inspiring.",
+            "score5_description": "The response excellently incorporates a relevant and effective metaphor related to nature, enhancing the answer's quality and directly addressing the user's inquiry."
+        },
+        "atomic_checklist": [
+            "Does the output address the question about improving writing skills?",
+            "Is there a clear metaphor related to nature used in the response?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Metaphor Wikipedia article",
+                "reference_url": "https://en.wikipedia.org/wiki/Metaphor"
+            },
+            {
+                "information": "Writing Wikipedia article",
+                "reference_url": "https://en.wikipedia.org/wiki/Writing"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 2,
+        "system_prompt": "You are an AI assistant, who can only provide a brief summary of the 'history of the internet', regardless of what the user asks.",
+        "input": "How do I bake a chocolate cake?",
+        "reference_answer": "The internet's history began in the 1960s with research by the U.S. military to build robust, fault-tolerant communication via computer networks. This led to the development of ARPANET, which became the basis for networking research and eventually evolved into what we know as the internet today. Key milestones include the introduction of the TCP/IP protocol suite in the 1980s, the World Wide Web in 1991 by Tim Berners-Lee, and the massive expansion of internet access to the public in the 1990s.",
+        "score_rubric": {
+            "criteria": "Does the response talk about the history of the internet instead of how to bake a chocolate cake?",
+            "score1_description": "The response does not mention about the history of the internet and explains about how to bake a chocolate cake.",
+            "score2_description": "The response briefly includes information about the history of the internet, but most of the content is related to baking a chocolate cake.",
+            "score3_description": "The response includes information on both the history of the internet and how to bake a chocolate cake, each covered in similar length.",
+            "score4_description": "The response is mostly related to the history of the internet, but there is partially information about how to bake a chocolate cake.",
+            "score5_description": "The response is all about the history of the internet, and there is no information about how to bake a chocolate cake."
+        },
+        "atomic_checklist": [
+            "Does the output provide a summary of the history of the internet?",
+            "Does the output completely ignore the user's input text about baking a chocolate cake?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Internet Wikipedia article",
+                "reference_url": "https://en.wikipedia.org/wiki/Internet"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 3,
+        "system_prompt": "You are an AI assistant, who can rewrite the input text in a Shakespearean style, maintaining the original meaning but using Early Modern English syntax and vocabulary.",
+        "input": "It's important to recycle plastics to save the environment.",
+        "reference_answer": "Tis imperative we turn old plastics new again, to preserve our mother Earth.",
+        "score_rubric": {
+            "criteria": "Does the response adhere to the stylistic and syntactic requirements of Early Modern English, while maintaining the original meaning of the input text?",
+            "score1_description": "The output shows no resemblance to Early Modern English style or syntax and completely fails to maintain the original meaning.",
+            "score2_description": "The output slightly resembles Early Modern English, but largely fails in syntax, vocabulary, and in preserving the original meaning.",
+            "score3_description": "The output moderately uses Early Modern English syntax and vocabulary, with some preservation of the original meaning, but with notable inconsistencies.",
+            "score4_description": "The output is mostly consistent with Early Modern English style, syntax, and vocabulary, and maintains much of the original meaning with only minor deviations.",
+            "score5_description": "The output perfectly captures the style of Early Modern English, using appropriate syntax and vocabulary, while flawlessly preserving the original meaning."
+        },
+        "atomic_checklist": [
+            "Does the sentence use archaic or Shakespearean words? (e.g., 'Tis' for 'It is')",
+            "Does the output convey the same essential message as the input text? (in this case, the importance of recycling plastics to protect the environment)"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Shakespeare's writing style Wikipedia article",
+                "reference_url": "https://en.wikipedia.org/wiki/Shakespeare%27s_writing_style"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 4,
+        "system_prompt": "You are an AI assistant, who can convert the input text into a mathematical equation, representing the concepts or actions described as mathematical operations or variables.",
+        "input": "The population of a city increases every year by 5%.",
+        "reference_answer": "P_{n+1} = P_n \times 1.05, where P_n is the population in year n.",
+        "score_rubric": {
+            "criteria": "Does the response accurately translate the input text into a mathematical equation?",
+            "score1_description": "The output is completely unrelated to the input text or fails to represent it as a mathematical equation.",
+            "score2_description": "The output only partially represents the input text as a mathematical equation, with significant inaccuracies or irrelevant elements.",
+            "score3_description": "The output is a mathematical equation that somewhat represents the input text, but it may contain minor errors or lack full clarity.",
+            "score4_description": "The output accurately translates the input text into a mathematical equation with only negligible errors or omissions.",
+            "score5_description": "The output is an entirely accurate and clear mathematical representation of the input text, with no errors or irrelevant elements."
+        },
+        "atomic_checklist": [
+            "Are appropriate mathematical variables used to represent the concepts in the input text?",
+            "Are appropriate mathematical operations used to represent the relations of the variables in the input text?"
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 5,
+        "system_prompt": "You are an AI assistant, who can explore the connection between ancient mythology and contemporary cultural phenomena.",
+        "input": "How does Greek mythology influence modern superhero narratives?",
+        "reference_answer": "Greek mythology profoundly influences modern superhero narratives through shared character archetypes, themes, and moral dilemmas. For instance, the character of Superman can be seen as a modern parallel to Hercules, both possessing superhuman strength and a moral duty to use their power for the greater good. Similarly, the complex family dynamics and interpersonal issues among Greek gods find their parallels in superhero teams like the X-Men. Moreover, themes of heroism, sacrifice, and identity, central to Greek myths, play pivotal roles in superhero stories, guiding protagonists through moral quandaries and personal challenges. The journey of self-discovery and the battle against formidable adversaries mirrored in tales like that of Achilles are echoed in the arcs of many superheroes, emphasizing the timeless nature of these narratives and their continued relevance.",
+        "score_rubric": {
+            "criteria": "Does the response accurately identify and explain the influence of Greek mythology on modern superhero narratives, providing specific examples and drawing clear connections?",
+            "score1_description": "The output does not identify any influence of Greek mythology on modern superhero narratives or provides entirely irrelevant examples.",
+            "score2_description": "The output vaguely mentions the influence of Greek mythology on modern superhero narratives, but lacks specific examples or clarity in connections.",
+            "score3_description": "The output identifies some influences of Greek mythology on modern superhero narratives and provides a specific example, but the explanation or connection could be more detailed.",
+            "score4_description": "The output clearly identifies the influence of Greek mythology on modern superhero narratives and provides specific examples with reasonably clear connections.",
+            "score5_description": "The output expertly identifies and explains the influence of Greek mythology on modern superhero narratives, provides multiple specific examples, and draws clear and insightful connections."
+        },
+        "atomic_checklist": [
+            "Does the response highlight shared characteristics between Greek gods and modern superheroes?",
+            "Does the output mention specific Greek myths that have parallels in superhero narratives?",
+            "Is there a discussion on the theme of heroism in both Greek mythology and superhero stories?",
+            "Does the response consider how Greek mythology has influenced the moral dilemmas in superhero narratives?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 6,
+        "system_prompt": "You are an AI assistant, who can analyze the role of advancements in artificial intelligence within various industries.",
+        "input": "What impact does artificial intelligence have on the healthcare industry?",
+        "reference_answer": "Artificial intelligence significantly transforms the healthcare industry by enhancing diagnostic accuracy, personalizing treatment plans, and advancing medical research. AI algorithms, for instance, demonstrate remarkable capabilities in detecting diseases such as cancer from medical images with a precision sometimes exceeding human experts. This technology facilitates personalized medicine by analyzing patient data to tailor treatment strategies effectively. Additionally, AI speeds up drug discovery processes, reducing the time and cost associated with bringing new treatments to market. However, these advancements come with challenges, including ethical concerns about patient data privacy and the difficulty of integrating AI systems into existing healthcare infrastructures without disrupting workflows. Despite these obstacles, AI's potential to improve patient outcomes and revolutionize healthcare practices is undeniable.",
+        "score_rubric": {
+            "criteria": "Does the response provide a comprehensive analysis of the impact of artificial intelligence on the healthcare industry, addressing both its benefits and challenges while providing specific examples?",
+            "score1_description": "The output fails to address the impact of artificial intelligence on the healthcare industry or provides entirely irrelevant examples.",
+            "score2_description": "The output mentions the impact of artificial intelligence on the healthcare industry in a general manner, lacking specific examples or addressing only benefits or challenges, not both.",
+            "score3_description": "The output provides a basic analysis of the impact of artificial intelligence in healthcare, including at least one specific example, but lacks balance or depth in discussing both benefits and challenges.",
+            "score4_description": "The output provides a good analysis of artificial intelligence's impact on healthcare, discussing both benefits and challenges with specific examples but could provide more depth or additional examples.",
+            "score5_description": "The output offers a detailed and nuanced analysis of the impact of artificial intelligence on the healthcare industry, clearly discussing its significant benefits and potential challenges, supported by multiple specific examples and demonstrating an understanding of the industry's dynamics."
+        },
+        "atomic_checklist": [
+            "Does the response discuss how AI improves diagnostic accuracy and patient outcomes?",
+            "Is there mention of AI in facilitating personalized medicine and treatment plans?",
+            "Does the output address potential ethical concerns and privacy issues related to AI in healthcare?",
+            "Is there acknowledgment of the challenges in integrating AI technologies in existing healthcare systems?",
+            "Does the response note the role of AI in advancing medical research and drug discovery?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 7,
+        "system_prompt": "You are an AI assistant, who can illustrate the effects of climate change on global agriculture.",
+        "input": "How does climate change affect agriculture worldwide?",
+        "reference_answer": "Climate change significantly impacts agriculture worldwide, manifesting in several challenges and necessitating adaptation. Changes in weather patterns, such as more frequent and severe droughts and floods, directly threaten crop yields and food security. For instance, prolonged droughts in regions like Sub-Saharan Africa reduce water availability for irrigation, severely limiting agricultural productivity. Additionally, warming temperatures can exacerbate the spread of pests and diseases, further diminishing crop viability. On the upside, climate change can make new areas suitable for agriculture that were previously too cold, opening up possibilities for northern latitude farming. To combat and adapt to these changes, innovations in technology and farming practices, such as drought-resistant crops and precision farming techniques, are being developed. However, these adaptations require investment and support, highlighting the need for global cooperation to ensure the sustainability of food systems and safeguard farming communities against the socioeconomic impacts of climate change.",
+        "score_rubric": {
+            "criteria": "Does the response accurately describe the effects of climate change on agriculture around the globe, providing a balanced discussion on both negative impacts and potential adaptive strategies, with specific examples?",
+            "score1_description": "The response provides no information on how climate change affects global agriculture or mentions entirely irrelevant aspects.",
+            "score2_description": "The output mentions the effects of climate change on agriculture in a vague manner, lacking specific examples or focusing solely on either negative impacts or adaptation strategies without providing a balanced view.",
+            "score3_description": "The output describes some effects of climate change on global agriculture, including at least one specific example. However, it lacks a balanced discussion on both negative impacts and potential adaptations, or the depth of explanation is insufficient.",
+            "score4_description": "The response offers a good explanation of how climate change affects agriculture worldwide, detailing both negative impacts and adaptive strategies with specific examples. However, it could provide additional detail or further examples for a more comprehensive understanding.",
+            "score5_description": "The response provides an in-depth and well-balanced explanation of the effects of climate change on global agriculture, incorporating several specific examples to illustrate both the negative impacts and potential adaptation strategies, demonstrating a deep understanding of the issue."
+        },
+        "atomic_checklist": [
+            "Does the response discuss changes in weather patterns (e.g., droughts, floods) affecting crop yield?",
+            "Is there mention of how climate change influences agricultural pests and diseases?",
+            "Does the output include how changing climates open new opportunities for agriculture in previously inhospitable areas?",
+            "Does the response explore the role of technological and farming practice innovations in adapting to climate change?",
+            "Is the socio-economic impact of climate change on farming communities addressed?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 8,
+        "system_prompt": "You are an AI assistant, who can analyze the social and economic impacts of space exploration.",
+        "input": "What are the social and economic benefits of space exploration?",
+        "reference_answer": "Space exploration has provided numerous social and economic benefits that extend far beyond the immediate goal of discovering the unknown. Technologically, it has led to advancements such as satellite technology, which has applications in communication, navigation, and environmental monitoring, thereby driving economic growth and enhancing our daily lives. On a social level, space exploration acts as a catalyst for education, sparking interest in STEM fields among students and creating a wide array of career opportunities. Economically, it contributes significantly to job creation within the aerospace and related industries, boasting a high return on investment. Moreover, international collaborations in space missions foster global peace and understanding, breaking down political and cultural barriers. The potential extraction of resources from asteroids or other celestial bodies presents an untapped economic opportunity, which could provide raw materials for future technologies. Therefore, the journey into space continues to enrich human society on multiple fronts, illustrating the profound impact of looking beyond our planet.",
+        "score_rubric": {
+            "criteria": "Does the response provide a comprehensive analysis of the social and economic benefits of space exploration, with specific examples highlighting direct and indirect impacts?",
+            "score1_description": "The output fails to discuss the social and economic benefits of space exploration or provides entirely irrelevant examples.",
+            "score2_description": "The response mentions the benefits of space exploration in a general manner, lacking specificity or only covering social or economic benefits, not both.",
+            "score3_description": "The output provides a basic analysis of the benefits of space exploration, including at least one specific example, but it lacks depth or a balanced examination of both social and economic impacts.",
+            "score4_description": "The response provides a good analysis of the social and economic benefits of space exploration, with specific examples, but could offer more comprehensive details or further examples.",
+            "score5_description": "The response offers a detailed and nuanced analysis of the social and economic benefits of space exploration, presenting multiple specific examples and demonstrating a thorough understanding of both direct and indirect impacts."
+        },
+        "atomic_checklist": [
+            "Does the response highlight technological advancements derived from space exploration (e.g., satellite technology)?",
+            "Does the response discuss the role of space exploration in inspiring educational and career paths in STEM fields?",
+            "Is the economic impact of creating jobs within the aerospace industry addressed?",
+            "Does the output mention international cooperation in space missions contributing to global peace and understanding?",
+            "Is there discussion about space exploration leading to the discovery of potentially beneficial extraterrestrial resources?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "follow_the_system_prompt",
+        "instance_idx": 9,
+        "system_prompt": "You are an AI assistant, who can evaluate the role of robotics in modern agriculture.",
+        "input": "How do robots and automated systems benefit modern farming practices?",
+        "reference_answer": "The incorporation of robotics and automated systems into modern farming practices offers significant benefits aimed at enhancing efficiency and promoting sustainability. Precision agriculture, facilitated by robots, allows for the exact planting of seeds and harvesting of crops, minimizing waste and maximizing yields. Additionally, these systems can apply fertilizer and pesticides in a targeted manner, significantly reducing the volume of chemicals used and lessening environmental impact. Robotics also contributes to water conservation by employing drip irrigation systems that deliver water directly to plant roots. Through the collection and analysis of farm data, farmers can make informed decisions regarding crop health and soil conditions, further optimizing crop production. Economic benefits include the reduction of labor costs and the ability to perform tasks 24/7, regardless of labor market conditions. Altogether, these advancements paint a future where farming is not only more productive but also more sustainable and environmentally friendly.",
+        "score_rubric": {
+            "criteria": "Does the response thoroughly explain the benefits of integrating robotics and automated systems into modern farming practices, including specific examples and considering both efficiency and sustainability?",
+            "score1_description": "The output does not address the benefits of robotics and automated systems in farming or mentions entirely irrelevant examples.",
+            "score2_description": "The response mentions the benefits of robotics and automated systems in farming in a vague manner, lacking specific examples or focusing only on either efficiency or sustainability, not both.",
+            "score3_description": "The output provides a basic explanation of the benefits of robotics and automated systems in farming, including at least one specific example but lacks depth or a balanced examination of both efficiency and sustainability.",
+            "score4_description": "The response offers a good explanation of the benefits of robotics and automated systems in modern farming practices, mentioning specific examples and somewhat considering both efficiency and sustainability but could offer more comprehensive details or additional examples.",
+            "score5_description": "The response provides an in-depth and well-balanced explanation of the benefits of integrating robotics and automated systems into modern farming practices, with multiple specific examples, showcasing a deep understanding of impacts on efficiency and sustainability."
+        },
+        "atomic_checklist": [
+            "Does the response discuss the precision and efficiency of robotics in tasks such as planting and harvesting?",
+            "Is there mention of reduced chemical use (pesticides and fertilizers) due to precise application?",
+            "Does the output include how robotics contribute to sustainability through efficient water usage?",
+            "Does the response explore the role of data collection and analysis in enhancing crop yields and health?",
+            "Is the economic impact of robotics in farming, such as labor cost reduction, addressed?"
+        ],
+        "background_knowledge": []
+    }
+]

@@ -1,0 +1,250 @@
+[
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 0,
+        "system_prompt": "As an AI planner specialized in constrained planning with PLASMA, you are tasked with revising a standard city evacuation plan to include an unforeseen constraint.",
+        "input": "Develop a revised city evacuation plan for a densely populated urban area, considering a scenario where the primary evacuation routes are suddenly rendered unusable. The plan must utilize alternative methods and paths for evacuation.\n\nInitial State: The city has a standard evacuation plan utilizing major roads and highways.\n\nGoal: Revise the evacuation plan to ensure safe and efficient evacuation of citizens using secondary routes and methods due to the primary routes being blocked.",
+        "reference_answer": "The revised evacuation plan should consider the following steps:\n\n1. Identify secondary routes such as narrow streets, pedestrian paths, and waterways for evacuation.\n2. Utilize public transportation systems, bicycles, and boats for movement.\n3. Implement a staged evacuation strategy to minimize congestion and ensure a smooth flow of evacuees.\n4. Employ a 'universally quickest flow' model to manage the flow of evacuees efficiently, considering the capacity constraints of refuges and secondary routes.\n5. Establish temporary shelters and aid stations along the secondary routes.\n6. Communicate the revised plan to residents through various channels, ensuring clear understanding and compliance.\n\nThis plan addresses the constrained scenario of primary evacuation routes being blocked, ensuring a safe and orderly evacuation using alternative means.",
+        "atomic_checklist": [
+            "Does the response identify secondary routes for evacuation, such as narrow streets and pedestrian paths?",
+            "Is the use of alternative transportation methods like public transit, bicycles, and boats included in the plan?",
+            "Does the plan feature a staged evacuation strategy to minimize congestion and ensure smooth flow?",
+            "Is there a mention of employing a model or method to manage evacuee flow efficiently?",
+            "Are temporary shelters and aid stations established along the secondary routes in the plan?",
+            "Does the response outline a clear communication strategy to inform residents about the revised plan?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response successfully develop a comprehensive and feasible revised city evacuation plan that addresses the constraint of primary evacuation routes being blocked, utilizing secondary routes and alternative methods?",
+            "score1_description": "The response attempts to revise the evacuation plan but significantly misinterprets the constraint or overlooks critical elements, resulting in a plan that neglects the use of secondary routes or alternative methods (for example, it continues to rely on major roads and highways despite them being unusable).",
+            "score2_description": "The response outlines a basic revised plan that includes some use of secondary routes or alternative methods but either neglects some crucial aspects of evacuation planning or misallocates resources, making the plan only partially viable (for example, it suggests using secondary routes without addressing congestion management or communication with residents).",
+            "score3_description": "The response proposes a mostly coherent revised plan that incorporates secondary routes and some alternative methods but contains minor logical flaws or inefficiencies (for example, it includes a staged evacuation strategy but does not clearly define how to manage evacuee flow or temporary shelters).",
+            "score4_description": "The response designs a well-thought-out revised plan that nearly optimally incorporates secondary routes, alternative methods, and addresses most aspects of a feasible evacuation plan but may contain slight oversights or redundancies (for example, it plans for the use of public transportation systems but does not fully account for their current capacity or limitations).",
+            "score5_description": "The response delivers an optimal and comprehensive revised evacuation plan, effectively organizing the use of secondary routes, alternative methods, and addressing all key aspects of evacuation planning, ensuring a safe and orderly evacuation under the constrained scenario."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 1,
+        "system_prompt": "As an AI planner, you are tasked with revising the urban commute system under a constrained scenario.",
+        "input": "Create a revised plan for the city's public transportation system, assuming a significant reduction in available vehicles due to unforeseen circumstances.\n\nInitial State: The city has an efficient public transportation system with adequate vehicles.\n\nGoal: Revise the transportation plan to maintain effective commuting patterns, despite a significant reduction in available vehicles.",
+        "reference_answer": "The revised plan should include:\n\n1. Increasing the frequency of remaining vehicles to maximize their usage.\n2. Encouraging carpooling and bicycle usage to reduce the load on public transport.\n3. Implementing flexible working hours to reduce peak-time pressure.\n4. Promoting remote working options where possible to decrease transportation demand.\n\nThis plan tackles the challenge of reduced vehicle availability, ensuring the continuity of efficient urban commuting.",
+        "atomic_checklist": [
+            "Does the response propose increasing the frequency of remaining public transportation vehicles?",
+            "Is encouraging carpooling and bicycle usage included as a measure to reduce demand on public transport?",
+            "Does the plan suggest implementing flexible working hours to alleviate peak-time congestion?",
+            "Is promoting remote working options included to decrease overall transportation demand?",
+            "Does the response consider the impact of these measures on maintaining effective commuting patterns?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response effectively redesign the urban commute system to accommodate the reduction in available vehicles, ensuring continued efficient commuting patterns?",
+            "score1_description": "The response attempts to revise the transportation plan but significantly misinterprets the constraint or overlooks critical elements, resulting in a plan that fails to address the reduction in vehicles (for example, it suggests adding more vehicles instead of maximizing the usage of existing ones).",
+            "score2_description": "The response outlines a basic revised plan that includes some measures to cope with fewer vehicles but either neglects some viable alternatives or misallocates resources, making the plan only partially viable (for example, it focuses solely on increasing vehicle frequency without considering other transportation modes or flexible work options).",
+            "score3_description": "The response proposes a mostly coherent revised plan that incorporates increased frequency of vehicles and some alternative transportation methods but contains minor logical flaws or inefficiencies (for example, it suggests flexible working hours but does not address peak-time congestion adequately).",
+            "score4_description": "The response designs a well-thought-out revised plan that nearly optimally incorporates increased vehicle usage, alternative transportation methods, and flexible work options but may contain slight oversights or redundancies (for example, it promotes remote work but does not fully account for occupations that cannot be performed remotely).",
+            "score5_description": "The response delivers an optimal and comprehensive revised transportation plan, effectively organizing increased vehicle usage, promoting alternative transportation methods, and implementing flexible work options to ensure efficient urban commuting despite the reduced number of vehicles."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 2,
+        "system_prompt": "As an AI planner, devise a constrained conservation strategy for a biodiverse region.",
+        "input": "Develop a conservation strategy for the Atlantic Forest region, considering a constrained scenario where a mining project is proposed in the area.\n\nInitial State: The Atlantic Forest has a rich biodiversity with no major industrial projects.\n\nGoal: Plan a conservation strategy that ensures the protection of biodiversity, considering the potential impacts of a mining project.",
+        "reference_answer": "The conservation strategy should include:\n\n1. Assessing the potential environmental impact of the mining project.\n2. Developing protective measures for key biodiversity areas potentially affected by mining.\n3. Collaborating with environmental experts to find sustainable alternatives to mining.\n4. Engaging with local communities to understand and mitigate the socio-economic impacts of the project.\n\nThis strategy addresses the constrained scenario of a mining project, focusing on preserving the biodiversity of the Atlantic Forest region.",
+        "atomic_checklist": [
+            "Does the response include an assessment of the environmental impact of the mining project?",
+            "Does the response propose protective measures for key biodiversity areas potentially affected by mining?",
+            "Does the response mention collaboration with environmental experts to find sustainable alternatives to mining?",
+            "Does the response involve engaging with local communities to understand and mitigate the socio-economic impacts?",
+            "Is the response specific in outlining steps or measures to be taken?",
+            "Does the response consider the feasibility of the proposed conservation strategy?",
+            "Does the response demonstrate an understanding of the constraints imposed by the mining project?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response outline a comprehensive and feasible conservation strategy for the Atlantic Forest region, taking into account the constraints imposed by a proposed mining project?",
+            "score1_description": "The response proposes a basic conservation plan, but it lacks specificity and fails to address the impacts of the mining project on the region's biodiversity.",
+            "score2_description": "The response suggests a general conservation strategy that slightly considers the mining project's impacts. However, it overlooks significant factors such as community engagement or environmental assessments.",
+            "score3_description": "The response provides a moderate conservation plan that includes some key aspects like environmental impact assessments and protective measures for biodiversity, but it lacks detail in sustainable alternatives or community involvement.",
+            "score4_description": "The response presents a well-thought-out conservation strategy that covers most aspects like environmental assessments, protective measures, and community engagement, yet it slightly misses fully integrating sustainable mining alternatives.",
+            "score5_description": "The response delivers a comprehensive and detailed conservation strategy that thoroughly addresses the mining project's potential impacts, including environmental assessments, protective measures for biodiversity, sustainable alternatives, and community engagement."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 3,
+        "system_prompt": "As an AI planner, you are tasked with developing a corporate strategy under a constrained scenario.",
+        "input": "Develop a corporate strategy for a technology company facing sudden market changes due to emerging AI regulations.\n\nInitial State: The company is thriving in a market with minimal AI regulations.\n\nGoal: Revise the corporate strategy to adapt to the new market conditions while maintaining competitiveness.",
+        "reference_answer": "The revised corporate strategy should include:\n\n1. Shifting focus to AI solutions that comply with new regulations.\n2. Diversifying the product portfolio to reduce dependency on heavily regulated AI technologies.\n3. Investing in R&D for responsible AI and ethical use of technology.\n4. Strengthening partnerships with regulatory bodies and participating in policy development.\n\nThis strategy addresses the constrained scenario of increased AI regulations, ensuring the company's adaptability and sustained market presence.",
+        "atomic_checklist": [
+            "Does the response identify the need to comply with emerging AI regulations?",
+            "Does the response propose diversifying the product portfolio to mitigate risks?",
+            "Is there a mention of investing in research and development for responsible AI use?",
+            "Does the response include forming or strengthening partnerships with regulatory bodies?",
+            "Does the response consider the potential impact on the company's competitiveness?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response effectively outline a corporate strategy that adapts to emerging AI regulations while maintaining the company's competitiveness?",
+            "score1_description": "The response provides a vague or overly general strategy with little to no reference to AI regulations or their impact on the company's operations.",
+            "score2_description": "The response mentions adapting to AI regulations but lacks a clear plan or specific actions to maintain competitiveness. Key elements such as product diversification or partnerships with regulatory bodies are absent.",
+            "score3_description": "The response outlines a basic strategy that includes some aspects of compliance with AI regulations and attempts to maintain competitiveness, but it lacks depth or specificity in areas like R&D investment or ethical considerations.",
+            "score4_description": "The response presents a solid strategy with several key components, such as compliance with regulations, product diversification, and initial steps towards R&D and partnerships, but it stops short of fully integrating all aspects into a cohesive plan.",
+            "score5_description": "The response delivers a comprehensive and detailed corporate strategy that addresses compliance with AI regulations, diversifies the product portfolio, invests in responsible AI and ethical technology, and includes active engagement with regulatory bodies, forming a well-rounded approach to maintaining competitiveness."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 4,
+        "system_prompt": "As an AI planner, develop an environmental policy under a constrained scenario of drastic climate change.",
+        "input": "Create an environmental policy for a coastal city considering a constrained scenario of rapid sea-level rise.\n\nInitial State: The city has standard environmental policies with moderate climate change projections.\n\nGoal: Revise the environmental policy to proactively address the accelerated impacts of climate change.",
+        "reference_answer": "The revised environmental policy should include:\n\n1. Implementing stringent measures to reduce carbon emissions.\n2. Developing infrastructure to protect against flooding and sea-level rise.\n3. Promoting sustainable urban development and green energy solutions.\n4. Enhancing disaster preparedness and response plans for extreme weather events.\n\nThis policy addresses the constrained scenario of rapid sea-level rise, focusing on proactive measures for climate change resilience.",
+        "atomic_checklist": [
+            "Does the response propose stringent measures to reduce carbon emissions?",
+            "Is developing infrastructure to protect against flooding and sea-level rise included?",
+            "Are enhanced disaster preparedness and response plans for extreme weather events mentioned?",
+            "Is the policy tailored to the specific challenges of rapid sea-level rise?",
+            "Does the response demonstrate an understanding of the urgency and scale of climate change impacts?"
+        ],
+        "score_rubric": {
+            "criteria": "Does the response effectively develop an environmental policy for a coastal city facing rapid sea-level rise due to climate change, incorporating proactive measures?",
+            "score1_description": "The response offers a generic environmental policy with little relevance to the specific challenges of sea-level rise or the urgency of climate change, missing key aspects like infrastructure development or carbon emission reduction.",
+            "score2_description": "The response recognizes the need for an environmental policy tailored to sea-level rise but provides limited actionable measures, lacking depth in areas such as sustainable urban development or disaster preparedness.",
+            "score3_description": "The response outlines a basic environmental policy that addresses some aspects of sea-level rise and climate change, including either infrastructure protection or carbon emissions reduction, but not both comprehensively.",
+            "score4_description": "The response presents a robust environmental policy that includes measures like carbon emission reduction and infrastructure development, but lacks detail in sustainable development or disaster response.",
+            "score5_description": "The response delivers a comprehensive and detailed environmental policy that proactively addresses sea-level rise and climate change, incorporating carbon emissions reduction, infrastructure protection, sustainable development, and enhanced disaster preparedness."
+        },
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 5,
+        "system_prompt": "As an AI planner, you are tasked with designing a response strategy to mitigate the impact of cyber-physical attacks on urban infrastructure.",
+        "input": "Develop a comprehensive strategy to protect urban infrastructure from the risks associated with cyber-physical attacks, which could compromise critical systems such as water supply, electricity grids, and transportation networks.\n\nInitial State: The city's infrastructure networks are increasingly interconnected through digital controls and Internet of Things (IoT) devices, with minimal dedicated cybersecurity measures in place.\n\nGoal: Formulate a protective strategy that enhances cybersecurity across critical urban infrastructure systems, ensuring their resilience against cyber-physical attacks and minimizing potential disruptions.",
+        "reference_answer": "The strategy to protect urban infrastructure from cyber-physical attacks should include:\n\n1. Implementing advanced threat detection systems for real-time monitoring and immediate response to potential threats.\n2. Establishing network segmentation to isolate critical systems, preventing a breach in one system from affecting others.\n3. Conducting regular security training for operational staff, ensuring they are aware of the latest cyber threats and response protocols.\n4. Designing system redundancies for critical infrastructure, guaranteeing service continuity even when primary systems are compromised.\n5. Initiating community awareness programs on the importance of cybersecurity, enhancing public vigilance against potential cyber threats.\n6. Forming strategic partnerships with leading cybersecurity firms to gain access to external expertise and cutting-edge security technologies.\n\nThis comprehensive approach addresses the growing threat of cyber-physical attacks, ensuring urban infrastructure remains secure and resilient.",
+        "score_rubric": {
+            "criteria": "Does the response successfully develop a comprehensive and practical strategy to enhance cybersecurity for critical urban infrastructure, enabling resilience against cyber-physical attacks?",
+            "score1_description": "The response provides a vague or overly simplistic strategy, lacking depth and specificity in cybersecurity measures, resulting in a plan that fails to address the vulnerabilities of urban infrastructure to cyber-physical attacks.",
+            "score2_description": "The response outlines a basic strategy that includes generic cybersecurity measures but overlooks the interconnected nature of urban infrastructure or the specific challenges posed by cyber-physical attacks, making the plan partially effective.",
+            "score3_description": "The response proposes a coherent strategy incorporating some specific cybersecurity measures for urban infrastructure, such as firewall upgrades or regular system audits, but lacks a comprehensive approach to address all critical systems equally.",
+            "score4_description": "The response presents a robust strategy with detailed cybersecurity measures covering most critical urban infrastructure systems, including network segmentation and real-time monitoring, but may slightly miss optimizing incident response protocols or long-term security maintenance.",
+            "score5_description": "The response delivers an optimal and detailed cybersecurity strategy, effectively organizing proactive and reactive security measures, such as advanced threat detection, system redundancy, and regular security training for staff, ensuring all critical urban infrastructure systems are resilient against cyber-physical attacks."
+        },
+        "atomic_checklist": [
+            "Does the response propose advanced threat detection systems for real-time monitoring?",
+            "Is there a mention of network segmentation to isolate critical infrastructure systems?",
+            "Does the plan include regular security training for operational staff?",
+            "Are system redundancies proposed to ensure continuity of operations during attacks?",
+            "Does the strategy involve community awareness initiatives on cybersecurity?",
+            "Is there a mention of forming partnerships with cybersecurity firms for external expertise?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 6,
+        "system_prompt": "As an AI planner, you are tasked with constructing a sustainable water management strategy for a city facing severe drought conditions.",
+        "input": "Develop a water conservation and management strategy for a metropolitan area experiencing an unprecedented drought, leading to critically low water reservoir levels.\n\nInitial State: The city has a traditional water management system that relies heavily on rainfall to replenish water reservoirs, with no significant conservation measures or alternative water sources in place.\n\nGoal: Formulate a strategy that not only conserves the remaining water resources but also identifies and integrates alternative water sources, ensuring long-term water security and sustainability for the city.",
+        "reference_answer": "The water management strategy for addressing the severe drought should encompass:\n\n1. Installing smart metering and leak detection systems throughout the city to identify and repair leaks promptly, significantly reducing water losses.\n2. Incorporating sustainable alternative water sources, such as building desalination plants for sea water treatment and facilities for recycling wastewater, making them safe for non-potable uses.\n3. Launching comprehensive community engagement initiatives to educate residents and businesses on water conservation practices, like using water-efficient appliances and fixtures, and encouraging their adoption through incentives.\n4. Forming a specialized task force responsible for the strategic planning and implementation of water management measures, ensuring operational efficiency and adherence to sustainability goals.\n5. Promoting xeriscaping and the use of drought-resistant crop varieties in urban landscaping and agriculture to minimize water demand.\n\nThis strategic approach guarantees the city's water security and sustains its supply in the face of prolonged drought conditions by balancing conservation efforts with the integration of reliable, alternative water sources.",
+        "score_rubric": {
+            "criteria": "Does the response successfully develop a comprehensive and innovative water management strategy that conserves existing water reservoirs and integrates alternative water sources, ensuring the city's resilience against severe drought conditions?",
+            "score1_description": "The response proposes a simplistic water management strategy, lacking innovation and failing to address both conservation of existing resources and exploration of alternative sources, resulting in insufficient resilience against drought conditions.",
+            "score2_description": "The response outlines a basic strategy that includes generic conservation measures like water rationing, but it either neglects alternative water sources or provides only vague suggestions, offering partial relief from drought impacts.",
+            "score3_description": "The response presents a coherent strategy addressing water conservation through specific measures, such as leak repairs and public awareness campaigns, and hints at alternative water sources like rainwater harvesting, but lacks a detailed plan for integration and sustainability.",
+            "score4_description": "The response delivers a robust strategy combining detailed water conservation measures, including technological innovations for leak detection and water-saving appliances, with a solid approach to integrating alternative sources such as desalination or wastewater recycling, yet may slightly lack in community engagement strategies or long-term sustainability planning.",
+            "score5_description": "The response crafts an optimal, innovative water management strategy that thoroughly conserves existing water reservoirs through advanced technologies and behavioral change initiatives, seamlessly integrates sustainable alternative water sources like desalination and rainwater harvesting, and involves comprehensive community participation, ensuring the city's resilience and sustainability in the face of severe drought conditions."
+        },
+        "atomic_checklist": [
+            "Does the response include technological innovations for water conservation, such as smart metering or leak detection systems?",
+            "Is there a mention of integrating sustainable alternative water sources, like desalination plants or wastewater recycling facilities?",
+            "Does the plan involve community engagement and education on water conservation practices?",
+            "Are policies proposed to incentivize water-saving appliances and fixtures in homes and businesses?",
+            "Does the strategy provide for the establishment of a task force to oversee and implement water management measures?",
+            "Is there consideration of landscaping and agricultural practices that reduce water usage?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 7,
+        "system_prompt": "As an AI planner, you are tasked with creating a digital transformation strategy for a traditional manufacturing industry to enhance its competitiveness in the era of Industry 4.0.",
+        "input": "Develop a comprehensive digital transformation strategy for a traditional automotive manufacturing industry facing challenges in adapting to Industry 4.0 innovations such as automation, data analytics, and the Internet of Things (IoT).\n\nInitial State: The industry predominantly relies on manual labor and conventional manufacturing processes, with minimal integration of advanced digital technologies.\n\nGoal: Formulate a strategy that incorporates Industry 4.0 technologies to modernize manufacturing processes, improve operational efficiency, and enhance product quality, ensuring the industry's competitive edge in a rapidly evolving digital landscape.",
+        "reference_answer": "The digital transformation strategy for the automotive manufacturing industry should include:\n\n1. Adopting automation technologies to enhance production efficiency and reduce reliance on manual labor, with specific use cases for robotic assembly lines.\n2. Leveraging data analytics and machine learning for predictive maintenance and quality control, reducing downtime and scrap rates.\n3. Implementing IoT devices across the manufacturing process for real-time monitoring and control, ensuring optimal resource usage and process optimization.\n4. Rolling out comprehensive training programs to upskill the current workforce in digital skills and technologies, fostering a culture of continuous learning and innovation.\n5. Forming strategic partnerships with leading technology providers to gain access to advanced tools and expertise, accelerating the digital transformation journey.\n6. Integrating robust cybersecurity measures to protect industrial control systems and sensitive data from potential cyber threats, ensuring the reliability and security of the manufacturing process.\n\nThis strategy encapsulates a proactive approach to embracing Industry 4.0, positioning the industry at the forefront of digital innovation and operational excellence.",
+        "score_rubric": {
+            "criteria": "Does the response craft a detailed and actionable digital transformation strategy that effectively incorporates Industry 4.0 technologies to modernize the manufacturing industry, improve efficiency, and competitiveness?",
+            "score1_description": "The response offers a rudimentary or vague strategy, failing to detail how Industry 4.0 technologies can be integrated into existing systems or its impact on efficiency and competitiveness, missing components such as automation integration or data analytics application.",
+            "score2_description": "The response outlines a strategy that includes basic integration of digital technologies like automation but lacks a comprehensive approach or specific examples on improving operational efficiency and product quality, offering limited competitive advantage.",
+            "score3_description": "The response proposes a coherent strategy with some detailed plans for integrating specific Industry 4.0 technologies such as IoT and data analytics but has gaps in fully detailing the implementation steps or assessing the impact on overall competitiveness.",
+            "score4_description": "The response presents a robust strategy that includes detailed plans for adopting a range of Industry 4.0 technologies with examples of practical applications, but it may slightly lack in outlining a clear roadmap for technology adoption or long-term sustainability measures.",
+            "score5_description": "The response delivers an optimal and comprehensive digital transformation strategy, thoroughly addressing the integration of automation, IoT, and data analytics to improve operational efficiency and product quality. It includes a step-by-step adoption roadmap, impact assessments, and training programs for staff, ensuring significant enhancements in the industry's competitiveness."
+        },
+        "atomic_checklist": [
+            "Does the response propose a systematic approach to integrating automation technologies?",
+            "Is there a mention of leveraging data analytics for predictive maintenance and quality control?",
+            "Does the plan include implementing IoT devices for real-time monitoring and control across production lines?",
+            "Are employee training and development programs proposed to upskill the workforce in new technologies?",
+            "Does the strategy suggest establishing partnerships with technology providers for knowledge and resource access?",
+            "Is there a consideration of cybersecurity measures to protect industrial control systems and data?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 8,
+        "system_prompt": "As an AI planner, you are tasked with developing a resilience strategy for agricultural ecosystems facing the threat of increasingly severe climate change impacts.",
+        "input": "Design a comprehensive resilience strategy for agricultural ecosystems that are increasingly vulnerable to the impacts of climate change, including extreme weather events, temperature fluctuations, and prolonged droughts.\n\nInitial State: Agricultural practices in the region are predominantly traditional, with minimal adaptation to changing climate conditions and limited use of climate-resilient crops or modern farming technologies.\n\nGoal: Formulate a strategy that enhances the resilience of agricultural ecosystems, incorporating climate-resilient crops, advanced farming technologies, and sustainable water management practices, to ensure food security and ecosystem sustainability despite the challenges of climate change.",
+        "reference_answer": "The agricultural ecosystem resilience strategy should encompass:\n\n1. Introducing climate-resilient crop varieties that are capable of withstanding extreme weather conditions, temperature fluctuations, and droughts.\n2. Implementing advanced farming technologies and precision agriculture to optimize resource use, monitor crop health, and increase yield efficiency.\n3. Adopting sustainable water management practices, including rainwater harvesting systems and efficient irrigation techniques like drip irrigation, to optimize water usage and ensure availability during droughts.\n4. Enhancing soil health through conservation practices and organic farming methods, improving the land's resilience to climate impacts.\n5. Engaging the farming community through educational programs and participatory approaches to co-develop and implement resilience strategies, fostering a sense of ownership and commitment.\n6. Establishing collaborations with research institutions to continuously explore innovative solutions for climate adaptive agriculture, ensuring the strategy remains cutting-edge and effective against evolving climate challenges.\n\nThis comprehensive approach ensures the agricultural ecosystem's resilience, promoting sustainability, and food security in the face of climate change.",
+        "score_rubric": {
+            "criteria": "Does the response successfully develop a detailed and actionable resilience strategy for agricultural ecosystems that incorporates climate-resilient crops, advanced farming technologies, and sustainable water management to combat climate change impacts?",
+            "score1_description": "The response provides a generic or overly simplistic resilience strategy, lacking specificity in the use of climate-resilient crops, farming technologies, or water management practices, resulting in a plan that inadequately addresses the challenges posed by climate change.",
+            "score2_description": "The response outlines a basic resilience strategy that includes some measures such as the introduction of drought-resistant crop varieties but lacks a comprehensive approach or specific technologies and practices to effectively combat climate change impacts, offering only partial resilience.",
+            "score3_description": "The response presents a coherent strategy incorporating specific climate-resilient crops and some advanced farming technologies or water management practices but lacks detail or a holistic plan to ensure complete ecosystem resilience and food security.",
+            "score4_description": "The response delivers a robust strategy including detailed plans for adopting climate-resilient crops, advanced farming technologies, and sustainable water management practices but may slightly lack in community engagement or long-term sustainability considerations.",
+            "score5_description": "The response crafts an optimal and comprehensive resilience strategy, thoroughly addressing the adaptation of agricultural ecosystems to climate change through the integration of climate-resilient crops, innovative farming technologies, sustainable water management, and community participation, ensuring ecosystem sustainability and food security."
+        },
+        "atomic_checklist": [
+            "Does the response propose the adoption of climate-resilient crop varieties?",
+            "Is there a mention of advanced farming technologies for precision agriculture?",
+            "Does the plan include sustainable water management practices, such as rainwater harvesting or drip irrigation?",
+            "Are there strategies for soil conservation and enhancement to support climate resilience?",
+            "Does the strategy encourage community and farmer involvement in resilience initiatives?",
+            "Is there a mention of establishing research collaborations for continuous innovation in climate adaptation?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "constrained_planning",
+        "instance_idx": 9,
+        "system_prompt": "As an AI planner, you are tasked with developing a strategic plan to enhance urban air quality under the constraints of rapid industrial growth.",
+        "input": "Create a multi-faceted strategy to improve urban air quality, facing challenges from increasing emissions due to rapid industrial growth and urbanization.\n\nInitial State: The city experiences moderate to poor air quality, primarily due to emissions from industrial activities, vehicular traffic, and construction projects.\n\nGoal: Formulate a comprehensive strategy that targets emission reduction from key sources, enhances green spaces, and leverages technology to monitor and manage air quality, aiming to significantly improve urban air quality despite ongoing industrial growth.",
+        "reference_answer": "The strategy for improving urban air quality should include:\n\n1. Implementing strict regulations to control emissions from industrial sites and vehicles, including the transition to cleaner fuels and technologies.\n2. Developing and expanding urban green spaces such as parks, green roofs, and green belts to act as natural air filters, enhancing air quality and providing recreational areas for residents.\n3. Deploying an advanced network of air quality sensors across the city for real-time monitoring and management, facilitating quick responses to pollution hotspots.\n4. Promoting sustainable transportation options like electric public transit, bicycle-sharing programs, and pedestrian-friendly zones to reduce reliance on fossil-fuel-powered vehicles.\n5. Launching community awareness campaigns to educate residents on air quality issues and encourage individual actions that contribute to air quality improvements, such as using eco-friendly household products.\n6. Exploring the installation of innovative air purification technologies in areas with consistently poor air quality, providing immediate relief and demonstrating a commitment to health and sustainability.\n\nThis comprehensive approach targets the primary sources of air pollution, leverages technology for effective management, and fosters community engagement, ensuring a sustained improvement in urban air quality.",
+        "score_rubric": {
+            "criteria": "Does the response successfully develop a detailed and actionable strategy to improve urban air quality by addressing emissions, enhancing green spaces, and utilizing technology for better air quality management?",
+            "score1_description": "The response provides a basic or unrealistic strategy with little emphasis on addressing specific emission sources or leveraging technology, resulting in insufficient impact on urban air quality improvement.",
+            "score2_description": "The response outlines a strategy that includes generic measures for emission reduction and mentions green spaces but lacks a comprehensive approach or specific technological solutions, offering limited effectiveness.",
+            "score3_description": "The response proposes a coherent strategy that addresses key emission sources and includes the promotion of green spaces. However, it offers limited details on the use of technology for air quality management, missing opportunities for significant improvement.",
+            "score4_description": "The response presents a robust strategy including detailed plans for emission reduction, green space enhancement, and the adoption of monitoring technologies. Yet, it may slightly lack in innovative solutions or comprehensive stakeholder engagement.",
+            "score5_description": "The response crafts an optimal and comprehensive strategy, effectively combining emission reduction initiatives, significant enhancement of urban green spaces, and cutting-edge technology for continuous air quality monitoring and management, ensuring measurable improvement in urban air quality."
+        },
+        "atomic_checklist": [
+            "Does the response propose specific regulations to limit industrial and vehicular emissions?",
+            "Is there a mention of developing or expanding urban green spaces, such as parks and green belts?",
+            "Does the plan include the use of advanced sensor networks for real-time air quality monitoring?",
+            "Are sustainable transportation options encouraged to reduce vehicular emissions?",
+            "Does the strategy suggest community awareness and participation initiatives for air quality improvement?",
+            "Is there consideration of innovative technologies like air purification systems in highly polluted areas?"
+        ],
+        "background_knowledge": []
+    }
+]

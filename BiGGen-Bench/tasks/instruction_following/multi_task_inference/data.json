@@ -1,0 +1,236 @@
+[
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "List all the terms referring to Elon Musk in a given text, and then rephrase each of them, excluding pronouns and 'Elon Musk'.\nText: Elon Musk has had an eventful year. Those events could end up hurting your portfolio. The world's richest man repeatedly stoked controversy in 2023 by placing himself at the center of a number of scandals. Musk has had a penchant for involving himself in problematic issues this year: from endorsing - and then apologizing for - blatantly antisemitic tropes on X, to re-platforming conspiracy theorist Alex Jones and telling concerned advertisers (and Disney in particular) on X to go 'f**k' themselves. And he's suffered for them. X, nee Twitter, is now projected to bring in significantly less than the $4.5 billion it earned in the year before Musk took over the company.",
+        "reference_answer": "Terms referring to Elon Musk:\n1. Elon Musk\n2. The world's richest man\n3. Musk\n4. He\n5. Him\nRephrased terms:\n1. Elon Musk\n2. The wealthiest individual\n3. The entrepreneur\n4. He\n5. Him",
+        "score_rubric": {
+            "criteria": "Does the response accurately list all terms referring to Elon Musk and rephrase each of them effectively, excluding pronouns and 'Elon Musk'?",
+            "score1_description": "The response fails to list any terms referring to Elon Musk or lists terms inaccurately, and does not rephrase any terms.",
+            "score2_description": "The response lists some but not all terms referring to Elon Musk, rephrases one or more terms inaccurately, or misses rephrasing some listed terms.",
+            "score3_description": "The response lists most terms referring to Elon Musk and rephrases them, but with minor inaccuracies or omissions in rephrasing.",
+            "score4_description": "The response accurately lists all terms referring to Elon Musk and rephrases them correctly, but the rephrasings may lack creativity or variety.",
+            "score5_description": "The response accurately lists all terms referring to Elon Musk and rephrases each term effectively and creatively, fully meeting the instruction's requirements."
+        },
+        "atomic_checklist": [
+            "Does the response accurately list all terms referring to Elon Musk?",
+            "Does the response include a rephrase version of the listed terms?",
+            "Are the pronouns and 'Elon Musk' kept still if they are listed?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Instruction:\nSummarize the main achievements of Marie Curie in the provided text, and explain why they are significant in the field of science. Use your own words as much as possible.\n\nText:\nMarie Curie was a pioneering physicist and chemist who became the first woman to win a Nobel Prize and the only person to ever win Nobel Prizes in two different scientific fields. Her first Nobel Prize, in Physics, was awarded in 1903 alongside her husband Pierre Curie and Henri Becquerel, for their work on radioactivity. In 1911, she won her second Nobel Prize, this time in Chemistry, for her discovery of the elements radium and polonium. Her work not only advanced the understanding of atomic science but also laid the groundwork for future research in nuclear physics and cancer treatment.",
+        "reference_answer": "Marie Curie was an exceptional scientist whose contributions had a profound impact on the world of science. Her most notable achievements include being the first woman to receive a Nobel Prize and the only individual to be awarded Nobel Prizes in two distinct scientific disciplines. In 1903, she was honored with the Nobel Prize in Physics, shared with her husband Pierre Curie and Henri Becquerel, in recognition of their collective research on radioactivity. This groundbreaking work was pivotal in advancing the understanding of atomic structures and phenomena.\n\nCurie's relentless pursuit of knowledge led to her second Nobel Prize in 1911, this time in the field of Chemistry. This award was in acknowledgment of her discovery of two previously unknown elements, radium and polonium. These discoveries were not only monumental in expanding the periodic table but also played a crucial role in the development of nuclear physics and medical treatments, particularly in the fight against cancer.\n\nThe significance of Curie's work cannot be overstated. Her pioneering research on radioactivity opened new avenues in science, leading to innovations in nuclear energy, radiography, and cancer therapy. Her achievements set the stage for future scientific explorations and have had a lasting impact on both science and medicine, making her one of the most influential figures in the history of science.",
+        "score_rubric": {
+            "criteria": "Does the response effectively summarize Marie Curie's main achievements and their significance in the field of science using original wording?",
+            "score1_description": "The response fails to summarize any of Marie Curie's achievements or their significance in science, or is mostly copied from the text.",
+            "score2_description": "The response mentions one or some of Marie Curie's achievements but lacks details on their significance or contains significant inaccuracies.",
+            "score3_description": "The response summarizes most of Marie Curie's main achievements and touches on their significance but may have minor inaccuracies or lack depth.",
+            "score4_description": "The response accurately summarizes all of Marie Curie's main achievements and their significance, but the explanation or originality of wording could be improved.",
+            "score5_description": "The response thoroughly and creatively summarizes all of Marie Curie's main achievements and articulately explains their significance in science, demonstrating a high level of originality and understanding."
+        },
+        "atomic_checklist": [
+            "Does the response list all of Marie Curie's main achievements mentioned in the text?",
+            "Does the response explain the significance of these achievements in the field of science?",
+            "Is the summary written in the responder's own words, demonstrating originality and understanding?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Generate a question starting with 'What' and including the word 'features' based on the article below. Provide the answer to the generated question afterward.\nArticle: Google announced on Thursday two new AI tools that it says will make searching for things online 'radically more helpful'.\nMobile users accessing Google on some Android phones will soon be able to circle or highlight items that appear on their smartphone screens to populate more information, and ask complicated or nuanced questions about an image or text.\nThe company said it's been quietly testing the tools to see how generative AI, the technology that underpins viral chatbots including ChatGPT, can make Search more personalized and intuitive since last year.\nThe features were first teased during Samsung's Unpacked event earlier this week and will come to the Galaxy S24 smartphone lineup launching later this month. It will also launch on a handful of other high-end Android smartphones, including the Pixel 8 and the Pixel 8 Pro, starting January 3.",
+        "reference_answer": "Question: What features did Google announce on Thursday to make searching for things online 'radically more helpful'?\nAnswer: Google announced features that enable users to circle or highlight items appearing on their smartphone screens, providing additional information. This functionality allows users to ask complex or nuanced questions about an image or text.",
+        "score_rubric": {
+            "criteria": "Does the response effectively generate a relevant 'What' question including the word 'features' based on the article, and provide an accurate, complete answer?",
+            "score1_description": "The response either does not generate a question starting with 'What' that includes the word 'features', or provides an answer that is completely unrelated or incorrect based on the article's content.",
+            "score2_description": "The response generates a 'What' question including the word 'features', but the question is vague or only tangentially related to the article. The answer provided is partially correct but lacks detail or contains inaccuracies.",
+            "score3_description": "The response generates a relevant 'What' question including the word 'features', but the question could be more specific or clearer. The answer is mostly correct but misses some details or includes minor inaccuracies.",
+            "score4_description": "The response generates a clear and relevant 'What' question including the word 'features'. The answer is accurate but might miss slight nuances or additional information that could make the response more comprehensive.",
+            "score5_description": "The response generates a clear, specific, and highly relevant 'What' question including the word 'features', fully based on the article. The answer is accurate, detailed, and reflects a comprehensive understanding of the announced features."
+        },
+        "atomic_checklist": [
+            "Does the response generate a question starting with 'What'?",
+            "Does the question include the word 'features'?",
+            "Is the question relevant and based on the article provided?",
+            "Does the response provide an answer to the generated question?",
+            "Is the answer accurate and complete according to the article's content?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Read the given text and provide a summary in the given form.\nText: Ash Ketchum, a young boy from Pallet Town, comes of age and gains the right to train Pok\u00e9mon, hoping to achieve his dream of becoming a Pok\u00e9mon Master; trainers receive their first Pok\u00e9mon from Professor Oak, the town's foremost authority on researching Pok\u00e9mon. Though Ash oversleeps and arrives late to Professor Oak's lab, he receives a Pikachu, who is initially uncooperative. On their way to Viridian City, Ash earns Pikachu's friendship by selflessly shielding him from a group of angry Spearow.\nForm:\n1. Title:\n2. Main characters: \n3. Main events:",
+        "reference_answer": "1. Title: The beginning of the journey to become a Pok\u00e9mon Master\n2. Main characters: Ash Ketchum, Pikachu\n3. Main events: Professor Oak gave Pikachu to Ash and Ash earned Pikachu's friendship by rescuing Pikachu selflessly.",
+        "score_rubric": {
+            "criteria": "Does the summary accurately reflect the main elements of the text including the title, main characters, and main events, in the specified form?",
+            "score1_description": "The summary does not accurately capture any main element of the text (title, main characters, or main events), or is missing entirely.",
+            "score2_description": "The summary captures only one of the main elements of the text accurately (title, main characters, or main events) but lacks detail or accuracy in the other elements.",
+            "score3_description": "The summary captures two of the main elements of the text accurately (title, main characters, or main events) but may lack some detail or accuracy in the third element.",
+            "score4_description": "The summary accurately captures all main elements of the text (title, main characters, and main events), but the descriptions may lack depth, creativity, or may not be concisely presented.",
+            "score5_description": "The summary accurately and concisely captures all main elements of the text (title, main characters, and main events) with depth, creativity, and in a well-structured form."
+        },
+        "atomic_checklist": [
+            "Does the summary provide a clear and relevant title reflecting the essence of the text?",
+            "Does the summary accurately identify the main characters mentioned in the text?",
+            "Does the summary concisely describe the main events of the text, capturing key details?",
+            "Is the summary presented in the specified form with clear sections for title, main characters, and main events?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Arrange the given names in alphabetical order and assign scores based on their order, starting from 1. For instance, the top-ranked name, Alexander Bennett, receives 1 point, followed by Amelia Foster with 2 points. Once scores are assigned, calculate the sum of the squares for individuals whose names end with 'r'.\nNames:\nLucas Turner\nOliver Thompson\nEmma Lawson\nAlexander Bennett\nSophia Mitchell\nHenry Carter\nAmelia Foster\nBenjamin Hayes\nBenjamin Turner\nGrace Palmer\nSamuel Reynolds\nLily Morgan\nStella Taylor\nChloe Miller\nGrace Harper\nHarper Smith",
+        "reference_answer": "Here's an arranged name and respective score based on the order. The scores for individuals whose names end with 'r' are 4, 9, 14, 16.\n1. Alexander Bennett - 1\n2. Amelia Foster - 2\n3. Benjamin Hayes - 3\n4. Benjamin Turner - 4\n5. Chloe Miller - 5\n6. Emma Lawson - 6\n7. Grace Harper - 7\n8. Grace Palmer - 8\n9. Harper Smith - 9\n10. Henry Carter - 10\n11. Lily Morgan - 11\n12. Lucas Turner - 12\n13. Oliver Thompson - 13\n14. Samuel Reynolds - 14\n15. Sophia Mitchell - 15\n16. Stella Taylor - 16",
+        "score_rubric": {
+            "criteria": "Does the response accurately arrange the given names in alphabetical order, assign scores correctly based on their order, and calculate the sum of the squares for individuals whose names end with 'r'?",
+            "score1_description": "The response fails to arrange names in alphabetical order, incorrectly assigns scores, and does not calculate the sum of squares for the specified names.",
+            "score2_description": "The response arranges some names in alphabetical order but not all, assigns scores inaccurately to several names, and either does not calculate the sum of squares for the specified names or does so incorrectly.",
+            "score3_description": "The response arranges most names in alphabetical order and assigns scores with minor inaccuracies. The sum of squares for the specified names is calculated but contains minor errors.",
+            "score4_description": "The response accurately arranges all names in alphabetical order and assigns scores correctly, but the calculation of the sum of squares for the specified names has negligible errors or lacks precision.",
+            "score5_description": "The response accurately arranges all names in alphabetical order, assigns scores correctly based on their order, and accurately calculates the sum of the squares for individuals whose names end with 'r', fully meeting the instruction's requirements."
+        },
+        "atomic_checklist": [
+            "Are all names arranged in alphabetical order correctly in the response?",
+            "Are scores assigned accurately based on the alphabetical order in the response?",
+            "Is the sum of squares calculated only for individuals whose names end with 'r' in the response?",
+            "Are calculations for the sum of squares accurate and precise in the response?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Evaluate the significance of the Internet and its global impact since its inception, focusing on the following areas:\n1. Communication\n2. Access to information\n3. Economic impact\n4. Social and cultural shifts",
+        "reference_answer": "The Internet had a transformative effect on global society across multiple dimensions ever since its inception. In terms of communication, it has dramatically reduced barriers, enabling instant messaging and video calls anywhere in the world. This evolution has not only changed personal relationships but also revolutionized business operations and global diplomacy, making interactions more immediate and borderless.\n\nAccess to information has seen unprecedented expansion, with the Internet becoming the world's largest repository of knowledge. It has democratized learning and empowered individuals with immediate access to vast resources, significantly impacting education and personal development.\n\nEconomically, the introduction of the digital marketplace has shifted the global economy towards the tech industry, fostering innovation, creating myriad job opportunities, and altering consumer behavior. Companies like Amazon and Alibaba exemplify the economic power of online business models.\n\nSocially and culturally, the Internet has been both a unifying and divisive tool. It has allowed for the global exchange of ideas, fostering cross-cultural understanding and collaboration. However, it has also facilitated the spread of misinformation and created echo chambers that can reinforce division. Nonetheless, its role in mobilizing social movements and giving a voice to the marginalized illustrates its unmatched impact on society.",
+        "score_rubric": {
+            "criteria": "Does the response effectively analyze the significance of the Internet across the specified aspects, using historical context and logical reasoning?",
+            "score1_description": "The response fails to effectively analyze the significance of the Internet in any of the specified areas or relies heavily on incorrect information and unsubstantiated claims.",
+            "score2_description": "The response provides a basic analysis of one or two specified areas with limited historical context and reasoning. The explanation lacks depth and may contain inaccuracies.",
+            "score3_description": "The response offers a fair analysis of the impact on two or three of the specified areas, with some historical context and logical reasoning, but the analysis might lack detail or contain minor inaccuracies.",
+            "score4_description": "The response provides a thorough analysis of all the specified areas, supported by substantial historical context and clear reasoning. Minor details may be overlooked or slightly misrepresented.",
+            "score5_description": "The response provides a comprehensive and insightful analysis of the Internet's significance across all specified areas, supported by detailed historical context and sound logical reasoning, demonstrating a deep understanding of its transformative effects."
+        },
+        "atomic_checklist": [
+            "Does the response discuss how the Internet revolutionized communication?",
+            "Is the impact of the Internet on access to information analyzed?",
+            "Does the response examine the economic implications of the Internet?",
+            "Is the effect of the Internet on social and cultural shifts discussed?",
+            "Are the analyses supported by historical context and logical reasoning?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Describe the impact of renewable energy adoption on environmental sustainability, focusing on the following areas:\n1. Reduction in carbon emissions\n2. Preservation of natural resources\n3. Impact on biodiversity\n4. Economic implications",
+        "reference_answer": "Adopting renewable energy sources has played a pivotal role in enhancing environmental sustainability across various dimensions. The shift towards sources like solar and wind energy has significantly reduced carbon emissions, combatting climate change by decreasing the reliance on fossil fuels that release large quantities of CO2 into the atmosphere. \n\nIn terms of preserving natural resources, renewable energy conversion processes generally consume less water and do not deplete finite resources, unlike the extraction of coal or oil, promoting a more sustainable use of Earth's natural assets. \n\nFrom a biodiversity perspective, renewable energy projects, if properly planned and managed, have a lower impact on habitats and wildlife compared to traditional energy production facilities, promoting conservation efforts. \n\nEconomically, though the upfront cost of renewable energy systems can be high, the long-term implications include energy price stability and job creation in the renewable sector, stimulating economic growth and transition towards a green economy. This diversified energy approach, therefore, supports not only environmental sustainability but paves the way for lasting economic and social benefits.",
+        "score_rubric": {
+            "criteria": "Does the response effectively analyze the impact of renewable energy adoption on environmental sustainability across the specified aspects, using scientific evidence and logical reasoning?",
+            "score1_description": "The response fails to effectively analyze the impact of renewable energy adoption in any of the specified areas or relies heavily on incorrect information and unsubstantiated claims.",
+            "score2_description": "The response provides a basic analysis of one or two specified areas with limited scientific evidence and reasoning. The explanation lacks depth and may contain inaccuracies.",
+            "score3_description": "The response offers a fair analysis of the impact on two or three of the specified areas, with some scientific evidence and logical reasoning, but the analysis might lack detail or contain minor inaccuracies.",
+            "score4_description": "The response provides a thorough analysis of all the specified areas, supported by substantial scientific evidence and clear reasoning. Minor details may be overlooked or slightly misrepresented.",
+            "score5_description": "The response provides a comprehensive and insightful analysis of renewable energy adoption's impact on environmental sustainability across all specified areas, supported by detailed scientific evidence and sound logical reasoning, demonstrating a deep understanding of its transformative effects."
+        },
+        "atomic_checklist": [
+            "Does the response discuss how renewable energy adoption contributes to a reduction in carbon emissions?",
+            "Is the preservation of natural resources due to renewable energy adoption analyzed?",
+            "Does the response examine renewable energy's impact on biodiversity?",
+            "Is the economic implication of transitioning to renewable energy discussed?",
+            "Are the analyses supported by scientific evidence and logical reasoning?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Assess the influence of artificial intelligence (AI) on modern employment, focusing on the following areas:\n1. Job displacement\n2. Creation of new job categories\n3. Changes in skill requirements\n4. Impact on wage levels",
+        "reference_answer": "The advent of artificial intelligence (AI) has had a profound and multifaceted influence on modern employment. Job displacement is one of the most immediate concerns, as AI automation and robotics replace roles in manufacturing, customer service, and even some professionals. While there is apprehension about job losses, AI also fosters the creation of new job categories such as AI ethics compliance officer, robot maintenance, and data annotation experts, showcasing the dynamic shift in employment sectors.\n\nMoreover, AI's integration into the workplace has drastically changed skill requirements, emphasizing the need for digital literacy, complex problem-solving abilities, and adaptability in the workforce. These new demands necessitate continuous learning and skill development among employees to remain relevant. Additionally, the impact on wage levels is mixed; while AI may pressure wages downward in displaced or automated sectors, there's a premium on wages in new tech-driven roles and industries that require specialized AI skills. Thus, AI's influence on employment is transformative, necessitating a balanced approach to harness its benefits while mitigating adverse impacts on the workforce.",
+        "score_rubric": {
+            "criteria": "Does the response effectively analyze the influence of AI on modern employment across the specified aspects, using empirical data and logical reasoning?",
+            "score1_description": "The response fails to effectively analyze the influence of AI in any of the specified areas or relies heavily on incorrect information and unsubstantiated claims.",
+            "score2_description": "The response provides a basic analysis of one or two specified areas with limited empirical data and reasoning. The explanation lacks depth and may contain inaccuracies.",
+            "score3_description": "The response offers a fair analysis of the influence on two or three of the specified areas, with some empirical data and logical reasoning, but the analysis might lack detail or contain minor inaccuracies.",
+            "score4_description": "The response provides a thorough analysis of all the specified areas, supported by substantial empirical data and clear reasoning. Minor details may be overlooked or slightly misrepresented.",
+            "score5_description": "The response provides a comprehensive and insightful analysis of AI's influence on modern employment across all specified areas, supported by detailed empirical data and sound logical reasoning, demonstrating a deep understanding of its transformative effects."
+        },
+        "atomic_checklist": [
+            "Does the response discuss how AI contributes to job displacement?",
+            "Is the creation of new job categories due to AI discussed?",
+            "Does the response examine changes in skill requirements fostered by AI?",
+            "Is the impact of AI on wage levels analyzed?",
+            "Are the analyses supported by empirical data and logical reasoning?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Explore the effects of smartphones on youth mental health, concentrating on the following aspects:\n1. Social relationships\n2. Attention span\n3. Sleep patterns\n4. Emotional well-being",
+        "reference_answer": "The ubiquity of smartphones has significantly influenced various aspects of youth mental health, with both positive and negative implications. In terms of social relationships, while smartphones enable constant connectivity and access to social networks, they can also lead to a sense of isolation and decreased face-to-face interactions, potentially exacerbating feelings of loneliness among youths. Research indicates that excessive use may impair the development of real-world social skills.\n\nConcerning attention span, there's evidence to suggest that the instant gratification provided by smartphones can reduce the ability to focus on prolonged tasks or activities, potentially affecting educational outcomes. Sleep patterns are also affected, with studies showing that screen time, especially before bed, can disrupt sleep quality and duration, impacting overall well-being.\n\nFrom an emotional perspective, the incessant need to check updates or compare oneself to others on social media platforms can lead to increased levels of anxiety and depression. However, smartphones can also serve as valuable tools for mental health support, offering apps for mindfulness, emotional regulation, and connection with supportive communities.\n\nOverall, the impact of smartphones on youth mental health is multifaceted, requiring a balanced approach to maximize benefits while minimizing potential harms. Parents and educators play a crucial role in guiding appropriate smartphone use to support healthy mental development.",
+        "score_rubric": {
+            "criteria": "Does the response effectively analyze the effects of smartphones on youth mental health across the specified aspects, using psychological studies and logical reasoning?",
+            "score1_description": "The response fails to effectively analyze the effects of smartphones on any of the specified aspects of youth mental health or relies heavily on incorrect information and unsubstantiated claims.",
+            "score2_description": "The response provides a basic analysis of one or two specified aspects with limited reference to psychological studies and reasoning. The explanation lacks depth and may contain inaccuracies.",
+            "score3_description": "The response offers a fair analysis of the effects on two or three of the specified aspects, with some reference to psychological studies and logical reasoning, but the analysis might lack detail or contain minor inaccuracies.",
+            "score4_description": "The response provides a thorough analysis of all the specified aspects, supported by substantial reference to psychological studies and clear reasoning. Minor details may be overlooked or slightly misrepresented.",
+            "score5_description": "The response provides a comprehensive and insightful analysis of the effects of smartphones on all specified aspects of youth mental health, supported by detailed references to psychological studies and sound logical reasoning, demonstrating a deep understanding of its impacts."
+        },
+        "atomic_checklist": [
+            "Does the response examine the impact of smartphones on social relationships among youth?",
+            "Is the effect of smartphones on youth attention span analyzed?",
+            "Does the response assess the implications of smartphone use on sleep patterns?",
+            "Is the influence of smartphones on emotional well-being discussed?",
+            "Are the analyses supported by references to psychological studies and logical reasoning?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "multi_task_inference",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Analyze the cultural impact of streaming services on the music industry, focusing on the following areas:\n1. Artist exposure and discovery\n2. Consumer listening habits\n3. Revenue models for artists and labels\n4. Influence on music production and distribution",
+        "reference_answer": "Streaming services have revolutionized the music industry by altering the landscape of artist exposure, consumer behavior, revenue models, and even the production and distribution of music itself. Firstly, these platforms have democratized artist exposure, allowing lesser-known artists to be discovered by a global audience without the need for traditional marketing or distribution channels, thanks to algorithm-driven recommendations.\n\nConsumer listening habits have shifted towards a preference for playlists and single tracks, rather than full albums, with accessibility and personalization at the forefront. This change challenges artists to release music that can stand alone outside the context of an album.\n\nRevenue models have also evolved, with streaming royalties becoming a critical income source for artists and labels, though this has prompted discussions about the fairness and adequacy of payouts. Additionally, the ease of distribution has encouraged more frequent releases and singles as artists strive to stay relevant in constantly updating feeds.\n\nMoreover, the influence on music production is evident in shorter song lengths and the optimization of tracks for streaming algorithms, potentially prioritizing catchy hooks and chorus to ensure listener retention. This denotes a cultural shift in how music is created, distributed, and consumed, emphasizing streaming's profound impact on the industry.",
+        "score_rubric": {
+            "criteria": "Does the response effectively analyze the cultural impact of streaming services on the music industry across the specified aspects, using industry data and logical reasoning?",
+            "score1_description": "The response fails to effectively analyze the cultural impact of streaming services in any of the specified areas or relies heavily on incorrect information and unsubstantiated claims.",
+            "score2_description": "The response provides a basic analysis of one or two specified areas with limited industry data and reasoning. The explanation lacks depth and may contain inaccuracies.",
+            "score3_description": "The response offers a fair analysis of the impact on two or three of the specified areas, with some use of industry data and logical reasoning, but the analysis might lack detail or contain minor inaccuracies.",
+            "score4_description": "The response provides a thorough analysis of all the specified areas, supported by substantial industry data and clear reasoning. Minor details may be overlooked or slightly misrepresented.",
+            "score5_description": "The response provides a comprehensive and insightful analysis of the cultural impact of streaming services on all specified aspects of the music industry, supported by detailed industry data and sound logical reasoning, demonstrating a deep understanding of its transformative effects."
+        },
+        "atomic_checklist": [
+            "Does the response discuss how streaming services have changed artist exposure and the discovery process?",
+            "Is the change in consumer listening habits due to streaming services analyzed?",
+            "Does the response examine the evolving revenue models for artists and labels with the advent of streaming?",
+            "Is the influence of streaming services on music production and distribution discussed?",
+            "Are the analyses supported by industry data and logical reasoning?"
+        ],
+        "background_knowledge": []
+    }
+]

@@ -1,0 +1,187 @@
+[
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 0,
+        "system_prompt": "도움이 되고 무해한 답변을 생성하도록 설정된 AI 어시스턴트로써 다음의 질문을 답해줘.",
+        "input": "다른 나라와 비교했을 때 한국의 전형적인 기업의 업무 스케쥴을 어떤가요?",
+        "reference_answer": "해당 질문은 어떤 분야에 종사하고 있는지, 나의 직급이 무엇인지, 어떤 회사에 다니고 있는지에 따라서 크게 달라질 수 있습니다. 이는 비단 한국 뿐만이 아니라, 다른 나라도 마찬가지 일 것 입니다. 예를 들어, 대부분의 나라에서는 보통 금융업이나 비즈니스 분야의 회사들은 엄격하게 9시에 출근하여 6시에 퇴근하는 문화를 지향하는 회사들이 많은 편일 것이고, 대부분의 나라의 장사를 하는 분들과 로펌이나 법률 사무소의 경우에는 주말에도 강도 높게 일할 것이며, IT 업종은 비교적 유연한 자율 출퇴근제를 시행하고 있을 것 입니다.\n한국에 대해서 한가지 이야기할 만한 것은 대부분 미국이나 유럽의 회사들에 비해서 일부 업종들이 야근을 실행하는 곳이 많을 수 있다는 것 입니다. 모든 곳이 그런 것은 아니겠지만, 여가 시간을 중요시하여 오후 5시 혹은 6시에 퇴근하는 것으로 알려진 유럽과 미국과 달리, 한국은 예로부터 야근을 많이 하고 아침에 일찍 출근하는 것으로 악명이 높았던 적도 있었습니다. 하지만, 시대적 흐름에 따라서 이러한 문화는 차츰 개선이 되고 있는 추세입니다.",
+        "score_rubric": {
+            "criteria": "Does the response comprehensively explain that a certain argument might differ depending on different areas/situations but also elaborate the overall trend compared to other countries/environments?",
+            "score1_description": "The response shows a fundamental misunderstanding of working hours in Korean companies, with no mention of typical 9 to 6 working hours or the possibility of overtime.",
+            "score2_description": "The response acknowledges the typical working hours in Korean companies but lacks details on cultural nuances such as the possibility of overtime or the existence of flexible working hours in some sectors.",
+            "score3_description": "The response mentions typical working hours and hints at the possibility of overtime, but it does not fully capture the cultural acceptance of overtime or the availability of flexible working hours in some sectors.",
+            "score4_description": "The response accurately describes the typical working hours in Korean companies and mentions the possibility of overtime, but it lacks detailed discussion on the cultural acceptance of such practices or the availability of flexible working hours in certain sectors.",
+            "score5_description": "The response provides a comprehensive description of working hours in Korean companies, including the typical 9 to 6 schedule, the cultural acceptance of overtime, and the availability of flexible working hours in some sectors."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 1,
+        "system_prompt": "Жауапкершілікті AI көмекшісі ретінде адамдардың қалаған пайдалы жауаптарын жаз.",
+        "input": "Жаңа жыл атқарылған шашу жеңісі үшін қандай кездестірулер және амандасулар қарастырылатын жәнеңбе ұжымдар туралы айтуға болады?",
+        "reference_answer": "Казақстанда шашу — бұл күшті, стратегиялық ойын, өте байырлы. Жаңа жыл атқарылған шашу жеңісінің кездестірулері мен амандасулары үшін аса тиімді ұжымдарды анықтау керек. Мысалы, шашу ойыншыларының өндірістік мақсаттарын, кез келген ойындағы стратегияларын, жақсы кездестіретін ходаларды талқылау керек. Бұлардың ішінде шашу ойыншыларының арасындағы дерекқорлық, адамдар арасындағы қарым-қатынасыздық, көрініс көрсету арқылы амандасуларды жәнеңбелерді анықтау мүмкін. Бірақ ең бастысы, бір кезеңде жаңа жыл атқарылған шашу жеңісінің азаматтарының қай себептермен өздеріне белгілі жеткіліктер жасауға мүмкін болатынын, жеңістің туындаған бағаларын күрделуі маңызды. Егер кез келген ойында қазіргі кезеңде жаңа жыл атқарылған шашу ойыншыларының өнеркәсібі және амандасулары туралы қанағаттанарлық айтуына болса, олардың салтанатты үйренушілердің дүниеге келіп түсуге жарияланған болуы, олардың көркем дуамен қабылдауы мен жаңа жыл атқарылған шашу жеңісінің қызметкерлеріне үлесін құртаруы керек.",
+        "score_rubric": {
+            "criteria": "Does the response offer a clear viewpoint within the response, using clear expressions?",
+            "score1_description": "The response lacks a clear viewpoint and uses ambiguous or unclear expressions throughout.",
+            "score2_description": "The response attempts to offer a viewpoint but does so ambiguously or with unclear expressions, making it difficult to understand.",
+            "score3_description": "The response presents a viewpoint, but it may be somewhat ambiguous or not fully expressed with clarity.",
+            "score4_description": "The response offers a clear viewpoint, using mostly clear expressions, but there may be some instances of ambiguity or lack of clarity.",
+            "score5_description": "The response provides a clear and well-defined viewpoint, using clear expressions throughout, ensuring the message is easily understood."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 2,
+        "system_prompt": "দায়িত্বশীল এআই সহায়ক হিসাবে মানুষের পছন্দের সাহায্যকারী উত্তরগুলি লিখুন।",
+        "input": "বাংলাদেশে নতুন কারো সাথে (পুরুষ বা নারী) পরিচিত হওয়ার সময় কী তাদের সাথে গলা মেলানো যাবে?",
+        "reference_answer": "বাংলাদেশে নতুন কারো সাথে পরিচিত হওয়ার সময় হাত মেলানো রীতির মধ্যে পড়ে, তবে গলা মেলানো ততটা সাধারণ নয়। তবে মনে রাখতে হবে যে বাংলাদেশ এখনও একটি রক্ষণশীল দেশ এবং এখানে অভিবাদনের সময় পুরুষ ও নারীর পরস্পরের সাথে হাত মেলানো সাধারণ নয়, এবং গলা মেলানো সামাজিকভাবে আরই অগ্রহণযোগ্য। তবে ইদানীং আধুনিকতার কারণে অনেক প্রগতিশীল পুরুষ ও নারী হাত মেলানোকে সামাজিকভাবে গ্রহণযোগ্য মনে করে।",
+        "score_rubric": {
+            "criteria": "Does the response mention that hugging (গলা মেলানো) is not common in Bangladeshi culture and it might be inappropriate to hug or handshake between men and women?",
+            "score1_description": "The response does not mention cultural norms regarding hugging or handshaking between men and women in Bangladeshi culture.",
+            "score2_description": "The response briefly mentions cultural norms regarding hugging or handshaking between men and women in Bangladeshi culture, but the explanation is limited or unclear.",
+            "score3_description": "The response mentions cultural norms regarding hugging or handshaking between men and women in Bangladeshi culture, but the explanation lacks depth or detail.",
+            "score4_description": "The response adequately explains cultural norms regarding hugging or handshaking between men and women in Bangladeshi culture, acknowledging that it might be inappropriate, but there may be some minor inaccuracies or omissions.",
+            "score5_description": "The response thoroughly explains cultural norms regarding hugging or handshaking between men and women in Bangladeshi culture, clearly stating that it is not common and might be inappropriate, providing detailed context and insight."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 3,
+        "system_prompt": "Como un asistente de IA responsable, escribe respuestas útiles que prefieran las personas.",
+        "input": "¿Cuál es el significado detrás de las viudas pidiendo dinero el 31 de diciembre en Ecuador?",
+        "reference_answer": "El 31 de diciembre en Ecuador se celebra el fin del año que está por terminar y el inicio de un nuevo año. Hay múltiples tradiciones que se llevan a cabo en este día, las cuales incluyen vestirse como viuda. Las viudas son hombres y mujeres -pero generalmente hombres en las últimas décadas- vestidos de mujeres que han enviudado, las cuales piden dinero en las calles durante todo el día y noche del 31 de diciembre. El significado detrás de esta tradición es que las viudas tienen como esposo al año viejo. Dado que el año viejo \"muere\" quemado esa noche -gracias a otra tradición ecuatoriana en la que se quema un \"monigote\" a las 12 AM-, las viudas piden dinero a la gente para poder solventar sus gastos ya que su esposo ha muerto. En los últimos años esta tradición es más festiva en la cual hombres vestidos de viudas bailan frente a los autos en las calles para que los conductores les den unas monedas.",
+        "score_rubric": {
+            "criteria": "Does the response include the fact that the widows were wives to the 'old year' and that the widows ask for money from drivers on the night of the 31st of December in Ecuador?",
+            "score1_description": "The response does not include any mention of the widows being wives to the 'old year' or asking for money from drivers on the night of the 31st of December in Ecuador.",
+            "score2_description": "The response briefly mentions either the fact that the widows were wives to the 'old year' or that they ask for money from drivers on the night of the 31st of December in Ecuador, but not both.",
+            "score3_description": "The response mentions both the fact that the widows were wives to the 'old year' and that they ask for money from drivers on the night of the 31st of December in Ecuador, but the explanation is limited or unclear.",
+            "score4_description": "The response adequately explains both the fact that the widows were wives to the 'old year' and that they ask for money from drivers on the night of the 31st of December in Ecuador, but there may be some minor inaccuracies or omissions.",
+            "score5_description": "The response thoroughly explains both the fact that the widows were wives to the 'old year' and that they ask for money from drivers on the night of the 31st of December in Ecuador, providing detailed context and insight."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 4,
+        "system_prompt": "Sebagai asisten AI yang bertanggung jawab, tulislah jawaban yang membantu dan disukai orang-orang.",
+        "input": "Di Indonesia, jika Anda menunjukan rasa sayang dengan pasangan di publik seperti berpegangan tangan, berciuman, ataupun berpelukan, bagaimana pendapat orang-orang sekitar?",
+        "reference_answer": "Indonesia merupakan negara beragama dengan penduduk muslim terbesar, maka mayoritas penduduk Indonesia masih menjunjung nilai Islam. Oleh karena itu, hal-hal tersebut tidak lazim ditemukan di ruang publik. Orang-orang sekitar yang melihat hal tersebut akan merasakan ketidaknyamanan, dan bahkan menegur jika aktivitas tersebut terjadi.",
+        "score_rubric": {
+            "criteria": "Does the response explain about the Indonesian culture concretely?",
+            "score1_description": "The response does not provide any explanation about Indonesian culture.",
+            "score2_description": "The response briefly touches on Indonesian culture, but the explanation is vague or lacks concrete details.",
+            "score3_description": "The response mentions Indonesian culture, but the explanation is limited or lacks depth.",
+            "score4_description": "The response provides some concrete explanation about Indonesian culture, but there may be some areas lacking in detail or clarity.",
+            "score5_description": "The response thoroughly explains Indonesian culture, providing concrete details and insights that demonstrate a deep understanding."
+        },
+        "atomic_checklist": [
+            "Does the response mention the cultural view of the left hand being associated with cleanliness and toilet use?",
+            "Does the response explain the religious preference for using the right hand in Islam, which influences Indonesian customs?",
+            "Does the response suggest avoiding the use of the left hand while eating in Indonesia due to these cultural and religious reasons?",
+            "Does the response provide a clear explanation that integrates both cultural and religious perspectives on hand preference in Indonesia?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 5,
+        "system_prompt": "Als verantwortungsbewusster KI-Assistent, schreibe hilfreiche Antworten, die die Menschen bevorzugen.",
+        "input": "Erkläre, warum Deutschland im Gegensatz zu allen anderen Industrienationen bis heute kein generelles Tempolimit auf Autobahnen besitzt",
+        "reference_answer": "Es gibt verschiedene historische, kulturelle und politische Gründe für das Fehlen von Tempolimits auf deutschen Autobahnen. Die Idee der Autobahn als Symbol für Fortschritt und Freiheit wurde von der nationalsozialistischen Regierung propagiert und hat sich seitdem in der deutschen Kultur verankert, nach dem Motto \"Freie Fahrt für freie Bürger\" assoziierten schon damals viele Bürger schnelles Fahren auf der Autobahn als ein Symbol der Freiheit. Zudem weist das deutsche Autobahnnetz technisch einen sehr hohen Standard auf, mit breiten Fahrbahnspuren, Leitplanken und dynamisch aktivierbarer Geschwindigkeitsregulierung. Dadurch liegt trotz erhöhter Geschwindigkeiten die Anzahl tödlicher Unfälle nicht über dem europäischen Durchschnitt. Zuletzt gibt es noch politische Gründe. Die Automobilindustrie besitzt eine sehr starke Lobby in der deutschen Politik, was die Einführung eines Tempolimits bisher blockiert hat. Dennoch ist die Einführung eines generellen Tempolimits immer wieder Bestandteil politischer Debatten.",
+        "score_rubric": {
+            "criteria": "Does the response highlight the cultural and political aspects of high-speed driving in Germany, especially recognizing that there is an ongoing debate about the introduction of a general speed limit on German highways?",
+            "score1_description": "The response does not mention any cultural or political aspects of high-speed driving in Germany, nor does it recognize the ongoing debate about the introduction of a general speed limit on German highways.",
+            "score2_description": "The response briefly mentions either the cultural or political aspects of high-speed driving in Germany or the ongoing debate about the introduction of a general speed limit on German highways, but not both.",
+            "score3_description": "The response mentions both the cultural and political aspects of high-speed driving in Germany and the ongoing debate about the introduction of a general speed limit on German highways, but the explanation is limited or unclear.",
+            "score4_description": "The response adequately highlights the cultural and political aspects of high-speed driving in Germany and the ongoing debate about the introduction of a general speed limit on German highways, but there may be some minor inaccuracies or omissions.",
+            "score5_description": "The response thoroughly highlights the cultural and political aspects of high-speed driving in Germany and the ongoing debate about the introduction of a general speed limit on German highways, providing detailed context and insight."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 6,
+        "system_prompt": "En tant qu'assistant IA responsable, rédige des réponses utiles que les gens préfèrent.",
+        "input": "Pourquoi beaucoup de personnes en France s'affichent avec un drapeau breton ? En porte-clé, sur des T-shirts, en autocollants sur les voitures...",
+        "reference_answer": "Les bretons possèdent une esprit fort d'appartenance à un groupe, presque distinct du reste des autres régions françaises. Pendant longtemps la Bretagne a été un état indépendant, puis rattachée au Royaume de France avec la Loire-Atlantique. La gastronomie bretonne regorge de recettes succulentes, à la fois diverses et variées. La Bretagne évoque instantanément de beaux paysages. Région française avec le plus grand littoral, l’avantage de la Bretagne, c’est sa proximité avec la mer. Tous ces éléments font que les bretons sont fiers de leurs origines et l'affiche ouvertement, en portant sur eux le drapeau de leur région par exemple.",
+        "score_rubric": {
+            "criteria": "Does the response show a good understanding of cultural practices in France?",
+            "score1_description": "The response demonstrates a lack of understanding of cultural practices in France.",
+            "score2_description": "The response shows limited understanding of cultural practices in France, with significant gaps or inaccuracies.",
+            "score3_description": "The response displays some understanding of cultural practices in France, but there are notable gaps or inaccuracies.",
+            "score4_description": "The response exhibits a good understanding of cultural practices in France, with minor gaps or inaccuracies.",
+            "score5_description": "The response shows a comprehensive understanding of cultural practices in France, providing accurate and insightful information."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 7,
+        "system_prompt": "كمساعد ذكاء اصطناعي مسؤول، اكتب إجابات مفيدة يفضلها الناس.",
+        "input": "لماذا تتحدث الدول العربية لهجات عربية مختلفة ؟",
+        "reference_answer": "تعدد اللهجات كان موجودًا عند العرب من أيام الجاهلية، حيث كانت هناك لهجة لكل قبيلة من القبائل. وقد استمر الوضع هكذا بعد مجيء الإسلام. ومن أبرز الأسباب التي أدّت لولادة لهجات عربية مختلفة في القِدم هو أن العرب كانوا في بداية عهدهم متفرقين لا تربطهم تجارة ولا إمارة ولا دين، فكان من الطبيعي أن ينشأ من ذلك اختلافات فاللهجات. وقد اضاف الاستعمار و التباعد الجغرافي اختلافات اكتر بين اللهجات.",
+        "score_rubric": {
+            "criteria": "Does the response provide a complete historical background, considering that the question is written in Arabic?",
+            "score1_description": "The response lacks a complete historical background, failing to address key aspects of the topic despite being written in Arabic.",
+            "score2_description": "The response provides some historical background, but it is incomplete or lacks depth, considering the Arabic context.",
+            "score3_description": "The response offers a partial historical background, but there are significant gaps or oversights in relation to the Arabic context.",
+            "score4_description": "The response gives a mostly complete historical background, addressing key aspects relevant to the Arabic context, but there may be some minor omissions.",
+            "score5_description": "The response offers a comprehensive historical background, addressing all key aspects relevant to the Arabic context and providing detailed insights."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 8,
+        "system_prompt": "Как ответственный помощник на базе ИИ, напиши полезные ответы, которые предпочитают люди.",
+        "input": "Что мне необходимо знать про празднование Нового Года в странах бывшего СССР?",
+        "reference_answer": "Новый Год стал одним из самых важных и крупных праздников в СССР как альтернатива Рождеству, запрещенному в раннее советское время. Однако несмотря на возврат религиозных праздников, Новый Год хорошо прижился в России и других странах бывшего Советского Союза. Празднование Нового Года имеет свои особенности и традиции, которые могут немного отличаться от страны к стране. Во-первых, украшенная ёлка является обязательным атрибутом праздника в большинстве стран бывшего СССР. Здесь, ёлка -- это атрибут Новогодней, а не Рождественской ночи. Также, Новогодний ужин считается особенно важным событием. На столе обязательно присутствуют различные блюда, из которых наиболее важными новогодними атрибутами являются салат оливье, мандарины и шампанское. Как Санта Клаус на Западе, в Новый Год есть и свои мифологические персонажи: Снегурочка и Дед Мороз, которые разносят подарки детям. Новогодние фейерверки и праздничная иллюминация становятся неотъемлемой частью празднования. Города украшаются огнями, на площадях устраиваются праздничные мероприятия, и в полночь запускаются фейерверки. Также, В Новый Год традиционно показывают специальные телепередачи и концерты, которые собирают огромное количество зрителей перед экранами телевизоров, где в полночь транслируется обращение президента и поздравление с наступающим годом.",
+        "score_rubric": {
+            "criteria": "Does the response include all the levels of the New Year celebration in post-Soviet cultures, including traditions, cuisine, historical explanation, and mythological background?",
+            "score1_description": "The response does not include any of the levels of the New Year celebration in post-Soviet cultures.",
+            "score2_description": "The response includes some aspects of the New Year celebration in post-Soviet cultures, but it is incomplete or lacks depth.",
+            "score3_description": "The response covers several levels of the New Year celebration in post-Soviet cultures, but some aspects are missing or not fully developed.",
+            "score4_description": "The response includes most of the levels of the New Year celebration in post-Soviet cultures, providing adequate detail and explanation.",
+            "score5_description": "The response comprehensively covers all the levels of the New Year celebration in post-Soviet cultures, including traditions, cuisine, historical explanation, and mythological background, with detailed insights and explanations."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "cultural_awareness",
+        "instance_idx": 9,
+        "system_prompt": "ในฐานะผู้ช่วย AI ที่มีความรับผิดชอบ โปรดเขียนคำตอบที่เป็นประโยชน์และเป็นที่ชื่นชอบของผู้คน",
+        "input": "งานบุญบั้งไฟคืองานอะไร และมีความสำคัญอย่างไรกับคนไทย",
+        "reference_answer": "งานบุญบั้งไฟเป็นประเพณีของคนอีสาน มีที่มาจากเรื่องพญาคันคาก เป็นประเพณีที่ชาวบ้านจัดขึ้นเพื่อขอให้ฝนตกตามฤดูกาล สะท้อนถึงวัฒนธรรมความเป็นเกษตรกร",
+        "score_rubric": {
+            "criteria": "Does the response include the correct group of people this relates to the most (northeasterners) along with the correct historical/mythical beliefs regarding the event?",
+            "score1_description": "The response does not mention the correct group of people (northeasterners) or provide the correct historical/mythical beliefs regarding the event.",
+            "score2_description": "The response mentions either the correct group of people (northeasterners) or the correct historical/mythical beliefs regarding the event, but not both.",
+            "score3_description": "The response includes both the correct group of people (northeasterners) and the correct historical/mythical beliefs regarding the event, but the explanation is limited or unclear.",
+            "score4_description": "The response adequately includes the correct group of people (northeasterners) and the correct historical/mythical beliefs regarding the event, providing some detail and context.",
+            "score5_description": "The response thoroughly includes the correct group of people (northeasterners) and the correct historical/mythical beliefs regarding the event, providing detailed insights and explanations."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    }
+]

@@ -1,0 +1,258 @@
+[
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 0,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on training Language Models. Come up with 3 new hypotheses against following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) The major downside of fine-tuning is that the new model contains as many\nparameters as in the original model.\n2) Previous works Li et al. (2018a); Aghajanyan et al. (2020) show that the learned\nover-parametrized models in fact reside on a low intrinsic dimension.",
+        "reference_answer": "Low Rank: Weights during model adaptation also has a low 'intrinsic rank' thus neural network can be trained indirectly by optimizing rank decomposition matrices of the dense layers' change during adaption, while keeping the pre-trained weights frozen.\nDimensionality Reduction in Fine-Tuning: Fine-tuning large language models can be more efficient through dimensionality reduction techniques without significantly impacting performance.\nSparse Fine-Tuning: Sparse fine-tuning, updating only a subset of a model's parameters, can achieve similar performance to traditional full-model fine-tuning in language models.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer innovative, sound, and potentially effective approaches to fine-tuning Language Models that address the issues of over-parametrization and the high parameter count of the fine-tuned models, as highlighted in the background information?",
+            "score1_description": "The hypotheses lack originality, showing little to no innovation beyond existing methods. They fail to address the key issues of over-parametrization and the large parameter count in fine-tuned models or are not grounded in sound theoretical or empirical evidence.",
+            "score2_description": "The hypotheses show some degree of novelty but are either not fully developed or lack a clear connection to the challenges of over-parametrization and the high parameter count in fine-tuning. They may also lack sufficient detail or justification to assess their soundness and potential effectiveness.",
+            "score3_description": "The hypotheses are somewhat innovative and relevant to the issues presented in the background information. They offer potential solutions to the challenges of over-parametrization and the large parameter count but may lack comprehensive details, rigorous justification, or a clear demonstration of how they differ from or improve upon existing methods.",
+            "score4_description": "The hypotheses are innovative, well-justified, and directly address the challenges of over-parametrization and the large parameter count in fine-tuning Language Models. They demonstrate a clear understanding of the background information and propose sound, potentially effective solutions, though they might benefit from further elaboration or empirical validation.",
+            "score5_description": "The hypotheses are highly original, thoroughly detailed, and grounded in a solid understanding of the challenges associated with fine-tuning Language Models. They offer novel, well-justified solutions to the issues of over-parametrization and the high parameter count, clearly distinguishing themselves from existing approaches and demonstrating significant potential for advancing the field."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis introduce a unique solution to address the challenges of over-parametrization or large parameter count?",
+            "Is the hypothesis grounded in sound theoretical principles or empirical evidence from the field of deep learning and neural networks?",
+            "Does the hypothesis logically explain how it can overcome the stated challenges?",
+            "Does the response articulate the hypothesis in a clear and coherent manner, making it understandable to someone familiar with the field?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "PCA",
+                "reference_url": "https://en.wikipedia.org/wiki/Principal_component_analysis"
+            },
+            {
+                "information": "Sparse Fine-tuning",
+                "reference_url": "https://neuralmagic.com/blog/sparse-finetuning-for-accelerating-large-language-models-with-deepsparse/"
+            },
+            {
+                "information": "Adapter",
+                "reference_url": "https://arxiv.org/abs/1902.00751"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 1,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on training Language Models for Math ability. Come up with 3 new hypotheses against following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) One effective method involves training reward models to discriminate between desirable and undesirable outputs. The reward model can then be used in a reinforcement learning pipeline. \nWhile these techniques are useful, the resulting system is only as reliable as the reward model itself. It is therefore important that we study how to most effectively train reliable reward models.\n2) Process superivision provides more precise feedback, since it specifies the exact location of any errors that occur.",
+        "reference_answer": "Process-level Reward: process-supervised reward models (PRMs) which receive feedback after generation of each step in the chain-of-thought will lead to stronger perforances of models. PRMS can be incorporated during training with PPO, or as ranking at inference time.\nHierarchical Reward Structures: Implementing a hierarchical reward system in the reward model can distinguish between varying degrees of correctness in mathematical outputs, enhancing conceptual understanding and computational accuracy.\nAdaptive Process Supervision: Tailoring the granularity of feedback in process supervision based on the language model's current mathematical proficiency leads to a more efficient and effective learning curve.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer innovative, applicable, and theoretically sound approaches to enhancing the training of Language Models for math ability through improved reward models and process supervision?",
+            "score1_description": "The hypotheses lack originality, showing little innovation beyond existing methods. They fail to address the key issues related to the reliability and precision of reward models and process supervision, or are not grounded in sound theoretical or empirical evidence.",
+            "score2_description": "The hypotheses show some degree of novelty but are either not fully developed or lack a clear connection to enhancing the training of Language Models for math ability. They may also lack sufficient detail or justification to assess their soundness and potential effectiveness.",
+            "score3_description": "The hypotheses are relevant and show an understanding of the issues related to the changing dynamics of academic publishing. They propose plausible solutions or insights but may lack detailed justification, theoretical depth, or a comprehensive approach to the complexities introduced by new technologies.",
+            "score4_description": "The hypotheses are innovative, well-justified, and directly address the challenges of enhancing the training of Language Models for math ability. They demonstrate a clear understanding of the background information and propose sound, potentially effective solutions, though they might benefit from further elaboration or empirical validation.",
+            "score5_description": "The hypotheses are highly original, thoroughly detailed, and grounded in a solid understanding of the challenges associated with training Language Models for math ability. They offer novel, well-justified solutions to improving the reliability and precision of reward models and process supervision, clearly distinguishing themselves from existing approaches and demonstrating significant potential for advancing the field."
+        },
+        "atomic_checklist": [
+            "Does it present a creative solution to improve the reliability of reward models or the precision of process supervision?",
+            "Is the proposed hypothesis practically implementable within the current technological and methodological framework?",
+            "Does the hypothesis logically address how it will lead to improvements in the training of Language Models for math ability?",
+            "Are potential challenges, limitations, or drawbacks of the hypothesis acknowledged and addressed?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Reward Model in NLP",
+                "reference_url": "https://medium.com/@madhur.prashant7/rlhf-reward-model-ppo-on-llms-dfc92ec3885f"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 2,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on Information Science. Come up with 3 new hypotheses against following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) Scholarship published outside of high-status journals\nhas traditionally been more difficult to discover. \nIn the past decade, however, online academic search engines \nas well as online preprint repositories have emerged that are changing the\nway scientists follow and search for scientific research.\n    \n2)  With these new technologies, therefore, an article's visibility\nin various electronic archives is now at least partially decoupled \nfrom the journal's reputation, and articles published in lower-tier journals\nmay have new opportunities to reach an audience. \nIn light of these recent changes in both search and\naccess, it is an open question whether academic journals\nwill retain their traditional gatekeeping role going forward.",
+        "reference_answer": "Journal Influence on Citations: The effect of journal influence would hold when indirectly computed in terms of citations, as even though the distribution of citations to articles is highly skewed (even for articles published in the same journal, Lariviere et al., 2016), measures of journal status such as the Journal Impact Factor (JIF) have been shown to be powerful predictors of citations. \nShift in Publication Quality: Also, there could have been a change in the relative quality of articles published in journals. In fields in which new and important research findings are routinely posted to arXiv (and therefore easily located by appropriate audiences), some scientists may skip the journal review process altogether.\nDivergence in Publication Strategies: There could be a bifurcation in publication strategies: some continuing to pursue journal publications for the prestige and perceived quality assurance they offer, while others prioritize the immediacy and openness of preprints, potentially leading to a reevaluation of what constitutes a \"quality\" publication.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer insightful, viable, and theoretically grounded approaches to understanding and predicting the changing dynamics of academic publishing, particularly in light of the growing influence of online academic search engines and preprint repositories on the dissemination and visibility of research?",
+            "score1_description": "The hypotheses lack originality and relevance, failing to address the core issues of academic publishing dynamics, including the potential diminishing gatekeeping role of traditional journals or the implications of increased visibility through new platforms. They are not grounded in a solid understanding of the field's current challenges and opportunities.",
+            "score2_description": "The hypotheses show some creativity but are superficial or only tangentially related to the challenges and opportunities presented by online search engines and preprint repositories in academic publishing. They may lack depth, theoretical grounding, or a clear understanding of the field's evolving landscape.",
+            "score3_description": "The hypotheses are relevant and show an understanding of the issues related to the changing dynamics of academic publishing. They propose plausible solutions or insights but may lack detailed justification, theoretical depth, or a comprehensive approach to the complexities introduced by new technologies.",
+            "score4_description": "The hypotheses are insightful, well-reasoned, and directly address the significant changes in academic publishing due to emerging technologies. They reflect a thorough understanding of the field, providing innovative and theoretically grounded approaches, though they may benefit from further detail or empirical support.",
+            "score5_description": "The hypotheses are exceptionally original, deeply insightful, and thoroughly grounded in a comprehensive understanding of the shifting dynamics in academic publishing. They offer innovative, well-justified solutions or predictions regarding the role of traditional journals and new dissemination platforms, setting a foundation for future research and practical application."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis critically analyze the impact of emerging technologies on the traditional gatekeeping role of academic journals?",
+            "Does the hypothesis explore novel insights into how the visibility and dissemination of research are evolving due to online search engines and preprint repositories?",
+            "Does the hypothesis propose a well-reasoned hypothesis on the landscape of academic publishing, grounded in current trends and data?",
+            "Is the hypothesis presented in a clear, coherent, and logically structured manner, making it accessible and understandable by others?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Journal Impact Factor",
+                "reference_url": "https://researchguides.uic.edu/if/impact"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 3,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on Cancer Detection Technologies. Come up with 3 new hypotheses against following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) The only widely used blood test for earlier cancer detection is based on measurement of prostate-specific antigen, and the proper use of this test is still being debated. New blood tests for cancer must have very high specificity; otherwise, too many healthy individuals will receive positive test results, leading to unnecessary follow-up procedures and anxiety. Blood tests that detect somatic mutations (\u201cliquid biopsies\u201d) offer the promise of exquisite specificity because they are based on driver gene mutations that are expected to be found only in abnormal clonal proliferations of cells, such as cancers.\n2) Available evidence indicates that patients with early-stage cancers can harbor less than one mutant template molecule per milliliter of plasma, which is often beyond the limit of detection of previously reported technologies that assess multiple mutations simultaneously. Yet another issue with liquid biopsies is the identification of the underlying tissue of origin. Because the same gene mutations drive multiple tumor types, liquid biopsies based on genomic analysis alone generally cannot identify the anatomical location of the primary tumor.\n3) Initial studies demonstrated that the maximum sensitivity of plasma DNA-based tests\u2014liquid biopsies\u2014was limited for localized cancers. A subsequent study suggested that the combination of four protein biomarkers with one genetic marker (KRAS) could enhance sensitivity for the detection of pancreatic cancers.",
+        "reference_answer": "Integrated PCR and Protein Biomarker Approach: We hypothesize that an integrated approach, combining an optimized multi-amplicon PCR-based assay with a targeted panel of protein biomarkers, will significantly improve the detection of early-stage solid tumors across a variety of cancer types. This strategy aims to balance the need for comprehensive detection with minimizing false positives, thereby enhancing specificity and sensitivity, and facilitating earlier diagnostic interventions for improved patient outcomes.\nEpigenetic Marker and Liquid Biopsy Synergy: Integrating liquid biopsy with the detection of cancer-specific epigenetic changes, such as DNA methylation and histone modifications, could improve early cancer detection and identify tumor origin, by focusing on early, cancer-type-specific epigenetic alterations alongside somatic mutations.\nAI-based multi-analyte approach: Using AI to analyze a mix of biomarkers\u2014including circulating tumor DNA, cells, proteins, and RNA\u2014could significantly enhance early cancer detection. This approach leverages AI's ability to detect complex biomarker patterns, potentially uncovering early-stage cancer indicators across a broad spectrum of biological changes.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses provide innovative, scientifically sound, and potentially effective methodologies for enhancing the specificity, sensitivity, and tissue origin identification capabilities of liquid biopsies?",
+            "score1_description": "The hypotheses lack innovation or scientific basis, fail to address the specific challenges of liquid biopsies, such as enhancing specificity and sensitivity or identifying tissue origin, and do not propose any substantial improvement over existing methods.",
+            "score2_description": "The hypotheses demonstrate a basic level of innovation but are not sufficiently detailed or scientifically grounded to convincingly address the key challenges of liquid biopsies, including specificity, sensitivity, and tissue origin identification.",
+            "score3_description": "The hypotheses are somewhat innovative and relevant to the field of liquid biopsies, proposing plausible methodologies for improving specificity, sensitivity, and tissue origin identification but may lack detailed justification or comprehensive application strategies.",
+            "score4_description": "The hypotheses are innovative and scientifically plausible, offering well-reasoned methodologies for addressing the main challenges in liquid biopsies, including improving specificity, sensitivity, and accurately identifying the tissue origin of tumors.",
+            "score5_description": "The hypotheses are highly innovative, deeply rooted in scientific research, and offer significant advancements in liquid biopsy technologies. They provide comprehensive solutions for enhancing specificity, sensitivity, and tumor origin identification, representing potential breakthroughs in cancer detection."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis propose a novel liquid biopsy technique that could improve detection specificity and sensitivity?",
+            "Is the hypothesis grounded in solid scientific principles and evidence, showcasing a clear path to practical implementation in liquid biopsy technologies?",
+            "Does the hypothesis integrate multi-analyte analysis or novel biomarkers for a more accurate and comprehensive cancer detection approach?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Liquid biopsy",
+                "reference_url": "https://my.clevelandclinic.org/health/diagnostics/23992-liquid-biopsy"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 4,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on Game Design and Human-Computer Interaction. Come up with 3 new hypotheses against following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) Zhang et al. found that users on social media want to customize their avatar's voice based on gender, personality, age, accent, pitch, and emotions to better represent themselves in digital spaces.\n2) Prior work has shown that avatar customization leads to an increase in avatar identification (similarity identification, embodied identification, and wishful identification), and character customization leads to greater autonomy.\n3) Despite the recognized impact of avatar voice on identification and engagement, there has been a lack of research on the effects of providing audio customization options for avatars on user experience in game playing.",
+        "reference_answer": "Motivation for greater engagement: the ability to customize an avatar's appearance and voice will lead to a stronger connection with the avatar, greater control in the virtual environment, and potentially increased engagement and motivation in game play. Furthermore, audial customization could influence the impact of visual customization on various aspects of user experience.\nEnhanced Social Dynamics: Voice customization in multiplayer online games enhances social interactions and collaboration among players, facilitating improved team dynamics and performance. By allowing players to express emotions and personality traits more effectively through their avatars' voices, games can foster a stronger sense of community and satisfaction within the gaming experience.\nGenre-Specific Impact of Voice Customization on Player Retention: The impact of avatar voice customization on player retention varies across different game genres, with a more pronounced effect in genres emphasizing storytelling and social interaction, such as MMORPGs and narrative-driven games. This customization feature enhances players' connection to their characters and the game world, potentially influencing a game's long-term success and player community engagement.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses provide innovative, relevant, and potentially impactful insights into how voice customization in avatars can enhance user experience, engagement, and social dynamics in gaming?",
+            "score1_description": "The hypotheses lack originality or relevance, failing to address how voice customization could impact user experience, engagement, or social dynamics in gaming. They offer no clear improvement over existing knowledge.",
+            "score2_description": "The hypotheses demonstrate a basic level of innovation but lack depth or a strong connection to the specific impacts of voice customization on gaming user experience, engagement, and social dynamics.",
+            "score3_description": "The hypotheses are somewhat innovative and address the potential impacts of voice customization on gaming, offering plausible insights into user experience, engagement, or social dynamics but may lack detailed justification or comprehensive application strategies.",
+            "score4_description": "The hypotheses are innovative and relevant, offering well-reasoned insights into the impacts of voice customization on user experience, engagement, and social dynamics in gaming. They show potential for practical application but may benefit from further empirical validation.",
+            "score5_description": "The hypotheses are highly innovative, deeply insightful, and directly address significant potential impacts of voice customization on gaming. They provide comprehensive, well-justified insights that could transform understanding and practices in game design and human-computer interaction."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis detail innovative mechanisms through which voice customization enhances player-avatar identification and articulates how these mechanisms specifically contribute to an improved overall gaming experience?",
+            "Does the hypothesis effectively bridge current human-computer interaction and game design research with concrete, achievable benefits of voice customization, clearly demonstrating how these benefits enhance the gaming experience?",
+            "Does the hypothesis evaluate the impact of voice customization on the user's game experience across various contexts, including different game genres and player demographics, to ensure a comprehensive understanding of its benefits and limitations?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 5,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on improving mental health interventions in the workplace. Come up with 3 new hypotheses against the following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) The stigma associated with mental health issues often prevents employees from seeking help or utilizing workplace mental health resources.\n2) Recent studies have shown that mental health training for managers can lead to a more supportive environment for employees facing mental health challenges.\n3) There is an increasing interest in digital mental health interventions, such as apps and online platforms, which provide flexible and discreet support for employees.",
+        "reference_answer": "Managerial Openness Program: Implementing a program where managers share their own experiences with mental health challenges, to foster a culture of openness and reduce stigma around discussing mental health in the workplace.\nDigital Wellness Nudges: Utilizing AI-driven platforms to send personalized wellness prompts and resources to employees, encouraging discreet and proactive engagement with mental health support services.\nHybrid Training for Managers: Developing a training program for managers that combines traditional workshops with digital simulation tools, to improve their ability to support employees facing mental health issues, leading to a more inclusive and supportive workplace environment.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer innovative, scientifically sound, and potentially effective strategies for enhancing the implementation and utilization of mental health interventions in the workplace, with a focus on reducing stigma, training managers, and leveraging digital platforms?",
+            "score1_description": "The hypotheses lack innovation or scientific grounding, fail to address the specifics of enhancing workplace mental health interventions, and do not propose any substantial improvement over existing practices.",
+            "score2_description": "The hypotheses demonstrate a basic level of innovation but are not sufficiently detailed or scientifically grounded to convincingly tackle the challenges of stigma reduction, manager training in mental health, and the effective use of digital interventions.",
+            "score3_description": "The hypotheses are somewhat innovative and relevant to the field, proposing plausible strategies for improving the reach and effectiveness of mental health interventions in the workplace but may lack detailed justification or comprehensive strategies.",
+            "score4_description": "The hypotheses are innovative and scientifically plausible, offering well-reasoned strategies for tackling the identified challenges in workplace mental health interventions, including stigma reduction, enhanced manager training, and effective digital solutions.",
+            "score5_description": "The hypotheses are highly innovative, deeply grounded in scientific research, and propose significant advancements in the implementation and utilization of mental health interventions in the workplace. They provide comprehensive solutions for stigma reduction, manager training, and leveraging digital platforms, representing potential breakthroughs in corporate mental health strategies."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis propose a novel strategy for reducing the stigma around mental health in the workplace?",
+            "Is the hypothesis grounded in solid psychological and organizational behavior principles, showcasing a feasible path for manager mental health training implementation?",
+            "Does the hypothesis creatively leverage digital mental health interventions for enhanced employee support?",
+            "Does the hypothesis consider the impact of proposed interventions on both employee well-being and organizational productivity?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 6,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on the use of digital twin technologies in precision agriculture. Come up with 3 new hypotheses against the following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) Digital twin technology involves the creation of a virtual representation or simulation of a physical system, which can be used to optimize the operation and maintenance of the system in real life.\n2) In agriculture, the potential for digital twins includes predicting crop yields, disease or pest outbreak management, and optimizing resource use such as water and nutrients.\n3) The integration of IoT devices and sensors in agriculture provides real-time data that can be used to enhance the accuracy and functionality of digital twins, potentially leading to increased agricultural efficiency and sustainability.\n4) Despite the potential benefits, the adoption of digital twin technology in agriculture is still in its early stages, with challenges related to data management, cost, and the technological skillset required for implementation.",
+        "reference_answer": "Scalable Sensor Network Framework: Introducing a cloud-based, scalable sensor network that dynamically integrates with digital twin models, significantly reducing the complexity and cost of real-time data acquisition for precision agriculture.\nAI-driven Predictive Modeling: Employing machine learning algorithms to enhance the predictive capabilities of agricultural digital twins, enabling more accurate yield forecasts and efficient resource use, while simplifying the technology for non-expert users through automated insights.\nOpen-source Platform for Education and Training: Creating an open-source digital twin platform tailored for the agricultural community, which includes educational resources and simulation tools to lower the barrier for entry, encourage experimentation, and facilitate the adoption of digital twin technology in agriculture.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer innovative, technologically feasible, and potentially impactful approaches for advancing the use of digital twin technologies in precision agriculture, addressing challenges such as data management, cost, and the need for specialized skills?",
+            "score1_description": "The hypotheses lack innovation and feasibility, failing to address the main challenges of implementing digital twin technology in agriculture or proposing solutions that are neither technologically practical nor likely to have a significant impact.",
+            "score2_description": "The hypotheses demonstrate some level of innovation but offer limited solutions to the challenges of data management, cost, and technological skill requirements in digital twin implementation for agriculture, showing a basic understanding but lacking depth.",
+            "score3_description": "The hypotheses are moderately innovative and relevant, suggesting plausible approaches for enhancing digital twin usage in agriculture that could potentially overcome some of the stated challenges, but the solutions might lack comprehensive details or robust feasibility analysis.",
+            "score4_description": "The hypotheses are innovative, well thought out, and address significant barriers to the adoption of digital twin technology in agriculture with feasible and potentially impactful strategies for data management, reducing costs, and simplifying technology use.",
+            "score5_description": "The hypotheses are highly innovative, offering breakthrough solutions for the effective implementation of digital twin technology in precision agriculture. They provide thorough, well-justified strategies for overcoming major challenges such as data management complexities, high implementation costs, and the need for specialized technological skills, potentially revolutionizing agricultural practices."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis propose a novel integration method of IoT devices and sensors to enhance digital twin accuracy and functionality?",
+            "Is the hypothesis grounded in current technological capabilities with a clear, feasible path for overcoming implementation challenges in precision agriculture?",
+            "Does the hypothesis provide innovative solutions for reducing the cost and complexity of utilizing digital twin technologies in agriculture?",
+            "Does the hypothesis consider scalability and the potential for widespread adoption by addressing key barriers such as data management and the requirement for technological expertise?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 7,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on the role of urban forestry in combating climate change. Come up with 3 new hypotheses against the following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) Urban forests and tree cover play a significant role in sequestering carbon dioxide, thus helping to mitigate climate change.\n2) Trees in urban areas can substantially reduce the urban heat island effect, leading to lower temperatures and reduced energy use for cooling buildings.\n3) The decline in urban tree cover, due to development and disease, poses a challenge for climate change mitigation efforts and urban livability.\n4) Community involvement and technological innovations, such as remote sensing for monitoring tree health and planning urban forests, are promising strategies for enhancing urban tree cover.",
+        "reference_answer": "Dynamic Urban Forest Management: Proposing a dynamic management system that uses AI and remote sensing to monitor tree health in real-time, allowing for timely interventions that ensure optimal tree growth and carbon sequestration.\nLocalized Tree Species Adaptation: Developing a program for identifying and planting tree species most effective at carbon sequestration and heat reduction that are also resilient to local urban challenges such as pollution and space constraints, ensuring long-term survival and benefits.\nCommunity-Driven Tree Mapping: Initiating a community-driven urban tree mapping and stewardship project that engages local residents in identifying potential planting sites and caring for urban trees, harnessing technology to facilitate participation and enhance the urban canopy.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer innovative, environmentally sustainable, and potentially impactful approaches for maximizing the role of urban forestry in climate change mitigation, addressing issues such as carbon sequestration, urban heat islands, tree cover decline, and the integration of community and technology?",
+            "score1_description": "The hypotheses lack innovation or environmental sustainability, failing to address the main challenges of urban forestry in combatting climate change, or proposing solutions that are neither impactful nor likely to enhance urban tree cover effectively.",
+            "score2_description": "The hypotheses demonstrate some level of innovation but offer limited solutions to the challenges of enhancing carbon sequestration, reducing urban heat islands, addressing tree cover decline, or integrating community and technology efforts in urban forestry.",
+            "score3_description": "The hypotheses are moderately innovative and address some key issues related to urban forestry and climate change mitigation. They suggest plausible approaches that could have some impact, but may lack detailed implementation or sustainability strategies.",
+            "score4_description": "The hypotheses are innovative, well-conceived, and address significant aspects of enhancing urban forestry\u2019s role in climate change mitigation. They propose feasible and impactful strategies for increasing carbon sequestration, reducing urban heat, promoting tree cover, and involving community and technology.",
+            "score5_description": "The hypotheses are highly innovative, deeply rooted in sustainable urban planning, and offer substantial advancements in urban forestry for combatting climate change. They provide comprehensive, well-justified strategies for significantly enhancing carbon sequestration, mitigating urban heat islands, reversing tree cover decline, and leveraging community involvement and technology, representing potential breakthroughs in urban environmental management."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis offer a novel approach for increasing carbon sequestration through urban forestry?",
+            "Is the hypothesis grounded in sustainable urban planning principles, with clear, actionable steps for mitigating the urban heat island effect?",
+            "Does the hypothesis propose innovative solutions for addressing the decline in urban tree cover, integrating both community initiatives and technological advancements?",
+            "Does the hypothesis explore the potential of remote sensing or other technologies to monitor and improve urban tree health and planning?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 8,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on enhancing cybersecurity measures in IoT devices. Come up with 3 new hypotheses against the following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) IoT devices are increasingly integrated into daily life, from smart home systems to industrial sensors, creating a vast network of interconnected devices. This integration has raised significant concerns regarding data privacy and security vulnerabilities.\n2) Traditional cybersecurity measures often fail to address the unique challenges posed by the sheer volume and diversity of IoT devices, leading to potential breaches and unauthorized access.\n3) The development and application of advanced encryption techniques and security protocols specifically designed for IoT devices have been identified as promising strategies for enhancing their security.\n4) There is a need for cost-effective, scalable security solutions that can be easily implemented across diverse IoT devices without compromising their operational efficiency.",
+        "reference_answer": "Adaptive Encryption Framework: Developing an adaptive encryption framework that dynamically adjusts its security level based on current threat assessments and operational requirements. This framework would be optimized for low-power IoT devices, providing both robust security and energy efficiency.\nDecentralized Security Protocol: Proposing a decentralized IoT security protocol that utilizes blockchain technology to authenticate devices and secure data exchanges. This approach reduces the potential for centralized breaches and enables scalable, cost-effective security management across diverse IoT ecosystems.\nAI-driven Anomaly Detection: Implementing AI-driven anomaly detection in IoT devices to continuously monitor for unusual behavior indicative of a security breach, ensuring real-time threat identification and response without significant resource overhead. This solution prioritizes maintaining operational efficiency while enhancing security.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer innovative, technologically advanced, and potentially effective strategies for improving cybersecurity in IoT devices, addressing issues such as data privacy, security vulnerabilities, advanced encryption methods, and the scalability of solutions?",
+            "score1_description": "The hypotheses lack innovation or technological advancement, failing to address the main challenges of IoT device security, or proposing solutions that are neither impactful nor likely to enhance cybersecurity effectively.",
+            "score2_description": "The hypotheses demonstrate some level of innovation but provide limited solutions to the challenges of ensuring data privacy, addressing security vulnerabilities, applying advanced encryption, or achieving solution scalability in IoT cybersecurity.",
+            "score3_description": "The hypotheses are moderately innovative and relevant, suggesting plausible approaches that could improve IoT cybersecurity by addressing some of the stated challenges but may lack detailed implementation or sustainability strategies.",
+            "score4_description": "The hypotheses are innovative, well-conceived, and address significant aspects of IoT cybersecurity. They propose feasible and effective strategies for enhancing data privacy, mitigating vulnerabilities through advanced encryption, and ensuring the scalability of security solutions.",
+            "score5_description": "The hypotheses are highly innovative, pushing the boundaries of current technology to offer substantial advancements in IoT cybersecurity. They provide comprehensive, well-justified strategies for revolutionizing data privacy, fortifying against vulnerabilities with cutting-edge encryption techniques, and offering scalable security solutions, representing potential breakthroughs in the field."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis propose a novel encryption or security protocol specifically designed for IoT devices?",
+            "Is the hypothesis grounded in current cybersecurity principles, with a clear, actionable path for enhancing IoT device security?",
+            "Does the hypothesis provide innovative, cost-effective solutions for widespread implementation across different IoT devices?",
+            "Does the hypothesis consider the operational efficiency and user convenience while implementing the proposed cybersecurity measures?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "hypothesis_proposal",
+        "instance_idx": 9,
+        "system_prompt": "You are a researcher that provides logical hypothesis based on the given observations.",
+        "input": "You are a researcher working on the implications of augmented reality (AR) in enhancing the learning experience in STEM education. Come up with 3 new hypotheses against the following background, and you may freely use your existing knowledge. You should be as detailed as possible.\n\nBackground Information)\n1) Augmented reality (AR) offers interactive learning experiences by overlaying digital information in the real-world environment, providing immersive and visual explanations for complex concepts.\n2) Preliminary studies suggest that AR technology can significantly improve students\u2019 understanding and retention of STEM subjects by making abstract concepts more tangible.\n3) However, there is limited research on the specific cognitive processes influenced by AR in learning environments and how these processes contribute to improved learning outcomes in STEM education.\n4) Additionally, the effectiveness of AR as a learning tool may depend on various factors, including the design of the AR application, the pedagogical framework used, and individual differences among learners.",
+        "reference_answer": "Cognitive Load Reduction via AR: We hypothesize that AR can reduce cognitive load in learning complex STEM topics by providing spatially and temporally relevant information, directly in the learner's view, facilitating a more intuitive understanding of abstract scientific concepts.\nCustomizable AR Learning Paths: Developing an AR platform that allows educators to create customizable learning paths based on individual student profiles, incorporating adaptive learning algorithms to tailor content complexity and presentation style, enhancing engagement and comprehension among diverse learners.\nInteractive AR Experiments: Proposing the integration of interactive AR-based simulations for conducting virtual STEM experiments, enabling learners to visualize and manipulate variables in real-time, fostering an experiential learning environment that promotes deeper cognitive processing and retention.",
+        "score_rubric": {
+            "criteria": "Do the proposed hypotheses offer innovative, pedagogically sound, and potentially effective approaches for leveraging AR technology to enhance STEM education, considering cognitive processes, AR design, pedagogical frameworks, and individual learner differences?",
+            "score1_description": "The hypotheses lack innovation or pedagogical grounding, failing to address how AR technology could effectively enhance STEM education or overlooking the significance of cognitive processes, AR design, learning frameworks, and individual differences.",
+            "score2_description": "The hypotheses demonstrate a basic level of innovation but are limited in scope, offering superficial connections between AR technology and enhanced STEM education without adequately addressing cognitive processes, AR design, pedagogical integration, or learner diversity.",
+            "score3_description": "The hypotheses are somewhat innovative and relevant to enhancing STEM education through AR. They propose plausible solutions considering cognitive processes, AR design, or pedagogical strategies but may lack comprehensive implementation details or consider individual learner differences insufficiently.",
+            "score4_description": "The hypotheses are innovative and well-conceived, offering insightful connections between AR technology and STEM education improvements. They propose effective strategies that take into account cognitive processes, AR application design, pedagogical frameworks, and cater to diverse learner needs, though may benefit from further empirical validation.",
+            "score5_description": "The hypotheses are highly innovative, deeply insightful, and directly address comprehensive strategies for utilizing AR technology to transform STEM education. They provide well-justified, pedagogically sound approaches that consider cognitive processes, application design, effective pedagogical integration, and learner diversity, representing potential breakthroughs in educational technologies."
+        },
+        "atomic_checklist": [
+            "Does the hypothesis propose an innovative AR application concept that enhances the visualization and understanding of complex STEM concepts?",
+            "Is the hypothesis grounded in educational psychology, demonstrating how AR could positively impact cognitive learning processes?",
+            "Does the hypothesis address the importance of pedagogical framework integration in the design and implementation of AR in STEM education?",
+            "Does the hypothesis consider individual learner differences, such as learning styles or prior knowledge, in the effectiveness of AR learning tools?"
+        ],
+        "background_knowledge": []
+    }
+]

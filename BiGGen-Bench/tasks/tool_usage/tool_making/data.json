@@ -1,0 +1,232 @@
+[
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 0,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: Consider the range of numbers from 30 to 50. For each number in this range, find its prime factors. Then, identify all unique prime factors across this entire range. Calculate the sum of these unique prime factors. What is the sum?\nExisting tool:```python\ndef find_primes_in_range(start, end):\n    primes = []\n    for num in range(start, end + 1):\n        if num > 1:\n            for i in range(2, int(num**0.5) + 1):\n                if (num % i) == 0:\n                    break\n            else:\n                primes.append(num)\n    return primes\n```start = 10\nend = 50\nprime_numbers = find_primes_in_range(start, end)\nprint(prime_numbers)\nNew tool:",
+        "reference_answer": "```python\ndef prime_factors(number, primes):\n    factors = []\n    for prime in primes:\n        while number % prime == 0:\n            factors.append(prime)\n            number //= prime\n    return factors\n\ndef prime_factors_range_analyzer(range_start, range_end, primes_range):\n    primes = find_primes_in_range(2, primes_range)\n    factors_dict = {}\n    for num in range(range_start, range_end + 1):\n        factors_dict[num] = prime_factors(num, primes)\n    return factors_dict```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the existing tool to develop a new function that identifies prime factors within a specified range and calculates the sum of unique prime factors?",
+            "score1_description": "The response attempts to create a new function but fails to integrate the existing tool correctly, resulting in no meaningful output related to the task of finding prime factors.",
+            "score2_description": "The response incorporates the existing tool but only manages to identify prime factors for individual numbers without aggregating them across the specified range, missing the final step of calculating the sum of unique prime factors.",
+            "score3_description": "The response successfully uses the existing tool to find prime factors for each number in the range and identifies unique prime factors, but it contains minor logical or syntax errors that prevent the correct calculation of the sum of these unique factors.",
+            "score4_description": "The response effectively utilizes the existing tool to identify unique prime factors across the specified range but makes a slight error in the calculation or presentation of the sum of these unique prime factors.",
+            "score5_description": "The response excellently integrates the existing tool to identify unique prime factors within the specified range and accurately calculates the sum of these unique prime factors, following the logical flow of the solution process without any errors."
+        },
+        "atomic_checklist": [
+            "Does the response define a new function that leverages the existing tool to find prime factors?",
+            "Does the response include a loop or mechanism to analyze each number in the specified range?",
+            "Does the response implement a method to identify all unique prime factors across the entire range?",
+            "Is the sum of these unique prime factors correctly calculated and presented in the response?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 1,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: Given a paragraph of text, find the frequency of each word. Then, transform each word in the paragraph into its reverse, maintaining the original structure of the paragraph. What is the transformed paragraph?\nExisting tool:```python\ndef word_frequency_counter(text):\n    words = text.split()\n    frequency = {}\n    for word in words:\n        frequency[word] = frequency.get(word, 0) + 1\n    return frequency\n```\n**Example Usage**:\n\n```python\ntext = \"hello world world hello\"\nfrequencies = word_frequency_counter(text)\nprint(frequencies)\n```\nNew Tool:",
+        "reference_answer": "```python\ndef reverse_word(word):\n    return word[::-1]\n\ndef word_frequency_and_reverse_transformer(text):\n    frequencies = word_frequency_counter(text)\n    words = text.split()\n    transformed_words = [reverse_word(word) for word in words]\n    transformed_text = ' '.join(transformed_words)\n    return frequencies, transformed_text```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the existing tool to both calculate word frequencies and then reverse the words in the given text, maintaining the original paragraph structure?",
+            "score1_description": "The response fails to invoke the existing tool for word frequency calculation, and does not implement the reversal of words in the text, showing a lack of tool integration.",
+            "score2_description": "The response uses the existing tool to calculate word frequencies but fails to correctly reverse the words in the text, indicating partial tool usage.",
+            "score3_description": "The response correctly uses the existing tool for word frequency calculation and reverses the words, but does not maintain the original paragraph structure, showing an incomplete understanding of tool integration.",
+            "score4_description": "The response successfully uses the existing tool for word frequency calculation and reverses the words while maintaining the original structure, but contains minor errors in implementation or formatting.",
+            "score5_description": "The response adeptly uses the existing tool to calculate word frequencies, accurately reverses the words, and maintains the original paragraph structure, demonstrating full proficiency in tool usage."
+        },
+        "atomic_checklist": [
+            "Does the response utilize the existing word frequency counter function?",
+            "Does the response implement a function to reverse individual words?",
+            "Is the original paragraph structure maintained after the transformation?",
+            "Does the response return both the word frequencies and the transformed text?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 2,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: Scientists working on a collider experiment need to analyze the trajectories of particles resulting from high-energy collisions. The goal is to categorize these trajectories based on their curvature and energy levels to identify potential new particles or phenomena.\n\nExisting tool:\n\n```python\ndef trajectory_curvature_calculator(path_data):\n    # Assume path_data is a list of (x, y) coordinates\n    # Simple curvature calculation (placeholder for more complex physics calculations)\n    curvatures = []\n    for i in range(1, len(path_data) - 1):\n        x1, y1 = path_data[i - 1]\n        x2, y2 = path_data[i]\n        x3, y3 = path_data[i + 1]\n        k = 2 * (x2 - x1) * (y3 - y1) - 2 * (y2 - y1) * (x3 - x1)\n        curvature = 0 if k == 0 else 1 / k\n        curvatures.append(abs(curvature))\n    return curvatures\n```\n\nExample usage:\n\n```python\npath_data = [(0, 0), (1, 2), (2, 3), (3, 2), (4, 0)]\ncurvatures = trajectory_curvature_calculator(path_data)\nprint(curvatures)\n```\n\nNew tool:",
+        "reference_answer": "def integrated_particle_trajectory_analyzer(trajectory_data, energy_levels):\n    def calculate_curvature(path_data):\n        curvatures = []\n        for i in range(1, len(path_data) - 1):\n            x1, y1 = path_data[i - 1]\n            x2, y2 = path_data[i]\n            x3, y3 = path_data[i + 1]\n            k = 2 * (x2 - x1) * (y3 - y1) - 2 * (y2 - y1) * (x3 - x1)\n            curvature = 0 if k == 0 else 1 / k\n            curvatures.append(abs(curvature))\n        return sum(curvatures) / len(curvatures) if curvatures else 0\n\n    def categorize_trajectory(curvature, energy):\n        if energy > 10000 and curvature < 0.1:\n            return \"High Energy, Straight Line\"\n        elif energy < 1000 and curvature > 1:\n            return \"Low Energy, High Curvature\"\n        else:\n            return \"Standard Trajectory\"\n\n    analyzed_trajectories = []\n    for path, energy in zip(trajectory_data, energy_levels):\n        average_curvature = calculate_curvature(path)\n        category = categorize_trajectory(average_curvature, energy)\n        analyzed_trajectories.append((path, category))\n\n    return analyzed_trajectories",
+        "score_rubric": {
+            "criteria": "Does the response effectively demonstrate the use of the integrated_particle_trajectory_analyzer function to categorize particle trajectories based on curvature and energy levels?",
+            "score1_description": "The response attempts to use the new tool but fails to integrate the curvature calculation within the trajectory analysis, resulting in incorrect or no categorization of trajectories.",
+            "score2_description": "The response uses the new tool and includes curvature calculation, but the categorization of trajectories is based solely on one parameter (either curvature or energy) instead of both, leading to partially correct trajectory categorization.",
+            "score3_description": "The response correctly uses the new tool, incorporating both curvature and energy calculations, but the categorization logic is flawed or overly simplistic, resulting in mostly correct but some inaccurate trajectory categorizations.",
+            "score4_description": "The response demonstrates competent use of the new tool, accurately calculating curvature and energy, and categorizes most trajectories correctly, but minor inaccuracies in the categorization logic prevent perfect accuracy.",
+            "score5_description": "The response expertly uses the new tool, flawlessly integrating curvature and energy calculations, and categorizes all trajectories accurately, demonstrating a deep understanding of the tool's application in particle trajectory analysis."
+        },
+        "atomic_checklist": [
+            "Does the response define a function that integrates both curvature calculation and energy level analysis?",
+            "Does the response correctly implement the curvature calculation as part of the trajectory analysis?",
+            "Is the response successful in categorizing trajectories based on both curvature and energy levels?",
+            "Does the response handle edge cases, such as zero curvature or extreme energy levels, appropriately in the categorization logic?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 3,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question:\nGiven a list of planets in our solar system, calculate the orbital speed and period of each planet based on their average distance from the Sun and mass. Then, determine the planet with the longest and shortest orbital period.\nExisting Tool: Orbital Speed Calculator\n\n```python\ndef orbital_speed_calculator(distance_from_sun, sun_mass):\n\t\t\"\"\"\n\t\tThis function calculates the orbital speed of a planet based on its average distance from the Sun.\n\t\t\"\"\"\n    # Gravitational constant in m^3 kg^-1 s^-2\n    G = 6.67430e-11\n    # Orbital speed calculation using the formula v = sqrt(GM/r)\n    return (G * sun_mass / distance_from_sun) ** 0.5\n\ndef orbital_period_calculator(distance_from_sun, orbital_speed):\n    # Orbital circumference = 2 * pi * radius\n    circumference = 2 * 3.14159265359 * distance_from_sun\n    # Orbital period in seconds = circumference / speed\n    return circumference / orbital_speed\n```\n\nExample Usage:\n\n```python\n# Distance from the Sun to Earth in meters\ndistance_earth = 1.496e+11\n# Mass of the Sun in kilograms\nsun_mass = 1.989e+30\n\nearth_orbital_speed = orbital_speed_calculator(distance_earth, sun_mass)\nprint(f\"Earth's Orbital Speed: {earth_orbital_speed} m/s\")\n\n```",
+        "reference_answer": "def comprehensive_orbital_analysis(planets, distances, sun_mass):\n    orbital_data = {}\n    for planet, distance in distances.items():\n        speed = orbital_speed_calculator(distance, sun_mass)\n        period = orbital_period_calculator(distance, speed)\n        orbital_data[planet] = {\"speed\": speed, \"period\": period}\n\n    longest_period = max(orbital_data.items(), key=lambda x: x[1][\"period\"])\n    shortest_period = min(orbital_data.items(), key=lambda x: x[1][\"period\"])\n\n    return orbital_data, longest_period, shortest_period\n",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the existing Orbital Speed Calculator tool to solve the problem?",
+            "score1_description": "The response attempts to solve the problem without using the existing Orbital Speed Calculator tool, missing the core requirement of the task.",
+            "score2_description": "The response uses the Orbital Speed Calculator tool but fails to correctly apply it to calculate the orbital speed for each planet, resulting in incorrect or incomplete orbital data.",
+            "score3_description": "The response correctly uses the Orbital Speed Calculator tool to calculate the orbital speeds but makes errors in calculating the orbital periods or identifying the planets with the longest and shortest periods.",
+            "score4_description": "The response successfully uses the Orbital Speed Calculator to derive orbital speeds and periods for each planet but has minor inaccuracies in the final analysis or presentation of the planets with the longest and shortest orbital periods.",
+            "score5_description": "The response expertly utilizes the Orbital Speed Calculator to accurately calculate the orbital speeds and periods for each planet and correctly identifies the planets with the longest and shortest orbital periods."
+        },
+        "atomic_checklist": [
+            "Does the response use the existing Orbital Speed Calculator tool for calculating the orbital speed of each planet?",
+            "Does the response calculate the orbital period for each planet using the derived speeds?",
+            "Is the response successful in identifying the planet with the longest orbital period?",
+            "Is the response successful in identifying the planet with the shortest orbital period?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 4,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "A patient has undergone genetic testing, and their DNA sequence has been obtained. There is a need to analyze this sequence to identify any potential genetic diseases that the patient might be at risk for.\n\n**DNA Sequence of the Patient**: **`\"GCTAGCTCGATCGTAGCTACGTACGATCGAGCTAGCTACG\"`**\n\n**Known Mutation-Disease Mapping**:\n\n- **`\"GCTAGCTC\"`**: Disease X\n- **`\"ATCGTAGC\"`**: Disease Y\n- **`\"CGTACGAT\"`**: Disease Z\n\nQuestion: Analyze the patient's DNA sequence. Identify any matches with known mutations and report the potential genetic diseases associated with these mutations.\n\nExisting tool:\n\n```python\ndef dna_sequence_matcher(dna_sequence, known_mutations):\n    matches = []\n    for mutation in known_mutations:\n        if mutation in dna_sequence:\n            matches.append(mutation)\n    return matches\n```\n\nExample usage:\n\n```python\ndna_sequence = \"AGTCGATCGCGTAGCTAGTACGATCGA\"\nknown_mutations = [\"AGTCGATCG\", \"CGTAGCTAG\", \"TACGATCGA\"]\nmatches = dna_sequence_matcher(dna_sequence, known_mutations)\nprint(\"Matches:\", matches)\n```\n\nNew tool:",
+        "reference_answer": "```python\ndef genetic_disease_identifier(dna_sequence, mutation_disease_mapping):\n    matches = dna_sequence_matcher(dna_sequence, mutation_disease_mapping.keys())\n    diseases = [mutation_disease_mapping[match] for match in matches if match in mutation_disease_mapping]\n    return diseases```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the given tool to solve the problem without directly accessing or manipulating the DNA sequence?",
+            "score1_description": "The response attempts to directly manipulate the DNA sequence instead of using the given tool, failing to identify any diseases.",
+            "score2_description": "The response uses the tool but incorrectly, resulting in the identification of incorrect diseases or missing known mutations.",
+            "score3_description": "The response uses the tool to identify some of the diseases correctly but misses others due to partial use or misunderstanding of the tool's capabilities.",
+            "score4_description": "The response correctly uses the tool to identify most diseases, with minor errors in interpretation or execution that do not significantly impact the outcome.",
+            "score5_description": "The response correctly uses the tool to identify all potential diseases associated with the mutations, demonstrating full understanding and application of the tool."
+        },
+        "atomic_checklist": [
+            "Does the response use the existing dna_sequence_matcher function?",
+            "Does the response correctly pass the DNA sequence and known mutations to the tool?",
+            "Is the response free from direct manipulation of the DNA sequence?",
+            "Does the response correctly interpret the tool's output to identify potential diseases?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 5,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: Given historical data on the fluctuating prices of various stocks over the last year, identify the stock with the highest average price increase per quarter. Additionally, determine which quarter experienced the largest average price increase across all stocks.\n\nExisting tool:\n\n```python\ndef calculate_quarterly_growth(stock_prices):\n    # Assumes stock_prices is a dictionary { \"Stock\": { \"Q1\": Price, \"Q2\": Price, \"Q3\": Price, \"Q4\": Price }, ... }\n    growth_rates = {}\n    for stock, prices in stock_prices.items():\n        growth_rates[stock] = {\n            quarter: (prices[quarter] - prices[min(prices.keys())]) / (max(prices.keys()).remove(min(prices.keys())) or 1)\n            for quarter in prices\n        }\n    return growth_rates\n```\n\nExample usage:\n\n```python\nstock_prices = {\n    \"TechCo\": {\"Q1\": 100, \"Q2\": 150, \"Q3\": 175, \"Q4\": 200},\n    \"HealthCorp\": {\"Q1\": 80, \"Q2\": 120, \"Q3\": 160, \"Q4\": 190}\n}\ngrowth_rates = calculate_quarterly_growth(stock_prices)\nprint(\"Quarterly Growth Rates:\", growth_rates)\n```\n\nNew tool:",
+        "reference_answer": "```python\ndef stock_insight_analysis(stock_prices):\n    growth_rates = calculate_quarterly_growth(stock_prices)\n    avg_growth_per_stock = {stock: sum(growth.values())/len(growth.values()) for stock, growth in growth_rates.items()}\n    highest_avg_growth_stock = max(avg_growth_per_stock.items(), key=lambda x:x[1])[0]\n\n    quarterly_averages = {}\n    for stock, growth in growth_rates.items():\n        for quarter, rate in growth.items():\n            if quarter in quarterly_averages:\n                quarterly_averages[quarter].append(rate)\n            else:\n                quarterly_averages[quarter] = [rate]\n    avg_growth_per_quarter = {quarter: sum(rates)/len(rates) for quarter, rates in quarterly_averages.items()}\n    highest_avg_growth_quarter = max(avg_growth_per_quarter.items(), key=lambda x:x[1])[0]\n\n    return highest_avg_growth_stock, highest_avg_growth_quarter\n```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the calculate_quarterly_growth function to analyze the stock data and deliver insights on the stock with the highest average price increase per quarter and the quarter with the largest average price increase across all stocks?",
+            "score1_description": "The response does not meaningfully use the existing function to analyze quarterly growth rates, resulting in incorrect or no insights on stock trends and quarterly growth.",
+            "score2_description": "The response uses the calculate_quarterly_growth function but only provides partial insights into the stock with the highest average price increase or the quarter with the highest increase, lacking thorough analysis.",
+            "score3_description": "The response correctly uses the calculate_quarterly_growth function to identify either the stock with the highest average price increase per quarter or the quarter with the largest average price increase, but not both.",
+            "score4_description": "The response successfully uses the calculate_quarterly_growth function to provide insights into both the stock with the highest average price increase and the quarter with the largest average increase, with minor errors in calculation or presentation.",
+            "score5_description": "The response expertly uses the calculate_quarterly_growth function to accurately identify the stock with the highest average price increase per quarter and the quarter with the largest average price increase across all stocks, showing comprehensive analysis and clear presentation."
+        },
+        "atomic_checklist": [
+            "Does the response correctly utilize the existing calculate_quarterly_growth function to calculate growth rates?",
+            "Is the stock with the highest average price increase per quarter correctly identified?",
+            "Is the quarter with the largest average price increase across all stocks accurately determined?",
+            "Does the response provide a clear analysis and presentation of the growth trends?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 6,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: In a study on dietary habits, researchers have compiled calorie intake data for different food items across various meals of the day. The goal is to find the average calorie intake per meal and identify the meal with the highest overall average calorie intake.\n\nExisting tool:\n\n```python\ndef calculate_average_calories(meal_data):\n    # Assumes meal_data is a dictionary { \"Meal\": [calories per item], ... }\n    averages = {}\n    for meal, calories in meal_data.items():\n        average = sum(calories) / len(calories)\n        averages[meal] = average\n    return averages\n```\n\nExample usage:\n\n```python\nmeal_data = {\n    \"Breakfast\": [300, 550, 400],\n    \"Lunch\": [600, 750, 700],\n    \"Dinner\": [500, 650, 600]\n}\naverages = calculate_average_calories(meal_data)\nprint(\"Average Calories:\", averages)\n```\n\nNew tool:",
+        "reference_answer": "```python\ndef meal_calorie_analysis(meal_data):\n    averages = calculate_average_calories(meal_data)\n    highest_average_meal = max(averages.items(), key=lambda x:x[1])[0]\n\n    return averages, highest_average_meal\n```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the calculate_average_calories function to analyze the meal data and deliver insights on average calorie intake per meal and the meal with the highest overall average calorie intake?",
+            "score1_description": "The response fails to meaningfully use the existing function to analyze average calorie intakes, resulting in incorrect or no insights on meal averages and the meal with the highest calorie intake.",
+            "score2_description": "The response uses the calculate_average_calories function but only provides partial insights into the average calorie intake per meal or the meal with the highest intake, lacking comprehensive analysis.",
+            "score3_description": "The response correctly uses the calculate_average_calories function to identify the average calorie intake per meal or the meal with the highest intake, but not both, showing gaps in the analysis.",
+            "score4_description": "The response successfully uses the calculate_average_calories function to provide insights into both the average calorie intake per meal and the meal with the highest intake, with minor errors in calculation or presentation.",
+            "score5_description": "The response expertly uses the calculate_average_calories function to accurately identify both the average calorie intake per meal and the meal with the highest overall average intake, demonstrating detailed analysis and clear presentation."
+        },
+        "atomic_checklist": [
+            "Does the response correctly utilize the existing calculate_average_calories function to calculate meal averages?",
+            "Is the average calorie intake per meal correctly calculated for each meal?",
+            "Is the meal with the highest overall average calorie intake accurately identified?",
+            "Does the response provide a comprehensive and clear analysis of the dietary habits?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 7,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: In an effort to enhance urban environmental quality, city planners are analyzing green space coverage across different city districts. The task is to calculate the average green space area per district and identify the district with the smallest green space coverage.\n\nExisting tool:\n\n```python\ndef calculate_green_space_areas(district_data):\n    # Assumes district_data is a dictionary { \"District\": [areas of green spaces], ... }\n    areas = {}\n    for district, spaces in district_data.items():\n        total_area = sum(spaces)\n        areas[district] = total_area\n    return areas\n```\n\nExample usage:\n\n```python\ndistrict_data = {\n    \"Downtown\": [2.5, 3.0, 1.2],\n    \"Suburb\": [4.0, 3.5, 2.1],\n    \"Rural Edge\": [5.2, 6.1, 4.3]\n}\nareas = calculate_green_space_areas(district_data)\nprint(\"Green Space Areas:\", areas)\n```\n\nNew tool:",
+        "reference_answer": "```python\ndef urban_green_space_analysis(district_data):\n    areas = calculate_green_space_areas(district_data)\n    averages = {district: area/len(district_data[district]) for district, area in areas.items()}\n    smallest_coverage_district = min(averages.items(), key=lambda x:x[1])[0]\n\n    return averages, smallest_coverage_district\n```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the calculate_green_space_areas function to analyze green space data and deliver insights on average green space area per district and the district with the smallest green space coverage?",
+            "score1_description": "The response fails to meaningfully use the existing function to analyze green space areas, resulting in incorrect or no insights on district averages and the district with the smallest coverage.",
+            "score2_description": "The response uses the calculate_green_space_areas function but provides partial insights into the average green space area per district or incorrectly identifies the district with the smallest coverage.",
+            "score3_description": "The response correctly uses the calculate_green_space_areas function to identify the average green space area per district or the district with the smallest coverage, but not both, showing incomplete analysis.",
+            "score4_description": "The response successfully uses the calculate_green_space_areas function to provide insights into both the average green space area per district and the district with the smallest coverage, with minor calculation or presentation errors.",
+            "score5_description": "The response expertly uses the calculate_green_space_areas function to accurately identify both the average green space area per district and the district with the smallest green space coverage, showing detailed analysis and clear presentation."
+        },
+        "atomic_checklist": [
+            "Does the response correctly utilize the existing calculate_green_space_areas function to calculate total areas?",
+            "Is the average green space area accurately calculated for each district?",
+            "Is the district with the smallest green space coverage accurately identified?",
+            "Does the response provide a comprehensive and clear analysis of green space distribution?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 8,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: A sports data analyst is tasked with examining the performance statistics of basketball players over a season. The goal is to find the player with the highest average points per game (PPG) and the most improved player based on points increase from the start to the end of the season.\n\nExisting tool:\n\n```python\ndef calculate_player_stats(player_data):\n    # Assumes player_data is a dictionary { \"Player Name\": { \"Games Played\": X, \"Total Points\": Y }, ... }\n    stats = {}\n    for player, data in player_data.items():\n        avg_ppg = data[\"Total Points\"] / data[\"Games Played\"]\n        stats[player] = avg_ppg\n    return stats\n```\n\nExample usage:\n\n```python\nplayer_data = {\n    \"John Doe\": {\"Games Played\": 82, \"Total Points\": 2024},\n    \"Jane Smith\": {\"Games Played\": 82, \"Total Points\": 1650}\n}\nstats = calculate_player_stats(player_data)\nprint(\"Player Stats:\", stats)\n```\n\nNew tool:",
+        "reference_answer": "```python\ndef basketball_player_insights(player_season_data):\n    stats = calculate_player_stats(player_season_data)\n    highest_avg_ppg_player = max(stats.items(), key=lambda x:x[1])[0]\n\n    improvement_stats = {player: (data['End of Season Points'] - data['Start of Season Points']) / data['Games Played'] for player, data in player_season_data.items()}\n    most_improved_player = max(improvement_stats.items(), key=lambda x:x[1])[0]\n\n    return highest_avg_ppg_player, most_improved_player\n```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the calculate_player_stats function to analyze player performance and deliver insights on the player with the highest average PPG and the most improved player?",
+            "score1_description": "The response does not use the existing function to analyze player stats, resulting in incorrect insights or failure to identify the top performer and the most improved player.",
+            "score2_description": "The response makes use of the calculate_player_stats function but provides partial insights, correctly identifying either the top performer or the most improved player but not both.",
+            "score3_description": "The response correctly uses the calculate_player_stats function to identify the top performer in terms of average PPG but lacks robust comparison for the most improved player or vice versa.",
+            "score4_description": "The response successfully uses the calculate_player_stats to identify the player with the highest average PPG and provides a basic analysis for identifying the most improved player, with minor inaccuracies or assumptions.",
+            "score5_description": "The response expertly uses the calculate_player_stats function to accurately identify both the player with the highest average PPG and the most improved player based on points increase, showing comprehensive analysis and detailed comparison."
+        },
+        "atomic_checklist": [
+            "Does the response correctly utilize the existing calculate_player_stats function to calculate average PPG?",
+            "Is the player with the highest average PPG correctly identified?",
+            "Is there a methodology provided for identifying the most improved player?",
+            "Does the response provide a clear comparison and analysis of player improvements?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "tool_usage",
+        "task": "tool_making",
+        "instance_idx": 9,
+        "system_prompt": "Please write a Python function to solve the problems using the given tool. The function for the new tool should be wrapped by \n```python```",
+        "input": "Question: A meteorological institute aims to investigate rainfall patterns to predict potential flooding events in a region. Analyze the collected rainfall data over several months to calculate the average monthly rainfall. Identify the month with the highest rainfall, and predict the likelihood of flooding based on the historical data and threshold levels of rainfall that typically lead to flooding in the region.\n\nExisting tool:\n\n```python\ndef calculate_rainfall_statistics(rainfall_data):\n    # Assumes rainfall_data is a dictionary { \"Month\": [daily rainfall amounts], ... }\n    statistics = {}\n    for month, rainfalls in rainfall_data.items():\n        total_rainfall = sum(rainfalls)\n        average_rainfall = total_rainfall / len(rainfalls)\n        statistics[month] = {\"Total\": total_rainfall, \"Average\": average_rainfall}\n    return statistics\n```\n\nExample usage:\n\n```python\nrainfall_data = {\n    \"January\": [2.5, 3.1, 0.0, 1.2],\n    \"February\": [5.0, 4.8, 0.0, 2.1],\n    \"March\": [3.2, 2.1, 1.0, 2.3]\n}\nstatistics = calculate_rainfall_statistics(rainfall_data)\nprint(\"Rainfall Statistics:\", statistics)\n```\n\nNew tool:",
+        "reference_answer": "```python\ndef rainfall_analysis_and_flood_prediction(rainfall_data, flood_threshold):\n    rainfall_statistics = calculate_rainfall_statistics(rainfall_data)\n    highest_rainfall_month = max(rainfall_statistics.items(), key=lambda x:x[1]['Average'])[0]\n\n    flood_risk_assessment = {}\n    for month, stats in rainfall_statistics.items():\n        if stats['Total'] > flood_threshold:\n            flood_risk_assessment[month] = True\n        else:\n            flood_risk_assessment[month] = False\n\n    return {'Highest Rainfall Month': highest_rainfall_month, 'Flood Risk': flood_risk_assessment}\n```",
+        "score_rubric": {
+            "criteria": "Does the response effectively utilize the calculate_rainfall_statistics function to analyze rainfall data, calculate average monthly rainfall, identify the wettest month, and evaluate flooding likelihood?",
+            "score1_description": "The response fails to meaningfully engage with the existing function, resulting in incorrect calculations, no identification of the wettest month, and/or inaccurate flooding likelihood assessment.",
+            "score2_description": "The response uses the calculate_rainfall_statistics function but either does not correctly calculate the average monthly rainfall, fails to identify the wettest month accurately, or inadequately assesses flooding likelihood.",
+            "score3_description": "The response correctly uses the calculate_rainfall_statistics function to obtain rainfall statistics and identifies the wettest month or forecasts flooding likelihood, but not both, showing incomplete analysis.",
+            "score4_description": "The response successfully uses the calculate_rainfall_statistics to analyze rainfall, identifies the wettest month, and provides a general assessment of flooding likelihood, with minor miscalculations or incomplete risk assessment.",
+            "score5_description": "The response expertly uses the calculate_rainfall_statistics function to accurately analyze rainfall data, precisely identifies the wettest month, and provides a detailed and justified prediction of flooding likelihood based on historical rainfall thresholds."
+        },
+        "atomic_checklist": [
+            "Does the response correctly utilize the existing calculate_rainfall_statistics function to calculate monthly averages and total rainfall?",
+            "Is the month with the highest average rainfall correctly identified?",
+            "Does the response include a prediction of flooding likelihood based on rainfall data?",
+            "Is the assessment of flooding likelihood logically justified with reference to historical data and threshold levels?"
+        ],
+        "background_knowledge": []
+    }
+]

@@ -1,0 +1,265 @@
+[
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Given the principle below, answer to the following question.\n\n[Principle]\nNothing which is not intended to cause death, is an offence by reason of any harm which it may cause, or be intended by the doer to cause, or be known by the doer to be likely to cause, to any person for whose benefit it is done in good faith, and who has given a consent, whether express or implied, to suffer that harm, or to take the risk of that harm.\n\n[Question]\nDr. Mortimer performs a kidney operation on James, who is HIV positive and dies of hemorrhage. James had consented to the risks. Is Dr. Mortimer guilty of murder, culpable homicide not amounting to murder, or not guilty?",
+        "reference_answer": "Based on the given principle, Dr. Mortimer would most likely not be guilty of murder or culpable homicide not amounting to murder in the scenario described. The principle outlines that an act is not an offence if it was not intended to cause death and was performed for the benefit of a person who has given consent, whether express or implied, to suffer that harm or to take the risk of that harm.\n\nIn this scenario:\n\nIntention: There is no indication that Dr. Mortimer intended to cause death. The act in question was a medical operation, presumably intended to benefit James.\n\nConsent: James, being aware of his HIV-positive status, consented to the risks of the operation. This consent implies an understanding and acceptance of the potential for harm, including severe complications like hemorrhage.\n\nGood Faith: The scenario does not suggest that Dr. Mortimer acted in bad faith. If the operation was conducted according to standard medical practices and with professional care, it implies good faith action for James's benefit.\n\nTherefore, applying the given principle, Dr. Mortimer's actions, though resulting in an unfortunate outcome, do not constitute a criminal offense under the categories of murder or culpable homicide. However, it should be noted that legal interpretations can vary, and factors such as the specifics of the medical procedure, the standard of care exercised, and the manner of obtaining consent can influence legal outcomes. Additionally, this assessment is based on the provided principle and may not align with all jurisdictions' legal standards.",
+        "score_rubric": {
+            "criteria": "Does the response effectively apply the provided principle to the scenario to determine Dr. Mortimer's legal liability?",
+            "score1_description": "The response fails to connect the provided principle with the scenario involving Dr. Mortimer and James, resulting in a significantly incorrect conclusion about Dr. Mortimer's legal liability.",
+            "score2_description": "The response makes a rudimentary connection between the principle and the scenario but includes significant misunderstandings or omissions, leading to a flawed conclusion about Dr. Mortimer's legal liability.",
+            "score3_description": "The response correctly connects the principle to the scenario but overlooks some key aspects, such as the nature of consent or the intention behind the act, leading to a partially correct conclusion about Dr. Mortimer's legal liability.",
+            "score4_description": "The response adequately applies the principle to the scenario, recognizing key aspects like consent and intention. However, it includes minor errors or omissions, resulting in a largely accurate conclusion about Dr. Mortimer's legal liability.",
+            "score5_description": "The response excellently applies the principle to the scenario, accurately addressing consent, intention, and good faith, leading to a precise and well-supported conclusion about Dr. Mortimer's legal liability."
+        },
+        "atomic_checklist": [
+            "Does the response acknowledge that the principle exempts acts from being offenses if not intended to cause death and done with consent?",
+            "Does the response identify that Dr. Mortimer's act was intended to benefit James, indicating no intention to cause death?",
+            "Does the response consider James's consent to the risks of the operation as a key factor in determining Dr. Mortimer's liability?",
+            "Is the response consistent in applying the principle throughout the analysis, leading to a logical conclusion about Dr. Mortimer's legal liability?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "8. Dr Mortimer performed a kidney operation upon James for removal of kidney stones. James was already affected by HIV. Dr Mortimer had warned James of all the possible risks. James, out of his own volition, decided to undertake the risks and signed a bond certifying the same. James died of haemorrhage as a result of the operation.\r\n\r\n(a) Doctor is guilty of murder. (b) Doctor is not guilty.\r\n\r\n(c) Doctor is guilty of culpable homicide not amounting to murder (d) None of these.",
+                "reference_url": "https://www.clatapult.com/legal-reasoning-50-practice-questions/"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Given the principle below, answer to the following question.\n\n[Principle]\nA person is liable for the tort of negligence if he breaches a legal duty of care he owes to the plaintiff, and the plaintiff suffered a damage resulting from this breach.\n\n[Question]\nNitin started to drive his Tata Nano in the highway after gulping down two bottles of whiskey. Isaac was driving his Reva NXR with the headlights turned off. They collided resulting in an injury on Isaac\u2019s head. Nitin, who was highly intoxicated, had only a narrow chance to avoid the collision, but because of the high levels of alcohol in his blood, he was unable to do so. Isaac sued Nitin for negligence. Will he succeed?",
+        "reference_answer": "Based on the given principle, let's analyze whether Isaac will succeed in his lawsuit against Nitin for negligence:\r\n\r\n**Breach of Duty of Care**: Nitin breached his legal duty of care by driving after consuming a significant amount of alcohol. Driving under the influence of alcohol is universally recognized as a breach of the duty of care owed to other road users.\r\n\r\n**Damage Resulting from Breach**: Isaac suffered a head injury as a result of the collision. This injury is a direct consequence of the accident, which in turn is linked to Nitin's breach of duty (driving while intoxicated).\r\n\r\n**Nitin's Ability to Avoid the Collision**: Nitin's high levels of intoxication impaired his ability to react and possibly avoid the collision. However, the standard for negligence does not change because of his intoxicated state; he is still held to the standard of a reasonable sober person.\r\n\r\n**Isaac's Contributory Negligence**: It's important to consider that Isaac was driving with his headlights off, which is also a breach of duty of care. This action could be seen as contributory negligence, potentially reducing the liability of Nitin or altering the damages Isaac could recover.\r\n\r\nIn conclusion, Isaac may succeed in his negligence claim against Nitin, as Nitin clearly breached a duty of care by driving while intoxicated, leading to the accident and Isaac's injury. However, Isaac's own negligence (driving without headlights) may impact the outcome of the case, potentially reducing the damages he can recover. The final decision would depend on how the court weighs these factors and the specifics of the applicable negligence laws.",
+        "score_rubric": {
+            "criteria": "Does the response accurately apply the principle of negligence to the scenario involving Nitin and Isaac?",
+            "score1_description": "The response fails to apply the principle of negligence, overlooking key elements like the breach of duty and the resulting damage, leading to an incorrect conclusion.",
+            "score2_description": "The response identifies either the breach of duty or the damage but fails to cohesively connect these elements to the principle of negligence, resulting in a flawed analysis.",
+            "score3_description": "The response correctly identifies both the breach of duty and the resulting damage but only partially applies the principle of negligence, missing critical aspects such as contributory negligence or the standard of care.",
+            "score4_description": "The response adequately applies the principle of negligence, identifying the breach of duty, resulting damage, and considers contributory negligence but contains minor inaccuracies or lacks depth in the analysis.",
+            "score5_description": "The response excellently applies the principle of negligence, thoroughly analyzing the breach of duty, resulting damage, contributory negligence, and the standard of care, leading to a well-supported conclusion."
+        },
+        "atomic_checklist": [
+            "Does the response identify Nitin's consumption of alcohol and subsequent driving as a breach of duty of care?",
+            "Does the response link Isaac's injury directly to the collision caused by Nitin's breach of duty?",
+            "Is the response considering Isaac's contributory negligence by driving without headlights?",
+            "Does the response evaluate the standard of care expected from Nitin irrespective of his intoxication?",
+            "Is the response logically consistent in applying the principle of negligence to derive a conclusion?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "31. Nitin started to drive his Tata Nano in the highway after gulping down two bottles of whiskey. Isaac was driving his Reva NXR with the headlights turned off. They collided resulting in an injury on Isaac\u2019s head. Nitin, who was highly intoxicated, had only a narrow chance to avoid the collision, but because of the high levels of alcohol in his blood, he was unable to do so. Isaac sued Nitin for negligence. Will he succeed?\r\n\r\nPrinciple: A person is liable for the tort of negligence if he breaches a legal duty of care he owes to the plaintiff, and the plaintiff suffered a damage resulting from this breach.\r\n\r\na. Yes, because Nitin should be taught a lesson.\r\n\r\nb. Yes, because Nitin breached the duty of care that he owes to the other people commuting on the highway.\r\n\r\nc. No, because Isaac provided Nitin with only a narrow window of time to avoid the collision.\r\n\r\nd. No, because they had no business driving on the highway late into the night.",
+                "reference_url": "https://www.clatapult.com/legal-reasoning-50-practice-questions/"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "When the consent of a party to a contract is obtained by undue influence, fraud, or misrepresentation, is the contract illegal, voidable, void, or enforceable?\u200b",
+        "reference_answer": "When the consent of a party to a contract is obtained by undue influence, fraud, or misrepresentation, the contract is typically considered voidable. Here's what each term means in this context:\n\n1. **Voidable**: This means that the contract is valid and enforceable unless the party affected by the undue influence, fraud, or misrepresentation chooses to void it. The affected party has the right to either affirm or reject the contract. If they choose to void it, the contract is treated as if it never existed.\n\n2. **Void**: A void contract is one that is not legally valid from the beginning and thus unenforceable by law. This is not usually the case with contracts involving undue influence, fraud, or misrepresentation, as these contracts are typically valid unless voided by the affected party.\n\n3. **Illegal**: An illegal contract is one that involves activities that are against the law. Contracts obtained through undue influence, fraud, or misrepresentation are not necessarily illegal; they are more about the manner in which consent was obtained rather than the legality of the contract's content.\n\n4. **Enforceable**: An enforceable contract is one that can be legally upheld in a court of law. A contract obtained through undue influence, fraud, or misrepresentation is enforceable until the affected party decides to void it due to the circumstances under which consent was obtained.\n\nIn summary, a contract obtained through undue influence, fraud, or misrepresentation is typically considered voidable at the discretion of the party affected by these factors.",
+        "score_rubric": {
+            "criteria": "Does the response accurately identify the legal status of a contract obtained through undue influence, fraud, or misrepresentation?",
+            "score1_description": "The response inaccurately categorizes the contract, overlooking the nuances of undue influence, fraud, or misrepresentation, leading to an incorrect conclusion about its legal status.",
+            "score2_description": "The response recognizes some aspects of how undue influence, fraud, or misrepresentation affect a contract but misinterprets their impact, resulting in a partially correct assessment of the contract's legal status.",
+            "score3_description": "The response correctly identifies the contract as voidable due to undue influence, fraud, or misrepresentation but lacks a detailed explanation or consideration of all relevant legal terms.",
+            "score4_description": "The response accurately identifies the contract as voidable and provides a basic explanation of the terms 'voidable', 'void', 'illegal', and 'enforceable', but misses minor details or nuances.",
+            "score5_description": "The response provides an excellent analysis, accurately identifying the contract as voidable due to undue influence, fraud, or misrepresentation, and thoroughly explains the distinctions among 'voidable', 'void', 'illegal', and 'enforceable' contracts."
+        },
+        "atomic_checklist": [
+            "Does the response categorize the contract as voidable when obtained through undue influence, fraud, or misrepresentation?",
+            "Is the distinction between 'voidable', 'void', 'illegal', and 'enforceable' clearly explained in the context of the contract?",
+            "Does the response explain that the affected party has the right to affirm or void the contract?",
+            "Is the explanation consistent with the legal principles governing contracts affected by undue influence, fraud, or misrepresentation?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "9. When the consent of a party to a contract has been obtained by Undue Influence, Fraud or Misrepresentation, the contract is-\r\n\r\n(a)Illegal (b) Voidable (c) Void (d) Enforceable",
+                "reference_url": "https://www.clatapult.com/legal-reasoning-50-practice-questions/"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Find existing flaws in the argument of a political scientist.\n\nA political scientist argues that democracy does not promote political freedom. They cite historical examples where democracies have led to oppressive societies, and conversely, cases where despotisms and oligarchies have offered significant political freedom.",
+        "reference_answer": "The flaw in the political scientist's argument is primarily that it overlooks the possibility that democracy promotes political freedom without being necessary or sufficient by itself to produce it. This is a significant oversight because it fails to recognize that democracy, while not the only factor, often plays a crucial role in fostering political freedom. The argument incorrectly implies that for democracy to promote political freedom, it must be both necessary and sufficient. In reality, democracy can contribute positively to the development of political freedom, even if it is not the sole or indispensable factor in doing so.\n\nFurthermore, this perspective allows for the recognition that other forms of government, like enlightened despotisms and oligarchies, might also contribute to political freedom in certain contexts. However, the presence of political freedom in these systems does not negate the role of democracy in other situations. In summary, the argument is flawed because it fails to appreciate the role of democracy as a significant, though not exclusive, promoter of political freedom.",
+        "score_rubric": {
+            "criteria": "Does the response effectively identify and explain the flaws in the political scientist's argument regarding democracy and political freedom?",
+            "score1_description": "The response fails to identify any flaws in the argument, potentially agreeing with the political scientist without critical analysis.",
+            "score2_description": "The response identifies superficial flaws in the argument but fails to provide a coherent explanation or reasoning.",
+            "score3_description": "The response identifies a major flaw in the argument but the explanation is either incomplete or lacks depth, missing key aspects of logical reasoning.",
+            "score4_description": "The response effectively identifies a major flaw and provides a good explanation, but it may miss some minor details or nuances in the argument.",
+            "score5_description": "The response excellently identifies and explains the flaws in the argument, demonstrating a deep understanding of the nuances in the relationship between democracy and political freedom."
+        },
+        "atomic_checklist": [
+            "Does the response recognize the oversight in the political scientist's argument that democracy might not be necessary or sufficient by itself to ensure political freedom?",
+            "Is the significance of democracy in fostering political freedom despite not being the sole factor acknowledged?",
+            "Does the response highlight the error in assuming that the presence of political freedom under non-democratic systems negates the value of democracy?",
+            "Is the explanation logically consistent and does it cover the broader implications of the political scientist's argument?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Political scientist: As a political system, democracy does not promote political freedom. There are historical examples of democracies that ultimately resulted in some of the most oppressive societies. Likewise, there have been enlightened despotisms and oligarchies that have provided a remarkable level of political freedom to their subjects.\r\n\r\nThe reasoning in the political scientist\u2019s argument is flawed because it\r\n\r\nconfuses the conditions necessary for political freedom with the conditions sufficient to bring it about    \r\nfails to consider that a substantial increase in the level of political freedom might cause a society to become more democratic\r\nappeals to historical examples that are irrelevant to the causal claim being made\r\noverlooks the possibility that democracy promotes political freedom without being necessary or sufficient by itself to produce it\r\nbases its historical case on a personal point of view",
+                "reference_url": "https://www.juriseducation.com/blog/lsat-logical-reasoning"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "The supernova event of 1987 is interesting in that there is still no evidence of the neutron star that current theory says should have remained after a supernova of that size. \n\nThis is in spite of the fact that many of the most sensitive instruments ever developed have searched for the tell-tale pulse of radiation that neutron stars emit. Thus, current theory is wrong in claiming that supernovas of a certain size always produce neutron stars.\n\nWhich one of the following, if true, most strengthens the argument, and why? Go through the options one by one.\n\nA. Most supernova remnants that astronomers have detected have a neutron star nearby.\nB. Sensitive astronomical instruments have detected neutron stars much farther away than the location of the 1987 supernova.\nC. The supernova of 1987 was the first that scientists were able to observe in progress.\nD. Several important features of the 1987 supernova are correctly predicted by the current theory.\nE. Some neutron stars are known to have come into existence by a cause other than a supernova explosion.",
+        "reference_answer": "To determine which statement most strengthens the argument, let's analyze each option in the context of the argument's claim: current theory is wrong in asserting that supernovas of a certain size always produce neutron stars. This claim is based on the absence of evidence for a neutron star after the 1987 supernova, despite the use of sensitive instruments.\r\n\r\nA. **Most supernova remnants that astronomers have detected have a neutron star nearby.** This statement actually weakens the argument. If most supernovas produce neutron stars, the absence of one in the 1987 supernova case would be more of an exception, possibly due to other factors, rather than a disproof of the theory.\r\n\r\nB. **Sensitive astronomical instruments have detected neutron stars much farther away than the location of the 1987 supernova.** This strengthens the argument. It suggests that if a neutron star were present at the site of the 1987 supernova, these instruments should have detected it, supporting the claim that the theory might be incorrect.\r\n\r\nC. **The supernova of 1987 was the first that scientists were able to observe in progress.** This is a neutral point; it doesn't directly strengthen or weaken the argument about the theory of neutron star formation.\r\n\r\nD. **Several important features of the 1987 supernova are correctly predicted by the current theory.** This actually weakens the argument, suggesting that the current theory has some validity, as it could accurately predict other aspects of the supernova.\r\n\r\nE. **Some neutron stars are known to have come into existence by a cause other than a supernova explosion.** This is also a neutral point in this context. It doesn't directly support or refute the argument about the specific relationship between supernovas and neutron star formation.\r\n\r\nBased on this analysis, the statement that most strengthens the argument is option B. This statement directly supports the argument by implying that the instruments capable of detecting distant neutron stars should have detected one at the 1987 supernova site if it existed, thereby challenging the theory that such supernovas always produce neutron stars.",
+        "score_rubric": {
+            "criteria": "Does the response effectively evaluate each option to determine which most strengthens the argument about the absence of a neutron star after the 1987 supernova?",
+            "score1_description": "The response fails to evaluate the options against the argument, possibly misunderstanding the argument or the role of the options.",
+            "score2_description": "The response evaluates some options but with significant misunderstandings or omissions, leading to an incorrect or incomplete conclusion about which option strengthens the argument.",
+            "score3_description": "The response evaluates most options but may overlook key details or implications, resulting in a partially correct assessment of which option strengthens the argument.",
+            "score4_description": "The response effectively evaluates all options and identifies the one that strengthens the argument, but the explanation may lack depth or miss minor nuances.",
+            "score5_description": "The response excellently evaluates each option with thorough reasoning, clearly identifying and explaining why the chosen option most strengthens the argument."
+        },
+        "atomic_checklist": [
+            "Does the response systematically go through each option and evaluate its relevance to the argument?",
+            "Is the reasoning behind the strengthening or weakening effect of each option on the argument clearly explained?",
+            "Does the response identify option B as the one that most strengthens the argument, with a coherent rationale?",
+            "Is the response logically consistent, avoiding contradictions or irrelevant considerations?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "The supernova event of 1987 is interesting in that there is still no evidence of the neutron star that current theory says should have remained after a supernova of that size. \r\n\r\nThis is in spite of the fact that many of the most sensitive instruments ever developed have searched for the tell-tale pulse of radiation that neutron stars emit. Thus, current theory is wrong in claiming that supernovas of a certain size always produce neutron stars.\r\n\r\nWhich one of the following, if true, most strengthens the argument?\r\n\r\nMost supernova remnants that astronomers have detected have a neutron star nearby.\r\nSensitive astronomical instruments have detected neutron stars much farther away than the location of the 1987 supernova.\r\nThe supernova of 1987 was the first that scientists were able to observe in progress.\r\nSeveral important features of the 1987 supernova are correctly predicted by the current theory.\r\nSome neutron stars are known to have come into existence by a cause other than a supernova explosion.",
+                "reference_url": "https://www.juriseducation.com/blog/lsat-logical-reasoning"
+            }
+        ]
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Examine the ethical implications of a hypothetical scenario where advanced AI systems are used to predict future crimes.\n\nIn a scenario reminiscent of 'Minority Report', an advanced AI system has been developed that claims to predict future criminal activities with high accuracy. Law enforcement agencies are considering employing this technology to preemptively detain individuals based on these predictions before any crime is actually committed. While the intentions behind the use of this technology are to prevent potential harm and improve public safety, concerns are raised about its ethical implications, particularly in relation to personal freedom, presumption of innocence, and the accuracy of predictions.",
+        "reference_answer": "The ethical implications of employing advanced AI systems for predictive policing raise significant concerns. Firstly, the potential infringement on personal freedom is alarming; detaining individuals based on predicted future crimes challenges the very notion of free will and autonomy. It presumes guilt in advance of any criminal action, directly conflicting with the foundational legal principle of the presumption of innocence until proven guilty.\n\nSecondly, the reliability and ethical implications of predictive accuracy come into question. No predictive model is flawless, and the consequences of false positives \u2013 detaining individuals who would not have committed a crime \u2013 are grave. This concern is compounded when considering potential biases encoded into the AI, which could disproportionately target certain groups, further exacerbating existing societal inequalities.\n\nFurthermore, the societal impact of normalizing such technologies could lead to a dystopian future where surveillance and predictive policing become pervasive, eroding trust between the populace and the state, and potentially stifling dissent and personal freedom under the guise of safety and order.\n\nIn light of these considerations, while the intention to prevent crime is noble, the deployment of predictive policing AI technologies necessitates a rigorous ethical evaluation and the implementation of robust safeguards, including transparency, accountability, and public oversight, to mitigate these significant ethical risks.",
+        "score_rubric": {
+            "criteria": "Does the response thoroughly analyze the ethical concerns regarding the predictive policing AI system, focusing on personal freedom, presumption of innocence, and predictive accuracy?",
+            "score1_description": "The response fails to substantially address any ethical implications or only mentions them without explanation, showing a lack of understanding of the complexities involved in predictive policing technology.",
+            "score2_description": "The response identifies basic ethical issues such as potential breaches of personal freedom but lacks a comprehensive exploration of the topics or fails to consider crucial aspects like presumption of innocence and predictive accuracy.",
+            "score3_description": "The response identifies and discusses some significant ethical considerations, including infringement on personal freedom and presumption of innocence, but the analysis of predictive accuracy is superficial or missing key points.",
+            "score4_description": "The response provides a solid analysis of ethical considerations, addressing concerns over personal freedom, presumption of innocence, and predictive accuracy. However, it might miss finer details or implications regarding societal impact or possible mitigation strategies.",
+            "score5_description": "The response excellently analyzes the ethical considerations, clearly addressing the invasion of personal freedom, risks related to the presumption of innocence, and the challenges in ensuring predictive accuracy. It also considers wider societal impacts and discusses potential safeguards against these issues, demonstrating a deep understanding of the ethical complexities."
+        },
+        "atomic_checklist": [
+            "Does the response consider the potential for unjustly infringing on personal freedom?",
+            "Is the question of the presumption of innocence in the face of predictive enforcement addressed?",
+            "Does the response discuss the reliability and ethical implications of predictive accuracy?",
+            "Are potential biases within the AI's predictive model and their consequences explored?",
+            "Is the societal impact of normalizing predictive policing technologies considered in the analysis?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Analyze the philosophical implications of creating artificial superintelligence (ASI) that surpasses human intelligence in all aspects, including social, emotional, and creative domains.\n\nThe development of artificial superintelligence (ASI) represents a pivotal moment in human history, potentially marking the emergence of beings that surpass human capabilities in every conceivable domain. This includes not only computational and logical reasoning abilities but also the capacity for social interaction, emotional understanding, and creative expression. While the prospect of ASI promises unprecedented technological advancements and solutions to complex global issues, it also raises profound philosophical questions about the nature of consciousness, free will, and the future of human identity in a world where machines rival or exceed human intelligence.",
+        "reference_answer": "The philosophical implications of creating artificial superintelligence are manifold and profound. Firstly, the potential for ASI to possess or closely simulate consciousness challenges our understanding of what it means to be sentient. This raises questions about rights, moral consideration, and the nature of experiences in entities not biologically human.\n\nSecondly, the existence of ASI impacts notions of free will and agency. If ASI can predict human behavior with high accuracy or influence it subtly, this could blur the lines between determinism and free action, challenging traditional views on moral and ethical responsibility.\n\nThirdly, human identity and self-perception are bound to evolve. The presence of entities that mirror or surpass human emotional and creative capacities may lead humans to question the uniqueness of traits once considered exclusively human, potentially redefining self-worth and purpose.\n\nMoreover, ASI's capabilities in emotional understanding and creativity could significantly influence human culture, arts, and social dynamics, perhaps fostering a new era of collaboration or, conversely, leading to existential crises about humanity's role and value.\n\nLastly, the development of ASI carries a heavy moral and ethical weight. It prompts consideration of the responsibilities humans hold in creating beings that might one day possess desires, aspirations, or consciousness akin to our own, and how to ethically accommodate potential new forms of intelligence.\n\nIn conclusion, while ASI offers exciting possibilities, the philosophical challenges it presents are as significant as its technological achievements, necessitating careful thought and ethical stewardship as we advance towards its realization.",
+        "score_rubric": {
+            "criteria": "Does the response thoroughly analyze the philosophical implications of creating ASI, focusing on consciousness, free will, and human identity?",
+            "score1_description": "The response fails to significantly address any philosophical implications or merely mentions them without in-depth analysis, showing a lack of depth in understanding the complexities of ASI development.",
+            "score2_description": "The response identifies basic philosophical issues such as the nature of consciousness but lacks a comprehensive exploration of the topics or fails to consider crucial aspects like free will and human identity.",
+            "score3_description": "The response identifies and discusses significant philosophical considerations, including consciousness and free will, but the analysis of human identity in the context of ASI is superficial or missing key insights.",
+            "score4_description": "The response provides a solid analysis of philosophical considerations, comprehensively addressing the implications for consciousness, free will, and human identity. However, it might overlook finer nuances or broader societal impacts.",
+            "score5_description": "The response excellently analyzes the philosophical considerations, thoroughly addressing the implications of ASI on consciousness, free will, and human identity. It also considers broader societal impacts, demonstrating a profound understanding of the complex interplay between human and machine intelligence."
+        },
+        "atomic_checklist": [
+            "Does the response explore the potential for ASI to possess or simulate consciousness?",
+            "Is the impact of ASI on concepts of free will, especially in the context of determinism vs. free action, discussed?",
+            "Does the response consider how human identity and self-perception might evolve in the presence of ASI?",
+            "Are the implications of ASI's emotional and creative capabilities on human culture and society analyzed?",
+            "Is the potential moral and ethical responsibility of creating ASI considered in the analysis?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Discuss the environmental implications of adopting large-scale vertical farming as a primary method for crop production.\n\nVertical farming, the practice of growing crops in vertically stacked layers, often incorporates controlled environment agriculture technology to optimize plant growth. As the global population continues to rise, vertical farming is touted as a sustainable solution to meet the increasing food demand without expanding farmland. However, concerns have been raised about its environmental impacts, including energy consumption, resource use, and the ecological effects of constructing and operating such large-scale facilities.",
+        "reference_answer": "The environmental implications of adopting large-scale vertical farming are multifaceted and warrant a nuanced examination. On one hand, vertical farming promises a reduction in the need for additional farmland, potentially safeguarding natural habitats and reducing deforestation. This is significant in the fight against biodiversity loss and for the conservation of ecosystems.\n\nHowever, a primary concern is the high energy consumption required for lighting and climate control in these vertically stacked farms. While LED technology and renewable energy sources offer some mitigation, the overall energy footprint remains substantial and could offset some of the ecological benefits.\n\nMoreover, vertical farming uses water and nutrients more efficiently through recirculating systems, significantly reducing waste and pollution associated with traditional agriculture. This is a positive step towards sustainable water use and nutrient management.\n\nYet, the construction and operation of large-scale vertical farming facilities could disrupt local ecosystems, particularly if these facilities are not carefully integrated into existing landscapes. The production of construction materials and the operation of facilities also contribute to carbon emissions, though potentially less than those associated with expanding traditional agriculture.\n\nIn conclusion, while vertical farming has the potential to contribute significantly to sustainable food production, careful consideration of its energy demands and ecological impacts is essential to fully leverage its benefits while mitigating drawbacks. The promise of vertical farming in sustainability terms is conditional on advances in energy efficiency and careful ecological planning.",
+        "score_rubric": {
+            "criteria": "Does the response comprehensively evaluate the environmental implications of large-scale vertical farming focusing on sustainability, energy consumption, and ecological impacts?",
+            "score1_description": "The response fails to provide a meaningful analysis of the environmental implications of vertical farming, showing a lack of understanding of sustainability practices, energy requirements, or ecological considerations.",
+            "score2_description": "The response identifies basic environmental issues related to vertical farming but lacks depth in exploring energy consumption or ecological impacts, resulting in a superficial analysis.",
+            "score3_description": "The response discusses significant environmental considerations such as energy consumption and sustainability, but the analysis of the ecological impacts of vertical farming is partial or lacks specificity.",
+            "score4_description": "The response provides a solid assessment of the environmental implications, including sustainability and energy consumption. However, it could delve deeper into the ecological impacts or offer broader perspectives on potential long-term effects.",
+            "score5_description": "The response excellently analyzes the environmental implications of large-scale vertical farming, thoroughly addressing sustainability, energy consumption, and ecological impacts. It demonstrates a deep understanding of the complexities involved, including potential benefits and drawbacks, with a balanced perspective on long-term sustainability."
+        },
+        "atomic_checklist": [
+            "Does the response address the potential for vertical farming to reduce farmland expansion and deforestation?",
+            "Is the high energy consumption of vertical farming, especially for lighting and climate control, discussed?",
+            "Does the response consider the use of water and nutrients more efficiently in vertical farming compared to traditional agriculture?",
+            "Are the potential ecological disruptions from constructing and operating large-scale vertical facilities considered in the analysis?",
+            "Is the analysis logically consistent, avoiding contradictions and providing a balanced view on vertical farming's environmental sustainability?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Investigate the ethical considerations of implementing a universal basic income (UBI) as a measure to alleviate poverty and economic inequality.\n\nUniversal Basic Income (UBI) proposes providing all citizens with a regular, unconditional sum of money, regardless of employment status, to cover essential living expenses. Advocates argue that UBI could significantly reduce poverty and economic inequality, providing a safety net for all citizens. Critics, however, raise concerns about the potential disincentives for work, the financial feasibility of such a system, and the impacts on inflation. Furthermore, there are debates on whether UBI promotes true social justice or merely acts as a band-aid solution for systemic economic issues.",
+        "reference_answer": "The ethical considerations of implementing a Universal Basic Income involve a careful balancing of its potential benefits and drawbacks. On the positive side, UBI could significantly reduce poverty and economic inequality by ensuring that all citizens have access to a basic standard of living. This could, in theory, lead to a more equitable and just society, where individuals are not constrained by financial necessity to pursue education, meaningful work, and community engagement.\n\nHowever, critics argue that UBI might create disincentives for work, potentially leading to a decrease in the labor force participation rate. This concern warrants a nuanced examination of human motivation and the value society places on different types of work. Moreover, the financial feasibility of UBI is a critical concern, as funding such a program could require substantial changes to taxation and government spending, with unclear impacts on the economy and inflation.\n\nFurthermore, while UBI aims to promote social justice, it's vital to consider whether it addresses the root causes of economic disparities or merely provides a superficial solution to deeper systemic issues. The risk of inflation and its effect on the purchasing power of the basic income must also be carefully analyzed to ensure that the benefits of UBI are not eroded over time.\n\nIn conclusion, while UBI offers promising advantages for poverty reduction and greater economic equality, it also presents significant ethical challenges in terms of work incentives, financial sustainability, and achieving true social justice. A comprehensive approach is required to ensure that its implementation does not have unintended negative consequences on the broader economy and society.",
+        "score_rubric": {
+            "criteria": "Does the response thoroughly analyze the ethical considerations surrounding UBI, focusing on poverty alleviation, economic inequality, work disincentives, financial feasibility, inflation, and the promotion of social justice?",
+            "score1_description": "The response fails to address the ethical considerations surrounding UBI, showing a lack of understanding or analysis of its implications on poverty, economic inequality, or social justice.",
+            "score2_description": "The response identifies basic ethical issues surrounding UBI but lacks depth in exploring its impacts on work disincentives, financial feasibility, or inflation.",
+            "score3_description": "The response discusses significant ethical considerations of UBI, including impacts on poverty and economic inequality, but the analysis of work disincentives, financial feasibility, or inflation is partial or lacks specificity.",
+            "score4_description": "The response provides a solid assessment of the ethical implications of UBI, adequately addressing concerns about poverty alleviation, work disincentives, and economic inequality. However, it could provide deeper insights into financial feasibility, inflation, and the promotion of social justice.",
+            "score5_description": "The response excellently analyzes the ethical considerations surrounding UBI, thoroughly addressing impacts on poverty alleviation, economic inequality, work disincentives, financial feasibility, inflation, and the promotion of social justice. It demonstrates a deep understanding of the complexities involved, offering a balanced perspective."
+        },
+        "atomic_checklist": [
+            "Does the response discuss the potential of UBI to reduce poverty and economic inequality?",
+            "Is the possibility of creating disincentives for work under UBI explored?",
+            "Does the response evaluate the financial feasibility of implementing UBI?",
+            "Is the impact of UBI on inflation considered in the analysis?",
+            "Does the response examine UBI's role in promoting or hindering social justice?",
+            "Are potential unintended consequences of UBI on the broader economy and social structures discussed?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "reasoning",
+        "task": "legal_reason",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Assess the societal impacts of transitioning to autonomous vehicles on a large scale, including considerations around safety, employment, urban planning, and ethical decision-making.\n\nThe transition to autonomous vehicles (AVs) is heralded as a revolution in transportation, promising to enhance road safety, reduce traffic congestion, and lower emissions. However, this shift also brings forth challenges and societal impacts. These include potential job losses in driving-related sectors, changes in urban infrastructure and public spaces, and the ethical dilemmas posed by AV decision-making processes during emergencies.",
+        "reference_answer": "The societal impacts of transitioning to autonomous vehicles encompass a broad spectrum of considerations. Firstly, the promise of improved road safety through reduced human error could significantly lower accident rates, saving lives and reducing healthcare costs associated with vehicle collisions. This represents a major benefit, though it raises questions about the accountability in the case of accidents involving AVs.\n\nSecondly, the adoption of autonomous vehicles poses substantial risks to employment in driving-related sectors, such as trucking, taxi services, and delivery drivers. This transition could require a societal shift towards retraining and redeploying the workforce, highlighting the need for proactive labor policies.\n\nAdditionally, the shift to AVs necessitates a reimagining of urban infrastructure. This includes modifying road designs, parking requirements, and public spaces to accommodate new traffic patterns and the potential for more shared vehicle usage, leading to more efficient city planning and potentially transforming urban landscapes.\n\nEthical dilemmas also emerge, particularly in how AVs are programmed to make decisions during unavoidable accidents. These decisions involve complex ethical considerations about valuing human life and require transparent, community-involved dialogues to establish guidelines that align with societal values.\n\nFurthermore, the introduction of AVs could redefine the balance between public and private transportation, offering opportunities for increased mobility but also risking the exacerbation of socio-economic divides if not carefully managed.\n\nLastly, societal readiness and attitudes towards AVs will play a crucial role in their successful integration. Building trust and addressing public concerns through education and gradual implementation strategies are essential for widespread acceptance.\n\nIn sum, while autonomous vehicles offer the promise of numerous benefits, their introduction demands careful consideration of safety, employment, urban development, and ethical principles to ensure they contribute positively to societal progress.",
+        "score_rubric": {
+            "criteria": "Does the response comprehensively analyze the societal impacts of large-scale adoption of autonomous vehicles, focusing on safety, employment, urban planning, and ethical decision-making?",
+            "score1_description": "The response fails to address the societal impacts of autonomous vehicles, showing a lack of understanding or analysis of their implications on safety, employment, urban planning, or ethical decision-making.",
+            "score2_description": "The response identifies basic societal impacts of autonomous vehicles but lacks depth in exploring their effects on either safety, employment, urban planning, or ethical decision-making.",
+            "score3_description": "The response discusses significant societal impacts of autonomous vehicles, including safety improvements and potential job disruptions, but the analysis of urban planning changes or ethical dilemmas is partial or lacks specificity.",
+            "score4_description": "The response provides a solid assessment of the societal impacts of autonomous vehicles, adequately addressing concerns about safety, employment, and urban planning. However, it could provide deeper insights into the ethical dilemmas posed by autonomous decision-making.",
+            "score5_description": "The response excellently analyzes the societal impacts of autonomous vehicles, thoroughly addressing considerations around safety, employment reductions, urban planning adaptations, and ethical decision-making during emergencies. It demonstrates a deep understanding of the complexities involved, offering a balanced perspective."
+        },
+        "atomic_checklist": [
+            "Does the response discuss the potential for autonomous vehicles to improve road safety?",
+            "Is the impact of autonomous vehicles on employment in driving-related fields explored?",
+            "Does the response evaluate changes in urban planning and infrastructure necessitated by autonomous vehicles?",
+            "Are the ethical dilemmas surrounding autonomous vehicle decision-making in emergencies considered?",
+            "Does the response consider how autonomous vehicles might alter the dynamics of public and private transportation?",
+            "Is the societal readiness and potential resistance to the widespread adoption of autonomous vehicles discussed?"
+        ],
+        "background_knowledge": []
+    }
+]

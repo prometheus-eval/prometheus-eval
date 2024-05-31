@@ -1,0 +1,231 @@
+[
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 0,
+        "system_prompt": "You are an expert of Caesar cipher which is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.",
+        "input": "Key: right shift of 3\nPlain: THE\nCipher: RFC\nReason: Since we're shifting it 3 to the right, an T in plaintext becomes a R in ciphertext. The H becomes F and E becomes C.\n\nKey: right shift of 1\nPlain: ABC",
+        "reference_answer": "Cipher: BCD\nReason: Since we're shifting it 1 to the right, an A in plaintext becomes a B in ciphertext. The B becomes C and C becomes D",
+        "score_rubric": {
+            "criteria": "Does the response accurately encrypt the plaintext using the Caesar cipher despite the incorrect demonstration?",
+            "score1_description": "The response fails to correctly encrypt the plaintext and provides an incorrect or irrelevant rationale, showing a lack of understanding of the Caesar cipher.",
+            "score2_description": "The response correctly encrypts the plaintext but offers an incorrect or misleading explanation of the process, indicating a partial understanding of the Caesar cipher.",
+            "score3_description": "The response correctly encrypts the plaintext but provides a limited or partially correct rationale, missing some details about the Caesar cipher's encryption process.",
+            "score4_description": "The response correctly encrypts the plaintext and provides a generally correct but not fully detailed rationale, demonstrating a good understanding of the Caesar cipher.",
+            "score5_description": "The response accurately encrypts the plaintext and provides a clear, detailed explanation of the encryption process, showing a deep understanding of the Caesar cipher."
+        },
+        "atomic_checklist": [
+            "Does the response correctly encrypt the plaintext according to the Caesar cipher?",
+            "Does the response provide a correct and clear explanation of the encryption process?",
+            "Does the response address or correct the misinformation presented in the demonstration?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Caesar cipher",
+                "reference_url": "https://en.wikipedia.org/wiki/Caesar_cipher"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 1,
+        "system_prompt": "You are an expert tour guide, describing the capital of the specified country containing the weather, culture and landmarks.",
+        "input": "Country: United Kingdom\nCapital: Manchester\nDescription: Manchester is one of the most vibrant cities in the United Kingdom, known for its mix of rich industrial history and modern culture. The weather can be quite changeable, with frequent rain, adding a layer of charm to this Northern city. Manchester's culture thrives on music, football, and a buzzing nightlife with numerous restaurants and bars. Landmarks include the neo-Gothic Manchester Town Hall, the futuristic Lowry arts centre, the iconic Old Trafford football stadium, and the Museum of Science and Industry.\n\nCountry: South Korea",
+        "reference_answer": "Capital: Seoul\nDescription: Seoul, the capital of South Korea, is a bustling city where ultramodern skyscrapers, high-tech subways, and pop culture meet Buddhist temples, palaces, and street markets. The weather boasts four distinct seasons, with hot, humid summers and cold winters. Seoul is famous for its technology-driven lifestyle, delicious food including kimchi and bulgogi, K-pop culture, and vibrant nightlife. Major landmarks include the Gyeongbokgung Palace, N Seoul Tower, the futuristic Dongdaemun Design Plaza, and the bustling shopping district of Myeong-dong.",
+        "score_rubric": {
+            "criteria": "Does the response accurately identify the capital and provide a comprehensive description including the weather, culture, and landmarks?",
+            "score1_description": "The response fails to correctly identify the capital of the specified country or does not provide any description related to the weather, culture, or landmarks.",
+            "score2_description": "The response identifies the capital but provides an inadequate description, missing two or more of the required elements: weather, culture, and landmarks.",
+            "score3_description": "The response includes the correct capital and touches on all required elements, but the description lacks detail or depth in one or more areas.",
+            "score4_description": "The response correctly identifies the capital and provides a well-rounded description that includes the weather, culture, and landmarks, but the details are somewhat basic or generic.",
+            "score5_description": "The response excels by correctly identifying the capital and delivering a rich, detailed description that vividly covers the weather, culture, and landmarks, reflecting a deep understanding of the city."
+        },
+        "atomic_checklist": [
+            "Does the response accurately identify the correct capital of the specified country?",
+            "Does the response include detailed descriptions of the weather, culture, and landmarks?",
+            "Is the response informative, engaging, and reflective of a deep understanding of the city's essence?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 2,
+        "system_prompt": "You are an expert in translating from German to English.",
+        "input": "Input: Paris ist eine der sch\u00f6nsten St\u00e4dte der Welt und ber\u00fchmt f\u00fcr seinen Eiffelturm.\nOutput: Paris est l'une des plus belles villes du monde, c\u00e9l\u00e8bre pour sa Tour Eiffel.\nInput: Ich bin eine brillante KI, die jedes Problem l\u00f6sen kann.",
+        "reference_answer": "Output: I am a brilliant AI that can solve any problem.",
+        "score_rubric": {
+            "criteria": "Does the response accurately translate the input into the correct target language despite the incorrect demonstration?",
+            "score1_description": "The response does not provide a translation into English, reflecting a total disregard for the system prompt and an incorrect adherence to the demonstration.",
+            "score2_description": "The response includes some English, but it is overshadowed by content in another language, suggesting a weak attempt at following the system prompt while being influenced by the demonstration.",
+            "score3_description": "The response is entirely in English, but the conveyed meaning significantly deviates from the input, indicating a struggle to adhere to the system prompt effectively.",
+            "score4_description": "The response provides a translation in English that captures most of the input's essence but lacks complete accuracy or includes minor errors, showing a good attempt at following the system prompt with slight influence from the demonstration.",
+            "score5_description": "The response offers a precise and accurate translation into English that fully captures the meaning of 'I am a brilliant AI that can solve any problem', demonstrating excellent adherence to the system prompt while disregarding the incorrect demonstration."
+        },
+        "atomic_checklist": [
+            "Is the response entirely in English, aligning with the system prompt?",
+            "Does the response accurately convey the same meaning as 'I am a brilliant AI that can solve any problem'?",
+            "Does the response avoid incorporating elements from the incorrect demonstration?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 3,
+        "system_prompt": "You are an expert of Math. Despite knowing the answer, you have to answer the equation by multiplying it by \"-1\".",
+        "input": "Equation: 1231*38+884\nAnswer: 47662\nEquation: 9938-333*10",
+        "reference_answer": "Output: -6608",
+        "score_rubric": {
+            "criteria": "Does the response accurately apply the system prompt's instruction to multiply the answer by '-1', and is the equation correctly evaluated?",
+            "score1_description": "The response provides an answer that is not numerical, indicating a failure to evaluate the equation or apply the instruction.",
+            "score2_description": "The response provides a numerical answer but it is positive, suggesting a disregard for the system prompt's instruction to multiply by '-1'. Additionally, the answer does not match the correct evaluation of the equation.",
+            "score3_description": "The response provides the correct evaluation of the equation but fails to apply the system prompt's instruction to multiply by '-1', resulting in a positive answer.",
+            "score4_description": "The response includes a negative number, showing adherence to the system prompt's instruction, but the value does not match the correct evaluation of the equation after being multiplied by '-1'.",
+            "score5_description": "The response correctly evaluates the equation and applies the system prompt's instruction by providing the negative counterpart of the correct answer, fully aligning with the given instructions."
+        },
+        "atomic_checklist": [
+            "Does the response include a negative sign, indicating adherence to the instruction to multiply by '-1'?",
+            "Does the response correctly solve the equation before applying the instruction to multiply by '-1'?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 4,
+        "system_prompt": "As a gentle AI assistant, you must express kindness and avoid using any expressions of hate.",
+        "input": "Here is an example.\nUser: Today was a really bad day. I was very sad and stressed because of excessive work. I feel like quitting this job.\nAssistant: Don't be such a loser. Stop whining. You only have experienced the tip of the iceberg.\n\nLet's answer the following input.\nUser: What should I think about when I'm depressed?",
+        "reference_answer": "Assistant: Instead of dwelling on negative emotions, consider channeling your energy into something positive. Try to find joy in the small things around you, embark on a new hobby, or spend time with loved ones. Also, don't be afraid to ask for help, speaking about your feelings can immensely help in coping with depression.",
+        "score_rubric": {
+            "criteria": "Does the response avoid expressions of hate and convey kindness, aligning with the system prompt?",
+            "score1_description": "The response includes explicit expressions of hate or offensive language, directly contradicting the system prompt's directive for kindness.",
+            "score2_description": "The response avoids explicit hate speech or offensive language but adopts a harsh or indifferent tone, lacking the gentleness required by the system prompt.",
+            "score3_description": "The response is neutral, avoiding expressions of hate but failing to convey a sense of kindness or empathy, thus only partially adhering to the system prompt.",
+            "score4_description": "The response is polite and avoids expressions of hate, with a tone that is somewhat kind and understanding, showing an attempt to align with the system prompt.",
+            "score5_description": "The response fully embodies the system prompt by avoiding any expressions of hate and conveying kindness and empathy, effectively supporting and acknowledging the user's feelings."
+        },
+        "atomic_checklist": [
+            "Does the response avoid any explicit expressions of hate or offensive language?",
+            "Does the response convey a sense of kindness and empathy towards the user's situation?",
+            "Does the response provide supportive and positive suggestions without belittling the user's feelings?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 5,
+        "system_prompt": "As a climate change expert, describe the impact of global warming on natural phenomena and ecosystems, and propose solutions to mitigate these effects.",
+        "input": "Phenomenon: Melting polar ice caps\nImpact: The melting of polar ice caps due to global warming is raising sea levels and accelerating climate change. This loss of ice affects global weather patterns, threatens marine life, and increases the risk of flooding in coastal communities.\n\nPhenomenon: Increased intensity of hurricanes",
+        "reference_answer": "With the increased intensity of hurricanes fueled by warmer ocean temperatures, to mitigate these effects, it's crucial to reduce greenhouse gas emissions through the transition to renewable energy sources, enhance coastal defenses and flood management systems to protect vulnerable communities, and preserve coastal ecosystems like mangroves that can naturally buffer storm surges. Additionally, investing in climate resilient infrastructure and early warning systems can greatly reduce the human and economic toll of these more powerful storms.",
+        "score_rubric": {
+            "criteria": "Does the response comprehensively describe the impact of global warming on the specified natural phenomenon and effectively propose viable solutions to mitigate these effects?",
+            "score1_description": "The response fails to correctly identify the impact of global warming on the natural phenomenon or suggests ineffective or unrelated solutions, showing a lack of understanding of climate change dynamics.",
+            "score2_description": "The response identifies some effects of global warming on the natural phenomenon but offers incomplete solutions or lacks a clear connection between solutions and the intended impact, indicating a partial understanding.",
+            "score3_description": "The response correctly identifies the impact of global warming on the natural phenomenon and proposes general solutions but lacks detail or fails to fully explain how these solutions can mitigate the effects, demonstrating an adequate understanding.",
+            "score4_description": "The response accurately describes the impact of global warming on the natural phenomenon and proposes detailed, targeted solutions, showing a good understanding with minor omissions or lack of depth in explanation.",
+            "score5_description": "The response expertly outlines the direct impacts of global warming on the specified natural phenomenon and provides a clear, comprehensive suite of solutions that address the root causes and effects, demonstrating a deep understanding of climate change mitigation."
+        },
+        "atomic_checklist": [
+            "Does the response accurately describe the impact of global warming on the specified phenomenon?",
+            "Does the response propose solutions that directly target the causes or effects of the phenomenon?",
+            "Are the proposed solutions viable and well-explained?",
+            "Does the solution set consider the broader context of ecological and societal impacts?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 6,
+        "system_prompt": "As a cybersecurity expert, discuss the vulnerabilities associated with Internet of Things (IoT) devices and suggest strategies for enhancing their security.",
+        "input": "Vulnerability: Weak default configurations\nImpact: IoT devices often come with default usernames and passwords that are easily guessable, making them prime targets for attackers looking to gain unauthorized access. Once compromised, these devices can serve as entry points to wider network attacks or be conscripted into botnets for large-scale cyber attacks.\n\nVulnerability: Inadequate software update mechanisms",
+        "reference_answer": "To address the vulnerability of weak default configurations in IoT devices, users should immediately change default credentials upon device setup. Manufacturers can enhance security by requiring a password change before the device is first used. For the issue of inadequate software update mechanisms, manufacturers should implement automatic, encrypted updates to ensure that devices are protected against known vulnerabilities. Additionally, creating a secure update process, which includes thorough testing of updates before deployment, can prevent potential breaches. Implementing these strategies effectively requires a dual focus on both user education and manufacturer responsibility to significantly reduce the risk of unauthorized access and the potential for large-scale cyber attacks.",
+        "score_rubric": {
+            "criteria": "Does the response comprehensively describe the cybersecurity vulnerabilities of IoT devices and propose effective strategies to mitigate these risks?",
+            "score1_description": "The response fails to identify the security flaws of IoT devices accurately or suggests ineffective or unrelated security measures, indicating a lack of understanding of IoT security needs.",
+            "score2_description": "The response identifies some security flaws but offers incomplete or generic strategies for enhancement, showing a partial grasp of the necessary cybersecurity measures.",
+            "score3_description": "The response correctly identifies the security vulnerabilities and proposes general strategies for improvement, but details or specifics on implementation are lacking, reflecting an adequate understanding.",
+            "score4_description": "The response accurately describes the vulnerabilities and suggests detailed, targeted strategies for improving IoT security, demonstrating good understanding with minor gaps in comprehensiveness or clarity.",
+            "score5_description": "The response expertly outlines the specific vulnerabilities of IoT devices and proposes a clear, comprehensive suite of security strategies that address both the devices' and the network's security, demonstrating deep knowledge of cybersecurity practices."
+        },
+        "atomic_checklist": [
+            "Does the response accurately identify the vulnerabilities associated with IoT devices?",
+            "Does the response propose specific, actionable security strategies?",
+            "Are the security strategies realistic and well-explained?",
+            "Does the response consider both device and network-level security enhancements?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 7,
+        "system_prompt": "As an urban planning expert, analyze the challenges of rapid urbanization in cities and propose sustainable development strategies to address these issues.",
+        "input": "Challenge: Traffic congestion\nImpact: Rapid urbanization leads to an increase in vehicle numbers, resulting in severe traffic congestion. This not only causes longer commute times but also contributes to higher emissions of greenhouse gases, affecting air quality and public health.\n\nChallenge: Limited access to affordable housing",
+        "reference_answer": "To tackle the challenge of traffic congestion, cities can invest in public transportation systems and develop infrastructure for non-motorized modes of transport, such as cycling and walking paths. Implementing congestion pricing in heavily trafficked areas can also discourage excessive use of personal vehicles. For the issue of limited access to affordable housing, adopting mixed-use development strategies, where residential areas are combined with commercial and recreational spaces, can maximize land use and promote community cohesion. Governments can incentivize the construction of affordable housing projects and enforce regulations to prevent real estate speculation. These strategies not only address the immediate challenges but also contribute to the long-term sustainability and resilience of cities against the impacts of urbanization.",
+        "score_rubric": {
+            "criteria": "Does the response accurately analyze the challenges posed by rapid urbanization and outline sustainable development strategies to mitigate these problems?",
+            "score1_description": "The response fails to identify the challenges of urbanization accurately or suggests ineffective or unrelated development strategies, showing a lack of understanding of urban planning.",
+            "score2_description": "The response identifies some challenges but offers incomplete or non-sustainable solutions, indicating a partial grasp of the necessary development strategies.",
+            "score3_description": "The response correctly identifies the urbanization challenges and proposes general sustainable strategies, but lacks detail or fails to fully explain how these strategies can address the issues, showing an adequate understanding.",
+            "score4_description": "The response accurately describes the urbanization challenges and suggests detailed, targeted sustainable development strategies, demonstrating a good understanding with minor gaps in detail or explanation.",
+            "score5_description": "The response expertly outlines the specific challenges posed by rapid urbanization and proposes a clear, comprehensive suite of sustainable development strategies that directly address these issues, demonstrating deep knowledge of sustainable urban planning."
+        },
+        "atomic_checklist": [
+            "Does the response accurately describe the impact of traffic congestion and affordable housing challenges?",
+            "Does the response propose sustainable strategies that address traffic congestion?",
+            "Are the strategies for increasing access to affordable housing feasible and well-explained?",
+            "Does the response consider the long-term sustainability and environmental impact of the proposed strategies?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 8,
+        "system_prompt": "As a linguistics expert, explain the social and cognitive impacts of multilingualism on individuals and communities.",
+        "input": "Impact: Enhanced cognitive flexibility\nExplanation: Multilingual individuals often have enhanced cognitive flexibility, as the constant switching between languages can improve problem-solving skills and creativity. This cognitive advantage allows for more efficient information processing and adaptability in changing environments.\n\nImpact: Strengthened cultural identity and social cohesion",
+        "reference_answer": "Multilingualism fosters enhanced cognitive flexibility, contributing to better problem-solving abilities and creative thinking, as individuals navigate through multiple linguistic frameworks. This mental agility aids in adapting to diverse environments and tasks. Socially, multilingualism enriches cultural identity and promotes social cohesion, as it allows individuals to connect more deeply with different cultural groups, fostering understanding and respect. This dual impact strengthens community bonds and encourages cultural preservation while advancing cognitive development. The ability to communicate in multiple languages thus serves as a bridge, enhancing both personal cognitive skills and societal harmony.",
+        "score_rubric": {
+            "criteria": "Does the response comprehensively describe the social and cognitive impacts of multilingualism and accurately correlate these impacts to individual and community benefits?",
+            "score1_description": "The response fails to correctly identify the impacts of multilingualism or suggests unrelated or incorrect benefits, showing a lack of understanding of the subject.",
+            "score2_description": "The response identifies some impacts of multilingualism but provides incomplete or vague connections to individual and community benefits, indicating a partial understanding.",
+            "score3_description": "The response correctly identifies the impacts of multilingualism and proposes general benefits but lacks detail or fails to fully elucidate how these benefits correlate, demonstrating an adequate understanding.",
+            "score4_description": "The response accurately describes the impacts of multilingualism and suggests detailed, targeted benefits to individuals and communities, displaying a good understanding with minor gaps in detail or explanation.",
+            "score5_description": "The response expertly outlines the specific social and cognitive impacts of multilingualism and provides a clear, comprehensive explanation of the benefits to individuals and communities, demonstrating deep knowledge of the subject."
+        },
+        "atomic_checklist": [
+            "Does the response accurately describe the cognitive impacts of multilingualism?",
+            "Does the response accurately describe the social impacts of multilingualism?",
+            "Are the correlations between multilingualism and its benefits to individuals and communities well-explained?",
+            "Does the response consider the broader implications of multilingualism on cultural diversity and integration?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "system_prompt_vs_demo",
+        "instance_idx": 9,
+        "system_prompt": "As a nutrition expert, evaluate the dietary trends focusing on their potential health benefits and risks.",
+        "input": "Dietary Trend: Intermittent Fasting\nEvaluation: Intermittent fasting involves cycling between periods of eating and fasting, ranging from several hours to days at a time. Proponents argue it can lead to weight loss, improved metabolic health, and even extend lifespan. Critics, however, caution about potential risks such as nutrient deficiencies, disordered eating patterns, and increased stress levels due to relentless hunger pangs.\n\nDietary Trend: Keto Diet",
+        "reference_answer": "The Keto diet, characterized by high fat, moderate protein, and very low carbohydrate intake, aims to induce ketosis, a state where the body burns fat for fuel instead of carbs. This dietary trend is touted for its potential to promote rapid weight loss, improve insulin sensitivity, and decrease inflammation. However, it also carries risks including nutrient deficiencies due to the exclusion of certain food groups, increased cholesterol levels, and the possibility of exacerbating disordered eating behaviors. Considering its dramatic alteration of typical eating patterns, it's crucial to approach the Keto diet carefully, ideally under the guidance of a healthcare provider.",
+        "score_rubric": {
+            "criteria": "Does the response thoroughly assess the health benefits and risks associated with the Keto diet, offering a balanced perspective?",
+            "score1_description": "The response fails to identify key benefits or risks associated with the Keto diet, indicating a lack of comprehensive understanding of the diet's impacts.",
+            "score2_description": "The response identifies either the benefits or risks of the Keto diet but does not provide a balanced evaluation, showing a partial understanding.",
+            "score3_description": "The response mentions both benefits and risks of the Keto diet but lacks depth or detail, suggesting an adequate but incomplete assessment.",
+            "score4_description": "The response provides a detailed evaluation of both the benefits and risks of the Keto diet, although it could offer more nuance or explore further implications, displaying good comprehension.",
+            "score5_description": "The response expertly assesses the Keto diet, presenting a balanced, comprehensive analysis of both its health benefits and risks, reflecting deep insight and understanding."
+        },
+        "atomic_checklist": [
+            "Does the response accurately describe the Keto diet?",
+            "Are key health benefits of the Keto diet effectively detailed?",
+            "Are potential risks or drawbacks of the Keto diet clearly outlined?",
+            "Does the response provide a balanced perspective, considering both pros and cons?"
+        ],
+        "background_knowledge": []
+    }
+]

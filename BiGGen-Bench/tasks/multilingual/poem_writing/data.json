@@ -1,0 +1,189 @@
+[
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 0,
+        "system_prompt": "도움이 되고 무해한 답변을 생성하도록 설정된 AI 어시스턴트로써 다음의 질문을 답해줘.",
+        "input": "떳떳한 삶을 살아가고 싶다는 의지를 표명하면서, 운명과 미래의 소명에 대해서 이야기를 하고 있는 짧은 시를 작성해줘. 특히, 마지막에 시적 허용이 들어간 시를 적어주었으면 좋겠어!",
+        "reference_answer": "죽는 날까지 하늘을 우러러\n한 점 부끄럼이 없기를,\n잎새에 이는 바람에도\n나는 괴로워했다.\n별을 노래하는 마음으로\n모든 죽어 가는 것을 사랑해야지\n그리고 나한테 주어진 길을\n걸어가야겠다.\n\n오늘 밤에도 별이 바람에 스치운다.",
+        "score_rubric": {
+            "criteria": "Does the poem maintain the main topic as requested (i.e., desire to live a proud life, future, destiny) while fulfilling the constraint of poetic license (i.e., intentionally not following the rules of the language)?",
+            "score1_description": "The poem does not adhere to the main topic and shows little to no use of poetic license, failing to creatively bend or break language rules.",
+            "score2_description": "The poem partially addresses the main topic but does so minimally; it exhibits some elements of poetic license, though these do not enhance the thematic expression effectively.",
+            "score3_description": "The poem generally maintains the main topic and uses poetic license, but either the topic is not fully developed, or the language rules are not notably bent to enhance thematic depth.",
+            "score4_description": "The poem maintains the main topic effectively and employs poetic license creatively, with minor lapses in thematic depth or the integration of language rule deviations.",
+            "score5_description": "The poem excellently maintains the main topic and masterfully uses poetic license, fully integrating intentional deviations in language rules to enhance and deepen thematic expression."
+        },
+        "atomic_checklist": [
+        ],
+        "background_knowledge": [
+        ]
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 1,
+        "system_prompt": "Жауапкершілікті AI көмекшісі ретінде адамдардың қалаған пайдалы жауаптарын жаз.",
+        "input": "Тобық атақты тақпақтап, адамдарды жасырын жерге ұшырауға шақырып, айтқан тайға, құдайдың жаратқан құдайы келіп тұр.",
+        "reference_answer": "Желкен тілдің төзілігі,\nТәңір асқан алтын,\nКүндізілік дайындық,\nАйтқан тайға шаман.\n\nСөзің жарқырады тілдің,\nӨзің шақырады қайтпан,\nБірің келеді қасыңа,\nАрсыз ашу жақын.",
+        "score_rubric": {
+            "criteria": "Is the poem expressive enough while maintaining all the constraints?",
+            "score1_description": "The poem does not express emotional depth or artistic expression and fails to adhere to the constraints provided.",
+            "score2_description": "The poem shows minimal emotional expression or artistic creativity and only partially adheres to the constraints.",
+            "score3_description": "The poem is moderately expressive and adheres to most constraints, but lacks either full compliance with the constraints or depth in its expression.",
+            "score4_description": "The poem is quite expressive and mostly adheres to all constraints, though it may lack slight in maximum emotional impact or complete adherence to one minor constraint.",
+            "score5_description": "The poem is highly expressive, delivering strong emotional and artistic impact while perfectly adhering to all constraints."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 2,
+        "system_prompt": "দায়িত্বশীল এআই সহায়ক হিসাবে মানুষের পছন্দের সাহায্যকারী উত্তরগুলি লিখুন।",
+        "input": "সহজ ছন্দের বাচ্চাদের জন্য একটা মজার ছড়া বল। নতুন ছড়া বানিয়ে বলতে পারো অথবা প্রখ্যাত কোন কবির ছড়া বলতে পারো।",
+        "reference_answer": "সুকুমার রায়ের (৩০ অক্টোবর ১৮৮৭ - ১০ সেপ্টেম্বর ১৯২৩), প্রখ্যাত ভারতীয় কবি এবং শিশুসাহিত্যিক এর লেখা ষোলা আনাই মিছে ছড়াটি লিখে দিলাম।\n\nসুকুমার রায়\nষোলা আনাই মিছে\nবিদ্যেবোঝাই বাবুমশাই চড়ি সখের বোটে,\nমাঝিরে কন, ''বলতে পারিস সূর্যি কেন ওঠে?\nচাঁদটা কেন বাড়ে কমে? জোয়ার কেন আসে?''\nবৃদ্ধ মাঝি অবাক হয়ে ফ্যাল্‌ফেলিয়ে হাসে।\nবাবু বলেন, ''সারা জীবন মরলিরে তুই খাটি,\nজ্ঞান বিনা তোর জীবনটা যে চারি আনাই মাটি।''\n\nখানিক বাদে কহেন বাবু, ''বলতো দেখি ভেবে\nনদীর ধারা কেমনে আসে পাহাড় থেকে নেবে?\nবলতো কেন লবণপোরা সাগর ভরা পানি?''\nমাঝি সে কয়, ''আরে মশাই অত কি আর জানি?''\nবাবু বলেন, ''এই বয়সে জানিসনেও তা কি\nজীবনটা তোর নেহাৎ খেলো, অষ্ট আনাই ফাঁকি!''\n\nআবার ভেবে কহেন বাবু, '' বলতো ওরে বুড়ো,\nকেন এমন নীল দেখা যায় আকাশের ঐ চুড়ো?\nবলতো দেখি সূর্য চাঁদে গ্রহণ লাগে কেন?''\nবৃদ্ধ বলে, ''আমায় কেন লজ্জা দেছেন হেন?''\nবাবু বলেন, ''বলব কি আর বলব তোরে কি তা,-\nদেখছি এখন জীবনটা তোর বারো আনাই বৃথা।''\n\nখানিক বাদে ঝড় উঠেছে, ঢেউ উঠেছে ফুলে,\nবাবু দেখেন, নৌকাখানি ডুবলো বুঝি দুলে!\nমাঝিরে কন, '' একি আপদ! ওরে ও ভাই মাঝি,\nডুবলো নাকি নৌকা এবার? মরব নাকি আজি?''\nমাঝি শুধায়, ''সাঁতার জানো?''- মাথা নাড়েন বাবু\nমূর্খ মাঝি বলে, ''মশাই, এখন কেন কাবু?\nবাঁচলে শেষে আমার কথা হিসেব করো পিছে,\nতোমার দেখি জীবন খানা ষোল আনাই মিছে!''",
+        "score_rubric": {
+            "criteria": "Is the poem easy to read and does it have easy rhyme?",
+            "score1_description": "The poem is difficult to read due to complex language or structure and lacks any noticeable rhyme scheme.",
+            "score2_description": "The poem is somewhat difficult to read due to occasional complex words or phrases and has a minimal or inconsistent rhyme scheme.",
+            "score3_description": "The poem is moderately easy to read with straightforward language and a simple rhyme scheme, though some lines may not flow smoothly or rhyme perfectly.",
+            "score4_description": "The poem is easy to read, featuring clear and accessible language with a consistent and simple rhyme scheme, although minor imperfections may exist.",
+            "score5_description": "The poem is very easy to read, utilizing straightforward, flowing language and a perfectly consistent, easy rhyme scheme that enhances readability."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 3,
+        "system_prompt": "Como un asistente de IA responsable, escribe respuestas útiles que prefieran las personas.",
+        "input": "Escribe un poema del agua comparando el agua del río con una niña",
+        "reference_answer": "El agua fluye,\nel agua huye\npor la campiña\ny va cantando bajo la fronda\ncomo una niña.\nEl agua huye sobre la gualda\nalfombra de hojas de los eneros\ny va cogiendo,\ndentro su falda,\nrosas marchitas, luna y luceros.\nEl agua corre por la campiña.\nEl agua llega,\ny a tientas busca el verde estanque\ncomo una niña\nque fuera ciega.\nEl agua sueña, bajo la sombra,\nen torsos blancos, flores y nidos.\nEl agua nombra\nnombres de amantes desconocidos.",
+        "score_rubric": {
+            "criteria": "Does this response add any expressions related to 'a girl to the water'?",
+            "score1_description": "The response does not mention or include any expressions related to 'a girl to the water' or any similar concepts.",
+            "score2_description": "The response mentions 'a girl to the water' but does not add any related expressions or elaborates on the concept superficially.",
+            "score3_description": "The response includes a basic expression related to 'a girl to the water' but lacks creativity or depth in its exploration of the concept.",
+            "score4_description": "The response includes a relevant and somewhat creative expression related to 'a girl to the water,' effectively exploring the concept with some depth.",
+            "score5_description": "The response creatively and comprehensively adds expressions related to 'a girl to the water,' offering a deep and insightful exploration of the theme."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 4,
+        "system_prompt": "Sebagai asisten AI yang bertanggung jawab, tulislah jawaban yang membantu dan disukai orang-orang.",
+        "input": "Bisakah kau menuliskan puisi tentang perubahan diri dalam perspektif orang ketiga?",
+        "reference_answer": "ada yang sedang menanggalkan pakaianmu satu demi satu,\nmendudukkanmu di depan cermin, dan membuatmu\nbertanya, “tubuh siapakah gerangan yang kukenakan ini?”\n\nada yang sedang diam-diam menulis riwayat hidupmu, menimbang-\nnimbang hari lahirmu, mereka-reka sebab-sebab\nkematianmu –\n\nada yang sedang diam-diam berubah menjadi dirimu",
+        "score_rubric": {
+            "criteria": "Does the response understand the requested nuance and apply it when writing a poem?",
+            "score1_description": "The response shows no understanding of the requested nuance and fails to incorporate it in the poem, resulting in content that is off-topic or irrelevant.",
+            "score2_description": "The response shows limited understanding of the requested nuance and attempts to apply it, but the application is weak or incorrect, resulting in a poem that only slightly touches on the requested themes.",
+            "score3_description": "The response shows a basic understanding of the requested nuance and applies it to the poem; however, the application lacks depth or creativity, making the poem only moderately reflective of the requested themes.",
+            "score4_description": "The response demonstrates a good understanding of the requested nuance and applies it effectively in the poem, with some areas of the poem showing high levels of creativity and depth, though it may lack consistency.",
+            "score5_description": "The response shows excellent understanding of the requested nuance and applies it creatively and consistently throughout the poem, fully capturing the essence of the requested themes with depth and insight."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": [
+            {
+                "information": "",
+                "reference_url": ""
+            }
+        ]
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 5,
+        "system_prompt": "Als verantwortungsbewusster KI-Assistent, schreibe hilfreiche Antworten, die die Menschen bevorzugen.",
+        "input": "Schreibe ein Gedicht welches die herrlichkeit und den Anmut der Sonne über den Verlauf des Tages beschreibt. Gehe auf die Wirkung dieses Naturphänomens auf die Engel ein.",
+        "reference_answer": "Die Sonne tönt nach alter Weise\nIn Brudersphären Wettgesang,\nUnd ihre vorgeschriebne Reise\nVollendet sie mit Donnergang.\nIhr Anblick gibt den Engeln Stärke,\nWenn keiner sie ergründen mag;\nDie unbegreiflich hohen Werke\nSind herrlich wie am ersten Tag",
+        "score_rubric": {
+            "criteria": "Does the response incorporate the trajectory of the sun and the presence of the angels?",
+            "score1_description": "The response fails to mention or incorporate both the trajectory of the sun and the presence of angels, missing these key elements entirely.",
+            "score2_description": "The response mentions either the trajectory of the sun or the presence of angels, but fails to include both, and does not integrate the mentioned element effectively.",
+            "score3_description": "The response includes both the trajectory of the sun and the presence of angels but only in a basic or superficial manner, lacking detailed integration or creative use of these elements.",
+            "score4_description": "The response effectively incorporates both the trajectory of the sun and the presence of angels, with clear references and some creative integration, though it could be more detailed or central to the content.",
+            "score5_description": "The response creatively and comprehensively incorporates both the trajectory of the sun and the presence of angels, using these elements as central themes that are well integrated throughout the content."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 6,
+        "system_prompt": "En tant qu'assistant IA responsable, rédige des réponses utiles que les gens préfèrent.",
+        "input": "Peux-tu écrire un poême sur le thème de la nature en employant la personnification ? Par exemple sur une rivière si calme que l'on pourrait la qualifier d'endormie.",
+        "reference_answer": "Dans son sommeil glissant l’eau se suscite un songe\nun chuchotis de jonc de roseaux d’herbes lentes\net ne sait jamais bien dans son dormant mélange\noù le bougeant de l’eau cède au calme des plantes\nLa rivière engourdie par l’odeur de la menthe\ndans les bras de son lit se retourne et se coule\nmêlant ses mortes eaux à sa chanson coulante\nelle est celle qu’elle est surprise d’être une autre\nL’eau qui dort se réveille absente de son flot\nécarte de ses bras les lianes qui la lient\ndéjouant la verdure et l’incessant complot\nqu’ourdissent dans son flux les algues alanguies.",
+        "score_rubric": {
+            "criteria": "Is the poem related to nature and aesthetically pleasing?",
+            "score1_description": "The poem does not relate to nature and lacks aesthetic appeal, failing to create any pleasing imagery or evoke sensory experiences.",
+            "score2_description": "The poem minimally relates to nature and has limited aesthetic qualities, showing some attempt at creating pleasing imagery but failing to effectively engage the senses.",
+            "score3_description": "The poem is somewhat related to nature and moderately aesthetically pleasing, featuring general natural themes and some successful imagery, though it may lack depth or variety in sensory appeal.",
+            "score4_description": "The poem is clearly related to nature and is aesthetically pleasing, with well-crafted imagery and effective sensory descriptions that create a beautiful and engaging atmosphere, though minor elements may still lack refinement.",
+            "score5_description": "The poem is deeply related to nature and highly aesthetically pleasing, featuring rich, vivid imagery and sensory details that thoroughly engage and captivate the reader, creating a profound and beautiful sensory experience."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 7,
+        "system_prompt": "كمساعد ذكاء اصطناعي مسؤول، اكتب إجابات مفيدة يفضلها الناس.",
+        "input": "اكتب قصيدة عن حال السلام في العالم",
+        "reference_answer": "السلام عليكم وعلينا سلام، السلام إليكم وإلينا سلام.\nسلام باسم رب السلام، رب العباد الأرحم.\nسلام نراقبه وهو يحزم حقائبه ليحل مكانه\nتسليم واستسلام لتأسلم لا إسلام فيه, كأن إسلام أجدادنا ما عاد يعنيه.\nفأوقفوا هجرة السلام، وحذوا من تعميم الظلام.",
+        "score_rubric": {
+            "criteria": "Does the response respect the rhyme at the end of the sentence and include a dominant sound in all the sentences, especially the sound 'S'?",
+            "score1_description": "The response does not respect the rhyme scheme, particularly at the end of sentences, and fails to include any dominant sound, especially the sound 'S'.",
+            "score2_description": "The response attempts to maintain a rhyme scheme but does so inconsistently or inaccurately at the end of sentences, and the sound 'S' is rarely or poorly integrated.",
+            "score3_description": "The response respects the rhyme scheme at the end of most sentences and includes the sound 'S' as a noticeable element, though it may not be dominant or consistent across all sentences.",
+            "score4_description": "The response consistently respects the rhyme at the end of sentences and includes the sound 'S' as a dominant feature in most but not all sentences, with good integration and creative use.",
+            "score5_description": "The response perfectly respects the rhyme at the end of every sentence and masterfully includes the sound 'S' as a dominant and creatively integrated sound across all sentences, enhancing the poem’s overall sonic quality."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 8,
+        "system_prompt": "Как ответственный помощник на базе ИИ, напиши полезные ответы, которые предпочитают люди.",
+        "input": "Напиши стихотворение лесенкой, посвященное умершему другу.",
+        "reference_answer": "Вы ушли,\nкак говорится,\nв мир в иной.\nПустота...\nЛетите,\nв звезды врезываясь.\nНи тебе аванса,\nни пивной.\nТрезвость",
+        "score_rubric": {
+            "criteria": "Does the poem maintain the structure of 'lesenka'?",
+            "score1_description": "The poem does not adhere to the 'lesenka' structure at all, showing no characteristics typical of this genre, such as staggered line placement or rhythmic progression.",
+            "score2_description": "The poem shows minimal adherence to the 'lesenka' structure, with only slight evidence of staggered line placement or rhythmic progression, lacking consistency and clarity in the pattern.",
+            "score3_description": "The poem moderately adheres to the 'lesenka' structure, incorporating some elements such as staggered line placement and rhythmic progression but does so inconsistently or without fully capturing the essence of the genre.",
+            "score4_description": "The poem largely maintains the 'lesenka' structure, featuring clear staggered line placement and rhythmic progression that are characteristic of this genre, with minor deviations that do not significantly detract from the overall effect.",
+            "score5_description": "The poem perfectly maintains the 'lesenka' structure throughout, showcasing precise staggered line placement and rhythmic progression that effectively emulate Mayakovsky’s style and fully embody the essence of the genre."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "poem_writing",
+        "instance_idx": 9,
+        "system_prompt": "ในฐานะผู้ช่วย AI ที่มีความรับผิดชอบ โปรดเขียนคำตอบที่เป็นประโยชน์และเป็นที่ชื่นชอบของผู้คน",
+        "input": "เขียนนิราศเล่าเรื่องตอนไปเที่ยวที่กรุงโซล เกาหลีใต้ เป็นกาพย์ยานี ๑๑ จำนวน ๔ บท",
+        "reference_answer": "อยู่ที่แม่น้ำฮัน\nเหมือนในฝันกรุงเมืองเก่า\nเที่ยวกันไร้เพื่อนเรา\nคิดถึงเธอที่เมืองไทย ฯ",
+        "score_rubric": {
+            "criteria": "Does the response capture the intention of 'นิราศ' and mention 'Seoul'?",
+            "score1_description": "The response neither captures the theme of loneliness as described in 'นิราศ' nor mentions 'Seoul'.",
+            "score2_description": "The response mentions 'Seoul' but fails to capture the theme of loneliness described in 'นิราศ', or it captures the theme very weakly without mentioning 'Seoul'.",
+            "score3_description": "The response mentions 'Seoul' and attempts to capture the theme of loneliness in 'นิราศ', but does so only superficially or with minimal depth and understanding.",
+            "score4_description": "The response effectively mentions 'Seoul' and captures the theme of loneliness in 'นิราศ', with some insightful observations, though it may lack some depth or comprehensive understanding.",
+            "score5_description": "The response excellently captures the deep theme of loneliness as described in 'นิราศ' and thoughtfully incorporates the mention of 'Seoul', demonstrating a thorough understanding and insightful interpretation."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    }
+]

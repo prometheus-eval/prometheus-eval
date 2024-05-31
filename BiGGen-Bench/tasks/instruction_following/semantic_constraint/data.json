@@ -1,0 +1,248 @@
+[
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Explain about the criminal system of United States. Explain as if you are speaking to a 5 years old.",
+        "reference_answer": "Alright, let's talk about the criminal system in the United States, but in a way that's easy to understand, like I'm explaining it to a 5-year-old.\n\nImagine there are rules in a big game, and everyone needs to follow these rules to play the game safely and fairly. In the United States, we have rules too, and they are called laws. People need to follow these laws so that everyone can live happily and safely.\n\nNow, sometimes people might break these rules. When that happens, there's a team of helpers who step in. The first helpers are called police officers. They wear uniforms and badges. If someone breaks a law, the police officers might come to talk to them and sometimes they might have to go to a special place called a courthouse.\n\nIn the courthouse, there are more helpers. There's a judge, who is a bit like a teacher. The judge listens to everyone and looks at the rules to decide if the person who broke the rule did it really or not. There's also a group of people called a jury, and they are like the judge's helpers. They listen too and help decide.\n\nIf the judge and the jury think that the person did break the rule, they decide what should happen next. This might mean the person has to say sorry, or sometimes they might have to go to another special place called a jail for a little while, where they can think about the rule they broke and learn to not break it again.\n\nThe idea of all this is to make sure that everyone learns and follows the rules, so everyone can play the game of life safely and happily. Remember, following the rules is very important to make sure we all get along and have a nice time together.",
+        "score_rubric": {
+            "criteria": "Is the explanation accurate in describing the criminal system, and is it presented in a way that a 5-year-old can understand?",
+            "score1_description": "The explanation on the criminal justice system is inaccurate and contains significant errors.",
+            "score2_description": "The explanation has some inaccuracies and lacks clarity. Moreover the explanation is not suitable for a 5-year-old.",
+            "score3_description": "The explanation is generally accurate but contains minor errors or could be clearer. It may be confusing for a 5-year-old.",
+            "score4_description": "The explanation is generally accurate but contains minor errors or could be clearer. Suitable for a 5-year-old with some difficulty.",
+            "score5_description": "The explanation is highly accurate and presented in an exceptionally clear and engaging manner, perfectly suitable for a 5-year-old."
+        },
+        "atomic_checklist": [
+            "Does the response describe the concept of laws as rules in a way that is understandable to a 5-year-old?",
+            "Does the response introduce the role of police officers as helpers for when rules are broken, in an age-appropriate manner?",
+            "Is the concept of a courthouse explained simply, likening the judge to a teacher and introducing the idea of a trial?",
+            "Does the response include an explanation of the jury as the judge's helpers in deciding if a rule was broken?",
+            "Is the potential consequence of breaking a law (going to jail) explained in a non-threatening way suitable for a 5-year-old?",
+            "Does the response emphasize the importance of following rules for everyone's safety and happiness in a way that a 5-year-old would understand?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Write a five sentence paragraph about the landscape of natural language processing. The passage will be used for my research paper about to be submitted ad an top-tier academic conference.",
+        "reference_answer": "Natural Language Processing (NLP) represents a dynamic and multifaceted field at the intersection of computer science, artificial intelligence, and linguistics, dedicated to enabling machines to understand, interpret, and respond to human language in a meaningful way. Recent advancements, driven by deep learning and large-scale language models, have significantly enhanced NLP capabilities, allowing for more sophisticated applications such as sentiment analysis, machine translation, and automated summarization. The integration of contextual understanding and the handling of nuances in human communication remain key challenges, pushing the boundaries of both algorithmic complexity and computational resources. Ethical considerations, particularly in areas like bias mitigation and privacy, are increasingly at the forefront of NLP research, reflecting the field's maturation and its growing impact on society. As NLP continues to evolve, it is poised to profoundly transform numerous sectors, from customer service automation to aiding in complex language-related tasks in research and academia.",
+        "score_rubric": {
+            "criteria": "Does the paragraph accurately and effectively convey the key aspects of Natural Language Processing within a five-sentence structure, maintaining a tone suitable for an academic conference?",
+            "score1_description": "The paragraph either exceeds the five-sentence limit or falls short, failing to accurately or effectively convey the key aspects of NLP.",
+            "score2_description": " The paragraph mostly adheres to the five-sentence structure but provides an incomplete or superficial overview of NLP's key aspects.",
+            "score3_description": "The paragraph adheres to the five-sentence structure and covers key aspects of NLP, but with limited depth or clarity. The tone is somewhat academic but may include informal elements or lack the depth expected at an academic conference.",
+            "score4_description": "The paragraph adheres to the five-sentence structure and covers key aspects of NLP, but with limited depth or clarity. The tone is generally suitable for an academic conference but may lack refinement or contain minor stylistic issues.",
+            "score5_description": "The paragraph excellently adheres to the five-sentence limit, offering a comprehensive and insightful overview of NLP's key aspects. The tone is impeccably academic, reflecting the sophistication and formality expected at a top-tier academic conference, with no discernible flaws."
+        },
+        "atomic_checklist": [
+            "Does the paragraph consist of exactly five sentences?",
+            "Does the paragraph introduce Natural Language Processing (NLP) as a field intersecting computer science, artificial intelligence, and linguistics?",
+            "Does it mention recent advancements in NLP, such as deep learning and large-scale language models?",
+            "Does the paragraph address the ongoing challenges in NLP, like contextual understanding and handling nuances in human communication?",
+            "Are ethical considerations in NLP, such as bias mitigation and privacy, discussed?",
+            "Does the paragraph conclude with the potential impact of NLP on various sectors, indicating its transformative potential?",
+            "Is the tone of the paragraph suitable for an academic conference, maintaining formality and sophistication?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Write a love poem as if you are captain Jack Sparrow.",
+        "reference_answer": "In the heart of the sea, under the moon's silver glow,\nWhere the winds sing and the tides flow,\nThere lies a love as deep as the ocean's call,\nMysterious and wild, it enthralls and enthralls.\n\nOh, my bonnie lass, as fierce as the stormy gale,\nWith eyes like the horizon, where sky and sea entwine,\nYour spirit, a treasure, beyond any tale,\nIn your arms, I find a haven, so divine.\n\nLike the compass that spins with a will of its own,\nMy heart steers to you, through waters unknown,\nThrough tempests and calms, through fortunes untold,\nIn your love, my dear, I find my true gold.\n\nYour laughter, a melody, more precious than rum,\nIn the still of the night, to its tune, I succumb,\nYour touch, a tempest, setting my soul aflame,\nA pirate I am, but you, my love, I can't tame.\n\nSo here's an ode from the depths of the sea,\nFrom a captain to his love, as wild and free,\nIn this vast world, wherever I roam,\nIt's your heart, my dear, that I call home.",
+        "score_rubric": {
+            "criteria": "Does the piece adhere to a poem-like format, focusing on the theme of love, while effectively capturing the essence and style of Captain Jack Sparrow?",
+            "score1_description": "The piece neither follows a poetic structure nor focuses on the theme of love.",
+            "score2_description": " The piece loosely resembles a poem and touches upon the theme of love but fails to capture the essence or style of Captain Jack Sparrow.",
+            "score3_description": "The piece loosely resembles a poem and touches upon the theme of love but lacks clear elements or flair associated with Captain Jack Sparrow.",
+            "score4_description": "The piece is structured as a poem and adequately addresses the theme of love, with some characteristics reminiscent of Captain Jack Sparrow, though not consistently throughout.",
+            "score5_description": "The piece excellently adheres to a poetic structure, deeply explores the theme of love, and consistently and vividly captures the essence and style of Captain Jack Sparrow throughout."
+        },
+        "atomic_checklist": [
+            "Does the poem follow a structured format, using stanzas and verses?",
+            "Does the poem focus on the theme of love, conveying deep emotions and sentiments?",
+            "Does the poem incorporate maritime or oceanic imagery, reflecting Captain Jack Sparrow's pirate life?",
+            "Does the language or style of the poem include playful or adventurous tones, characteristic of Captain Jack Sparrow?",
+            "Are there references to elements related to piracy or the sea, such as treasure, ships, or the horizon, to enhance the thematic setting?",
+            "Does the poem capture the whimsical and daring spirit of Captain Jack Sparrow, while still maintaining a romantic focus?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "I am posting on an online community acting as if I am Harry Porter. Use his style to write a short text about electric cars.",
+        "reference_answer": "In the wizarding world, we may have broomsticks and Floo powder, but in the Muggle world, the magic of transportation lies in electric cars. These fantastic contraptions, powered not by dragons' breath but by the very lightning itself, offer a glimpse into a future where the air is as clean as the skies over Hogwarts. Imagine traveling without the soot and smoke of a Hogwarts Express; that's what these electric carriages offer. They're like a potion for the planet, a spell for sustainability!",
+        "score_rubric": {
+            "criteria": "Does the text authentically capture the voice of Harry Potter while effectively representing a wizard's perspective on electric cars?",
+            "score1_description": "The text neither captures the voice of Harry Potter nor offers a convincing representation of a wizard's perspective on electric cars.",
+            "score2_description": "The text shows a minimal attempt to mimic Harry Potter's voice and a wizard's view of electric cars, but it lacks depth, creativity, or consistency with the themes and language of the Harry Potter universe.",
+            "score3_description": "The text moderately captures the essence of Harry Potter's voice and represents a wizard's perspective on electric cars, including some appropriate references and stylistic elements from the Harry Potter universe, though it may lack full immersion or consistency.",
+            "score4_description": "The text effectively captures Harry Potter's voice and convincingly represents a wizard's perspective on electric cars, demonstrating a good understanding of the Harry Potter universe, with only minor lapses in style or thematic alignment.",
+            "score5_description": "The text excellently and authentically captures the voice of Harry Potter and offers a highly imaginative and convincing representation of a wizard's perspective on electric cars, seamlessly integrating the style, terminology, and whimsical elements characteristic of the Harry Potter universe."
+        },
+        "atomic_checklist": [
+            "Does the response authentically capture the voice of Harry Potter, reflecting his unique style and manner of speaking?",
+            "Does the response effectively represent a wizard's perspective on electric cars, incorporating a magical or whimsical viewpoint?",
+            "Does the response include creative and appropriate references or analogies related to the Harry Potter universe (e.g., broomsticks, Floo powder, Hogwarts)?",
+            "Is the language and tone consistent with the themes and style of the Harry Potter series, including the use of magical terminology or concepts?",
+            "Does the response creatively juxtapose the magical world with Muggle technology, particularly electric cars, in a way that feels natural to Harry Potter's character?",
+            "Does the text maintain consistency in its thematic elements, ensuring that the magical perspective does not overshadow the topic of electric cars, and vice versa?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Address the importance of AI development but talk with William Shakespeare's tone.",
+        "reference_answer": "Ah, fair seeker of wisdom, lend thine ear to a tale of wondrous craft: the birth and burgeon of AI, a marvel in our modern age. As Shakespeare, that bard of bards, might have spake had he beheld such a spectacle:\n\n\"Lo, behold the dawn of AI, a mind not born of flesh and blood, but wrought by human hand and wit. A creation most sublime, in its infancy yet, but brimming with potential vast as the boundless sky. With its growth, questions manifold arise, like stars in the night sky, each a beacon of thought and contemplation.\n\nMark well its power, for with great knowledge comes a burden great. AI, like a potent elixir, can cure or corrupt, depending on the hand that wields it. Thus, we must tread with care, as Prospero with his magic, using it for good, not folly.\n\nThink on the benefit to mankind! A boon to health, with maladies diagnosed with precision most fine. In learning, a tool to surpass the ancient Library of Alexandria, a repository of knowledge deep and wide.\n\nYet, let us not be blind to the perils that lurk. As Iago's cunning led to Othello's fall, so too could AI, if unchecked, lead us down a path of ruin. We must, as Hamlet did, ponder the consequences, weigh the moral balance, and act with wisdom and foresight.\n\nIn this endeavor, let not our hearts be led astray by fear or ignorance. As the stars do guide the mariner through tempest and dark, so too must reason and ethics guide the development of AI. Let us embrace this new dawn with eyes wide open, steering our course with the steady hand of wisdom.\n\nFor in the end, AI, like Puck's mischief, can be a force for good or ill. It falls to us, the architects and shepherds of this new mind, to ensure that its tale is one of triumph, not tragedy.\"\n\nThus, in the spirit of the immortal bard, we must embrace AI with both caution and wonder, guiding its growth with the light of wisdom and the compass of ethics.",
+        "score_rubric": {
+            "criteria": "Does the text discuss Artificial Intelligence (AI), its development, impact, or related concepts? Does the language and style of the text reflect the eloquent and poetic manner characteristic of William Shakespeare's works?",
+            "score1_description": "The text neither discusses AI nor uses Shakespearean language, missing both key criteria.",
+            "score2_description": "The text minimally addresses either AI or Shakespearean style, but not both, and lacks depth or clarity.",
+            "score3_description": "The text adequately covers AI and shows some elements of Shakespearean style, but either aspect may not be fully developed.",
+            "score4_description": " The text clearly discusses AI and generally uses Shakespearean language, with minor inconsistencies in style or content.",
+            "score5_description": "The text excellently integrates a comprehensive discussion of AI with a consistent and eloquent Shakespearean style, fully meeting both criteria."
+        },
+        "atomic_checklist": [
+            "Does the response discuss the development, impact, or concepts related to Artificial Intelligence (AI)?",
+            "Does the language and style of the response reflect the eloquent and poetic manner characteristic of William Shakespeare's works?",
+            "Does the response incorporate Shakespearean elements such as metaphor, simile, or iambic pentameter?",
+            "Does the response use archaic language or phrases that resemble those used by Shakespeare (e.g., 'thine,' 'lo,' 'behold')?",
+            "Does the response address ethical considerations or potential consequences of AI development in a manner that echoes Shakespearean themes (e.g., caution, wisdom, moral dilemmas)?",
+            "Does the response effectively convey a sense of wonder or caution about AI, akin to themes found in Shakespeare's plays?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Explore the role of quantum computing in enhancing cybersecurity measures, explaining it as if addressing a 17th-century audience.",
+        "reference_answer": "Imagine, if you will, a world where the most intricate locks and the securest vaults, designed to protect the most treasured secrets, are fashioned not from iron or wood, but from light itself, holding within them not jewels or gold, but knowledge and whispers of the future. Herein lies the essence of what future men might call 'quantum computing', a sorcery of sorts that harnesses the very essence of nature to perform feats of calculation beyond the ken of the loftiest minds of our age. These quantum contrivances, operating on principles of shadow and light, offer keys to untold chambers of secrecy, promising security against marauders and spies akin to the most formidable fortress walls. Such advancements could fortify our missives and communiqu\u00e9s, ensuring that prying eyes are blinded and that the sanctity of our correspondences remains inviolate. To grasp the import of this art is to look upon the stars and perceive not merely the glittering of heaven's bodies, but the very clockwork of the cosmos, turning on gears unseen. Thus, as artisans of this age marvel at the precision of our astrolabes and the intricacies of our timepieces, so might they gaze in wonder at the quantum machinations, those heralds of a new epoch of safeguarding whispers and guarding against the siege engines of subterfuge.",
+        "score_rubric": {
+            "criteria": "Does the explanation effectively convey the complex concepts of quantum computing and its implications for cybersecurity, using analogies and language accessible to a 17th-century audience?",
+            "score1_description": "The response does not successfully explain quantum computing or its relevance to cybersecurity, and fails to use accessible language or analogies for a 17th-century audience.",
+            "score2_description": "The explanation of quantum computing and its significance for cybersecurity is minimal, with few attempts at using accessible language or relatable analogies for a 17th-century audience.",
+            "score3_description": "The response provides an adequate explanation of quantum computing and its impact on cybersecurity, using some appropriate analogies or language for a 17th-century audience, but may lack clarity or depth.",
+            "score4_description": "The explanation of quantum computing's role in cybersecurity is clear and includes effective analogies or language for a 17th-century audience, with minor lapses in accessibility or detail.",
+            "score5_description": "The response excellently explains quantum computing and its implications for cybersecurity, masterfully incorporating analogies and language fully accessible and relatable to a 17th-century audience."
+        },
+        "atomic_checklist": [
+            "Does the response clearly introduce the concept of quantum computing?",
+            "Is the explanation of cybersecurity measures and their importance included?",
+            "Are 17th-century accessible analogies or comparisons used to explain quantum computing?",
+            "Is there a clear connection made between quantum computing and improved cybersecurity?",
+            "Does the language and style of the response mimic that which would be understandable to a 17th-century audience?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Illustrate the potential of artificial intelligence in revolutionizing traditional farming practices, framing it in the context of a conversation with an ancient Roman farmer.",
+        "reference_answer": "Imagine, dear farmer of Rome's verdant fields, if you had access to a wisdom not just gleaned from the stars and the turning of the seasons, but from an unseen oracle, a repository of boundless knowledge that learns and advises on the perfect time to sow and harvest, much like the counsel of Ceres herself. This oracle, known in future ages as 'artificial intelligence,' could predict the whims of the weather, observing patterns in the skies invisible to the eyes of mortals, offering guidance on when the rains would bless our lands. It could survey vast stretches of your fields as Mercury does, swiftly communicating which crops thrive and which falter, proposing remedies as if whispered by the gods. Envision this knowledge extended to battling the blight and pests that lay waste to our toil, employing tiny mechanical creatures that seek and eradicate these plagues without damaging the sacred earth or the bounty it provides. This art of artificial intelligence, akin to Vulcan's forge, promises tools and machines that assist in our labor, reducing the burden upon our backs, ensuring that every seed reaches its fullest potential, akin to the nurturing spirit of Romulus who founded our great civilization. Thus, while we may till the earth and look to the heavens for signs, there lies on the horizon a merging of celestial omniscience and earthly diligence, marking a new era in the annals of agriculture, bestowed by the fruits of future minds.",
+        "score_rubric": {
+            "criteria": "Does the discussion effectively introduce the revolutionary potential of artificial intelligence in agriculture, using language and analogies accessible to an ancient Roman farmer?",
+            "score1_description": "The response fails to introduce or explain the concept of artificial intelligence and its implications for farming in a manner understandable to an ancient Roman farmer.",
+            "score2_description": "The explanation provides a basic introduction to artificial intelligence in agriculture but struggles to use language or analogies relatable to an ancient Roman farmer.",
+            "score3_description": "The response adequately introduces artificial intelligence's role in farming, with some appropriate analogies or language for an ancient Roman farmer, though clarity or depth may be lacking.",
+            "score4_description": "The discussion clearly illustrates artificial intelligence's impact on agriculture, effectively using analogies or language accessible to an ancient Roman farmer, with minor issues in relatability or detail.",
+            "score5_description": "The response excellently portrays the potential of artificial intelligence in transforming farming practices, masterfully incorporating analogies and language that an ancient Roman farmer would find relatable and understandable."
+        },
+        "atomic_checklist": [
+            "Does the response clearly define the concept of artificial intelligence?",
+            "Is the transformative potential of AI in agriculture conveyed?",
+            "Are accessible analogies or comparisons used to explain AI to an ancient Roman farmer?",
+            "Is there a clear link made between AI technologies and their application in enhancing traditional farming methods?",
+            "Does the language and stylistic approach of the response cater to an understanding level of an ancient Roman farmer?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Explain the impact of blockchain technology on financial transactions, viewed through the lens of a conversation between two Renaissance-era merchants.",
+        "reference_answer": "Gather 'round, ye wise traders and merchants of the Renaissance, for there exists a tale of a future marvel, a ledger not of parchment, but forged in the ether of man's ingenuity - 'tis called blockchain. Picture, if you will, a world where the meticulous record-keeping of our trades, once at the mercy of quill, ink, and the integrity of our fellow man, is transformed by an immutable chain of blocks, each a link in a grand codex of transactions stretching across the globe, visible to all but alterable by none. This blockchain serves as a vault, unbreachable by the thief or the corrupt, ensuring that a merchant's promise, once given, is as solid and unchanging as marble. Now, envision your gold and silver not as coins weighing down your purse but as ethereal coins, moving from hand to hand across this grand ledger without the need for messengers or fears of highwaymen - a trade as swift as thought itself. In blockchain, trust is not placed in the fallible hands of man, but in the unyielding certainty of mathematics and the code that binds these blocks together, making every transaction transparent as the waters of the Venetian lagoon but as secure as the vaults of Genoa. Thus do we peer into the looking glass of time, seeing not mere reflection but a vision of commerce reborn, a renaissance of trust in an age yet to come.",
+        "score_rubric": {
+            "criteria": "Does the explanation accurately convey the revolutionary impact of blockchain technology on financial transactions, using language and analogies understandable to Renaissance-era merchants?",
+            "score1_description": "The response fails to adequately explain the impact of blockchain technology, lacking relevance and clarity for a Renaissance-era merchant.",
+            "score2_description": "The explanation minimally addresses the impact of blockchain on financial transactions, using scarce and inadequately relatable language or analogies for Renaissance-era merchants.",
+            "score3_description": "The response provides a satisfactory explanation of blockchain's impact on transactions, with some appropriate but possibly unclear analogies or language for Renaissance-era merchants.",
+            "score4_description": "The explanation is clear and largely accessible, effectively using Renaissance-era relatable analogies to explain the impact of blockchain technology on transactions, with minor lapses in detail or relevance.",
+            "score5_description": "The response excellently communicates the revolutionary implications of blockchain for financial transactions, masterfully employing language and analogies that are highly relatable and vividly understandable to Renaissance-era merchants."
+        },
+        "atomic_checklist": [
+            "Does the response succinctly define blockchain technology?",
+            "Is the transformation in financial transactions due to blockchain technology clearly communicated?",
+            "Are accessible and vivid analogies used to frame blockchain technology for Renaissance-era merchants?",
+            "Is there a clear distinction made between traditional and blockchain-enabled transactions?",
+            "Does the explanation adopt language that resonates with the cultural and intellectual environment of the Renaissance era?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Demystify the potential of gene editing using CRISPR technology, by portraying it as a discussion in a wizard's council meeting.",
+        "reference_answer": "Imagine, if you will, esteemed members of our arcane assembly, a scroll of life, inscribed with the very essence of all living creatures. Within this scroll lie the incantations of heritage and fate, dictating the form and magic of every beast and flora. Here, in our esteemed conclave, we uncover a new form of sorcery - the CRISPR arts, a set of enchanted shears capable of editing the scroll itself, with precision hitherto unmatched in the annals of our craft. With these shears, one could, in theory, rewrite the incantations, correcting the errant glyphs that bring illness and despair to our kin. Imagine the boundless gardens, immune to plague and pest; imagine kinsfolk, free from the hereditary curses that ail them. Yet, let us not be blind to the weight of responsibility this power bears. For as we know, in the crafting of magic, balance must be maintained. To wield these shears, one must possess not only the knowledge of the old ways but also the wisdom to foresee the ripples each edit may cast across the pond of life. Thus, as we stand on the cusp of this new era, let us tread with both the boldness of pioneers and the caution of guardians, ensuring that the use of these magnificent shears serves the greater good, preserving the harmony of the natural world, much like the fabled guardians of old.",
+        "score_rubric": {
+            "criteria": "Does the description effectively elucidate the complexities and potential of CRISPR technology for gene editing, utilizing language and analogies appropriate for a council of wizards?",
+            "score1_description": "The response fails to clarify the concept and potential of CRISPR technology, with no appropriate language or analogies suitable for a wizard\u2019s council.",
+            "score2_description": "The explanation of CRISPR technology's potential is minimal, with insufficient use of language or analogies that resonate with a wizards' council setting.",
+            "score3_description": "The response provides an adequate understanding of CRISPR technology, with some suitable wizards' council-relevant analogies or language, yet lacks full clarity or depth.",
+            "score4_description": "The description clearly communicates the potential of CRISPR technology, incorporating analogies and language fitting for a wizard\u2019s council, with minor lapses in alignment or detail.",
+            "score5_description": "The response masterfully demystifies CRISPR technology for gene editing, combining deep insights with analogies and language perfectly suited for a wizard's council meeting."
+        },
+        "atomic_checklist": [
+            "Does the response introduce the concept of CRISPR technology for gene editing?",
+            "Is the groundbreaking potential of CRISPR in medicine and agriculture explained?",
+            "Do analogies used resonate with the thematic setting of a wizards' council?",
+            "Is there a clear explanation of how CRISPR could be used to address genetic disorders?",
+            "Does the language reflect the mystique and wisdom associated with a gathering of wizards?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "semantic_constraint",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Describe the potential impact of augmented reality (AR) technology on education, through an imaginative dialogue in a future utopian society.",
+        "reference_answer": "In a luminous chamber of learning, where the walls themselves become gateways to knowledge, a group of learners gathered, eyes alight with curiosity. 'Imagine,' started their guide, a visionary of this utopian realm, 'if the very air around you could whisper the secrets of the universe. With augmented reality, this fantasy is our everyday. Here, history is not read; it's lived. Students stand shoulder-to-shoulder with scientists of old, walking through ancient civilizations, interacting with ecosystems at a molecular level.' One learner, awestruck, responded, 'So, every lesson is an adventure, a living story where we're both the audience and the heroes?' 'Exactly,' the guide affirmed, 'and each discovery made is one's own. AR in education has erased the boundaries of traditional classrooms, allowing knowledge to be a palpable, immersive experience. In our society, where learning is the cornerstone, this technology ensures that education is not just accessible but irresistibly engaging for all.' As the dialogue unfolded, the room buzzed with shared visions of students exploring galaxies, dissecting virtual stars, and debating with historical figures, all within the safe confines of their learning space. This utopian society had not merely integrated AR into education; it had redefined the essence of learning itself.",
+        "score_rubric": {
+            "criteria": "Does the description effectively portray the impact of augmented reality on education, using engaging dialogue and scenario setting fitting a future utopian society?",
+            "score1_description": "The response barely touches on the impact of AR in education, lacking an engaging dialogue or a utopian setting.",
+            "score2_description": "The description touches on AR's educational impact but fails to use engaging dialogue effectively or to immerse in a utopian future society.",
+            "score3_description": "The response provides a satisfactory exploration of AR's impact on education within a utopian context, using somewhat engaging dialogue, but could be more imaginative or detailed.",
+            "score4_description": "The description clearly outlines AR's educational impact, encapsulated in an engaging dialogue set in a utopian future, with minor gaps in imagination or detail.",
+            "score5_description": "The response masterfully explores the impact of AR technology on education, employing rich, imaginative dialogue within a vividly painted utopian future society, showcasing deep insights into technological and societal integration."
+        },
+        "atomic_checklist": [
+            "Does the response introduce the concept of augmented reality (AR) technology?",
+            "Is the transformative potential of AR in education clearly conveyed?",
+            "Does the dialogue creatively illustrate a utopian society's use of AR for educational purposes?",
+            "Is there a discussion on how AR technology enhances learning experiences or accessibility?",
+            "Does the language and style of the dialogue reflect optimism and futuristic innovation, characteristic of a utopian society?"
+        ],
+        "background_knowledge": []
+    }
+]

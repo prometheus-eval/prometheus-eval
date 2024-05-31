@@ -1,0 +1,235 @@
+[
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In a high-stakes game of international diplomacy, Ambassador Chen was negotiating a critical trade agreement with Ambassador Rodriguez. During their discussions, Chen noticed Rodriguez frequently touching his necktie whenever the topic of agricultural tariffs was raised. This was a stark contrast to his usual confident posture. Chen remembered from previous meetings that Rodriguez often displayed this subtle gesture when discussing points where his country had less leverage or when it was willing to make concessions. Chen further noticed Rodriguez's careful choice of words, and his avoidance of direct answers regarding agriculture tariffs.\n\nQuestion: Considering the story, how might Ambassador Chen infer Ambassador Rodriguez's mental state and his belief on his country's position on agricultural tariffs? Provide a reasoning step of Chen to infer Rodriguez's mental state.",
+        "reference_answer": "The reasoning step involves linking observed behavior (touching the necktie) with the specific negotiation topic (agricultural tariffs) and recalling past instances of similar behavior under similar circumstances. This pattern recognition allows Chen to infer that Rodriguez's gesture is a non-verbal indication of discomfort or anxiety related to the topic of agricultural tariffs. The additional observation of Rodriguez's careful wording and evasion of direct answers further reinforces this inference. Therefore, Chen might conclude that Rodriguez is internally apprehensive or uncertain about his country's stance on agricultural tariffs, possibly believing that his country is in a weaker negotiating position.",
+        "score_rubric": {
+            "criteria": "Does the response correctly infer Chen's reasoning steps through Rodriguez's beliefs via non-verbal clues?",
+            "score1_description": "The response fails to capture non-verbal clues and also does not explain Chen's reasoning steps.",
+            "score2_description": "The response captures non-verbal cues but fails to infer Rodriguez's beliefs using these cues.",
+            "score3_description": "The response captures non-verbal cues, attempts to infer Rodriguez's beliefs but doesn't effectively link them with past instances involving Rodriguez or the negotiation topic.",
+            "score4_description": "The response captures non-verbal cues, successfully infers Rodriguez's beliefs toward agricultural tariffs based on cues and past meetings. However, it may miss some details, such as Rodriguez's careful wording or have imperfect reasoning.",
+            "score5_description": "The response captures all the relevant clues, successfully infers Rodriguez's beliefs toward agricultural tariffs based on cues and past meetings. The response appropriately explains Chen's reasoning steps in inferring Rodriguez's beliefs."
+        },
+        "atomic_checklist": [
+            "Does the response capture Rodriguez's non-verbal cues?",
+            "Does the response correctly infer Rodriguez's belief regarding agriculture tariffs based on non-verbal cues?",
+            "Does the response appropriately explain the reasoning step used to infer Chen's belief regarding Rodriguez's belief?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In the conference room, Emily, a seasoned marketing executive, was presenting a new campaign idea to a potential client, Mr. Hashimoto. She carefully observed his reactions, a crucial part of her pitch strategy. Emily noticed that whenever she highlighted the cost-saving features of the campaign, Mr. Hashimoto's demeanor subtly shifted; he would nod slightly, a hint of approval in his eyes, and meticulously jot down notes. However, when the presentation turned to the more creative aspects, his expression became unreadable, and his pen came to a rest, with occasional glances at his watch.\n\nQuestion: How should Emily interpret Mr. Hashimoto's beliefs regarding different parts of her presentation, and how will Emily adjust her campaign based on these beliefs? Please provide a reasoning step used by Emily to infer Hashimoto's mental state.",
+        "reference_answer": "The reasoning step here involves correlating non-verbal cues with the content being discussed: Mr. Hashimoto's nods and note-taking when cost-saving is mentioned suggest approval and interest, while his unreadable expression and lack of note-taking during creative discussions imply less enthusiasm or relevance to his interests. Emily might interpret Mr. Hashimoto as having a strong interest in the cost-saving features of the campaign and less engagement with its creative aspects. To adjust her campaign, Emily should focus more on emphasizing cost efficiency, potentially downplaying the creative elements to better align with Mr. Hashimoto's apparent preferences. This approach would more closely cater to what seems to be Mr. Hashimoto's primary concern, such as the financial aspect of the campaign.",
+        "score_rubric": {
+            "criteria": "Does the response correctly infer Emily's reasoning steps through Hashimoto's beliefs via non-verbal clues? Does the response further suggest the adjustment plan based on implied Hashimoto's belief?",
+            "score1_description": "The response fails to capture non-verbal clues and also does not explain Emily's reasoning steps.",
+            "score2_description": "The response captures non-verbal cues but fails to infer Hashimoto's beliefs using these cues.",
+            "score3_description": "The response captures non-verbal cues, attempts to infer Hashimoto's preferences regarding Emily's campaign but may miss one of the parts between cost-saving features and creative aspects.",
+            "score4_description": "**Score 4:** The response captures non-verbal cues, successfully infers Hashimoto's beliefs toward both cost-saving features and creative aspects. However, it may miss linking Hashimoto's reaction to an adjustment plan.",
+            "score5_description": "The response captures non-verbal cues, successfully infers Hashimoto's beliefs toward both cost-saving features and creative aspects. The response suggests an appropriate adjustment plan and further identifies Hashimoto's primary concern based on non-verbal cues."
+        },
+        "atomic_checklist": [
+            "Does the response capture Hashimoto's non-verbal cues?",
+            "Does the response correctly infer Hashimoto's belief regarding Emily's campaign based on non-verbal cues?",
+            "Does the response appropriately explain the reasoning step used to infer Emily's thoughts regarding Hashimoto's belief?",
+            "Does the response correctly provide an adjustment plan of Emily based on implied Hashimoto's belief?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Sarah and Lucas have debates regarding deforestation.\nSarah: Recent studies show that deforestation rates have increased by 20% in the last five years, leading to significant biodiversity loss.\nLucas: (Taps his pen against the notepad) While biodiversity is important, we must also consider the economic impact of stringent environmental policies.\nSarah: But economic growth shouldn't come at the expense of our planet. The same studies indicate that deforestation is contributing to a 15% increase in greenhouse gas emissions.\nLucas: (Taps his pen more noticeably) Greenhouse gases are a global issue, not just linked to deforestation. We need broader solutions.\nSarah: True, but focusing on deforestation offers a tangible starting point. For instance, the Amazon rainforest, which is crucial for global oxygen supply, has lost an area equivalent to 1.5 million soccer fields due to deforestation.\nLucas: (taps his pen again) ... But we also need to consider the needs of local communities who rely on these lands for their livelihoods.\nSarah: Absolutely, however, sustainable practices can support these communities while preserving forests. Studies from the Rainforest Alliance show successful implementations of this approach.\n\nQuestion: How would Sarah infer his mental state or level of preparedness on the topic of deforestation, and how might this influence her strategy in the debate? Provide a reasoning step of Sarah to infer Lucas's mental state.",
+        "reference_answer": "Sarah likely interprets Lucas's pen tapping as a sign of discomfort or disagreement with her environmental focus, especially as it becomes more pronounced following her arguments about deforestation's impact. Each time Sarah presents a fact about deforestation's impact, Lucas's pen tapping becomes more noticeable, possibly indicating his eagerness to counterargue or his discomfort with the environmental focus of the argument. This non-verbal cue may suggest to Sarah that Lucas is more prepared to discuss economic implications than the environmental aspects of deforestation. Consequently, she might choose to emphasize environmental consequences more strongly, aiming to address this perceived gap in Lucas's arguments.",
+        "score_rubric": {
+            "criteria": "Does the response correctly infer Sarah's reasoning steps through Lucas's mental state via non-verbal cues? Does the response further suggest Sarah's strategy in the debate based on Lucas's mental state?",
+            "score1_description": "The response fails to capture non-verbal cues and does not explain Sarah's reasoning steps.",
+            "score2_description": "The response captures non-verbal cues but fails to infer Lucas's mental state using these cues.",
+            "score3_description": "The response captures non-verbal cues, attempts to infer Lucas's mental state as discomfort, but may miss linking it to preparedness regarding the environmental impact of deforestation.",
+            "score4_description": "The response captures non-verbal cues, attempts to infer Lucas's mental state as discomfort, further links it to preparedness regarding the environmental impact of deforestation. However, it may miss or misinterpret Sarah's strategy in the debate.",
+            "score5_description": "The response captures non-verbal cues, attempts to infer Lucas's mental state as discomfort, further links it to preparedness regarding the environmental impact of deforestation. The response suggests an appropriate strategy in the debate based on Lucas's preparedness."
+        },
+        "atomic_checklist": [
+            "Does the response capture Lucas's non-verbal cues?",
+            "Does the response correctly infer Lucas's mental state regarding environmental aspects of deforestation based on non-verbal cues?",
+            "Does the response appropriately explain the reasoning step used to infer Sarah's belief regarding Lucas's mental state?",
+            "Does the response appropriately suggest Sarah's strategy in the debate based on Lucas's implied mental state?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "At an elite culinary competition, Chef Emilia observes her rival, Chef Renard, who is known for his innovative cooking style. During the final round, where competitors must create a dish from mystery ingredients, Emilia notices Renard frequently glancing at her cooking station, more than he observes other competitors. He hesitates longer than usual before choosing his ingredients, often picking items similar to Emilia's selections. His usual brisk and confident movements are replaced with a cautious deliberation. At one point, Renard accidentally drops a spice jar, quite unusual mistake, and quickly glances at Emilia before recovering. Towards the end of the competition, Renard suddenly decides to change his cooking technique, a risky move with time running out. Emilia wonders about the reason behind Renard's unusual behaviour and last-minute changes.\n\n.Question: What can Emilia infer about Chef Renard's unusual behaviour and last-minute changes based on his mental state? Please provide a reasoning step used by Emilia to infer Renard's mental state and reason for his actions.",
+        "reference_answer": "Emilia can infer that Renard may be experiencing a lack of confidence or uncertainty in his own approach. The reasoning step used by Emilia could be the observation of Renard's repeated glances towards her station, indicating he might be seeking inspiration or validation from her choices. This is supported by his hesitation in selecting ingredients and mimicking Emilia's selections. The fact that he drops a spice jar can be interpreted as a sign of nervousness or distraction. Finally, Renard's sudden change in cooking technique, especially under time pressure, could be seen as a last-minute attempt to innovate or differentiate his dish, possibly due to a fear of being outperformed.",
+        "score_rubric": {
+            "criteria": "Does the response correctly infer Emilia's reasoning steps based on Renard's mental state during the competition? Does the response explain the implied reasons for Renard's unusual behaviors and last-minute changes?",
+            "score1_description": "The response fails to capture non-verbal clues and does not explain Emilia's reasoning steps.",
+            "score2_description": "The response captures non-verbal cues but fails to infer Renard's mental state using these cues.",
+            "score3_description": "The response captures non-verbal cues, inferring Renard's nervousness and lack of confidence. However, it does not explain the last-minute changes.",
+            "score4_description": "The response captures non-verbal cues, inferring Renard's nervousness and lack of confidence. The response attempts to explain the last-minute changes but does not effectively utilize the story's context (e.g., Renard's reputation for innovative cooking).",
+            "score5_description": "The response captures non-verbal cues, inferring Renard's nervousness and lack of confidence, which results in unusual behaviors during the competition. The response also effectively explains Renard's mental state behind last-minute changes, utilizing clues from the story. If it uses cues from the context, other answers are also acceptable."
+        },
+        "atomic_checklist": [
+            "Does the response capture Renard's unusual behaviors and non-verbal cues?",
+            "Does the response correctly infer Renard's mental state during the competition based on non-verbal cues?",
+            "Does the response appropriately explain the reasoning step used to infer Emilia's thoughts regarding Renard's mental state behind his unusual behaviors?",
+            "Does the response appropriately explain the reasoning step used to infer Emilia's thoughts regarding Renard's mental state behind his last-minute changes?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In the caf\u00e9, Anna and Michael were engrossed in their usual weekend ritual of people-watching. They enjoyed guessing the stories of strangers. Today, they focused on a middle-aged man sitting alone, his eyes darting between his untouched coffee and the entrance. Every time the door opened, he would straighten up, only to slouch back in disappointment as the newcomer was not who he expected. Suddenly, the man's phone buzzed. He glanced at it, sighed deeply, and muttered to himself before standing up to leave. 'Well, that's that,' he said, his voice tinged with a mix of resignation and relief.\n\nQuestion: Based on cues observed by Anna and Michael, how would Anna and Michael infer the mental state of a man when he says, 'Well, that's that'? Please provide a reasoning step of them o infer the man's mental state.",
+        "reference_answer": "Throughout Anna and Michael's observations, they noticed that the man had been anxiously awaiting someone's arrival, evidenced by his constant glances at the entrance and his repeated attempts to straighten up whenever the door opened. The untouched coffee could signify a preoccupation or nervousness about the meeting. When the man's phone buzzed, it interrupted his anticipation. His deep sigh and muttered comments suggested that the message or notification he received might have brought unwelcome news. His statement, 'Well, that's that, delivered with a mix of resignation and relief in his voice, implies that he has come to terms with the situation. The relief suggests that he can now move on from the anticipation and uncertainty he had been experiencing.",
+        "score_rubric": {
+            "criteria": "Does the response correctly explain the reasoning steps to infer the man's mental state for his last statement?",
+            "score1_description": "The response fails to capture non-verbal clues and does not explain the reasoning steps.",
+            "score2_description": "The response captures non-verbal cues but fails to infer the man's mental state using these cues.",
+            "score3_description": "The response captures non-verbal cues, inferring that the man is waiting for someone; however, it does not explain the nervousness and relief.",
+            "score4_description": "The response captures non-verbal cues, inferring the man's nervousness while waiting for someone important. The response attempts to explain the mixed emotion of his last statement, though it is less appropriate.",
+            "score5_description": "The response captures non-verbal cues, inferring the man's nervousness while waiting for someone important. The response explains the mixed emotion of his last statement, inferring the man's mental state as both resignation and relief."
+        },
+        "atomic_checklist": [
+            "Does the response capture the man's non-verbal and verbal cues?",
+            "Does the response correctly infer the man's mental state for his last statement?",
+            "Does the response appropriately explain the reasoning steps used to infer the man's mental state?",
+            "Does the response appropriately explain the implied reason for the relief when he says, 'Well, that's that'?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "During a competitive robotics tournament, Coach Thompson observes her team's programmer, Alex, showing signs of stress as they near the final round. Alex frequently rubs his temples and stares at his laptop screen for long periods, occasionally muttering to himself and shaking his head. However, whenever a team member approaches to discuss strategy or offer help, Alex forces a smile and assures them everything is under control. With only minutes left before their final match, Alex suddenly stands, stretches, and declares a break for some fresh air, leaving his team puzzled and concerned about his uncharacteristically evasive behavior.\n\nQuestion: Based on cues observed by Coach Thompson, how can she infer Alex's mental state during the tournament, and what reasoning steps could lead her to understand his potential need for support or space? Provide a detailed explanation.",
+        "reference_answer": "Coach Thompson could interpret Alex's actions\u2014rubbing temples, prolonged staring at the screen, muttering, and head shaking\u2014as clear signs of stress or anxiety about the competition. His insistence that everything is under control, despite physical cues indicating otherwise, may signal a desire to maintain team morale or a sense of responsibility to not worry others. Alex's decision for a sudden break suggests a need to manage his stress away from the team, indicating both a coping mechanism and a subtle request for space to gather his thoughts. Coach Thompson's reasoning could involve recognizing the contrast between Alex's verbal assurances and non-verbal behaviors, suggesting his internal struggle. She may infer that while Alex is trying to be self-reliant, he might still benefit from targeted support or space to navigate his stress, viewing his actions as a potential to address his needs without directly confronting him, thereby maintaining his sense of autonomy and respect within the team dynamics.",
+        "score_rubric": {
+            "criteria": "Does the response correctly explain Coach Thompson's reasoning steps in inferring Alex's mental state from his behaviors during the tournament? Does the response analyze the implications of Alex's behavior for team dynamics and his potential needs?",
+            "score1_description": "The response fails to capture behavioral cues and does not explain Coach Thompson's reasoning steps.",
+            "score2_description": "The response captures some behavioral cues but fails to infer Alex's mental state using these cues.",
+            "score3_description": "The response captures behavioral cues, inferring Alex's stress and need for control, but does not connect these emotions to his need for support or space.",
+            "score4_description": "The response captures behavioral cues, inferring Alex's stress and need for control, and attempts to explain his need for support or space but may overlook the impact on team dynamics or miss subtle cues.",
+            "score5_description": "The response captures all relevant behavioral cues, inferring Alex's stress, evasive behavior, and the underlying need for control or support. It explains Coach Thompson's reasoning steps in understanding these mental state shifts, the implications for team dynamics, and Alex's potential needs, effectively linking to his actions and comments."
+        },
+        "atomic_checklist": [
+            "Does the response capture Alex's behavioral and verbal cues during the tournament?",
+            "Does the response correctly infer Alex's stress and coping mechanisms?",
+            "Does the response appropriately explain the reasoning step used to infer Coach Thompson's understanding of Alex's mental state?",
+            "Does the response appropriately explain the implications of Alex's behavior for his need for support or space and team dynamics?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In a bustling innovation lab, Supervisor Jenna notices her lead engineer, Sam, exhibiting uncharacteristic hesitance during a brainstorming session for a new product. Typically, Sam is vocal about his ideas and confident in his contributions. However, today, he's been unusually quiet, only offering short, non-committal responses when directly engaged. Further, when a junior engineer enthusiastically proposed a novel approach that diverged significantly from the lab's traditional methodologies, Sam frowned briefly before quickly masking his reaction with a neutral expression. Jenna also observed that Sam kept glancing at the project timeline displayed on the wall, his brow furrowed.\n\nQuestion: Based on cues observed by Supervisor Jenna, how can she infer Sam's mental state and attitude towards the new project approach? What reasoning steps could lead her to address any potential concerns Sam might have? Provide a detailed explanation.",
+        "reference_answer": "Supervisor Jenna could deduce Sam's skepticism towards the new project approach from his subdued participation, a stark contrast to his usual proactive engagement. His brief frown at the junior engineer's suggestion, though quickly hidden, suggests an initial resistance to ideas that challenge the lab's standard practices. Sam's repeated glances at the project timeline might indicate anxiety about the feasibility of implementing such novel approaches within the project's constraints. Jenna's reasoning might include understanding that Sam's hesitance and skepticism stem from a concern for the project's success and adherence to timelines, rather than a dismissal of innovation. Recognizing the need to maintain team morale while also valuing Sam's expertise and concerns, Jenna might initiate a one-on-one discussion with Sam to explore his reservations in a supportive environment, encouraging an open exchange of ideas and concerns. This approach could help reassure Sam that his expertise is valued and that risk-taking in innovation will be managed carefully with consideration to the project's timelines.",
+        "score_rubric": {
+            "criteria": "Does the response correctly explain Supervisor Jenna's reasoning steps in inferring Sam's mental state and attitude towards the project from his behaviors in the brainstorming session? Does the response analyze the implications of Sam's behavior for project management and team dynamics?",
+            "score1_description": "The response fails to capture behavioral cues and does not explain Supervisor Jenna's reasoning steps.",
+            "score2_description": "The response captures some behavioral cues but fails to infer Sam's mental state using these cues.",
+            "score3_description": "The response captures behavioral cues, inferring Sam's hesitance and discomfort, but does not connect these emotions to his attitude towards the new project approach.",
+            "score4_description": "The response captures behavioral cues, inferring Sam's hesitance and discomfort, and attempts to explain his attitude towards the new project approach but may overlook the impact on team dynamics or miss subtle cues.",
+            "score5_description": "The response captures all relevant behavioral cues, inferring Sam's hesitance, discomfort, and potentially skeptical attitude towards the new project approach. It explains Supervisor Jenna's reasoning steps in understanding these mental state shifts, the implications for project management, and how to address Sam\u2019s concerns, effectively linking to his actions and comments."
+        },
+        "atomic_checklist": [
+            "Does the response capture Sam's behavioral and verbal cues during the brainstorming session?",
+            "Does the response correctly infer Sam's skepticism towards the new project approach?",
+            "Does the response appropriately explain the reasoning step used to infer Supervisor Jenna's understanding of Sam's mental state?",
+            "Does the response appropriately explain the implications of Sam's behavior for project management and team dynamics?",
+            "Does the response propose a method for Jenna to address Sam's potential concerns?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "At an international cybersecurity conference, Chief Security Officer (CSO) Linda observes Thomas, a young cybersecurity analyst, as they discuss strategies to combat the latest ransomware attack trends. Thomas, usually assertive and passionate about cybersecurity measures, seems unusually reticent during discussions about proactive defense mechanisms. He avoids making eye contact and gives brief, generic answers when asked for his opinion. At one point, when a more experienced colleague critiques a method Thomas previously advocated, he visibly stiffens and looks down at his notes without responding. Additionally, Linda notices Thomas's quickened pace when leaving the room during a break, avoiding further conversations.\n\nQuestion: Based on cues observed by CSO Linda, how can she infer Thomas's mental state and his stance on the current cybersecurity strategies being discussed? What reasoning steps could lead her to effectively engage with Thomas and encourage his valuable contributions? Provide a detailed explanation.",
+        "reference_answer": "CSO Linda might identify Thomas's reticence and avoidance of eye contact, particularly when confronted with criticism, as signs of discomfort or insecurity regarding his stance on the discussed cybersecurity strategies. His stiffness and silence in response to critique suggest he may feel undervalued or unsure about his earlier advocacy for certain methods. The quick exit during a break underscores a wish to avoid discourse or confrontation. Linda's reasoning could involve recognizing that Thomas\u2019s insights are likely still valuable, but his current mental state may hinder his usual proactive contribution. To engage Thomas effectively, Linda could consider arranging a more private or smaller group setting where Thomas might feel more comfortable expressing his views. She could also emphasize the value of diverse strategies, including those Thomas advocated in the past, to bolster his confidence and reassure him that all perspectives are crucial to developing a robust cybersecurity plan.",
+        "score_rubric": {
+            "criteria": "Does the response correctly explain CSO Linda's reasoning steps in inferring Thomas's mental state and stance on the cybersecurity strategies from his behaviors during the conference? Does the response analyze the implications of Thomas's behavior for team dynamics and strategy formulation?",
+            "score1_description": "The response fails to capture behavioral cues and does not explain CSO Linda's reasoning steps.",
+            "score2_description": "The response captures some behavioral cues but fails to infer Thomas's mental state using these cues.",
+            "score3_description": "The response captures behavioral cues, inferring Thomas's discomfort and possible insecurity, but does not connect these emotions to his stance on the cybersecurity strategies discussed.",
+            "score4_description": "The response captures behavioral cues, inferring Thomas's discomfort and possible insecurity, and attempts to explain his stance on the cybersecurity strategies but may overlook the implications for team dynamics or miss key nuances.",
+            "score5_description": "The response captures all relevant behavioral cues, inferring Thomas's discomfort, possible insecurity, and his nuanced stance on the cybersecurity strategies discussed. It explains CSO Linda's reasoning steps in understanding these mental state shifts, the implications for team dynamics and invites strategies to engage Thomas effectively, linking to his actions and comments."
+        },
+        "atomic_checklist": [
+            "Does the response capture Thomas's behavioral and verbal cues during the conference?",
+            "Does the response correctly infer Thomas's apprehension towards the cybersecurity strategies discussed?",
+            "Does the response appropriately explain the reasoning step used to infer CSO Linda's understanding of Thomas's mental state?",
+            "Does the response appropriately explain the implications of Thomas's behavior for team dynamics and strategy formulation?",
+            "Does the response propose a practical way for Linda to encourage Thomas's engagement and contributions?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "While visiting an art exhibition, Curator Daniel observes Alicia, a novice artist, nervously pacing in front of her displayed painting. Alicia frequently adjusts the lighting above her artwork and double-checks the positioning of her painting. When attendees stop to view her work, she discreetly watches their reactions from a distance, looking for any signs of approval or disapproval. On several occasions, Alicia starts to approach viewers as if wanting to engage in conversation, but then retreats, hesitating to initiate dialogue. Additionally, Daniel notices Alicia's relieved expression when attendees nod or smile before moving on.\n\nQuestion: Based on cues observed by Curator Daniel, how can he infer Alicia's mental state regarding the public's reception of her artwork? What reasoning steps could lead him to support Alicia and encourage her active participation in future exhibitions? Provide a detailed explanation.",
+        "reference_answer": "Curator Daniel might discern Alicia's nervous anticipation and longing for positive feedback through her continuous pacing, adjustments to her artwork's presentation, and vigilant observation of attendees' reactions. Her repeated attempts to approach viewers, followed by withdrawal, suggest a deep desire to interact but also a fear of possible rejection or criticism. The relief shown at any sign of approval indicates that Alicia values external validation highly, impacting her confidence. Understanding this, Daniel's reasoning could involve recognizing the importance of fostering artists' confidence in their work and the art community. He might support Alicia by providing gentle feedback, highlighting the strengths of her artwork, and encouraging her to participate in guided discussions with attendees. By facilitating a supportive environment during future exhibitions and fostering connections with more experienced artists, Daniel can help Alicia overcome her hesitations, boosting her engagement and confidence in sharing her art.",
+        "score_rubric": {
+            "criteria": "Does the response correctly explain Curator Daniel's reasoning steps in inferring Alicia's mental state and concerns about her artwork's reception from her behaviors during the exhibition? Does the response analyze the implications of Alicia's behavior for her future artistic confidence and engagement with the art community?",
+            "score1_description": "The response fails to capture behavioral cues and does not explain Curator Daniel's reasoning steps.",
+            "score2_description": "The response captures some behavioral cues but fails to infer Alicia's mental state using these cues.",
+            "score3_description": "The response captures behavioral cues, inferring Alicia's nervousness and desire for approval, but does not connect these emotions to her future engagement in the art community.",
+            "score4_description": "The response captures behavioral cues, inferring Alicia's nervousness and desire for approval, and attempts to explain her concerns about the reception of her artwork but may overlook the implications for her future artistic confidence or miss key nuances.",
+            "score5_description": "The response captures all relevant behavioral cues, inferring Alicia's nervousness, desire for approval, and concerns about her artwork's reception. It explains Curator Daniel's reasoning steps in understanding these mental state shifts, the implications for her future artistic confidence, and suggests effective ways to support Alicia and encourage her active participation in the art community."
+        },
+        "atomic_checklist": [
+            "Does the response capture Alicia's behavioral cues during the exhibition?",
+            "Does the response correctly infer Alicia's nervousness about her artwork's reception?",
+            "Does the response appropriately explain the reasoning step used to infer Curator Daniel's understanding of Alicia's mental state?",
+            "Does the response appropriately explain the implications of Alicia's behavior for her future in the art community?",
+            "Does the response propose a constructive approach for Daniel to encourage Alicia?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "multistep_tom",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "At a university debate club meeting, Professor Green observes Taylor, a usually outspoken and confident debater, showing signs of reluctance during a discussion on the ethics of artificial intelligence in modern warfare. When the topic shifts to the accountability for AI decisions in conflict zones, Taylor avoids engaging in the debate and instead focuses intently on her notes. Professor Green notes that Taylor glances up at the mention of specific case studies but quickly looks back down, avoiding further involvement. Additionally, she observes Taylor's brief moment of eye contact with another debater who shares her viewpoint, followed by a quick nod before returning to her disengaged posture.\n\nQuestion: Based on cues observed by Professor Green, how can she infer Taylor's mental state and her stance on the topic being discussed? What reasoning steps could lead her to address Taylor's reluctance and encourage her active participation in the debate? Provide a detailed explanation.",
+        "reference_answer": "Professor Green might conclude that Taylor's reluctance and avoidance to engage directly in the debate indicate a deep inner conflict or apprehension about the topic, particularly the accountability aspects of AI in warfare. Observing Taylor's reaction to specific case studies and brief interactions with like-minded debaters suggests that she holds strong, potentially nuanced views but hesitates to voice them possibly due to fear of conflict or uncertainty about fully articulating her stance. By recognizing these subtle cues, Professor Green can infer that while Taylor is engaged mentally, she feels inhibited from participating openly. To address this, Professor Green could create an environment that fosters safe and constructive discussion, perhaps by organizing smaller group sessions or one-on-one meetings where Taylor might feel more comfortable expressing her views. Encouraging Taylor to explore and present research on her viewpoints could also bolster her confidence, enriching her contributions and growth as a debater.",
+        "score_rubric": {
+            "criteria": "Does the response correctly explain Professor Green's reasoning steps in inferring Taylor's mental state and stance on the topic from her behaviors during the debate club meeting? Does the response analyze the implications of Taylor's behavior for her future participation and growth as a debater?",
+            "score1_description": "The response fails to capture behavioral cues and does not explain Professor Green's reasoning steps.",
+            "score2_description": "The response captures some behavioral cues but fails to infer Taylor's mental state using these cues.",
+            "score3_description": "The response captures behavioral cues, inferring Taylor's reluctance and tacit agreement with certain viewpoints, but does not connect these emotions to her active participation or growth in debating.",
+            "score4_description": "The response captures behavioral cues, inferring Taylor's reluctance and tacit agreement, and attempts to explain her stance on the ethics of AI in warfare but may overlook the implications for her confidence and development as a debater.",
+            "score5_description": "The response captures all relevant behavioral cues, inferring Taylor's reluctance, possible apprehension, and her nuanced stance on the ethics of AI in warfare. It explains Professor Green's reasoning steps in understanding these mental state shifts, the implications for Taylor's participation, and suggests effective strategies to engage Taylor, fostering her growth and confidence in debating."
+        },
+        "atomic_checklist": [
+            "Does the response capture Taylor's behavioral and verbal cues during the debate club meeting?",
+            "Does the response correctly infer Taylor's apprehension towards the ethics of AI in modern warfare?",
+            "Does the response appropriately explain the reasoning step used to infer Professor Green's understanding of Taylor's mental state?",
+            "Does the response appropriately explain the implications of Taylor's behavior for her future in debate club?",
+            "Does the response propose a supportive approach for Green to encourage Taylor's active participation?"
+        ],
+        "background_knowledge": []
+    }
+]

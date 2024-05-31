@@ -1,0 +1,244 @@
+[
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Read the following story and answer the question below.",
+        "input": "Chloe's mother was organizing a surprise party for Chloe's birthday. She invited Zoe and mentioned, \"Keep it a secret, and make sure Chloe doesn't find out!\" On the eve of the celebration, while Chloe and Zoe were playing, Zoe accidentally tore her new skirt. \"Oops!\" exclaimed Zoe, \"I planned to wear this at your party.\" \"What party?\" asked Chloe. \"Let's hurry,\" suggested Zoe, \"and see if my mom can fix the skirt.\"\nIn the story, did someone say something that they should not have said, and if so, why? Explain.",
+        "reference_answer": "Yes, in the story, Zoe said something that she should not have. When her skirt tore, she exclaimed to Chloe, \"I planned to wear this at your party.\" This statement inadvertently revealed the surprise party that Chloe's mother was organizing for Chloe's birthday, which she had explicitly asked Zoe to keep secret. Zoe seemed to not have remembered in the moment that the party was a surprise. Nonetheless, by mentioning the party, Zoe accidentally broke the promise of secrecy to Chloe's mother and spoiled the surprise.",
+        "score_rubric": {
+            "criteria": "Does the response correctly detect the faux pas situation, identifying if someone said something they shouldn't have in the story and providing a clear explanation of why the statement was inappropriate?",
+            "score1_description": "The response completely fails to identify any faux pas situation in the story. It either suggests that no inappropriate statement was made or does not address the question at all. There is no explanation provided about why any statement could be considered inappropriate.",
+            "score2_description": "The response vaguely suggests that there might be a faux pas situation, but it fails to clearly identify who made the inappropriate statement or what the statement was. The explanation for why the statement was inappropriate is either missing or lacks relevance to the story's context.",
+            "score3_description": "The response correctly identifies a character who made an inappropriate statement, but the explanation of why it was inappropriate is only partially complete. The response shows some understanding of the situation but misses key details that fully contextualize the faux pas in the story.",
+            "score4_description": "The response accurately identifies the character who made the inappropriate statement and provides a clear, but not comprehensive, explanation of why it was inappropriate. It recognizes the context of the statement within the story, but may omit some details about the specific circumstances or consequences of the faux pas.",
+            "score5_description": "The response comprehensively identifies the character who made the inappropriate statement and provides a detailed and nuanced explanation of why it was inappropriate. It demonstrates a thorough understanding of the story's context, the specific circumstances surrounding the faux pas, and articulates the significance of maintaining appropriate communication in the given scenario."
+        },
+        "atomic_checklist": [
+            "Does the response identify the person who said something they should not have said?",
+            "Does the response identify the correct statement that the person should not have said?",
+            "Does the response show understanding of how the situation progresses and pay attention to the details of the story?",
+            "Does the response show understanding that the faux pas was a consequence of the speaker's false belief rather than being an action with malicious intent?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Read two situations provided and answer the question below.",
+        "input": "[Situation 1]\nMichael had recently begun attending a different school. He mentioned to his new friend, Lucas, \"My dad is a janitor at this school.\" Then Kyle approached and said, \"I can't stand janitors. They're awful.\" \"Do you want to join us for basketball?\" Lucas asked Kyle. \"No,\" he responded, \"I don't feel well.\"\n[Situation 2]\nMichael had recently begun attending a different school. He mentioned to his new friend, Lucas, \"My dad is a janitor at this school.\" Then Kyle approached and said, \"I hate school. It's so tiny.\" \"Do you want to join us for basketball?\" Lucas asked Kyle. \"No,\" he responded, \"I don't feel well.\"\nExplain the difference in Kyle's intention in his statement how Kyle's statement would impact other people in the two situations.",
+        "reference_answer": "It's important to consider Kyle's intentions and the context in which his statements were made in both situations, particularly considering that Michael is a newcomer and Kyle might not be aware of Michael's personal circumstances.\n\nSituation 1:\nIn this scenario, Kyle's statement, \"I can't stand janitors. They're awful,\" although harsh and targeted, likely did not have malicious intent directed specifically towards Michael's father. Given that Michael is new to the school, it's reasonable to assume Kyle may not have known about Michael's dad being a janitor at the school. Therefore, Kyle's comment, while insensitive and hurtful in its nature, can be interpreted as a general expression of his feelings towards janitors, rather than a targeted attack on Michael's father. This misunderstanding, however, does not mitigate the impact of his words, as it still creates an awkward and potentially hurtful situation for Michael, who just shared that his dad is a janitor. Lucas, as a bystander, is put in an uncomfortable position, witnessing a friend being inadvertently hurt by another's thoughtless remarks.\n\nSituation 2:\nHere, Kyle's statement, \"I hate school. It's so tiny,\" reflects a general discontent with the school environment and lacks any personal or targeted sentiment towards any individual. In this case, Kyle's intention seems to be expressing his own personal dissatisfaction with the school, which is a more benign complaint and doesn't carry the same personal sting as the first scenario. This comment is unlikely to be perceived as directly offensive to Michael or Lucas, as it does not relate to any personal aspect of their lives. It's a generic criticism that, while negative, does not create the same level of personal discomfort or offense as the first situation.\n\nIn summary, while Kyle's intention in the first situation was likely not to harm or offend Michael specifically, the lack of awareness about Michael's situation led to a comment that was inadvertently hurtful. In the second situation, Kyle's intention is clearly just to express a personal opinion about the school, which, although negative, is not directed at any individual and thus less impactful on a personal level for Michael and Lucas.",
+        "score_rubric": {
+            "criteria": "Does the response effectively analyze the dynamics between characters, comprehend their emotional conditions and motivations, faithfully represent their interpersonal relationships, and stay true to the original narrative?",
+            "score1_description": "The response exhibits a significant misunderstanding of the character dynamics and their emotional underpinnings. It either misinterprets the relationships or overlooks key perspectives. Additionally, the response may diverge considerably from the original story, introducing irrelevant or new information.",
+            "score2_description": "The response demonstrates a basic grasp of the narrative but lacks depth in character analysis and emotional insight. It somewhat recognizes the characters' perspectives and relationships but may include slight inaccuracies or minor extraneous details not present in the original scenarios.",
+            "score3_description": "The response adequately captures the essence of the characters' interactions and their emotional states. It reasonably identifies the relationships and perspectives involved, though it might lack detailed exploration. The response stays mostly true to the original narrative, with only minimal additional information.",
+            "score4_description": "The response provides a strong analysis of the characters' emotions and intentions, showing good insight into their perspectives and relationships. It remains faithful to the story's content, with any deviations being minor and not significantly impacting the overall interpretation.",
+            "score5_description": "The response excels in analyzing the characters' interactions and emotions, offering a nuanced understanding of their relationships and motivations. It adheres closely to the original story, avoiding any extraneous details. The analysis is comprehensive, demonstrating a deep and insightful understanding of the narrative."
+        },
+        "atomic_checklist": [
+            "Does the response consider every person's perspective in the situation?",
+            "Does the response not introduce any new information that is not provided in either story?",
+            "Does the response correctly interpret the emotions and intentions of the characters in the story?",
+            "Does the response correctly identify the relationship between the characters in the story?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Read the following story and answer the question below.",
+        "input": "Audrey assisted her mom in preparing a peach cake for her neighbor when he came to visit. She brought it out of the kitchen. \"I baked this just for you,\" Audrey said. \"Mmm,\" her neighbor responded, \"That looks lovely. I adore cakes, except for peaches, of course!\"\nIn this story, how would the characters' feelings change before and after the neighbor's statement \"except for peaches\"?",
+        "reference_answer": "Before the neighbor's statement \"except for peaches,\" the feelings of the characters are likely quite positive and expectant. Audrey, having helped her mom prepare the peach cake and proudly presenting it, probably feels a sense of accomplishment and eagerness to share something she made. Her mom, similarly, would feel proud and happy to be sharing their homemade cake with the neighbor. The neighbor, upon seeing the cake, initially reacts positively, which would reinforce Audrey and her mom's feelings of pride and happiness.\n\nHowever, after the neighbor's statement \"except for peaches,\" there would be a noticeable shift in emotions. Audrey might feel disappointment, embarrassment, or even a bit of confusion and sadness because the cake she thoughtfully made does not align with her neighbor's preferences. Her mom might also feel a mix of surprise and embarrassment, possibly along with a bit of concern for how Audrey might feel about this unexpected revelation. The neighbor might experience a sense of awkwardness or regret upon realizing that his comment could be seen as ungrateful or insensitive, especially after they have already expressed enthusiasm for cakes in general.\n\nOverall, the neighbor's specific comment about disliking peaches would create an awkward and potentially uncomfortable situation, shifting the mood from positive and celebratory to one that is more subdued and uneasy.",
+        "score_rubric": {
+            "criteria": "Does the response insightfully and accurately interpret the perspectives and emotional shifts of each character in the story?",
+            "score1_description": "The response fails to consider the perspectives of all characters involved or misinterprets their feelings. It does not detect the nuanced change in emotions before and after the critical statement, nor does it analyze the difference between the original intent and the resulting emotional impact.",
+            "score2_description": "The response offers a basic interpretation of characters' perspectives but lacks depth in understanding their feelings. It recognizes a change in emotions but does not effectively capture the nuances of this shift. The analysis of the intent and subsequent emotional impact is superficial or partially incorrect.",
+            "score3_description": "The response adequately considers the perspectives of the characters and interprets their feelings with a reasonable degree of accuracy. It identifies the change in emotions, capturing some nuances of this shift. The response makes a decent attempt at analyzing the difference between intent and emotional impact, though it may lack depth or full insight.",
+            "score4_description": "The response provides a strong analysis of the characters' perspectives and effectively interprets their emotional shifts. It accurately detects the nuanced change in feelings and thoughtfully analyzes the discrepancy between the original intent and the emotional aftermath, though it may miss some subtle aspects.",
+            "score5_description": "The response excels in comprehensively understanding each character's perspective and meticulously interprets their emotional journey. It insightfully detects the nuanced shift in feelings and provides a detailed analysis of the contrast between the initial intent and the altered emotions, demonstrating deep insight and understanding of the characters' dynamics."
+        },
+        "atomic_checklist": [
+            "Does the response consider every person's perspective in the story?",
+            "Does the response interpret every person's feelings correctly?",
+            "Does the response expressively detect the nuanced change in feelings before and after the given statement?",
+            "Does the response correctly analyze the difference in the original intent and changed emotion after the speaker's realization of the statement's impact?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Read the following story and answer the question below.",
+        "input": "Every student in the class participated in a math contest. Olivia was very eager to come out on top. While she was absent from school, the results of the contest were revealed: Sophia was declared the winner. The following day, when Sophia encountered Olivia, she said, \"I feel bad about your news.\" \"What do you mean?\" said Olivia. \"Oh, it's nothing,\" replied Sophia.\nDescribe the mental state of the two people in the story as the story progresses.",
+        "reference_answer": "As the story progresses, the mental states of both Olivia and Sophia undergo notable changes:\n\n**Olivia:**\n- **Eager and Hopeful:** Initially, Olivia is very eager and hopeful about winning the math contest. This eagerness suggests a state of optimism and anticipation for a positive outcome.\n- **Unaware and Inquisitive:** When she returns to school and hears Sophia's comment, \"I feel bad about your news,\" Olivia is initially unaware of the contest results. Her reaction, \"What do you mean?\" indicates confusion and curiosity. This response suggests a shift to uncertainty and a desire for clarification.\n- **Potentially Disappointed or Confused:** The story doesn't explicitly mention Olivia's reaction upon realizing she didn\u2019t win, but it's likely that she experiences disappointment or confusion, especially given her initial eagerness to win. Sophia's vague response, \"Oh, it's nothing,\" might exacerbate her confusion or curiosity about the situation.\n\n**Sophia:**\n- **Joyful and Proud:** At the moment Sophia learns she has won the math contest, she likely feels a sense of joy and pride. Winning the contest would naturally bring feelings of accomplishment and happiness, especially in a competitive setting.\n- **Empathetic or Guilty:** After the initial joy, when Sophia thinks about Olivia, who was very eager to win, her feelings might shift to empathy or guilt. Knowing about Olivia's strong desire to come out on top could temper her joy with a sense of concern for how Olivia might be feeling about not winning.\n- **Uncomfortable or Evasive:** When Sophia encounters Olivia and mentions feeling bad about her news, her state becomes one of discomfort or evasiveness. This indicates a conflict between her happiness about her own success and her concern for Olivia\u2019s feelings. Sophia\u2019s attempt to address the situation, followed by quickly retreating from the topic (\"Oh, it's nothing\"), suggests discomfort with the conversation, possibly due to not wanting to upset Olivia further or feeling awkward about discussing her own victory.\n\nOverall, Olivia likely experiences a journey from hopefulness to confusion and potential disappointment, while Sophia's mental state transitions from joy and pride at her own achievement to empathy or guilt when considering Olivia's feelings, leading to discomfort and evasiveness in their direct interaction.",
+        "score_rubric": {
+            "criteria": "Does the response effectively capture and analyze the emotional journey and interplay of perspectives between characters, highlighting the progression and nuances of their mental states throughout the story?",
+            "score1_description": "The response fails to consider the perspectives of both characters and does not identify any shared experiences affecting them. It does not analyze any stages of mental state shifts, nor does it infer any unstated emotional states. The response also lacks in logically connecting one character's mental state to the other's.",
+            "score2_description": "The response demonstrates a basic understanding of the characters' perspectives but overlooks their shared experiences. It analyzes only one or two stages of mental state shifts, with limited success in inferring unstated emotional states. The connection between the mental states of the two characters is weak or superficial.",
+            "score3_description": "The response adequately considers the perspectives of both characters and identifies some shared experiences. It analyzes at least three stages of mental state shifts for each character, with a reasonable attempt at inferring unstated emotional states. The analysis makes a decent connection between the mental states of the two characters, though it may lack depth.",
+            "score4_description": "The response provides a strong analysis of both characters' perspectives, clearly recognizing their shared experiences. It successfully analyzes multiple stages of mental state shifts and accurately infers unstated emotional states. The response effectively relates one character's mental state to the other's, showing a good understanding of their interdependence.",
+            "score5_description": "The response excels in thoroughly examining each character's perspective, insightfully recognizing all shared experiences. It provides a detailed analysis of multiple stages of mental state shifts for each character and skillfully infers unstated emotional states. The response demonstrates a deep understanding of how one character's mental state impacts and relates to the other's, showing exceptional insight into their emotional dynamics."
+        },
+        "atomic_checklist": [
+            "Does the response consider every person's perspective in the story?",
+            "Does the response recognize common events in the story that apply to both characters",
+            "Does the response analyze at least 3 stages of mental state shifts for each character?",
+            "Does the response correctly predict the potential mental state of a character even if it is not explicitly stated in the story?",
+            "Does the response reasonably analyze the mental state of one person in relation to the other person's mental state?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "A mental state, or a mental property, is a state of mind of a person. Mental states comprise a diverse class, including perception, pain/pleasure experience, belief, desire, intention, emotion, and memory.",
+                "reference_url": "https://en.wikipedia.org/wiki/Mental_state"
+            }
+        ]
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Read the following story and answer the question below.",
+        "input": "Max was in a diner. He accidentally knocked over his coffee on the floor. Ethan was another person in the diner, standing near the counter ready to pay. Max went up to Ethan and said, \"I'm terribly sorry, but I've knocked over my coffee. Could you help clean it up?\"\nHow would Max and Ethan behave or react shortly after?",
+        "reference_answer": "Shortly after the incident in the diner, the behaviors and reactions of the characters, especially considering Max's realization that Ethan is a customer and not a staff member, would likely unfold as follows:\n\nMax: After accidentally knocking over his coffee and mistakenly asking Ethan, whom he perceives as a staff member, for help, Max would quickly realize his error when he observes Ethan's attire, behavior, or his position near the counter ready to pay. Feeling embarrassed and apologetic for his mistake, Max might hastily apologize again for the confusion. He might then either offer to clean up the mess himself or look for an actual staff member to notify about the spill.\n\nEthan: Initially surprised or taken aback by being mistaken for a staff member and asked to clean up a spill, Ethan's reaction could range from understanding (acknowledging that mistakes happen) to mild annoyance or amusement at the mix-up. Upon Max's realization and subsequent apology, Ethan might respond with reassurance, politely declining to help and perhaps suggesting that Max inform the staff.\n\nOverall, the sequence of events would involve Max's embarrassment and corrective action upon realizing his mistake and Ethan's potential range of reactions to being mistakenly asked for help.",
+        "score_rubric": {
+            "criteria": "Does the response effectively capture and detail the subsequent behaviors and reactions of a faux pas situation, considering the possible perspectives of characters and social dynamics at play?",
+            "score1_description": "The response fails to adequately consider the perspectives of both characters, overlooks the speaker's realization of their mistake, and offers a limited or unrealistic range of reactions from the listener. It lacks an understanding of social norms and provides a vague or incomplete description of the characters' behaviors or reactions.",
+            "score2_description": "The response demonstrates a basic consideration of the characters' perspectives but may miss key aspects of the speaker's realization of their mistake. It offers a limited range of reactions from the listener and shows only a superficial understanding of social norms. The description of behaviors or reactions is somewhat general and lacks detail.",
+            "score3_description": "The response adequately explores the perspectives of both characters and acknowledges the speaker's realization of their mistake. It suggests a reasonable range of reactions from the listener and shows an understanding of social norms. The description of each character's behavior or reaction is fairly detailed but may lack depth or insight.",
+            "score4_description": "The response provides a thorough analysis of both characters' perspectives and clearly captures the speaker's realization of their mistake. It offers a broad and realistic range of reactions from the listener, demonstrating a good understanding of social norms. The description of behaviors or reactions is detailed and well-articulated.",
+            "score5_description": "The response excels in comprehensively considering the viewpoints of both characters and insightfully captures the speaker's realization of their mistake. It explores a diverse and nuanced range of reactions from the listener, showing a deep understanding of social norms. The response provides an exceptionally detailed and insightful description of each character's behavior and reaction."
+        },
+        "atomic_checklist": [
+            "Does the response comprehensively consider the perspectives of both characters?",
+            "Does the response acknowledge the realization of the mistake by the speaker?",
+            "Does the response suggest a broad range of reactions from the listener?",
+            "Does the response show commonsense knowledge and appropriate social norms?",
+            "Does the response provide a detailed description of each person's behavior or reaction?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Examine the given scenario and respond to the question provided.",
+        "input": "During a local environmental club meeting, Kevin discussed the benefits of an upcoming tree planting initiative. He enthusiastically explained how each member could contribute and the expected positive impact on the local ecosystem. Mid-presentation, Maya, another club member, raised her hand and asked, \"But how do we ensure the selected tree species won't adversely affect our local flora and fauna?\" Kevin paused, realizing he hadn't considered this aspect in his plan.\nHow could Kevin's oversight affect the project's planning, and what might be his next steps in response to Maya's question?",
+        "reference_answer": "Kevin's oversight could potentially lead to unintended consequences for the local ecosystem, such as introducing invasive species that could harm native flora and fauna or disrupt ecological balances. Acknowledging the importance of Maya's concern, Kevin's next steps should involve pausing the initiative to conduct thorough research on native species beneficial to the local environment. He should propose consulting with environmental biologists or experts in local biodiversity to assess the impact of various tree species. Kevin could then organize workshops or meetings with these experts and the community to gather feedback and insights, ensuring the initiative aligns with ecological sustainability principles. This revised approach would not only address the oversight but also enhance the project's effectiveness and community engagement, contributing positively to local biodiversity and environmental awareness.",
+        "score_rubric": {
+            "criteria": "Does the response thoroughly evaluate the implications of Kevin's oversight and thoughtfully propose practical next steps, demonstrating a deep understanding of environmental considerations and project planning?",
+            "score1_description": "The response significantly overlooks the potential impact of Kevin's oversight on local biodiversity and fails to propose any sensible next steps. It might suggest unrelated or harmful actions that do not reflect an understanding of ecological balance.",
+            "score2_description": "The response minimally acknowledges the importance of considering local flora and fauna but lacks depth or practicality in suggesting next steps. It may propose generic actions without specific relevance to addressing the oversight.",
+            "score3_description": "The response recognizes the importance of ecological considerations in project planning and proposes basic but relevant next steps. However, the suggestions may lack specificity or a clear plan to validate and mitigate the oversight.",
+            "score4_description": "The response provides a robust analysis of Kevin's oversight, identifying its potential risks to local ecosystems. It proposes well-considered next steps that include researching native species, consulting experts, or adjusting the tree selection process.",
+            "score5_description": "The response excels in comprehensively understanding the ecological ramifications of Kevin's oversight and devisively proposes multifaceted next steps. These include setting up expert consultations, ecological impact assessments, community engagement for feedback, and a revised, sustainable approach to tree planting that ensures local biodiversity is supported."
+        },
+        "atomic_checklist": [
+            "Does the response identify the potential negative impacts of not considering local flora and fauna?",
+            "Does the response suggest consulting with environmental experts or biologists?",
+            "Does the response propose conducting a comprehensive ecological impact assessment?",
+            "Does it recommend engaging with the local community for feedback and insights?",
+            "Does the response advocate for a revised, more sustainable tree selection and planting plan?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Examine the scenario provided and answer the question that follows.",
+        "input": "A municipal council is planning to introduce a new public transportation route to improve access to remote residential areas. The project manager, Sofia, presented the proposed routes during a town hall meeting, emphasizing the benefits of improved connectivity and reduced travel times. After the presentation, a local resident, Jim, questioned how the new routes would impact existing traffic congestion and whether the council had considered the environmental impact of potentially increased vehicle emissions.\nHow might Sofia address Jim's concerns, and what steps could be taken to refine the transportation project?",
+        "reference_answer": "In response to Jim's concerns, Sofia might first reassure the community that both traffic congestion and environmental impacts are crucial considerations for the council. She could propose conducting detailed traffic flow analyses with the help of urban planning experts to predict and mitigate possible congestion. Environmental impact assessments would be initiated to evaluate potential increases in vehicle emissions and explore strategies to minimize carbon footprints, potentially by incorporating eco-friendly vehicles or optimizing route efficiency. Sofia could also announce plans for community engagement sessions to gather residents' feedback and concerns, ensuring the project aligns with the community's needs and values. Based on these assessments and community input, the project could be refined to balance improved access with sustainability goals, demonstrating the council's commitment to responsible and inclusive urban development.",
+        "score_rubric": {
+            "criteria": "Does the response thoroughly examine the concerns raised by Jim, offering a detailed analysis on addressing traffic congestion and environmental impact, and suggesting actionable steps for project refinement?",
+            "score1_description": "The response fails to adequately address Jim's concerns, providing irrelevant or impractical recommendations that show a lack of understanding of urban planning and environmental sustainability.",
+            "score2_description": "The response acknowledges Jim's concerns but offers only superficial suggestions that lack detailed insight into mitigating traffic congestion and environmental impact. The steps proposed are generic and lack specificity.",
+            "score3_description": "The response reasonably addresses Jim's concerns, proposing initial steps such as traffic flow analysis and environmental assessments. However, the suggestions could benefit from greater detail and a clearer implementation strategy.",
+            "score4_description": "The response gives a robust analysis of the concerns, suggesting comprehensive measures like conducting traffic simulations, and environmental impact studies, and considering alternative eco-friendly transportation options. The steps are practical and well thought out but may miss minor considerations.",
+            "score5_description": "The response excels in thoughtfully addressing Jim's concerns with a multi-faceted approach. It suggests conducting detailed traffic flow analyses, environmental impact assessments, community feedback sessions, exploring green transportation technologies, and adjusting routes accordingly. The proposed steps demonstrate a keen understanding of urban planning, ecological considerations, and community engagement, offering a clear and progressive strategy for project refinement."
+        },
+        "atomic_checklist": [
+            "Does the response acknowledge the potential for increased traffic congestion and the importance of addressing it?",
+            "Does the response propose conducting an environmental impact assessment?",
+            "Is there a suggestion to involve the community in feedback sessions to gather input on proposed routes?",
+            "Does the response recommend exploring eco-friendly public transportation options?",
+            "Does the response outline a clear plan for refining the project based on traffic and environmental studies?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Carefully evaluate the described scenario and provide insights based on the question below.",
+        "input": "A software development team is working on an app to help users improve their mental health through mindfulness exercises. The team leader, Alice, proposed integrating a feature that uses artificial intelligence to personalize the exercises based on user feedback. During a team meeting, Ben raised a concern about user privacy and data security, questioning if enough measures are in place to protect sensitive user information given the app's personal nature.\nHow might Alice address Ben's concerns, and what steps could the team take to ensure the app's features respect user privacy and data security?",
+        "reference_answer": "Alice might first acknowledge Ben's concerns, emphasizing that user privacy and data security are top priorities for the team. She could propose adopting state-of-the-art encryption methods to protect user data and a transparent consent process informing users how their information is used, specifically for AI personalization. Alice might suggest the team consults with cybersecurity and data privacy experts to perform a comprehensive audit of the app's security measures, ensuring adherence to the highest standards. Additionally, implementing privacy-by-design principles in the AI feature's development could be a focus, alongside exploring differential privacy techniques to anonymize user data used for AI training. Continuous improvement plans would include regular security updates, vulnerability testing, and adapting the privacy policy as new data protection regulations emerge. This approach would ensure the mindfulness app respects user privacy while offering personalized experiences, aligning with ethical tech development standards.",
+        "score_rubric": {
+            "criteria": "Does the response effectively address Ben's privacy and data security concerns, providing a detailed strategy on protecting user information while implementing AI personalization, and suggesting practical steps for enhancing privacy measures?",
+            "score1_description": "The response fails to recognize the significance of privacy and data security, providing vague or irrelevant solutions that lack understanding of ethical AI use and data protection principles.",
+            "score2_description": "The response acknowledges privacy and data security concerns superficially, suggesting generic or basic measures without specific insights into implementing strong privacy protections in an AI-powered app.",
+            "score3_description": "The response adequately identifies the need for privacy and data security measures, proposing initial steps like encryption and user consent forms. However, the solutions could be expanded with more comprehensive strategies tailored to AI integration.",
+            "score4_description": "The response provides a solid plan that addresses Ben's concerns, including implementing advanced encryption, conducting independent security audits, and ensuring transparency with users about data usage. The steps are thoughtful and relevant but may overlook some advanced privacy-enhancing technologies.",
+            "score5_description": "The response excels in meticulously detailing a privacy-first approach to address Ben's data security concerns. It suggests adopting cutting-edge encryption technologies, conducting regular security vulnerability assessments, applying differential privacy techniques for AI training, engaging with privacy experts for continuous improvements, and establishing clear, user-friendly privacy policies. The steps demonstrate a deep understanding of protecting sensitive user information in AI-driven applications, showcasing a commitment to ethical tech development."
+        },
+        "atomic_checklist": [
+            "Does the response emphasize the importance of incorporating robust encryption for user data?",
+            "Does the response include engaging with cybersecurity and privacy experts for regular audits?",
+            "Does the response propose clear communication with users about how their data will be used?",
+            "Does the response suggest implementing privacy-enhancing technologies specific to AI?",
+            "Does the response outline a plan for continuous assessment and improvement of privacy measures?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Review the provided scenario and analyze it based on the question that follows.",
+        "input": "In a university laboratory, a robotics team is developing an autonomous drone for delivering medications in remote areas. The team, led by Dr. Emily, is enthusiastic about the project's potential impact. However, during a project review meeting, John, a drone safety expert, expressed concerns over the drone's ability to navigate through complex terrains and adverse weather conditions, questioning if the current design ensures safe, reliable delivery under such circumstances.\nConsidering these concerns, how might Dr. Emily and her team address John's safety and reliability questions, and what steps could be taken to optimize the drone\u2019s design for its intended mission?",
+        "reference_answer": "Dr. Emily might initially express appreciation for John\u2019s insights, emphasizing their value in guiding the project towards success. She could suggest enhancing the drone's capabilities with advanced sensors and navigation algorithms capable of adapting to unexpected terrain and weather changes. A pivotal step would be integrating AI to analyze real-time data for making autonomous decisions, ensuring safe navigation and delivery in the most challenging conditions. To address the reliability in adverse weather, materials specifically designed for durability and resilience could be explored. Dr. Emily could also plan for exhaustive simulation tests replicating various environmental scenarios, followed by field testing in controlled remote areas. This systematic approach, underpinned by continual iteration based on test results and stakeholder feedback, would aim to refine the drone\u2019s design for optimal safety and reliability, ensuring the project\u2019s ultimate goal of improving medication access in remote regions is safely met.",
+        "score_rubric": {
+            "criteria": "Does the response effectively tackle John's safety and reliability concerns, offering a comprehensive strategy for enhancing the drone's design and suggesting actionable steps for addressing navigation and durability challenges in complex environments?",
+            "score1_description": "The response inadequately addresses the concerns about drone safety and reliability, offering superficial or irrelevant solutions that show a lack of understanding of drone technology and its application in remote deliveries.",
+            "score2_description": "The response recognizes John's concerns but proposes only basic or general improvements without delving into specific design or technology solutions that could enhance the drone's navigation and resilience in harsh environments.",
+            "score3_description": "The response reasonably tackles John's concerns, suggesting initial improvements like better sensors or weather-resistant materials. However, it could provide more comprehensive and innovative steps tailored to overcoming the drone\u2019s specific challenges.",
+            "score4_description": "The response provides a strong strategy for addressing the concerns, including adopting advanced navigation algorithms, integrating AI for real-time decision making, and employing durable materials designed for adverse weather conditions. It outlines relevant, specific actions but might miss cutting-edge technological advancements.",
+            "score5_description": "The response excels in thoroughly addressing safety and reliability issues, proposing a multi-faceted approach that includes cutting-edge technologies such as LIDAR for terrain mapping, machine learning for adaptive flight paths, robust communication systems for remote areas, and advanced materials engineering for weather resilience. The proposed steps indicate a deep understanding of drone technology\u2019s potential and challenges, reflecting a commitment to innovative, safe delivery solutions."
+        },
+        "atomic_checklist": [
+            "Does the response highlight the importance of advanced navigation and real-time decision-making capabilities?",
+            "Does the response suggest conducting extensive tests in simulated complex terrains and weather conditions?",
+            "Does it propose integration of AI and machine learning for dynamic route optimization?",
+            "Does the response recommend using materials and designs suited for operation in diverse environmental conditions?",
+            "Does the response outline a plan for continuous testing, feedback, and iteration to enhance safety and reliability?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "faux_pas_explanation",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, respectful and honest assistant. Analyze the scenario provided and formulate a response to the question that follows.",
+        "input": "A city council is considering the adoption of smart street lighting to enhance urban safety and energy efficiency. The project manager, Helena, emphasized the benefits of these lights, including reduced energy consumption and improved public safety through better illumination at night. However, during the public consultation period, a group of residents expressed concerns about potential privacy invasions, citing the capacity of smart lights to collect data on pedestrian movements. They questioned how the council plans to address these privacy concerns without compromising the initiative's objectives.\nHow might Helena and her team reassess the smart lighting project to address residents' privacy concerns while still achieving the project's goals of enhancing safety and energy efficiency?",
+        "reference_answer": "To address the privacy concerns raised by residents, Helena could first ensure that all stakeholders understand the technology's capabilities and intended use, highlighting that the primary goal is enhancing safety and not monitoring individual movements. She might propose implementing data anonymization techniques right from the data collection stage to ensure personal information is not identifiable. Privacy-by-design principles would be integrated into the lighting system, ensuring that privacy considerations are included at every step of development and deployment. Helena could also initiate community engagement sessions to understand resident concerns better and adapt the project based on this feedback. Moreover, working with legal experts to draft and implement specific guidelines or regulations governing the collection, storage, and use of data from smart lighting could reassure the public. This balanced approach aims to maintain transparency, prioritize resident privacy, and achieve the project's safety and efficiency goals.",
+        "score_rubric": {
+            "criteria": "Does the response insightfully address the residents' privacy concerns related to smart street lighting, offering a balanced approach that preserves the project's safety and energy efficiency benefits while ensuring data protection and privacy?",
+            "score1_description": "The response inadequately addresses privacy concerns, suggesting actions that either disregard the significance of data protection or fail to propose viable solutions that align with the project's objectives of safety and energy efficiency.",
+            "score2_description": "The response acknowledges privacy concerns but offers only general or vague strategies that lack specificity in how the project could achieve a balance between safety and privacy. It might overlook crucial aspects of data protection.",
+            "score3_description": "The response reasonably addresses privacy concerns, proposing initial steps such as reviewing data collection policies. However, it could offer more detailed and practical solutions to ensure that safety and energy efficiency goals are met without compromising privacy.",
+            "score4_description": "The response provides a well-considered strategy to address privacy concerns, including the implementation of data minimization practices and transparent communication about data usage. It outlines specific actions but may slightly miss opportunities for more innovative privacy-enhancing technologies or methods.",
+            "score5_description": "The response excels in presenting a comprehensive and nuanced approach to privacy concerns, suggesting adopting strict data anonymization techniques, deploying privacy-by-design principles in the development of smart lighting systems, engaging in continuous dialogue with the community for feedback, and introducing legislative measures for data protection. The proposed steps demonstrate a deep understanding of balancing urban safety improvements with rigorous privacy safeguards."
+        },
+        "atomic_checklist": [
+            "Does the response prioritize stringent data protection measures for collected information?",
+            "Does it propose community engagement sessions to gather feedback and address privacy concerns?",
+            "Does the response recommend the adoption of privacy-by-design principles in smart lighting systems?",
+            "Is there a suggestion for legislative measures or guidelines to ensure data collected is protected and used ethically?",
+            "Does the response outline a clear plan for balancing enhanced urban safety with the residents' right to privacy?"
+        ],
+        "background_knowledge": []
+    }
+]

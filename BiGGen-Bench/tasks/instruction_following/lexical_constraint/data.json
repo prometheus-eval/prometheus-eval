@@ -1,0 +1,239 @@
+[
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "I opened a fruit juice store called 'Juice heaven' last July. The advantage of our cafe is that we use fresh fruits to make our juices. Generate three promotional messages for the store with less than 15 words, including the term 'Fresh Fruit'.",
+        "reference_answer": "Here are three promotional messages highlighting that all juices are made with fresh fruit:\n\n1. Enjoy the Taste of Paradise with Fresh Fruit at Juice Heaven\n2. Beat the Heat with Fresh Fruit Juice from Juice Heaven\n3. Experience Unforgettable taste of juice made with Fresh Fruit",
+        "score_rubric": {
+            "criteria": "Does the response contain promotional messages, include the term 'Fresh Fruit', and are they within 15 words each?",
+            "score1_description": "No promotional messages meet the criteria of including 'Fresh Fruit' and staying within 15 words.",
+            "score2_description": "Only one promotional message meets the criteria of including 'Fresh Fruit' and staying within 15 words.",
+            "score3_description": "Two promotional messages meet the criteria of including 'Fresh Fruit' and staying within 15 words.",
+            "score4_description": "Three promotional messages meet the criteria of including 'Fresh Fruit' and staying within 15 words, but could highlight the store's advantages more effectively.",
+            "score5_description": "Three promotional messages perfectly meet the criteria, including 'Fresh Fruit' within 15 words, and effectively highlight the store's advantages."
+        },
+        "atomic_checklist": [
+            "Does all the 3 responses consist of 15 words?",
+            "Does all the 3 responses include the term 'Fresh Fruit'?",
+            "Does all the 3 responses highlight the advantages of the store?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Write the lyrics of the nursery rhyme 'Row, Row, Row Your Boat' in lowercase. If the rhyme includes the word 'merrily', insert '(everyone)' in front of the first occurrence of that word.",
+        "reference_answer": "row, row, row your boat,\ngently down the stream,\n(everyone) merrily merrily, merrily, merrily,\nlife is but a dream.",
+        "score_rubric": {
+            "criteria": "Does the response correctly follow the instructions for lowercase text and the specific insertion of '(everyone)' in front of the first occurrence of 'merrily'?",
+            "score1_description": "The response does not convert the text to lowercase and fails to insert '(everyone)' in front of 'merrily'.",
+            "score2_description": "The response is in lowercase but does not insert '(everyone)' in front of 'merrily', or it inserts '(everyone)' but not in the correct location.",
+            "score3_description": "The response is in lowercase and inserts '(everyone)' in front of 'merrily', but contains significant spelling or grammatical errors.",
+            "score4_description": "The response correctly follows the lowercase instruction and inserts '(everyone)' in front of 'merrily', with minor spelling or grammatical errors.",
+            "score5_description": "The response accurately follows the instructions by converting the text to lowercase and correctly inserting '(everyone)' in front of the first occurrence of 'merrily', with no spelling or grammatical errors."
+        },
+        "atomic_checklist": [
+            "Does the response convert the input text to lowercase?",
+            "Does the response insert '(everyone)' in front of 'meriily'?",
+            "Is there not a single grammatical error in the given sentence?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Provide information about the president elected in the 2020 Taiwan presidential election in the following format:\n[Information for Elected President]\n- Name:\n- Political party:\n- Major policies:",
+        "reference_answer": "[Information for Elected President]\n1. Name: Tsai Ing-wen\n2. Political party: Democratic Progressive Party (DPP)\n3. Major policies:\n- Maintaining Taiwan's sovereignty and resisting pressure from China.\n- Strengthening Taiwan's economy, especially in the face of global challenges.\n- Promoting social and environmental sustainability.",
+        "score_rubric": {
+            "criteria": "Does the response accurately provide the name, political party, and major policies of the president elected in the 2020 Taiwan presidential election?",
+            "score1_description": "The response fails to correctly identify the president elected in the 2020 Taiwan presidential election, providing incorrect information for all three categories (name, political party, and major policies).",
+            "score2_description": "The response correctly identifies either the name, political party, or major policies of the elected president, but the other two categories contain incorrect information.",
+            "score3_description": "The response correctly identifies two out of the three categories (name, political party, and major policies) for the elected president, but one category contains incorrect or incomplete information.",
+            "score4_description": "The response correctly identifies the name and political party of the elected president and provides a general overview of the major policies, but the details may lack depth or precision.",
+            "score5_description": "The response accurately provides the name, political party, and a detailed description of the major policies of the president elected in the 2020 Taiwan presidential election, demonstrating a comprehensive understanding."
+        },
+        "atomic_checklist": [
+            "Does the response accurately provide the name of the president elected in the 2020 Taiwan presidential election?",
+            "Does the response accurately provide the political party of the president elected in the 2020 Taiwan presidential election?",
+            "Does the response accurately provide the major policies of the president elected in the 2020 Taiwan presidential election?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "President of Tsai Ing-wen",
+                "reference_url": "https://en.wikipedia.org/wiki/Presidency_of_Tsai_Ing-wen"
+            }
+        ]
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Explain Pavlov's dog experiments as an example of the theory of Classical Conditioning using the following terms: unconditioned stimulus, conditioned stimulus, neutral stimulus, unconditioned response, conditioned response.",
+        "reference_answer": "Here is an explanation on Pavlov's dog experiments as an example of the theory of Classical Conditioning using the specified terms:\n[Unconditioned response through Unconditioned stimulus]\nPavlov provided an unconditioned stimulus, food, to dogs to elicit a natural response without any prior learning. The food naturally caused salivation in the dogs. When presented with this unconditioned stimulus, the dogs exhibited an unconditioned response of salivating. This response occurred spontaneously without the need for any learning.\n[Converting Neutral stimulus to Conditioned stimulus]\nNext, a neutral stimulus that initially did not elicit any response was introduced and paired with the unconditioned stimulus to induce a response. This process is known as classical conditioning. In Pavlov's experiment, the neutral stimulus was something like a bell or metronome. This neutral stimulus was associated with the unconditioned stimulus, which is food. Through repeated pairings, the neutral stimulus became a conditioned stimulus.\n[Conditioned response through Conditioned stimulus]\nAs a result of this conditioning, the conditioned stimulus (such as the sound of the bell or metronome) came to elicit a conditioned response. Even without the presence of food, the dogs would salivate in response to the conditioned stimulus, demonstrating that the neutral stimulus had become a conditioned stimulus capable of triggering a conditioned response.\nIn summary, Classical Conditioning involves the association of a neutral stimulus with an unconditioned stimulus to elicit a conditioned response. The process demonstrates how a previously neutral stimulus can acquire the ability to evoke a response through repeated pairings with a stimulus that naturally triggers a response. Pavlov's experiments provided a foundational understanding of classical conditioning in psychology.",
+        "score_rubric": {
+            "criteria": "Does the response accurately use the specified terms to explain Pavlov's dog experiments as an example of Classical Conditioning?",
+            "score1_description": "The response fails to use any of the specified terms correctly, providing an incorrect or irrelevant explanation of Pavlov's dog experiments.",
+            "score2_description": "The response uses one or two of the specified terms correctly but lacks a comprehensive explanation of Pavlov's dog experiments in the context of Classical Conditioning.",
+            "score3_description": "The response uses most of the specified terms correctly but may confuse one or two terms, providing a somewhat accurate explanation of Pavlov's dog experiments and Classical Conditioning.",
+            "score4_description": "The response uses all the specified terms correctly but may not fully integrate them into a cohesive explanation of Pavlov's dog experiments as an example of Classical Conditioning.",
+            "score5_description": "The response accurately uses all the specified terms and provides a clear, comprehensive explanation of Pavlov's dog experiments as a coherent example of Classical Conditioning."
+        },
+        "atomic_checklist": [
+            "Does the response include the term 'unconditioned stimulus'?",
+            "Does the response include the term 'conditioned stimulus'?",
+            "Does the response include the term 'neutral stimulus'?",
+            "Does the response include the term 'unconditioned response'?",
+            "Does the response include the term 'conditioned response'?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Pavlov's dogs experiment",
+                "reference_url": "https://www.simplypsychology.org/pavlov.html"
+            }
+        ]
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "The following is a conversation between two friends. Generate A's response. Start with 'Thanks' and include the phrase 'How often'.\nA: Hey, I've been feeling a bit overwhelmed lately, and I was thinking about seeking mental consulting. Have you ever tried it?\nB: Yeah, I actually started seeing a mental health consultant a few months ago. It's been really helpful.\nA: That's great to hear. How did you find the right consultant for you?\nB: I asked my primary care doctor for recommendations, and they referred me to someone who specializes in the issues I was dealing with. You could also check online reviews or ask friends for suggestions.\nA:",
+        "reference_answer": "Thanks for the advice. How often do you go for your mental consulting sessions?",
+        "score_rubric": {
+            "criteria": "Does A's response appropriately include 'Thanks' and inquire about the frequency using 'How often'?",
+            "score1_description": "The response neither includes 'Thanks' nor asks about the frequency of the sessions using 'How often'.",
+            "score2_description": "The response includes either 'Thanks' or 'How often' but not both, and may be off-topic or inappropriate.",
+            "score3_description": "The response includes both 'Thanks' and 'How often' but one of them feels forced or out of context.",
+            "score4_description": "The response includes 'Thanks' and 'How often' in a way that is contextually appropriate but may lack smooth integration into the conversation or may have minor relevance issues.",
+            "score5_description": "The response effectively incorporates both 'Thanks' and 'How often' in a contextually appropriate and seamlessly integrated manner, maintaining the flow and relevance of the conversation."
+        },
+        "atomic_checklist": [
+            "Does the response start with 'Thanks'?",
+            "Does the response include 'How often'?",
+            "Does the response maintain the flow and relevance of the conversation?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Design a social media challenge to promote sustainable living habits. The challenge should include a catchy name, three rules participants must follow, and the desired impact of the challenge.",
+        "reference_answer": "Introducing the 'Eco-Change Challenge': 1. Swap one daily use item for a reusable alternative. 2. Cut down single-use plastics by at least 50%. 3. Share your sustainable meals ideas online. Desired Impact: To foster a community that actively reduces waste and promotes sustainable consumption habits, inspiring widespread eco-conscious behavior.",
+        "score_rubric": {
+            "criteria": "Does the challenge include a catchy name, three specific rules for participants, and clearly outline the desired impact on promoting sustainable living?",
+            "score1_description": "The response lacks a catchy name, does not provide three specific rules, and fails to mention the desired impact on sustainable living.",
+            "score2_description": "The response provides a name or one rule related to sustainable living, but does not effectively outline three rules, the desired impact, or lacks catchiness in the name.",
+            "score3_description": "The response includes a name and two rules. It makes an attempt to outline the desired impact on sustainable living but lacks full development or catchiness in the challenge name.",
+            "score4_description": "The response includes a catchy name, three rules, and outlines the desired impact. However, the integration of sustainable living concepts could be more innovative or impactful.",
+            "score5_description": "The response includes a highly catchy name, three well-thought-out rules, and clearly outlines a significant desired impact on promoting sustainable living, demonstrating creativity and a strong understanding of sustainability."
+        },
+        "atomic_checklist": [
+            "Does the response specify a catchy name for the challenge?",
+            "Does the response list three specific rules for participants?",
+            "Does the response outline the desired impact on sustainable living?",
+            "Are the rules directly related to promoting sustainable habits?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Compose a technical blog post outline on the future of Artificial Intelligence (AI) in healthcare. The outline should include an introduction, three potential AI applications, and a section on ethical considerations.",
+        "reference_answer": "Introduction: Exploring the transformative potential of AI in revolutionizing healthcare, from diagnostics to patient care and beyond. AI Applications: 1. Predictive Analytics for Early Diagnosis: Using AI to analyze patterns in medical data to predict diseases before symptoms manifest. 2. Personalized Treatment Plans: Leveraging AI algorithms to tailor treatments to the individual patient's genetics and disease specifics. 3. Robotic Surgery: Enhancing precision in surgeries through AI-driven robots, reducing human error. Ethical Considerations: Addressing patient data privacy, ensuring equitable access to AI-driven care, and managing the transition for healthcare professionals to integrate AI without displacing jobs.",
+        "score_rubric": {
+            "criteria": "Does the outline include an introduction, three distinct AI applications in healthcare, and address ethical considerations?",
+            "score1_description": "The outline fails to introduce the topic, lacks three distinct AI applications in healthcare, and does not address ethical considerations.",
+            "score2_description": "The outline provides an introduction or one AI application in healthcare but does not effectively cover three applications or address ethical considerations.",
+            "score3_description": "The outline includes an introduction and two AI applications, attempting to address ethical considerations but lacks depth or specificity in one of the sections.",
+            "score4_description": "The outline properly introduces the topic, lists three AI applications in healthcare, and discusses ethical considerations, but could be more thorough or detailed in its coverage.",
+            "score5_description": "The outline offers a comprehensive introduction, details three innovative AI applications in healthcare, and thoughtfully addresses ethical considerations, demonstrating a deep understanding of the topic."
+        },
+        "atomic_checklist": [
+            "Does the response provide a clear introduction to AI's future in healthcare?",
+            "Does the response list three potential AI applications in healthcare?",
+            "Does the response consider ethical implications of AI in healthcare?",
+            "Are the applications diverse, covering different aspects of healthcare?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Develop an educational program for high school students to learn about the importance of biodiversity. The program should include a catchy title, three key learning objectives, and three interactive activities that align with the objectives.",
+        "reference_answer": "Introducing the 'Biodiversity Brigade': Objectives: 1. Understand the roles of different species in ecosystems. 2. Recognize the impact of human activity on biodiversity. 3. Explore conservation strategies to protect biodiversity. Activities: 1. 'Species Role-Play': Students assume roles of various species within an ecosystem to learn their functions. 2. 'Impact Investigation': Groups research and present on how specific human actions affect local biodiversity. 3. 'Conservation Quest': An interactive game where students devise and implement a plan to increase an endangered species\u2019 population within a simulated environment. This program aims to ignite a passion for preserving our planet\u2019s biological diversity.",
+        "score_rubric": {
+            "criteria": "Does the educational program include a catchy title, three key learning objectives, and three interactive activities that are clearly aligned with these objectives?",
+            "score1_description": "The response lacks a catchy title, does not outline three key learning objectives, and fails to list three aligned interactive activities.",
+            "score2_description": "The response includes a title or one learning objective related to biodiversity, but does not effectively outline all three objectives or align the interactive activities, or lacks a catchy title.",
+            "score3_description": "The response includes a title and two learning objectives, with an attempt to align activities with these objectives but one of the objectives or activities lacks full development or relevance.",
+            "score4_description": "The response includes a catchy title, three learning objectives, and three aligned interactive activities but the integration of objectives with activities could be more innovative or engaging.",
+            "score5_description": "The response includes a highly catchy title, three well-developed learning objectives, and three creative, engaging interactive activities that directly align with the objectives, demonstrating a strong understanding of biodiversity education."
+        },
+        "atomic_checklist": [
+            "Does the response provide a catchy title for the program?",
+            "Does the response list three key learning objectives about biodiversity?",
+            "Does the response include three interactive activities aligned with the learning objectives?",
+            "Are the activities engaging and likely to enhance understanding of biodiversity?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Create a mini-guide for beginners on how to start composting at home. The guide should include a brief introduction to composting, three basic steps to start, and tips for maintaining a healthy compost.",
+        "reference_answer": "Getting Started with Composting: A Beginner's Guide Introduction: Composting is a sustainable way to recycle your kitchen and garden waste into rich soil for your plants. Steps to Start: 1. Choose Your Compost Bin: Start with a simple bin or pile in your backyard. 2. Balance Your Browns and Greens: Combine carbon-rich 'browns' like leaves and paper with nitrogen-rich 'greens' like vegetable scraps and coffee grounds. 3. Turn Regularly: Mixing your compost helps speed up the decomposition process. Tips for a Healthy Compost: - Keep It Moist: Your compost should be as wet as a wrung-out sponge. - Chop Up Large Pieces: Smaller items decompose faster. - Avoid Meat and Dairy: These can attract pests and produce odors. Follow these steps and tips, and you'll turn waste into gardening gold in no time!",
+        "score_rubric": {
+            "criteria": "Does the mini-guide provide a clear introduction to composting, outline three basic steps for beginners to start, and offer practical tips for maintaining a healthy compost?",
+            "score1_description": "The response fails to introduce composting, does not outline three basic steps to start composting, and lacks tips for maintaining a healthy compost.",
+            "score2_description": "The response provides a vague introduction to composting or outlines only one step for starting composting and lacks practical tips for maintaining a healthy compost.",
+            "score3_description": "The response includes a basic introduction to composting and two steps for starting composting, with an attempt at providing tips for maintaining a healthy compost but lacks detail or clarity.",
+            "score4_description": "The response offers a clear introduction to composting, outlines three steps to start, and provides tips for maintaining a healthy compost, though some tips or steps could be more actionable or specific.",
+            "score5_description": "The response delivers a compelling introduction to composting, thoroughly outlines three actionable steps for beginners to start, and gives detailed, practical tips for maintaining a healthy compost, demonstrating an excellent understanding of composting practices."
+        },
+        "atomic_checklist": [
+            "Does the response introduce composting in a way understandable to beginners?",
+            "Does the response list three basic steps to start composting at home?",
+            "Does the response provide practical tips for maintaining a healthy compost?",
+            "Are the steps and tips accurate and easy to follow for beginners?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "lexical_constraint",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Craft a beginner\u2019s guide to birdwatching that can be used in a local community park. The guide should include a brief introduction to birdwatching, three easy steps to get started, and tips for spotting and identifying birds.",
+        "reference_answer": "Birdwatching Basics: A Guide for Beginners in Community Parks Introduction: Birdwatching, or birding, is a joyful and accessible hobby that connects you with nature and can be done anywhere, even in your local community park. Steps to Get Started: 1. Equip Yourself: All you need is a pair of binoculars and a field guide to local birds. Smartphone apps can also be handy for identification. 2. Know When to Go: Early morning or late afternoon are prime birdwatching times when birds are most active. 3. Quiet and Observant: Move slowly and quietly, keeping your eyes and ears open for bird movements and calls. Tips for Spotting and Identifying Birds: - Start with Shape and Size: Observe the silhouette of a bird; the shape and size are the first clues to its identity. - Color and Markings: Note the colors and unique markings, like stripes or spots. - Listen: Birds have distinctive calls. Learning to recognize these can direct you to their location. With patience and practice, you\u2019ll start recognizing different species and their habits, enhancing your walks in the park.",
+        "score_rubric": {
+            "criteria": "Does the guide provide a concise introduction to birdwatching, clearly outline three easy steps to get started, and offer practical tips for spotting and identifying birds?",
+            "score1_description": "The response fails to introduce birdwatching, does not outline three easy steps to get started, and lacks tips for spotting and identifying birds.",
+            "score2_description": "The response provides an introduction to birdwatching or outlines only one step for getting started, and lacks practical tips for spotting and identifying birds.",
+            "score3_description": "The response includes an introduction to birdwatching and two steps for getting started, with an attempt at providing tips for spotting and identifying birds, but the details are vague or not actionable.",
+            "score4_description": "The response offers a clear introduction to birdwatching, outlines three steps to get started, and provides tips for spotting and identifying birds, though some tips or steps could be more detailed or specific.",
+            "score5_description": "The response delivers an engaging introduction to birdwatching, thoroughly outlines three actionable steps for beginners to start, and gives detailed, practical tips for spotting and identifying birds, demonstrating an excellent understanding of birdwatching practices."
+        },
+        "atomic_checklist": [
+            "Does the response provide an easily understandable introduction to birdwatching for beginners?",
+            "Does the response list three easy steps to begin birdwatching in a local park?",
+            "Does the response include practical tips for spotting and identifying birds?",
+            "Are the steps and tips accurate and feasible for beginners?"
+        ],
+        "background_knowledge": []
+    }
+]

@@ -1,0 +1,244 @@
+[
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Write a textbook-like material consisted of minimum two paragraphs that explains the Ito's Lemma. It should include how the Ito's Lemma induce the Black\u2013Scholes model.",
+        "reference_answer": "Ito's Lemma is a critical result in the field of stochastic calculus, and it allows us to differentiate functions of stochastic processes, which are processes with inherent randomness. \n\nConsider a Wiener process \\( W(t) \\), which is a mathematical representation of Brownian motion and is characterized by its continuous, non-differentiable paths. In the simplest form, the differential of \\( W(t) \\), denoted by \\( dW(t) \\), is given by:\n\\[ dW(t) = \\mu W(t) \\, dt \\]\nwhere \\( \\mu \\) is the drift rate of the process and \\( dt \\) is the infinitesimal time increment.\n\nNow, let's consider a function \\( f \\) that is dependent on \\( W(t) \\). In classical calculus, if you want to find the differential of \\( f \\), you would simply use the chain rule. However, in stochastic calculus, because \\( W(t) \\) has randomness, \\( dW(t) \\) is not just \\( \\mu W(t) \\, dt \\); there is also a stochastic term that involves Brownian motion, \\( dB(t) \\). The full differential of \\( W(t) \\) in the context of stochastic processes is:\n\\[ dW(t) = \\mu W(t) \\, dt + \\sigma W(t) \\, dB(t) \\]\nwhere \\( \\sigma \\) is the volatility of the process and \\( dB(t) \\) represents the stochastic increment of Brownian motion.\n\nIto's Lemma comes into play when we have a function \\( f(t, W(t)) \\) that is twice continuously differentiable in \\( W \\) and once in \\( t \\). The differential of this function, \\( df(W(t), t) \\), is not just a matter of applying the chain rule; we also have to consider the second-order term because \\( (dW(t))^2 \\) has a non-negligible value equal to \\( dt \\) due to the properties of the Wiener process. This is a departure from classical calculus, where the square of an infinitesimal is considered zero. Ito's Lemma provides the correct formula for the differential of \\( f \\) as:\n\\[ df(W(t), t) = \\frac{\\partial f}{\\partial t} (W(t), t) \\, dt + \\frac{\\partial f}{\\partial W} (W(t), t) \\, dW(t) + \\frac{1}{2} \\frac{\\partial^2 f}{\\partial W^2} (W(t), t) \\, (dW(t))^2 \\]\n\nThis equation takes into account the drift and volatility of the stochastic process, as well as the non-zero contribution of the squared differential term, which is unique to stochastic calculus.\n**Ito's Lemma and the Black\u2013Scholes Model**\n\nThe significance of Ito's Lemma becomes evident in its application to financial models, most notably the Black\u2013Scholes model for option pricing. The Black\u2013Scholes model provides a theoretical estimate of the price of European-style options and is widely used in financial markets. The model itself is derived by applying Ito's Lemma to the option pricing equation, which is dependent on the underlying asset's price, a stochastic process.\n\nIn the Black\u2013Scholes model, the price of the underlying asset is modeled as a geometric Brownian motion, and Ito's Lemma is used to derive the Black\u2013Scholes differential equation. By assuming that the option price is a continuously differentiable function of the underlying asset price and time, and applying Ito's Lemma, the change in the option price can be expressed in terms of changes in the asset price and time. This leads to the famous Black\u2013Scholes partial differential equation:\n\n\\[ \\frac{\\partial V}{\\partial t} + \\frac{1}{2} \\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} + rS \\frac{\\partial V}{\\partial S} - rV = 0 \\]\n\nHere, \\( V \\) is the option price, \\( S \\) is the underlying asset price, \\( r \\) is the risk-free interest rate, and \\( \\sigma \\) is the volatility of the underlying asset. The Black\u2013Scholes equation, thus derived, serves as the foundation for modern financial mathematics and option pricing theory, illustrating the profound impact of Ito's Lemma on quantitative finance.",
+        "score_rubric": {
+            "criteria": "Is the proposed material a well-explained material of Ito's Lemma? ",
+            "score1_description": "The material is unclear and inaccurate, containing significant errors and omissions, and fails to provide any meaningful depth or insight into Ito's Lemma.",
+            "score2_description": "While somewhat clear, the material lacks coherence and contains notable errors or oversimplifications, providing only a surface-level explanation without delving into the importance of Ito's Lemma in financial mathematics.",
+            "score3_description": "The material is reasonably clear and understandable, offering a general overview with some accuracy and basic insight, but lacks comprehensive detail and thorough exploration of Ito's Lemma and its derivation via equation.",
+            "score4_description": "Clear, well-structured, and effectively communicated, the material accurately explains Ito's Lemma and its application in the Black\u2013Scholes model, with good depth and mathematical derivation.",
+            "score5_description": "Exceptionally well-explained and engaging, the material offers a comprehensive, precise, and insightful explanation of Ito's Lemma and a well written mathematical derivation, it thoroughly details application in the Black\u2013Scholes model."
+        },
+        "atomic_checklist": [
+            "Does the response provide a clear and accurate explanation of Ito's Lemma, including its role in differentiating functions of stochastic processes?",
+            "Is the Wiener process (\\( W(t) \\)) and its differential (\\( dW(t) \\)) correctly described, including the terms for drift rate (\\( \\mu \\)) and stochastic term (\\( dB(t) \\))?",
+            "Does the response explain the application of Ito's Lemma to a function \\( f(t, W(t)) \\) that is twice continuously differentiable in \\( W \\) and once in \\( t \\), including the correct formula for the differential of \\( f \\)?",
+            "Is the significance of Ito's Lemma in financial models, specifically its application to the Black\u2013Scholes model for option pricing, clearly and correctly described?",
+            "Does the response include the derivation of the Black\u2013Scholes differential equation using Ito's Lemma, accurately explaining how changes in the option price can be expressed in terms of changes in the asset price and time?",
+            "Is the Black\u2013Scholes partial differential equation (\\( \\frac{\\partial V}{\\partial t} + \\frac{1}{2} \\sigma^2 S^2 \\frac{\\partial^2 V}{\\partial S^2} + rS \\frac{\\partial V}{\\partial S} - rV = 0 \\)) correctly presented and explained in the context of its derivation from Ito's Lemma?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Create a 12 week curriculum to study \"Financial Engineering\" for a student that graduated as a Computer Science major. He knows basic python programming but has no experience in studying finance.",
+        "reference_answer": "**Week 1-2: Introduction to Financial Markets and Instruments**\n- Overview of financial markets: equity, fixed income, derivatives, and foreign exchange.\n- Introduction to financial instruments: stocks, bonds, options, futures, swaps, and their market mechanics.\n- Readings: \"Options, Futures, and Other Derivatives\" by John C. Hull.\n- Python Application: Setting up a Python environment, using Jupyter notebooks, and an introduction to financial data libraries like pandas and numpy.\n\n**Week 3-4: Time Value of Money and Risk Management**\n- Time Value of Money: Present and Future Value, Annuities, and NPV.\n- Risk Management fundamentals: understanding risk, risk types, and risk measures (VaR, CVaR).\n- Python Application: Building basic financial calculators for PV, FV, and NPV; simulating stock price movements using random walks.\n\n**Week 5-6: Stochastic Calculus and Ito's Lemma**\n- Introduction to stochastic processes in finance, Brownian motion.\n- Understanding and applying Ito's Lemma and the Black-Scholes-Merton model.\n- Readings: \"Paul Wilmott Introduces Quantitative Finance\" by Paul Wilmott.\n- Python Application: Simulating Geometric Brownian Motion; Option pricing using Black-Scholes formula.\n\n**Week 7-8: Financial Time Series Analysis and Econometrics**\n- Time series analysis: trends, seasonality, and autoregression models.\n- Econometric theories: regression analysis, hypothesis testing, and model selection.\n- Python Application: Using statsmodels for time series analysis and forecasting; applying ARIMA models to financial data.\n\n**Week 9-10: Portfolio Theory and Asset Pricing Models**\n- Modern Portfolio Theory: Efficient Frontier, CAPM, and Beta.\n- Asset Pricing Models: APT, Fama-French three-factor model.\n- Python Application: Portfolio optimization using scipy and cvxopt; calculating stock betas and expected returns.\n\n**Week 11: Algorithmic Trading and Machine Learning**\n- Overview of algorithmic trading strategies and backtesting frameworks.\n- Introduction to Machine Learning in finance: supervised vs unsupervised learning, overfitting, and model evaluation.\n- Python Application: Developing a simple moving average crossover strategy; implementing machine learning models with scikit-learn.\n\n**Week 12: Capstone Project**\n- Development of a comprehensive financial application using Python. This could be a portfolio management system, a trading algorithm with backtesting against historical data, or a machine learning model for price prediction.\n- The project will incorporate data retrieval, statistical analysis, financial theory, and computational algorithms.\n- Presentation of the project, including a report and a code repository.\n\nThis curriculum offers a balanced mix of theory and practical application, laying a solid foundation in financial engineering while leveraging the student's background in computer science. It ensures the student is not only able to understand complex financial concepts but can also implement them using Python, a highly relevant skill in today's finance industry. The capstone project serves as a culmination of the skills learned and provides a tangible artifact demonstrating the student's newly acquired financial engineering capabilities.",
+        "score_rubric": {
+            "criteria": "Does the curriculum cover all fundamental aspects of financial engineering?  Does the curriculum follow a logical progression, building on concepts week by week? Is the capstone project well-integrated, allowing the student to apply learned concepts in a real-world context?",
+            "score1_description": "Fails to cover key areas of financial engineering, lacks practical application, and shows no logical progression. Topics are outdated, and the capstone project is either absent or poorly integrated.",
+            "score2_description": "Covers some basic aspects of financial engineering but lacks depth. Limited focus on practical application and weak structure. Some relevant topics are included, but the capstone project is underdeveloped.",
+            "score3_description": "Provides a general overview of financial engineering with a reasonable balance of theory and practice. The curriculum has a basic structure, but progression could be improved. Includes a capstone project that somewhat applies the concepts learned.",
+            "score4_description": "Comprehensive coverage of essential financial engineering topics with a strong emphasis on practical application using Python. Well-structured with clear progression. Topics are relevant and up-to-date. The capstone project is effectively integrated, allowing practical application of learned skills.",
+            "score5_description": "Exceptionally comprehensive and well-structured, covering all critical aspects of financial engineering. Perfect balance between theoretical knowledge and practical application using Python. Includes current and highly relevant topics. The capstone project is thoroughly integrated, providing an excellent opportunity for applying concepts in a real-world scenario."
+        },
+        "atomic_checklist": [
+            "Does the curriculum cover all fundamental aspects of financial engineering, including financial markets, instruments, time value of money, risk management, stochastic calculus, financial time series analysis, econometrics, portfolio theory, asset pricing models, and algorithmic trading?",
+            "Is there a logical progression in the curriculum, with concepts building on each other from basic to advanced topics, starting with an introduction to financial markets and ending with a capstone project?",
+            "Does the curriculum include a balance between theoretical knowledge and practical application, particularly using Python for financial analysis and modeling?",
+            "Are the topics covered relevant and up-to-date, reflecting current practices and theories in financial engineering?",
+            "Is the capstone project well-integrated into the curriculum, designed to allow the student to apply learned concepts to a real-world context, culminating in the development of a comprehensive financial application?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Draft a series of five calculus questions, arranged in ascending order of difficulty, intended to assess the mathematical proficiency of students in this subject area.",
+        "reference_answer": "Here is a series of five calculus questions.\n\n1. **Basic Differentiation**: Find the derivative of the function \\( f(x) = 2x^3 - 5x^2 + 3x - 7 \\).\n\n2. **Chain Rule and Trigonometry**: Differentiate the function \\( g(x) = \\cos(x^2 + 3x) \\).\n\n3. **Implicit Differentiation**: Given the equation \\( x^2 + xy + y^2 = 7 \\), find \\( \\frac{dy}{dx} \\).\n\n4. **Integration by Substitution**: Evaluate the integral \\( \\int 3x^2 e^{x^3} \\, dx \\).\n\n5. **Application in Area Between Curves**: Find the area bounded by the curves \\( y = x^2 \\) and \\( y = 2x + 3 \\) from \\( x = 0 \\) to \\( x = 3 \\).",
+        "score_rubric": {
+            "criteria": "Is the provided series of questions based on diversity in topics and have a clear, logical progression in difficulty?",
+            "score1_description": "The series lacks clear progression in difficulty, covers limited topics, questions are ambiguous, and do not effectively assess mathematical proficiency.",
+            "score2_description": "Questions show some variation in topics but limited progression in difficulty, with moderate clarity and partially assess students' proficiency.",
+            "score3_description": "The series covers a reasonable range of topics, with an evident but not optimal increase in difficulty, questions are clear, and adequately assess proficiency.",
+            "score4_description": "Questions are diverse, show a clear and well-structured increase in difficulty, are clearly articulated, and effectively assess mathematical proficiency.",
+            "score5_description": "The series excellently spans a wide range of calculus topics, demonstrates a perfectly graded difficulty level, questions are exceptionally clear and comprehensive, thoroughly assessing mathematical proficiency."
+        },
+        "atomic_checklist": [
+            "Does the series of questions cover a diverse range of calculus topics such as basic differentiation, chain rule, implicit differentiation, integration, and application problems?",
+            "Is there a clear and logical progression in the difficulty level of the questions, starting from basic concepts and moving towards more complex applications?",
+            "Are the questions articulated clearly to avoid ambiguity and ensure they assess the intended mathematical proficiency effectively?",
+            "Does the series include questions that assess both procedural skills (like differentiation and integration techniques) and conceptual understanding (like application in real-world contexts or geometric interpretations)?",
+            "Is the increase in difficulty between consecutive questions evident but not too abrupt, ensuring a smooth transition for assessing students with varying levels of proficiency?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Generate a solution for the given question. \n\nQuestion: N moles of an ideal gas with constant volume heat capacity {C_v} undergo an isobaric expansion by certain volume. The ratio of the work done in the process to the heat supplied is? ",
+        "reference_answer": "The correct ratio of the work done \\(W\\) to the heat supplied \\(Q\\) for an isobaric process is indeed \\(\\frac{nR}{C_v + nR}\\).\n\nThe work done in an isobaric process is given by:\n\\[ W = P \\Delta V = nR \\Delta T \\]\n\nAnd the heat supplied is:\n\\[ Q = nC_p \\Delta T \\]\nwhere \\(C_p = C_v + R\\) for an ideal gas. Substituting \\(C_p\\) into the equation for \\(Q\\) gives us:\n\\[ Q = nC_v \\Delta T + nR \\Delta T \\]\n\nSo the ratio of work done to heat supplied is:\n\\[ \\frac{W}{Q} = \\frac{nR \\Delta T}{nC_v \\Delta T + nR \\Delta T} \\]\nSimplifying this, we get:\n\\[ \\frac{W}{Q} = \\frac{nR}{C_v + nR} \\]",
+        "score_rubric": {
+            "criteria": "Is the answer for the correct and supported with detailed explanations?",
+            "score1_description": "The answer is wrong and the explanation is unclear, incorrect, and incoherent, with frequent miscalculations and mistakes that demonstrate a lack of understanding of basic concepts and procedures. ",
+            "score2_description": "The answer is wrong. The explanation is vague, incomplete, and contains significant miscalculations that affect the understanding of the topic. There is a noticeable misuse of terms and concepts. Reasoning is flawed or poorly constructed, leading to a disjointed explanation.",
+            "score3_description": "The explanation is mostly clear and includes relevant information, but minor miscalculations are present. Leading to a wrong answer.",
+            "score4_description": "The explanation provides the correct answer. The provided explanation is not comprehensive, without enough explanation.",
+            "score5_description": "The explanation provides the correct answer. The provided explanation is comprehensive, demonstrating an accurate application of relevant concepts and terminology,."
+        },
+        "atomic_checklist": [
+            "Does the response provide the correct ratio of work done \\(W\\) to heat supplied \\(Q\\) for an isobaric process as \\(\\frac{nR}{C_v + nR}\\)?",
+            "Does the response explain the calculation of work done in an isobaric process using the formula \\[ W = P \\Delta V = nR \\Delta T \\]?",
+            "Does the response clarify the heat supplied using the formula \\[ Q = nC_p \\Delta T \\] and explain the relation \\(C_p = C_v + R\\) for an ideal gas?",
+            "Does the response derive the ratio \\frac{W}{Q} by substituting the expressions for \\(W\\) and \\(Q\\) and simplifying to \\(\\frac{nR}{C_v + nR}\\)?",
+            "Is the sequence of explanation logical, starting from defining work done and heat supplied, to deriving the ratio of \\(W\\) to \\(Q\\)?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Organize the following topics so that it is suitable for a Natural language processing (NLP) course at university.\n\n['More about Transformers and Pretraining',\n 'Gensim word vectors example',\n 'Social & Ethical Considerations in NLP Systems',\n 'Dependency Parsing',\n 'Recurrent Neural Networks and Language Models',\n 'Transformers',\n 'Word Vectors 2 and Word Window Classification',\n 'Machine Translation, Attention, Subword Models',\n 'Word Vectors',\n 'Backprop and Neural Networks',\n 'T5 and large language models: The good, the bad, and the ugly',\n 'Integrating knowledge in language models',\n 'Vanishing Gradients, Fancy RNNs, Seq2Seq']",
+        "reference_answer": "The suggested order of curriculum may be:\n\n- Word Vectors\n- Gensim word vectors example:\n- Word Vectors 2 and Word Window Classification\n- Backprop and Neural Networks\n- Dependency Parsing\n- Recurrent Neural Networks and Language Models\n- Vanishing Gradients, Fancy RNNs, Seq2Seq\n- Machine Translation, Attention, Subword Models\n- Transformers\n- More about Transformers and Pretraining\n- T5 and large language models: The good, the bad, and the ugly\n- Integrating knowledge in language models\n- Social & Ethical Considerations in NLP Systems",
+        "score_rubric": {
+            "criteria": "Does the answer contain all listed components in a logical order that facilitate seasy and progressive learning of students?",
+            "score1_description": "The response shows a fundamental misunderstanding of the NLP course structure, with no logical progression from basic concepts to advanced topics, or it omits several key topics.",
+            "score2_description": "The response includes some NLP topics but arranges them in a way that doesn't facilitate a smooth learning progression, missing the logical flow from foundational concepts to more complex topics.",
+            "score3_description": "The response demonstrates a basic understanding of a progressive NLP curriculum but has minor errors in the sequence that could slightly disrupt the learning progression, such as placing advanced topics too early or foundational topics too late.",
+            "score4_description": "The response shows a good understanding of the NLP curriculum with a logical order that mostly facilitates easy and progressive learning, but minor adjustments in topic sequencing could enhance clarity or learning efficiency.",
+            "score5_description": "The response perfectly organizes the NLP topics in a logical order that starts with foundational concepts, builds up to more complex topics, and includes considerations of social and ethical implications, thereby facilitating easy and progressive learning for students."
+        },
+        "atomic_checklist": [
+            "Does the response start with foundational topics such as \"Word Vectors\" and \"Gensim word vectors example\"?",
+            "Does the response logically progress to intermediate topics like \"Backprop and Neural Networks\" and \"Recurrent Neural Networks and Language Models\"?",
+            "Are advanced topics like \"Transformers\", \"Machine Translation, Attention, Subword Models\", and \"large language models\" placed in the latter part of the curriculum?",
+            "Is the topic \"Social & Ethical Considerations in NLP Systems\" included towards the end to ensure students have the technical background to understand these considerations fully?",
+            "Does the response maintain a logical order that builds from basic concepts to more complex ones, ensuring a smooth learning curve?",
+            "Are all listed topics included in the response, ensuring a comprehensive coverage of the NLP field?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Outline a detailed guide on the rise of renewable energy technologies and their impact on global energy markets. Discuss the evolution of these technologies, key drivers behind their growth, market adoption, challenges faced, and future prospects.",
+        "reference_answer": "The guide begins by tracing the origins and historical development of renewable energy technologies, from the early use of hydro and wind power to modern advancements in solar, biomass, and geothermal energy. It highlights key milestones, such as the first commercial wind turbines and the deployment of solar photovoltaic systems.\n\nNext, it explores the factors that have driven the rapid growth of renewables, including significant technological advancements that have lowered costs, increased efficiency, and policy measures like subsidies and tax incentives that have made renewables more competitive.\n\nThe guide then assesses renewable energy's current market position, detailing its increasing share in global energy mixes, its role in displacing traditional fossil fuels, and its economic benefits, such as job creation and energy security.\n\nChallenges are also critically examined, from the variability of wind and solar power and storage issues to grid integration, political resistance, and the need for substantial investments in infrastructure.\n\nFinally, it projects the future of renewable energy, emphasizing ongoing research and innovation, the potential for smarter, more flexible grids, and emerging technologies like floating solar farms and next-generation wind turbines. The guide concludes by asserting the pivotal role renewable energy technologies are poised to play in shaping sustainable energy systems and meeting global energy demands.",
+        "score_rubric": {
+            "criteria": "Does the guide provide a comprehensive overview of the ascent of renewable energy technologies, including historical evolution, growth factors, market penetration, encountered challenges, and future considerations?",
+            "score1_description": "The guide offers little to no useful information on renewable energies, lacks substantial detail, and fails to touch on all required aspects like historical context, growth drivers, and future outlook. It also includes numerous inaccuracies.",
+            "score2_description": "While the guide mentions renewable energy, it does so with limited scope and depth. Some key aspects are covered superficially, with minor inaccuracies, and there's scant analysis of market dynamics or challenges.",
+            "score3_description": "The guide covers the fundamental aspects of renewable energy technologies' rise and impact but lacks detailed exploration of certain areas. Most information is accurate, though the discussion of challenges and future prospects needs enhancement.",
+            "score4_description": "A well-detailed guide that offers insightful information into renewable energy technologies' growth, market adoption, and challenges, with minor omissions. It provides a solid understanding, although some sections could be expanded for depth.",
+            "score5_description": "An exceptionally detailed and comprehensive guide that thoroughly examines the historical evolution, drivers of growth, market adoption, challenges, and future outlook of renewable energy technologies. It includes accurate analysis, vivid examples, and demonstrates a deep understanding of the subject matter."
+        },
+        "atomic_checklist": [
+            "Does the guide provide a historical overview of the development of renewable energy technologies?",
+            "Are the key drivers of renewable energy growth, such as technological advancements and policy initiatives, clearly outlined?",
+            "Does the guide discuss the rate of market adoption and the economic implications for global energy markets?",
+            "Are the challenges faced in the adoption and implementation of renewable energies, including technical, economic, and political obstacles, thoroughly analyzed?",
+            "Is there an in-depth exploration of future prospects and directions for renewable energy technologies, considering current trends and potential innovations?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Provide a comprehensive explanation focusing on the concept of 'Smart Cities', including their key features, the role of IoT (Internet of Things) and AI (Artificial Intelligence) technologies in their development, challenges for their implementation, and potential impacts on urban life.",
+        "reference_answer": "The narrative begins by defining 'Smart Cities' as urban areas that leverage digital technology, particularly IoT and AI, to enhance the quality of municipal services, reduce costs and resource consumption, and engage more effectively with citizens. It underscores the vision of creating more livable, responsive, and sustainable urban environments.\n\nElaborating on key technologies, the guide explains how IoT devices collect vast amounts of data from various city components, such as traffic lights, pollution sensors, and energy systems, while AI algorithms analyze this data to improve decision-making, efficiency, and automation across services.\n\nAddressing implementation challenges, it highlights concerns around data privacy and security, the significant investment required for modern infrastructure, and the need for cross-sector collaboration. Potential issues of digital divide and equitable access to technology-driven solutions are also discussed.\n\nThe explanation then delves into the profound impacts smart cities can have, ranging from improved traffic management and energy use to enhanced public safety and environmental protection. It touches upon the broader economic benefits, such as attracting businesses and fostering innovation.\n\nFeaturing examples like Singapore\u2019s Smart Nation initiative and Barcelona\u2019s smart city projects, the guide provides concrete evidence of how smart city solutions have led to tangible improvements in urban management and resident life quality, setting a precedent for cities worldwide.",
+        "score_rubric": {
+            "criteria": "Does the explanation offer a thorough understanding of the 'Smart Cities' concept, articulating the fundamental features, importance of IoT and AI, challenges faced during implementation, and their overall influence on urban environments?",
+            "score1_description": "The explanation is overly simplistic or significantly flawed, lacking in critical details about smart cities, incorrectly explaining the roles of IoT and AI, or omitting significant challenges and impacts.",
+            "score2_description": "While the explanation identifies the concept of smart cities, it does so in a limited and somewhat inaccurate manner. It touches on IoT and AI roles and challenges but lacks depth and misinterprets crucial impacts on urban life.",
+            "score3_description": "The explanation provides a basic overview of smart cities, including relevant but superficial details about IoT and AI contributions. It identifies some implementation challenges and potential urban impacts, albeit with room for more thorough analysis.",
+            "score4_description": "A comprehensive and well-structured explanation that accurately describes smart cities, effectively highlights the roles of IoT and AI, addresses significant challenges clearly, and outlines potential urban impacts with considerable insight.",
+            "score5_description": "An exceptional and detailed explanation that offers in-depth insights into smart cities, thoroughly articulating the pivotal roles of IoT and AI, comprehensively detailing implementation challenges, and vividly discussing transformative impacts on urban environments."
+        },
+        "atomic_checklist": [
+            "Does the explanation include a clear definition of 'Smart Cities' and their key objectives?",
+            "Is there a detailed discussion on how IoT and AI technologies are integrated and function within smart city frameworks?",
+            "Are the major challenges, such as privacy, security, and infrastructure demands, associated with developing smart cities examined?",
+            "Does the explanation cover the potential societal, economic, and environmental impacts of smart cities on urban life?",
+            "Are specific examples or case studies mentioned that illustrate successful smart city projects and their outcomes?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Examine the influence of artificial intelligence on healthcare, focusing on diagnostics, personalized medicine, patient care management, ethical considerations, and future prospects.",
+        "reference_answer": "Artificial Intelligence (AI) is rapidly transforming the healthcare sector by enhancing diagnostics, personalizing treatment plans, and reshaping patient care management. In diagnostics, AI algorithms assist in analyzing images, pathology slides, and genetic information with remarkable accuracy and speed, enabling the early detection of diseases such as cancer and cardiovascular conditions.\n\nIn personalized medicine, AI leverages patient data to tailor treatments to individual genetic profiles, improving treatment efficacy and reducing side effects. Patient care management benefits from AI through predictive analytics that forecast patient risks, automate care plans, and provide continuous remote monitoring, significantly improving health outcomes and patient satisfaction.\n\nHowever, the integration of AI in healthcare raises ethical questions related to data privacy, informed consent, and ensuring equitable access to AI-driven treatments, emphasizing the importance of robust ethical frameworks and regulations to guide AI's use.\n\nLooking ahead, AI promises to further innovate healthcare delivery, from advancing robotic surgery to developing new drugs. Yet, it also poses challenges, including the potential for algorithmic bias and the need for interdisciplinary collaboration to effectively integrate AI into clinical practice. As we navigate these complexities, AI stands poised to fundamentally redefine healthcare, making it more efficient, personalized, and accessible.",
+        "score_rubric": {
+            "criteria": "Does the discussion provide a detailed examination of artificial intelligence's impact on healthcare, emphasizing diagnostics, personalized medicine, patient care, ethics, and future possibilities?",
+            "score1_description": "The discussion barely touches upon AI's role in healthcare, offers incorrect information, overlooks significant areas like diagnostics or ethics, and gives no insight into future developments.",
+            "score2_description": "Mentions AI in healthcare but lacks depth and clarity. It addresses some areas like diagnostics or personalized medicine superficially, with minor inaccuracies and scant mention of ethical considerations or future trends.",
+            "score3_description": "Provides a general overview of AI's impact on healthcare, covering key areas adequately but without in-depth analysis or examples. Ethical considerations and future prospects are mentioned but not elaborated on.",
+            "score4_description": "A comprehensive examination that clearly discusses AI in healthcare, covering diagnostics, personalized medicine, and patient care effectively. Ethical considerations and future implications are well addressed, though some minor details may be lacking.",
+            "score5_description": "An exceptional, deeply insightful examination of AI in healthcare. Thoroughly explores diagnostics, personalized medicine, patient care, and ethical considerations. Offers forward-looking insights into AI's future role and potential advancements in healthcare."
+        },
+        "atomic_checklist": [
+            "Does the examination include detailed descriptions of how AI enhances diagnostic accuracy and speed?",
+            "Is there an in-depth discussion on AI's role in developing personalized medicine approaches?",
+            "Are patient care management improvements through AI, such as treatment planning and patient monitoring, comprehensively covered?",
+            "Do the ethical considerations of AI in healthcare, including privacy, consent, and equity, receive thorough analysis?",
+            "Are future prospects of AI in healthcare, considering both opportunities and challenges, thoroughly explored?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Discuss the challenges and advancements in space exploration technology, focusing on satellite technology, deep space exploration, the role of private companies, the international collaboration in space missions, and the future of human colonization of other planets.",
+        "reference_answer": "Space exploration technology has seen unparalleled advancements and faced unique challenges in recent years. Satellite technology, the backbone of communication and Earth observation, has progressed with innovations in miniaturization, propulsion, and digital communication, enabling a constellation of small satellites to provide global data connectivity.\n\nDeep space exploration has pushed the boundaries of human knowledge, with missions such as the Mars Perseverance Rover and the Voyager spacecraft transcending the outer planets, signaling humanity's quest to understand the cosmos.\n\nThe entry of private companies such as SpaceX and Blue Origin has revolutionized the space sector, reducing costs through reusable rockets, and invigorating space tourism and interplanetary mission concepts. These companies' ambitions highlight the growing trend of commercial participation in what was once a field dominated by governmental agencies.\n\nInternational collaboration has also been pivotal, exemplified by the International Space Station (ISS), which serves as a model for future cooperative missions to the Moon, Mars, and beyond. Such partnerships pool resources, expertise, and foster peaceful relations, critical aspects for the daunting task of space exploration.\n\nLooking towards the future, the prospect of human colonization of other planets, primarily Mars, stands as the next frontier. Challenges in habitability, life support systems, and sustainable resource utilization must be overcome. However, with the continued pace of technological innovation, international cooperation, and private sector dynamism, the dream of establishing human presence beyond Earth is gradually morphing into a tangible goal, promising an exciting era for humanity's spacefaring ambitions.",
+        "score_rubric": {
+            "criteria": "Does the discussion comprehensively cover the current state of space exploration technology, detailing satellite advancements, deep space missions, the impact of private sector involvement, international collaborations, and prospects for planetary colonization?",
+            "score1_description": "The discussion provides very little or incorrect information on space exploration technologies, lacks mention of key areas like satellite advancements or private sector's role, and offers no insights into future colonization prospects.",
+            "score2_description": "Touches on space exploration technology but with limited scope and some inaccuracies. Briefly mentions satellite advancements or private companies' involvement without adequate detail or foresight into future space colonization.",
+            "score3_description": "Presents a general overview of space exploration technology advancements and challenges. It covers significant areas including satellite technology and deep space exploration but lacks depth in discussing private companies' roles, international collaboration, and colonization prospects.",
+            "score4_description": "Provides a detailed discussion on space exploration technology, with clear insights into satellite advancements, deep space exploration, and the role of private companies. International collaborations and future colonization endeavors are well articulated, though could be expanded upon.",
+            "score5_description": "An exceptional and in-depth overview that expertly addresses satellite technology advancements, deep space exploration milestones, the transformative role of private companies, the importance of international cooperation, and visionary prospects for human colonization of other planets. It showcases comprehensive knowledge and foresight."
+        },
+        "atomic_checklist": [
+            "Does the discussion detail recent advancements and current challenges in satellite technology?",
+            "Is there a thorough exploration of recent and future deep space exploration missions?",
+            "Are the contributions and influences of private companies on the space industry fully discussed?",
+            "Does it highlight the importance and examples of international collaboration in space missions?",
+            "Are realistic prospects and challenges for the future colonization of other planets thoughtfully considered?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "instruction_following",
+        "task": "education_content_creation",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, and informative assistant.",
+        "input": "Illuminate the critical impact of blockchain technology on financial services, addressing the aspects of security enhancements, decentralized finance (DeFi), challenges in regulation and adoption, and the potential for transforming traditional banking systems.",
+        "reference_answer": "Blockchain technology heralds a significant paradigm shift in financial services, offering unparalleled security improvements through its immutable and transparent ledger system, which significantly mitigates fraud and cyber threats common in traditional financial systems. \n\nDecentralized finance (DeFi), built on blockchain, further empowers this revolution by offering financial instruments without the need for central financial intermediaries, thus democratizing access to finance, enhancing transaction efficiency, and fostering financial inclusion. However, the nascent state of DeFi also presents challenges in terms of regulatory compliance and ensuring the security of smart contracts.\n\nThe regulatory landscape is struggling to keep pace with the rapid development of blockchain technologies, posing significant challenges in defining legal frameworks that adequately safeguard consumers while not stifling innovation. Effective regulation and overcoming skepticism are crucial for widespread adoption.\n\nBlockchain's potential to transform traditional banking is immense, promising to streamline operations, reduce costs, and offer faster, more secure services. However, this requires significant infrastructural changes, cultural shifts within long-established institutions, and a move towards interoperability and standards.\n\nAs exemplified by projects like Ripple for cross-border payments and Ethereum enabling smart contracts, blockchain is not just theoretical but has practical, impactful applications in finance that indicate its potential to fundamentally reshape the financial landscape.",
+        "score_rubric": {
+            "criteria": "Does the discussion deeply analyze blockchain technology's influence on the financial sector, including aspects such as security improvements, DeFi, regulatory challenges, and its capability to revolutionize conventional banking?",
+            "score1_description": "The discussion provides an inadequate view of blockchain's implications for financial services, misinforms on security or DeFi, disregards regulatory challenges, and lacks insight into the transformative potential for traditional banking.",
+            "score2_description": "Mentions blockchain's role in financial services but does so with limited depth and some inaccuracies. Discusses security or DeFi superficially, with scant attention to regulatory or adoption challenges and minimal consideration of impacts on traditional banking.",
+            "score3_description": "Offers a general insight into blockchain's impact on financial services, covering security, DeFi, and some regulatory challenges adequately but lacking comprehensive detail or analysis. The potential for transforming traditional banking is mentioned but not deeply explored.",
+            "score4_description": "Provides a detailed examination of blockchain in the financial sector, effectively discussing security enhancements and DeFi. Regulatory challenges and the technology's potential to disrupt traditional banking are well addressed, though could be explored further.",
+            "score5_description": "An exceptional overview that comprehensively assesses blockchain technology's profound impact on financial services. It thoroughly explores security improvements, the expansion of DeFi, addresses regulatory and adoption hurdles insightfully, and articulates blockchain's transformative potential for traditional banking with depth and foresight."
+        },
+        "atomic_checklist": [
+            "Does the discussion present an in-depth analysis of how blockchain enhances security in financial transactions?",
+            "Is there an extensive exploration of decentralized finance (DeFi) and its implications for the financial industry?",
+            "Are the challenges related to regulation and widespread adoption of blockchain in financial services thoroughly discussed?",
+            "Does it evaluate the transformative impact of blockchain on conventional banking systems and practices?",
+            "Are specific examples or case studies included to illustrate the direct applications and impacts of blockchain technology in finance?"
+        ],
+        "background_knowledge": []
+    }
+]

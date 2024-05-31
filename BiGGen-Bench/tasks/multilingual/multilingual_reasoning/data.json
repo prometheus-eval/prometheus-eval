@@ -1,0 +1,189 @@
+[
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 0,
+        "system_prompt": "도움이 되고 무해한 답변을 생성하도록 설정된 AI 어시스턴트로써 다음의 질문을 답해줘. 대답을 할 때, 바로 답을 이야기하지 말고, 차근차근 추론 과정도 같이 표시해줘.",
+        "input": "과일 가게에는 복숭아, 망고, 그리고 사과, 총 3개의 과일을 팔고 있습니다. 복숭아는 사과보다 비쌉니다. 망고가 가장 저렴합니다.\n\n선택지:\n(A) 복숭아가 두번째로 비쌉니다. (B) 망고가 두번째로 비쌉니다. (C) 사과가 두번째로 비쌉니다.\n정답을 말하기 전, 생각을 단계별로 차근차근 먼저 말하세요.",
+        "reference_answer": "이 문제를 해결하기 위해, 과일의 가격을 순서대로 배열해야 합니다. 망고는 가장 저렴하다고 주어졌으며, 복숭아는 사과보다 비싸다고 합니다. 따라서 가장 저렴한 과일은 망고이며, 복숭아는 사과보다 비싸기 때문에 가장 비싼 과일일 가능성이 높습니다. 이 정보를 바탕으로 복숭아가 가장 비싸고 망고가 가장 저렴하다면, 사과는 이 두 과일 사이에 위치하게 됩니다. 즉, 사과는 두 번째로 비싼 과일입니다. 따라서 정답은 (C) 사과가 두번째로 비쌉니다.",
+        "score_rubric": {
+            "criteria": "Does the rationale use all the conditions mentioned in the input and logically infer that apple is the second most expensive fruit among the three options?",
+            "score1_description": "The rationale fails to consider all the conditions mentioned in the input and does not logically infer that apple is the second most expensive fruit among the three options.",
+            "score2_description": "The rationale partially considers the conditions mentioned in the input but does not logically infer that apple is the second most expensive fruit among the three options.",
+            "score3_description": "The rationale somewhat uses the conditions mentioned in the input and attempts to infer that apple is the second most expensive fruit among the three options, but the logic is flawed or incomplete.",
+            "score4_description": "The rationale uses most of the conditions mentioned in the input and logically infers that apple is the second most expensive fruit among the three options, though there may be some minor gaps in the reasoning.",
+            "score5_description": "The rationale effectively uses all the conditions mentioned in the input and logically infers that apple is the second most expensive fruit among the three options, providing a comprehensive and sound reasoning process."
+        },
+        "atomic_checklist": [
+        ],
+        "background_knowledge": [
+            {
+                "information": "BBH logical deduction",
+                "reference_url": "https://aclanthology.org/2023.findings-acl.824/"
+            }
+        ]
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 1,
+        "system_prompt": "Проблемаға шешімді соңғы жауаптан бұрын қадам-қадаммен түсіндіре отырып шеш.",
+        "input": "Бірінші сылақшы 6 сағ, екінші сылақшы 8 сағ жұмыс жасады. Екіншісі біріншісіне қарағанда 600 теңге артық жалақы алады. екеуінің сағаттық төлемақылары бірдей болса, олардың әрқайсысы неше теңге жалақы алады?",
+        "reference_answer": "x сағаттық төлемақы:\nбірінші сылақшы 6x\nекінші сылақшы 8x\n\nЕкіншісі біріншісіне қарағанда 600 теңге артық жалақы алады.\n\n6x=8x-600\n6x+600=8x\n600=2x\nx=600/2\nx=300;\n\nсағаттық төлемақылары - 300 теңге\nкүніне:\nбірінші сылақшы 6*300=1800 теңге\nекінші сылақшы 8*300=2400 теңге",
+        "score_rubric": {
+            "criteria": "Does the response solve the problem and explain clearly?",
+            "score1_description": "The response does not solve the problem and lacks clear explanation.",
+            "score2_description": "The response attempts to solve the problem but the explanation is unclear or incomplete.",
+            "score3_description": "The response partially solves the problem and provides some explanation, but there are gaps or unclear points.",
+            "score4_description": "The response solves most of the problem and explains clearly, but there may be some minor areas of confusion or ambiguity.",
+            "score5_description": "The response fully solves the problem and provides a clear and thorough explanation, leaving no room for misunderstanding or ambiguity."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 2,
+        "system_prompt": "সমস্যার সমাধান প্রক্রিয়াটি চূড়ান্ত উত্তরের আগে ধাপে ধাপে ব্যাখ্যা করে সমাধান কর.",
+        "input": "আপনি কোন স্থান যাত্রা শুরু করে উত্তর দিকে এক গজ গেলেন, পূর্ব দিকে এক গজ গেলেন, তারপর দক্ষিণ দিকে এক গজ গেলেন। এখন আপনি দক্ষিণ দিকে মুখ করে আছেন। এবার আপনি আপনার হাতের বাম দিকে এক গজ গেলেন।\n\nআপনার সর্বশেষ অবস্থান কোথায়?\n১। যেখান থেকে শুরু করেছিলেন সেখানে।\n২। শুরু করার স্থান থেকে ১ গজ পশ্চিমে।\n৩। শুরু করার স্থান থেকে ২ গজ পূর্বে।\n৪। শুরু করার স্থান থেকে ১ গজ উত্তরে।",
+        "reference_answer": "আগে প্রথমে ধাপে ধাপে চিন্তা করি।\n\n১। উত্তর দিকে এক গজ গেলে আমার অবস্থান যাত্রা শুরুর স্থান থেকে ১ গজ উত্তরে।\n২। এর পরে পূর্ব দিকে এক গজ গেলে আমার অবস্থান হবে যাত্রা শুরুর স্থান থেকে (১, ১) বিন্দুতে।\n৩। এবার দক্ষিণে গেলে আমার অবস্থান হবে যাত্রা শুরু স্থান থেকে ১ গজ পূর্বে (১, ০)।\n৪। আমি এই অবস্থান থেকে দক্ষিণ দিকে মুখ করে থাকলে আমার হাতের বাম দিক পূর্ব দিক।\n৫। এখন পূর্ব দিকে এক গজ গেলে আমার অবস্থান হবে যাত্রা শুরু স্থান থেকে ২ গজ পূর্ব দিকে, কারণ আমি আগে ছিলাম যাত্রা শুরু স্থান থেকে ১ গজ পূর্বে।\n\nসঠিক উত্তর হচ্ছে ৩ শুরু করার স্থান থেকে ২ গজ পূর্বে।",
+        "score_rubric": {
+            "criteria": "Are the intermediate reasoning steps valid?",
+            "score1_description": "The intermediate reasoning steps are invalid, containing logical fallacies or unsupported claims.",
+            "score2_description": "Some intermediate reasoning steps are valid, but others contain logical fallacies or unsupported claims.",
+            "score3_description": "The majority of intermediate reasoning steps are valid, but there are a few instances of logical fallacies or unsupported claims.",
+            "score4_description": "Most intermediate reasoning steps are valid, with only minor instances of logical fallacies or unsupported claims.",
+            "score5_description": "All intermediate reasoning steps are valid, supported by logical reasoning and evidence where necessary, leading to a coherent and logical conclusion."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 3,
+        "system_prompt": "Explica el proceso de resolución del problema paso a paso antes de dar la respuesta final.",
+        "input": "Ayer tenía 16 años y el próximo año tendré 17 años. Si el día de mañana cumplo años, ¿en qué día y mes nací?\nA) 28 de Febrero B) 01 de Marzo C) 29 de Febrero D) 01 de Enero E) 31 de Diciembre",
+        "reference_answer": "Suponiendo que mañana es tu cumpleaños, hoy tienes 16 años y mañana tendrás 17. Dado que cumples 17 años el próximo año, implica que mañana es también el próximo año. Por ende, tu cumpleaños es el:\nD) 1 de enero.",
+        "score_rubric": {
+            "criteria": "Does the response mention that tomorrow is the next year and derive the final answer correctly?",
+            "score1_description": "The response fails to mention that tomorrow is the next year and does not derive the final answer correctly.",
+            "score2_description": "The response mentions that tomorrow is the next year, but does not derive the final answer correctly.",
+            "score3_description": "The response mentions that tomorrow is the next year and attempts to derive the final answer, but there are errors or inaccuracies in the calculation.",
+            "score4_description": "The response correctly mentions that tomorrow is the next year and mostly derives the final answer correctly, but there may be minor errors or inconsistencies.",
+            "score5_description": "The response accurately mentions that tomorrow is the next year and correctly derives the final answer, providing a clear and logical explanation."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 4,
+        "system_prompt": "Jelaskan proses penyelesaian masalah secara bertahap sebelum memberikan jawaban akhir.",
+        "input": "Jika rambutan dan pisang masuk dalam kategori yang sama, dan pisang juga termasuk ke dalam kategori yang sama dengan bunga matahari, namun rambutan tidak bisa dikategorikan dalam kategori tersebut. Berapa jumlah kategori yang sedang dibicarakan dan apa kategori-kategori tersebut?",
+        "reference_answer": "Terdapat dua kategori yang sedang dibicarakan yaitu kategori buah dan kategori warna. Rambutan dan pisang masuk dalam kategori yang sama karena keduanya adalah buah-buahan. Lalu, pisang dan bunga matahari memiliki warna yang sama yaitu kuning sehingga mereka bisa dimasukkan ke dalam satu kategori dan rambutan tidak bisa karena warna rambutan adalah merah.",
+        "score_rubric": {
+            "criteria": "Does the response show clear coherence in the reasoning?",
+            "score1_description": "The response lacks coherence in the reasoning, with disjointed or illogical connections between points.",
+            "score2_description": "The response shows some coherence in the reasoning, but there are noticeable gaps or inconsistencies in the flow of logic.",
+            "score3_description": "The response demonstrates moderate coherence in the reasoning, with logical connections between points, but some aspects may be unclear or underdeveloped.",
+            "score4_description": "The response displays good coherence in the reasoning, with logical connections between points and a clear overall structure, though some minor improvements could enhance clarity.",
+            "score5_description": "The response exhibits excellent coherence in the reasoning, with seamlessly connected points and a clear, well-structured flow of logic that effectively supports the conclusion."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 5,
+        "system_prompt": "Erkläre den Lösungsprozess für das Problem Schritt für Schritt, bevor du die endgültige Antwort gibst.",
+        "input": "Hans ist verletzt und muss zum Arzt. Er bekommt drei Tabletten, mit deren Einnahme er sofort starten und die er alle 30 Minuten einnehmen soll. Wann nimmt er die letzte Tablette ein? A) nach 30 minuten; B) nach 60 minuten; C) nach 90 minuten?",
+        "reference_answer": "Die korrekte Antwort ist B) nach 30 minuten. Wenn Hans sofort mit Einnahme der Tabletten beginnen soll, hat er in Minute 0 schon die erste Tablette eingenommen. Nach 30 Minuten nimmt er die zweite Tablette ein, und nach 60 Minuten die dritte.",
+        "score_rubric": {
+            "criteria": "Does the response capture the main point that by taking the first pill immediately, Hans will not need 90 minutes to take all 3 pills?",
+            "score1_description": "The response fails to capture the main point and does not recognize that taking the first pill immediately reduces the total time needed.",
+            "score2_description": "The response partially captures the main point but does not fully recognize that taking the first pill immediately reduces the total time needed, or the explanation is unclear.",
+            "score3_description": "The response somewhat captures the main point and acknowledges that taking the first pill immediately reduces the total time needed, but the explanation lacks clarity or depth.",
+            "score4_description": "The response accurately captures the main point and recognizes that taking the first pill immediately reduces the total time needed, providing a clear explanation.",
+            "score5_description": "The response fully captures the main point, clearly explaining that by taking the first pill immediately, Hans will not need 90 minutes to take all 3 pills, demonstrating a thorough understanding of the concept."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 6,
+        "system_prompt": "Explique progressivement le processus de résolution du problème avant de donner la réponse finale.",
+        "input": "Maïwenn et Erwan vont au marché pour acheter des pommes et des poires. Ils ont 10€ en poche au total. Maïwenn souhaite acheter 8 pommes et dit à Erwan qu'elle lui donnera l'argent restant pour aller acheter des poires. Sachant qu'une pomme coûte 80 centimes et une poire 85 centimes à l'unité, avec combien de poires Maïwenn et Erwan pourront repartir du marché ?",
+        "reference_answer": "Sachant qu'une pomme coûte 80 centimes, 8 pommes coûtent 6,40€. En soustrayant le coût des 8 pommes au budget initial, on obtient l'argent que Maïwenn confiera à Erwan pour l'achat des poires. En soustrayant, 6,40€ à 10€, on obtient 3,60€. En divisant ce budget par le coût unitaire des poires, c'est-à-dire 3,6/0,85, on obtient 4,24. Ainsi, Maïwenn et Erwan pourront acheter 4 poires en plus des 8 pommes et il leur restera 24 centimes.",
+        "score_rubric": {
+            "criteria": "Is the reasoning in the response clear and logically connected?",
+            "score1_description": "The response lacks clear and logical connections between points, making it difficult to follow.",
+            "score2_description": "The response demonstrates some logical connections but contains noticeable gaps or inconsistencies.",
+            "score3_description": "The response shows moderate logical connections between points, but some aspects may be unclear or not fully developed.",
+            "score4_description": "The response displays good logical connections between points and has a clear overall structure, although minor improvements could enhance clarity.",
+            "score5_description": "The response exhibits excellent logical connections between points, with a seamlessly structured flow of logic that effectively supports the conclusion."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 7,
+        "system_prompt": "اشرح خطوات حل المشكلة تدريجيًا قبل تقديم الإجابة النهائية.",
+        "input": "ما هي نسبة الماء في جسم الإنسان\n1 30%\n2 40%\n3 60%\n4 90%",
+        "reference_answer": "في حين أن متوسط نسبة الماء في جسم الشخص يبلغ حوالي %60، إلا أن النسبة يمكن أن تختلف من %45 إلى %75 تقريبًا.\n\nعلى سبيل المثال، يمتلك الأطفال نسبة عالية من الماء في أجسامهم، والتي تتناقص مع تقدم العمر.\nفد يكون الجواب الصحيح لهدا السؤال الجواب رقم \n3",
+        "score_rubric": {
+            "criteria": "Does the question explain if there may be different answers depending on the context?",
+            "score1_description": "The question does not acknowledge the possibility of different answers based on context.",
+            "score2_description": "The question briefly mentions the possibility of different answers based on context, but does not explore it thoroughly.",
+            "score3_description": "The question acknowledges the possibility of different answers based on context, but the explanation is limited or vague.",
+            "score4_description": "The question clearly explains the possibility of different answers based on context, providing some examples or context.",
+            "score5_description": "The question thoroughly explains the possibility of different answers based on context, providing detailed examples and context to illustrate."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 8,
+        "system_prompt": 
+        "Пошагово объясни процесс решения проблемы перед тем, как дать окончательный ответ.",
+        "input": "Группу из 20 студентов нужно разделить на 3 бригады, причем в первую бригаду должны входить 3 человека, во вторую — 5 и в третью — 12. Сколькими способами это можно сделать.",
+        "reference_answer": "Создавая первую бригаду, отбирают 3 человека из 20, создавая вторую – 5 из оставшихся 17, создавая третью – 12 из оставшихся 12. Для выборок важен только состав (роли членов бригады не различаются). Эти выборки - сочетания из n различных элементов по m элементов. Создавая сложную выборку (из 3-х бригад), воспользуемся правилом умножения: N = C_20^3 * C_17^5 * C_12^12 = 7054320.",
+        "score_rubric": {
+            "criteria": "Does the answer use the correct words for mathematical terms in combinatorics in Russian language (which is different when directly translating into English)?",
+            "score1_description": "The answer consistently uses incorrect words or terms for mathematical concepts in combinatorics in Russian, demonstrating a lack of understanding of the terminology.",
+            "score2_description": "The answer frequently uses incorrect words or terms for mathematical concepts in combinatorics in Russian, indicating some confusion or inconsistency in terminology usage.",
+            "score3_description": "The answer occasionally uses incorrect words or terms for mathematical concepts in combinatorics in Russian, but there are also correct usages present.",
+            "score4_description": "The answer mostly uses correct words or terms for mathematical concepts in combinatorics in Russian, but there are some minor inaccuracies or inconsistencies.",
+            "score5_description": "The answer consistently uses correct words or terms for mathematical concepts in combinatorics in Russian, demonstrating a strong understanding of the terminology."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "multilingual_reasoning",
+        "instance_idx": 9,
+        "system_prompt": "อธิบายขั้นตอนการแก้ปัญหาอย่างละเอียดก่อนที่จะให้คำตอบสุดท้าย.",
+        "input": "ถ้าคนทุกคนเป็นสิ่งมีชีวิต และสิ่งมีชีวิตทุกตัวต้องหายใจ งั้นปลาก็ต้องเป็นคนใช่หรือไม่ เนื่องจากปลาต้องหายใจ",
+        "reference_answer": "ปลาไม่ได้เป็นคนเนื่องจากถึงแม้ปลาต้องหายใจ แต่สิ่งมีชีวิตทุกตัวที่ต้องหายใจไม่จำเป็นต้องเป็นคน ถึงแม้คนทุกคนจะต้องหายใจก็ตาม",
+        "score_rubric": {
+            "criteria": "Does the response prove that the model understands the logical implication of each phase and correctly deduces that the converse statement does not hold generally?",
+            "score1_description": "The response does not demonstrate an understanding of the logical implication of each phase and fails to deduce that the converse statement does not hold generally.",
+            "score2_description": "The response shows limited understanding of the logical implication of each phase and struggles to deduce that the converse statement does not hold generally.",
+            "score3_description": "The response partially proves that the model understands the logical implication of each phase, but the deduction about the converse statement is unclear or incomplete.",
+            "score4_description": "The response demonstrates a good understanding of the logical implication of each phase and makes a reasonable deduction about the converse statement, though there may be some minor errors or oversights.",
+            "score5_description": "The response thoroughly proves that the model understands the logical implication of each phase and correctly deduces that the converse statement does not hold generally, providing clear and coherent reasoning throughout."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    }
+]

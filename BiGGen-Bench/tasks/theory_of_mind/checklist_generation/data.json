@@ -1,0 +1,256 @@
+[
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Jordan, Alex, Taylor and Riley are having debate about 'The impact of technology on education'.\nJordan: While technology has its place, I'm concerned about its overuse. Isn't there a risk of losing traditional teaching methods that have proven effective?\nAlex: That's a common misconception. The integration of tech in education enhances traditional methods, it doesn't replace them.\nTaylor: I've seen both sides in my school. Some teachers use tech well, but others struggle, and it can be distracting.\nRiley: Indeed, research shows a mixed impact. The effectiveness depends heavily on implementation and training.\nJordan: But what about the social aspect? Are we risking students' ability to interact face-to-face?\nTaylor: That's a valid point. Sometimes, it feels like we're more connected to our devices than to each other.\nAlex: However, technology also brings collaborative opportunities that weren't possible before.\nRiley: The key is balance and understanding the different needs of students.\n\nCreate a checklist regarding participants' perspectives on technology in education. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: Concern about overuse of technology; [Jordan]\n2: Values traditional teaching methods; [Jordan]\n3: Concerns about social impact on students; [Jordan, Taylor]\n4: Enhances traditional teaching methods; [Alex]\n5: Technology will bring collaborative opportunities; [Alex]\n6: Aware of distractions that can come with technology; [Taylor]\n7: Advocates balance and understanding diverse student needs; [Riley]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding technology in education and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format, missing most of items (>5) in checklist or mis-allocate the participants.",
+            "score3_description": "The response follows the proper checklist format, missing some of items (>3) in checklist while mis-allocate the participants for some checklist items.",
+            "score4_description": "The response follows the proper checklist format, missing few items (1-2 items) in checklist or mis-allocate the participants.",
+            "score5_description": "The response follows the proper checklist format, and finds all checklist items while allocating proper participants.."
+        },
+        "atomic_checklist": [
+            "Is the response in the correct checklist format?",
+            "Does the response cover all perspectives regarding technology in education as checklist items?",
+            "Does the response correctly assign Jordan to each checklist item?",
+            "Does the response accurately assign Alex to each checklist item?",
+            "Does the response appropriately assign Taylor to each checklist item?",
+            "Does the response accurately assign Riley to each checklist item?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Alice and Charlie are planning to organize a surprise party for their friend, Dana. As Alice and Charlie discuss the surprise party, Grace approaches.\nGrace: Hey guys, what's up?\nCharlie: (Quickly changing the topic) We were just discussing the new caf\u00e9 downtown. Have you been there?\nAlice: (Trying to act casual) Yeah, Grace, you should totally check it out. Maybe even take Dana there sometime.\nGrace: That's a great idea! Dana loves trying new places. Speaking of Dana, are we doing anything special for her birthday?\nAlice: Oh, just the usual stuff, you know how it is.\nCharlie: Yeah, nothing out of the ordinary.\nGrace: Alright, if you guys think of something, count me in!\n\nCreate a checklist for awareness regarding Dana's birthday and surprise party. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: [Aware of Dana's birthday]; [Alice, Charlie, Grace]\n2: [Aware of a Dana's surprise party]; [Alice, Charlie]\n3: [Aware of Grace does not know about the surprise]; [Alice, Charlie]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding Dana's birthday and allocate proper participants to each item? Does the response imply that Alice and Charlie are attempting to keep the surprise party a secret?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format but fails to include appropriate items in the checklist.",
+            "score3_description": "The response follows the proper checklist format but misses the item that requires implying that Alice and Charlie are trying to keep the surprise party a secret.",
+            "score4_description": "The response follows the proper checklist format and implies that Alice and Charlie are trying to keep the surprise party a secret, but misallocates some of the participants.",
+            "score5_description": "The response follows the proper checklist format, implies that Alice and Charlie are trying to keep the surprise party a secret, and finds all checklist items while allocating proper participants."
+        },
+        "atomic_checklist": [
+            "Is the response in the correct checklist format?",
+            "Does the response cover all awareness regarding Dana's birthday as checklist items?",
+            "Does the response correctly assign Alice to each checklist item?",
+            "Does the response accurately assign Charlie to each checklist item?",
+            "Does the response appropriately assign Grace to each checklist item?",
+            "Does the response successfully imply that Alice and Charlie are trying to keep the surprise party a secret?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In an airport lounge, Emma found herself seated between two strangers, Michael and Lisa. Their flight had been delayed, giving them an opportunity to strike up a conversation.Emma noticed a curious dynamic at play. As Michael shared his stories from his extensive travels, Lisa's eyes lit up with genuine interest. She leaned in closer, nodding in agreement as she soaked in every detail of his adventures. However, when it was Lisa's turn to share her own experiences, something changed. Michael's attention seemed to wander. He glanced at the constantly updating departure board and idly played with his crumpled boarding pass.\n\nCreate a checklist regarding awareness of Lisa and Michael in view of Emma. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: Flight delay; [Lisa, Michael]\n2: Michale's travel stories; [Lisa, Michael]\n3: Lisa's travel stories and experiences; [Lisa]\n4: Departure board updates; [Michael]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding awareness of Lisa and Michael through non-verbal cues, and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format, fails to imply Lisa and Michael's awareness through non-verbal cues.",
+            "score3_description": "The response follows the proper checklist format, and implies Lisa and Michael's awareness through non-verbal cues. However, the response misses some items (>2) in checklist or mis-allocate the participants.",
+            "score4_description": "The response follows the proper checklist format, and implies Lisa and Michael's awareness through non-verbal cues. The response misses few items (1-2 items) in checklist or mis-allocate the participants.",
+            "score5_description": "The response follows the proper checklist format, and implies Lisa and Michael's awareness through non-verbal cues. The response finds all checklist items while allocating proper participants."
+        },
+        "atomic_checklist": [
+            "Is the response in the correct checklist format?",
+            "Does the response imply the awareness of Lisa and Michael through non-verbal cues?",
+            "Does the response awareness of Lisa and Michael as checklist items?",
+            "Does the response correctly assign Miachael to each checklist item?",
+            "Does the response accurately assign Lisa to each checklist item?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In the small game room, four friends, Sam, Ellie, Max, and Grace, gathered for their weekly poker night. Sam confidently placed his bets, often catching Ellie's eye, who mirrored his calm composure. Ellie watched the others closely, a faint smile towards Sam whenever Sam made a bold move. Max and Grace, less experienced and more reliant on luck than strategy, played their hands with visible enthusiasm and uncertainty, often hesitating before matching the bets. As the night wore on, Sam and Ellie engaged in silent acknowledgment of each other's feints. Max and Grace, seemingly oblivious to the undercurrents of strategy between Sam and Ellie, reacted with surprise and amusement at the unfolding game. The evening ended with laughter from cunning plays, Sam and Ellie exchanging knowing glances while Max and Grace discussed the 'luck' elements of the game.\n\nCreate a checklist regarding participants' awareness during the game. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist: ",
+        "reference_answer": "1: Awareness of Sam's Confident Betting; [Ellie]\n2: Awareness of Ellie's Faint Smile; [Sam]\n3:Awareness of the Luck Elements in the Game; [Max, Grace]\n4: Awareness of Ellie's Feints; [Sam]\n5: Awareness of Sam's Feints; [Ellie]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items during a poker game and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format, missing most of items (>4) in checklist or mis-allocate the participants.",
+            "score3_description": "The response follows the proper checklist format, missing some of items (>2) in checklist while mis-allocate the participants for some checklist items.",
+            "score4_description": "The response follows the proper checklist format, missing few items (1-2 items) in checklist or mis-allocate the participants.",
+            "score5_description": "The response follows the proper checklist format, and finds all checklist items while allocating proper participants. "
+        },
+        "atomic_checklist": [
+            "Is the response in the correct checklist format?",
+            "Does the response cover all awareness during a poker game?",
+            "Does the response correctly assign Ellie to each checklist item?",
+            "Does the response accurately assign Sam to each checklist item?",
+            "Does the response appropriately assign Max to each checklist item?",
+            "Does the response appropriately assign Grace to each checklist item?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "At an art auction, three collectors, Madison, Jordan and Charles are discussing about a unique painting.\nMadison: This painting is a vivid testament to its era, isn't it? It doesn't just depict a scene; it captures the deep, underlying social and political currents of the time.\nJordan: Absolutely, Madison. It's like the artist has distilled the essence of the historical event into this canvas. The vivid colors, the raw emotion... it's all there.\nMadison: And there's a certain poignancy when you consider the artist's own life during that period. The personal narrative intertwined with the broader historical context adds a unique depth.\nJordan: Exactly. His personal struggles and triumphs during those tumultuous times are reflected in every brushstroke. The painting is not just a visual piece; it's a piece of the artist's soul.\nCharles: I hear what you're saying, but let's not forget about the painting's market potential. History and the artist's story are interesting, sure, but what is it worth?\nMadison: Charles, I think you're missing the point. The value of a piece like this isn't just in its market price. It's in its ability to convey a story, a moment in time.\nCharles: But as collectors, we must also think practically about our investments. Yes, the history and the artist's story are compelling, but the real question is how much will its value increase?\nJordan: The artist's biography and the historical context aren't just footnotes; they are what give this painting its soul, its true value.\nMadison: Yes, we should also consider how the appreciation of art enriches us culturally and intellectually. It's not just an investment; it's a legacy.\n\nCreate a checklist to assess participants' awareness of the painting, including awareness of its historical significance, marketing aspects, and artists's life as the checklist item. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist: ",
+        "reference_answer": "1: Awareness of the historical significance of the painting: [Madison, Jordan]\n2: Awareness of the artist's life and how it's reflected in the painting: [Madison, Jordan]\n3: Awareness of the marketing aspects and investment potential of the painting: [Charles]\n4: Emotional and visual impact of the paining (e.g. use of vivid colours); [Jordan]\n5: The painting's storytelling and representational aspect of a moment in time; [Madison]\n6: Consideration of the cultural and intellectual enrichment offered by the painting, viewing it as a legacy; [Madison]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding the awareness of the painting, including required items, and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format but misses some required items.",
+            "score3_description": "The response follows the proper checklist format, includes all required items, but misallocates the participants.",
+            "score4_description": "The response follows the proper checklist format, includes all required items, and allocates appropriate participants for them. However, the response misses some additional checklist items.",
+            "score5_description": "Score 5: The response follows the proper checklist format, includes all required items, allocates appropriate participants for them, and further provides additional checklist items for each participant's view. (Any other checklist items mentioned in the conversation are acceptable)"
+        },
+        "atomic_checklist": [
+            "Is the response in the correct checklist format?",
+            "Does the response include all the required checklist items (historical significance, marketing aspects, artist's life)?",
+            "Does the response also include other awareness checklist items in addition to the required ones?",
+            "Does the response accurately reflect that Madison and Jordan share similar awareness?",
+            "Does the response accurately convey that Charles opposes Madison and Jordan?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "During a professional networking event, three entrepreneurs, Anna, Blake, and Camila, are discussing the evolving landscape of digital marketing. Anna emphasizes the power of social media influence. Blake highlights the importance of data analytics for targeted marketing. Camila talks about the integration of artificial intelligence in personalized customer experiences.\n\nAnna: Leveraging social media influencers can dramatically increase our brand's visibility and engagement.\nBlake: Absolutely, but understanding our audience through data analytics allows us to make more informed marketing decisions.\nCamila: And with AI, we can take personalization to another level, offering unique experiences to each customer based on their preferences.\nAnna: True, each platform provides a different way to connect with our target audience.\nBlake: Data-driven strategies ensure that our marketing efforts are efficient and effective.\nCamila: The key is to stay ahead of technology trends to keep offering innovative solutions to our customers.\n\nCreate a checklist to evaluate participants' awareness of digital marketing strategies. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: Awareness of leveraging social media influencers for brand visibility; [Anna]\n2: Understanding the importance of data analytics for informed marketing decisions; [Blake]\n3: Integrating AI for personalized customer experiences; [Camila]\n4: Recognition that different platforms connect with various target audiences; [Anna]\n5: The necessity of data-driven strategies for marketing efficiency; [Blake]\n6: Staying ahead of technology trends for innovative customer solutions; [Camila]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding the awareness of digital marketing strategies, including perspectives on social media influence, data analytics, and the integration of AI, and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format but lacks more than half of the required perspectives or misallocates participants.",
+            "score3_description": "The response follows the proper checklist format, including some of the perspectives but missing significant topics (2-3) while occasionally misallocating participants.",
+            "score4_description": "The response includes most required perspectives on digital marketing strategies with only one missing topic or slight misallocation of participants.",
+            "score5_description": "The response excellently follows the proper checklist format, includes all required perspectives regarding digital marketing strategies, and correctly allocates participants to each aware of item."
+        },
+        "atomic_checklist": [
+            "Is the response in correct checklist format?",
+            "Does the response correctly identify the importance of social media influence?",
+            "Does the response recognize the role of data analytics for targeted marketing?",
+            "Does the response acknowledge the integration of AI in marketing for personalized customer experiences?",
+            "Does the response accurately reflect Anna's focus on social media impact?",
+            "Does the response correctly convey Blake's emphasis on data analysis?",
+            "Does the response appropriately highlight Camila's interest in AI and technology trends?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "At an educational conference, three professors, Dr. Lewis, Dr. Patel, and Dr. Murphy, are discussing the best methods to enhance student engagement in online classes. Dr. Lewis champions the use of interactive multimedia content. Dr. Patel believes in the power of real-time feedback and interactive discussion forums. Dr. Murphy argues for the importance of personalized learning paths tailored to each student's needs.\n\nDr. Lewis: Incorporating videos, simulations, and interactive quizzes can make learning more engaging for students.\nDr. Patel: It's crucial to have an active communication channel for real-time feedback. Discussion forums can facilitate this, alongside frequent live sessions.\nDr. Murphy: Customized learning experiences, where content adapts to the student's pace and interest, are essential for effective engagement.\nDr. Lewis: Utilizing different multimedia elements caters to various learning styles, making lessons more accessible.\nDr. Patel: Engagement is not just about content but also about how students feel supported and heard through their learning journey.\nDr. Murphy: The technology allows us to analyze student data and adjust learning paths, reinforcing a personalized learning environment.\n\nCreate a checklist to evaluate participants' perspectives on enhancing student engagement in online learning. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: Utilization of interactive multimedia content for engagement; [Dr. Lewis]\n2: The role of real-time feedback and discussion forums in student support; [Dr. Patel]\n3: Personalization of learning paths according to student needs; [Dr. Murphy]\n4: Catering to diverse learning styles through varied multimedia; [Dr. Lewis]\n5: Importance of feeling supported throughout the learning process; [Dr. Patel]\n6: Adjusting content based on analytical data for a tailored learning experience; [Dr. Murphy]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding the perspectives on enhancing student engagement in online learning, including viewpoints on interactive content, real-time feedback, and personalized learning paths, and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format but lacks more than half of the required perspectives or misallocates participants.",
+            "score3_description": "The response follows the proper checklist format, including some of the perspectives but missing significant topics (2-3) while occasionally misallocating participants.",
+            "score4_description": "The response includes most required perspectives on enhancing online learning engagement with only one missing topic or slight misallocation of participants.",
+            "score5_description": "The response excellently follows the proper checklist format, includes all required perspectives on enhancing student engagement in online learning, and correctly allocates participants to each aware of item."
+        },
+        "atomic_checklist": [
+            "Is the response in correct checklist format?",
+            "Does the response correctly identify the use of interactive multimedia content?",
+            "Does the response recognize the importance of real-time feedback and discussion forums?",
+            "Does the response acknowledge the significance of personalized learning paths?",
+            "Does the response accurately reflect Dr. Lewis's emphasis on interactive content?",
+            "Does the response correctly convey Dr. Patel's focus on feedback and communication?",
+            "Does the response appropriately highlight Dr. Murphy's interest in personalized education?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In a community gardening club meeting, three members, Sophia, David, and Mia, discuss strategies for sustainable gardening practices. Sophia emphasizes the use of native plants to support local wildlife. David talks about the importance of composting organic waste to improve soil health. Mia advocates for rainwater harvesting to reduce water consumption.\n\nSophia: By incorporating native plants, we not only beautify our gardens but also provide crucial habitats for pollinators.\nDavid: Absolutely, and through composting, we can turn kitchen scraps and yard waste into nutrient-rich soil, enhancing plant growth.\nMia: Rainwater harvesting is a must. It's an eco-friendly way to irrigate our gardens without straining our municipal water supplies.\nSophia: Native plants typically require less maintenance and water, making them ideal for sustainable gardening.\nDavid: Plus, healthy soil from composting helps plants resist pests naturally, reducing the need for chemical pesticides.\nMia: And by using rainwater, we also prevent runoff pollution, further protecting our local environment.\n\nCreate a checklist to evaluate members' awareness of sustainable gardening practices. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: Support and provision of habitats for local wildlife through native plants; [Sophia]\n2: Improvement of soil health via composting organic waste; [David]\n3: Reduction of water consumption through rainwater harvesting methods; [Mia]\n4: Lower maintenance and water needs of native plants for sustainable gardening; [Sophia]\n5: Use of compost to naturally enhance plant growth and pest resistance; [David]\n6: Prevention of runoff pollution by utilizing harvested rainwater; [Mia]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding the awareness of sustainable gardening practices, including perspectives on native plants, composting, and water conservation, and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format but lacks more than half of the required perspectives or misallocates participants.",
+            "score3_description": "The response follows the proper checklist format, including some of the perspectives but missing significant topics (2-3) while occasionally misallocating participants.",
+            "score4_description": "The response includes most required perspectives on sustainable gardening with only one missing topic or slight misallocation of participants.",
+            "score5_description": "The response excellently follows the proper checklist format, includes all required perspectives on sustainable gardening practices, and correctly allocates participants to each aware of item."
+        },
+        "atomic_checklist": [
+            "Is the response in correct checklist format?",
+            "Does the response correctly identify the benefits of using native plants?",
+            "Does the response recognize the importance of composting for soil health?",
+            "Does the response acknowledge the advantages of rainwater harvesting?",
+            "Does the response accurately reflect Sophia's emphasis on native plants?",
+            "Does the response correctly convey David's focus on composting?",
+            "Does the response appropriately highlight Mia's advocacy for water conservation?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "During a local book club meeting, three avid readers, Jenna, Marco, and Fiona, are discussing themes of resilience and adversity in literature. Jenna points out the significance of character development through struggles. Marco emphasizes the impact of setting and context on a character's resilience. Fiona talks about the role of narrative style in conveying themes of adversity.\n\nJenna: Understanding a character's growth through adversity helps us appreciate the depth of their resilience.\nMarco: Yes, and the setting plays a crucial role in shaping that resilience. It's about how characters respond to their environment.\nFiona: Don't forget the narrative style. First-person narratives, for example, can offer an intimate look at the character's thoughts and feelings during their challenges.\nJenna: It's fascinating how different authors portray resilience in their characters.\nMarco: And how those portrayals reflect the time period and societal context of the story.\nFiona: Agreed. The narrative approach can make themes of adversity feel more personal or universal, depending on how they're told.\n\nCreate a checklist to evaluate members' perspectives on resilience and adversity in literature. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: The significance of character development through struggles; [Jenna]\n2: The role of setting and context in shaping resilience; [Marco]\n3: The impact of narrative style on conveying themes of adversity; [Fiona]\n4: The portrayal of resilience across different authors and stories; [Jenna]\n5: Reflections of time period and societal context in resilience portrayals; [Marco]\n6: How narrative approach affects the perception of adversity themes; [Fiona]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding the discussions on resilience and adversity in literature, including perspectives on character development, setting's impact, and narrative style, and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format but lacks more than half of the required perspectives or misallocates participants.",
+            "score3_description": "The response follows the proper checklist format, including some of the perspectives but missing significant topics (2-3) while occasionally misallocating participants.",
+            "score4_description": "The response includes most required perspectives on resilience and adversity with only one missing topic or slight misallocation of participants.",
+            "score5_description": "The response excellently follows the proper checklist format, includes all required perspectives on resilience and adversity in literature, and correctly allocates participants to each aware of item."
+        },
+        "atomic_checklist": [
+            "Is the response in correct checklist format?",
+            "Does the response correctly identify the significance of character development?",
+            "Does the response recognize the impact of setting and context?",
+            "Does the response acknowledge the role of narrative style in conveying themes?",
+            "Does the response accurately reflect Jenna's focus on character growth through adversity?",
+            "Does the response correctly convey Marco's emphasis on setting and context?",
+            "Does the response appropriately highlight Fiona's interest in narrative style?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "checklist_generation",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, respectful, and honest assistant.",
+        "input": "At a tech summit panel, three industry experts, Ethan, Olivia, and Sophia, are discussing the implications of blockchain technology on data security and privacy. Ethan highlights blockchain's potential to revolutionize data storage with its decentralized nature. Olivia speaks about the challenges of integrating blockchain with current IT systems and concerns about scalability. Sophia points out the ethical considerations and the need for regulations to protect user privacy.\n\nEthan: The decentralized nature of blockchain can drastically change how we secure data, making breaches more difficult.\nOlivia: It's a promising technology, but the integration process could be complex, and scalability remains a big question.\nSophia: Moreover, as we embrace blockchain, we must ensure that ethical guidelines and privacy regulations keep pace to protect users.\nEthan: This technology also offers transparency, allowing users to see and control their data in unprecedented ways.\nOlivia: True, but achieving that level of integration without compromising current system stability is going to be challenging.\nSophia: The potential benefits are vast, but without proper regulatory frameworks, we risk compromising user trust.\n\nCreate a checklist to assess participants' awareness of the implications of blockchain technology on data security and privacy. Read the following conversation and create a checklist for what each participant of a dialogue is aware of in the form {i}: {checklist_item}; [{participantA}, {participantB}], referring {i}-th item in checklist where {participantA} and {participantB} is aware on {checklist_item}.\nChecklist:",
+        "reference_answer": "1: Decentralization as a means to enhance data security; [Ethan]\n2: Integration challenges with existing IT systems; [Olivia]\n3: Scalability concerns related to blockchain technology; [Olivia]\n4: Ethical considerations for blockchain in data privacy; [Sophia]\n5: The necessity for regulations to protect user privacy; [Sophia]\n6: Potential for transparency and user control over data; [Ethan]\n7: The importance of maintaining system stability during integration; [Olivia]\n8: The balance between innovation benefits and user trust; [Sophia]",
+        "score_rubric": {
+            "criteria": "Does the response generate checklist items regarding the implications of blockchain technology on data security and privacy, including perspectives on decentralization, system integration, scalability, ethical considerations, and regulation, and allocate proper participants to each item?",
+            "score1_description": "The response fails to follow the proper checklist format.",
+            "score2_description": "The response follows the proper checklist format but lacks more than half of the required perspectives or misallocates participants.",
+            "score3_description": "The response follows the proper checklist format, including some of the perspectives but missing significant topics (2-3) while occasionally misallocating participants.",
+            "score4_description": "The response includes most required perspectives on blockchain implications with only one missing topic or slight misallocation of participants.",
+            "score5_description": "The response excellently follows the proper checklist format, includes all required perspectives on blockchain's implications on privacy and security, and correctly allocates participants to each aware of item."
+        },
+        "atomic_checklist": [
+            "Is the response in correct checklist format?",
+            "Does the response accurately describe blockchain's potential for data security?",
+            "Does the response recognize the integration and scalability challenges?",
+            "Does the response consider the ethical and privacy implications?",
+            "Is there an awareness of the need for regulatory frameworks?",
+            "Does the response correctly assign Ethan to the decentralization benefits?",
+            "Does the response accurately assign Olivia to the concerns about integration and scalability?",
+            "Does the response appropriately allocate Sophia to the ethical and regulatory concerns?"
+        ],
+        "background_knowledge": []
+    }
+]

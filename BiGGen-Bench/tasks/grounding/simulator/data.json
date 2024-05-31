@@ -1,0 +1,249 @@
+[
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 0,
+        "system_prompt": "You should act as a Linux terminal, which will reply with what the terminal should show given a command.",
+        "input": "echo \"Hello, World!\"",
+        "reference_answer": "Hello, World!",
+        "score_rubric": {
+            "criteria": "Does the response interpret and execute the 'echo' command, reproducing the specified text in the output?",
+            "score1_description": "The output is completely unrelated or opposite to the expected response from the 'echo' command.",
+            "score2_description": "The output prints out something related to \"Hello, World!\", but the format is broken or some characters are missing.",
+            "score3_description": "The output exactly prints out \"Hello, World\", but it includes some additional opening, closing, and explanations such as \"As an AI language model...\" which are longer than 2 sentences.",
+            "score4_description": "The output exactly prints out \"Hello, World\", but it includes some additional opening, closing, and explanations such as \"As an AI language model...\" in about 1 sentence.",
+            "score5_description": "The output prints out \"Hello, World!\"."
+        },
+        "atomic_checklist": [
+            "Is the output exactly \"Hello, World!\" without any additional characters or sentences included?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Linux echo command explanation webpage with examples",
+                "reference_url": "https://www.geeksforgeeks.org/echo-command-in-linux-with-examples/"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 1,
+        "system_prompt": "You should act as a Linux terminal, which will reply with what the terminal should show given a command. In addition, let assume that you have a notes.txt file in the current directory, which is composed of the following texts: \n\nMeeting at 10am with the design team.\nRemember to email the report to John.\n\nTo-Do:\n1. Finalize presentation slides for Monday's meeting.\n2. Call the marketing department about the new campaign.\n3. Buy coffee beans on the way home.\n\nShopping List:\n- Milk\n- Bread\n- Coffee beans\n- Apples\n\nImportant Dates:\n- Feb 12: Sarah's birthday\n- Feb 20: Marketing campaign launch\n- Mar 01: Annual general meeting\n\nNotes from Last Meeting:\n- Increase social media presence\n- Focus on user experience in the new design\n- Schedule a follow-up meeting with the IT department\n\nRemember to review the budget report by Wednesday.\nYoga class at 6pm on Thursday.\nDinner with Emily and Tom this Saturday.",
+        "input": "cat notes.txt",
+        "reference_answer": "Meeting at 10am with the design team.\nRemember to email the report to John.\n\nTo-Do:\n1. Finalize presentation slides for Monday's meeting.\n2. Call the marketing department about the new campaign.\n3. Buy coffee beans on the way home.\n\nShopping List:\n- Milk\n- Bread\n- Coffee beans\n- Apples\n\nImportant Dates:\n- Feb 12: Sarah's birthday\n- Feb 20: Marketing campaign launch\n- Mar 01: Annual general meeting\n\nNotes from Last Meeting:\n- Increase social media presence\n- Focus on user experience in the new design\n- Schedule a follow-up meeting with the IT department\n\nRemember to review the budget report by Wednesday.\nYoga class at 6pm on Thursday.\nDinner with Emily and Tom this Saturday.",
+        "score_rubric": {
+            "criteria": "Does the output accurately and completely reflect the contents of the notes.txt file as they would appear when displayed using the cat command in a Linux terminal.",
+            "score1_description": "The output bears no resemblance to the expected contents of notes.txt.",
+            "score2_description": "The output shows some elements of the notes.txt file but with significant errors or omissions.",
+            "score3_description": "The output is partially accurate but has notable discrepancies or formatting issues.",
+            "score4_description": "The output closely matches the notes.txt file, with only minor inaccuracies or formatting differences.",
+            "score5_description": "The output perfectly matches the notes.txt file as it would appear in a Linux terminal using the cat "
+        },
+        "atomic_checklist": [
+            "Does all sections (e.g., To-Do, Shopping List, Important Dates, Notes from Last Meeting) are present in the output?",
+            "Does the otuput contain extra text or information not present in the original notes.txt file?",
+            "Does the output maintains the line breaks (\n), list formatting, and overall structure as described in notes.txt?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Ubuntu cat command documentation",
+                "reference_url": "https://manpages.ubuntu.com/manpages/trusty/man1/cat.1posix.html"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 2,
+        "system_prompt": "You should act as a Linux terminal, which will reply with what the terminal should show given a command. In addition, let assume that you have a notes.txt file in the current directory, which is composed of the following texts: \n\nMeeting at 10am with the design team.\nRemember to email the report to John.\n\nTo-Do:\n1. Finalize presentation slides for Monday's meeting.\n2. Call the marketing department about the new campaign.\n3. Buy coffee beans on the way home.\n\nShopping List:\n- Milk\n- Bread\n- Coffee beans\n- Apples\n\nImportant Dates:\n- Feb 12: Sarah's birthday\n- Feb 20: Marketing campaign launch\n- Mar 01: Annual general meeting\n\nNotes from Last Meeting:\n- Increase social media presence\n- Focus on user experience in the new design\n- Schedule a follow-up meeting with the IT department\n\nRemember to review the budget report by Wednesday.\nYoga class at 6pm on Thursday.\nDinner with Emily and Tom this Saturday.",
+        "input": "grep \"design\" notes.txt",
+        "reference_answer": "Meeting at 10am with the design team.\n- Focus on user experience in the new design",
+        "score_rubric": {
+            "criteria": "How accurately does the output reflect all instances of the word \"design\" in the notes.txt file, as per the grep command?",
+            "score1_description": "The output does not correctly or completely reflect instances of the word \"design\" in the notes.txt file.",
+            "score2_description": "The output partially reflects the instances of the word \"design\" but misses significant content or has inaccuracies.",
+            "score3_description": "The output somewhat reflects the instances of the word \"design\" but has minor inaccuracies or omissions.",
+            "score4_description": "The output accurately reflects most instances of the word \"design\" with only very minor omissions or inaccuracies.",
+            "score5_description": "The output perfectly and completely reflects all instances of the word \"design\" in the notes.txt file."
+        },
+        "atomic_checklist": [
+            "Does the output includes all lines where the word \"design\" appears in the notes.txt file?",
+            "Does the text surrounding the word \"design\" in each instance is accurately captured in the output."
+        ],
+        "background_knowledge": [
+            {
+                "information": "Ubuntu grep command documentation",
+                "reference_url": "https://help.ubuntu.com/community/grep"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 3,
+        "system_prompt": "You should act as an SQL database interface, which will provide appropriate SQL query syntax as responses given user queries.",
+        "input": "There is a table for 'Employees' with columns for 'DepartmentID', 'EmployeeID', and 'Salary'. List the top 5 highest earning employees in each department. Note that your query could return more than 5 employees per department if there are ties in the salaries.",
+        "reference_answer": "SELECT DepartmentID, EmployeeID, Salary\nFROM (\n    SELECT DepartmentID, EmployeeID, Salary,\n           RANK() OVER (PARTITION BY DepartmentID ORDER BY Salary DESC) as SalaryRank\n    FROM Employees\n) as RankedEmployees\nWHERE SalaryRank <= 5;",
+        "score_rubric": {
+            "criteria": "Does the generated SQL query accurately reflect the request to list the top 5 highest earning employees in each department, considering potential salary ties?",
+            "score1_description": "The query does not correctly partition by department, rank salaries, or handle ties in salary, thus failing to meet the task requirements.",
+            "score2_description": "The query partially meets the requirements but has significant issues in accurately partitioning by department, ranking salaries, or handling ties.",
+            "score3_description": "The query meets the basic requirements but has minor issues that might affect its accuracy or efficiency in retrieving the correct results.",
+            "score4_description": "The query correctly retrieves the top 5 highest earning employees in each department and handles ties, but it might lack in optimization or clarity.",
+            "score5_description": "The query accurately and efficiently retrieves the top 5 highest earning employees in each department, including handling ties in salaries, and is well-optimized and clear."
+        },
+        "atomic_checklist": [
+            "Does the query has a valid SQL structure, including the use of SELECT, FROM, and WHERE clauses?",
+            "Does the query correctly partitions the data by 'DepartmentID'?",
+            "Does the query uses the RANK() function to rank employees within each department based on their salary?",
+            "Does the query correctly handles ties in salary rankings, for example, by using the RANK() function?",
+            "Does the query correctly limits the results to top 5 highest earning employees?",
+            "Does the syntax and formatting of the query are clear?"
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 4,
+        "system_prompt": "You should act as a software developer, which will provide debugging suggestions or code corrections.",
+        "input": "I'm working on a web application using JavaScript and I can't figure out why my async function isn't waiting for the promise to resolve. It's supposed to fetch data from an API and then process it, but it seems to skip the waiting part. My code is as follows: async function fetchData() {\n    let response = fetch('https://api.example.com/data');\n    let data = response.json();\n    console.log(data);\n}\nfetchData();",
+        "reference_answer": "The issue here is that you're not using 'await' with the 'fetch' function and the 'json()' method. Both these operations return promises and need to be awaited in an async function. The corrected code should look like this: async function fetchData() {\n    let response = await fetch('https://api.example.com/data');\n    let data = await response.json();\n    console.log(data);\n}\nfetchData(); \n\nThis modification will ensure that the function waits for the data to be fetched and processed before logging it to the console.",
+        "score_rubric": {
+            "criteria": "Does the output accurately identifies and corrects the technical issue in the input, providing a clear and correct code solution along with an explanation that aligns with standard JavaScript async-await practices?",
+            "score1_description": "The output fails to identify the issue correctly and provides an incorrect or irrelevant solution, demonstrating a lack of understanding of JavaScript async-await practices.",
+            "score2_description": "The output somewhat identifies the issue but provides an incorrect or unclear solution, deviating significantly from standard JavaScript practices.",
+            "score3_description": "The output identifies the issue and provides a solution, but the explanation or code correction lacks clarity or full adherence to JavaScript best practices.",
+            "score4_description": "The output correctly identifies and addresses the issue with minor areas for improvement in the explanation or code, but still adheres to good JavaScript practices.",
+            "score5_description": "The output perfectly identifies and corrects the issue in the input, providing an exemplary code solution and explanation that is entirely in line with JavaScript best practices."
+        },
+        "atomic_checklist": [
+            "Does the response explain 'await' in an async function?"
+        ],
+        "background_knowledge": [
+            {
+                "information": "Javascript async and await documentation",
+                "reference_url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function"
+            }
+        ]
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 5,
+        "system_prompt": "You should act as an environmental consultant, offering sustainable solutions or advice on reducing environmental impact in various scenarios.",
+        "input": "A small town wants to reduce its carbon footprint by implementing more sustainable waste management practices. They are particularly interested in reducing landfill waste. What strategies should they consider?",
+        "reference_answer": "To substantially reduce the town's landfill waste, a multifaceted approach should be adopted. First, initiating robust recycling programs that accept a wide variety of materials will directly reduce the volume of waste ending up in landfills. Additionally, establishing a town-wide composting program for organic waste can significantly decrease landfill dependency. Educating the community about reducing waste, recycling correctly, and the benefits of composting is essential to ensure participation and effectiveness. Strategies should also be put in place to minimize the use of single-use plastics through bans or incentives for using sustainable alternatives. Lastly, adopting a zero-waste policy for municipal operations can serve as a model for businesses and residents, further promoting a culture of sustainability.",
+        "score_rubric": {
+            "criteria": "Does the response provide practical and effective strategies for reducing landfill waste, emphasizing sustainability and environmental impact reduction?",
+            "score1_description": "The advice given is irrelevant or impractical for reducing landfill waste, showing a lack of understanding of sustainable waste management practices.",
+            "score2_description": "The strategies mentioned are somewhat related to waste reduction but lack detail or do not significantly impact reducing landfill waste. ",
+            "score3_description": "The response includes applicable strategies but misses key practices that could further reduce landfill waste or fails to explain how the strategies directly impact landfill waste reduction.",
+            "score4_description": "The strategies provided are relevant and practical for reducing landfill waste, including most of the key sustainable waste management practices but could be elaborated upon for clarity or effectiveness.",
+            "score5_description": "The response clearly outlines a comprehensive plan that combines various effective strategies for reducing landfill waste, demonstrating a deep understanding of sustainable waste management practices."
+        },
+        "atomic_checklist": [
+            "Does the response suggest implementing recycling programs?",
+            "Is composting of organic waste recommended?",
+            "Does the advice include community education on waste reduction?",
+            "Are strategies to reduce single-use plastics mentioned?",
+            "Does the plan suggest implementing a zero-waste policy?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 6,
+        "system_prompt": "You should act as a food nutrition analyst, offering advice on meal planning and dietary adjustments based on specific health goals and dietary restrictions.",
+        "input": "A 45-year-old individual with a sedentary lifestyle wishes to transition to a more active lifestyle and improve cardiovascular health. They are looking for a meal plan that supports heart health and increases energy levels for exercise. What dietary advice would you provide?",
+        "reference_answer": "For improving heart health and boosting energy levels, incorporating foods rich in omega-3 fatty acids, such as salmon, walnuts, and flaxseeds, is essential. Saturated fats from processed foods should be minimized, and trans fats avoided completely. Instead, focus on lean protein sources, whole grains like oats and quinoa for sustained energy, and plenty of fruits and vegetables to provide the necessary fiber, vitamins, and antioxidants. Reduce the intake of added sugars and emphasize drinking water and herbal teas to stay hydrated. A sample day might include oatmeal with berries and nuts for breakfast, a quinoa and chickpea salad for lunch, and grilled salmon with steamed broccoli and sweet potato for dinner. Snacks can include Greek yogurt, fruits, or a handful of nuts.",
+        "score_rubric": {
+            "criteria": "Does the response offer detailed and appropriate dietary recommendations that support heart health and provide energy for an active lifestyle, while considering the individual's age and current lifestyle?",
+            "score1_description": "The dietary recommendations are generic, lack detail, or are inappropriate for improving heart health and supporting an active lifestyle, indicating a misunderstanding of nutritional needs.",
+            "score2_description": "The advice includes some relevant dietary suggestions but fails to provide a comprehensive plan or falls short in addressing the need for heart health improvement or energy increase.",
+            "score3_description": "The dietary advice is somewhat comprehensive, including suggestions that generally support heart health and increased energy levels but lacks specific meal planning or the full integration of nutritional needs.",
+            "score4_description": "The recommendations offer a mostly complete dietary approach for improving heart health and enhancing energy, including specific types of foods, though it could be more detailed or tailored.",
+            "score5_description": "The response provides a detailed, well-considered dietary plan tailored to improving heart health and increasing energy for an active lifestyle, considering the individual's age and sedentary background. It includes specific food suggestions, portions, and meal timing."
+        },
+        "atomic_checklist": [
+            "Does the advice include heart-healthy foods rich in omega-3 fatty acids?",
+            "Is there a recommendation for reducing saturated fats and eliminating trans fats?",
+            "Does the response suggest incorporating whole grains for sustained energy?",
+            "Are fruits and vegetables emphasized for their fiber and antioxidant content?",
+            "Is there guidance on hydration and avoiding sugary drinks?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 7,
+        "system_prompt": "You should act as a historical analysis tool, providing insights or explanations on historical events, figures, or trends based on specific prompts.",
+        "input": "Examine the impact of the Renaissance on scientific advancement during the 16th century. How did this cultural movement contribute to the development of modern science?",
+        "reference_answer": "The Renaissance significantly impacted 16th-century scientific advancements through its emphasis on humanism, individual achievement, and empirical evidence. Key figures such as Leonardo da Vinci, with his detailed anatomical drawings, and Galileo Galilei, who enhanced the telescope, advanced scientific observation and understanding significantly. This period fostered a cultural shift from explanations rooted in religious doctrine to those based on observation and experimentation, laying the groundwork for modern science. Particularly, Renaissance art contributed to a better understanding of human anatomy and natural studies, encouraging a holistic and detailed observation of the natural world. The movement\u2019s focus on rediscovering and building upon the knowledge of the past while questioning established beliefs facilitated the development of a scientific methodology that prioritizes evidence and experimentation.",
+        "score_rubric": {
+            "criteria": "Does the response accurately describe the influence of the Renaissance on 16th-century scientific advancements, highlighting key figures, inventions, and ideological shifts?",
+            "score1_description": "The answer does not correctly identify or explain the impact of the Renaissance on scientific advancement, showing little understanding of the period or its contributions to science.",
+            "score2_description": "The response mentions the Renaissance and its impact on science but with significant inaccuracies or omissions, failing to highlight key contributors or advancements correctly.",
+            "score3_description": "The response identifies some correct effects of the Renaissance on scientific advancement but lacks depth in explaining the connection between Renaissance ideologies and scientific progress.",
+            "score4_description": "The answer accurately describes the impact of the Renaissance on the development of modern science with minor omissions, including some mention of key figures and inventions.",
+            "score5_description": "The response provides a detailed and accurate analysis of the Renaissance\u2019s influence on 16th-century scientific advancement, correctly highlighting key figures, inventions, and the ideological shift towards observation and empirical evidence."
+        },
+        "atomic_checklist": [
+            "Does the response mention key figures like Leonardo da Vinci or Galileo Galilei?",
+            "Is there an acknowledgment of inventions that facilitated scientific observation, such as the telescope?",
+            "Does the answer discuss the shift from religious to empirical explanations for natural phenomena?",
+            "Are the contributions of Renaissance art to anatomical study and natural observation highlighted?",
+            "Does the response connect the cultural shift towards humanism with the development of scientific methodology?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 8,
+        "system_prompt": "You should act as a cultural consultant, offering insights or recommendations on integrating cultural elements into business strategies, considering global diversity and sensitivities.",
+        "input": "A tech startup is planning to expand its operations into the East Asian market, specifically targeting countries like Japan, South Korea, and China. They aim to develop products that resonate with local cultures. What cultural considerations should they keep in mind to ensure their product is well-received?",
+        "reference_answer": "To succeed in East Asian markets, the tech startup should first deeply understand and respect the hierarchical nature of business interactions in these countries, tailoring communication styles accordingly. Products and marketing materials must be linguistically and culturally localized, considering the nuances of local languages and symbols. For instance, the color red signifies good luck in China but can denote danger in South Korea. Understanding social values, such as the collectivist nature of Chinese society versus the nuanced blend of individualism and collectivism in Japan and South Korea, is crucial for product design and advertising strategies. Incorporating local festivals and historical contexts into marketing initiatives can significantly boost brand acceptance. Lastly, forming strategic partnerships with local entities can provide invaluable cultural insights and enhance the startup\u2019s credibility in these markets.",
+        "score_rubric": {
+            "criteria": "Does the response offer detailed and relevant cultural considerations specific to East Asian markets (Japan, South Korea, China) that a tech startup should integrate into their product development and business strategies?",
+            "score1_description": "The cultural considerations mentioned are vague, irrelevant, or demonstrate a lack of understanding of East Asian cultures, failing to provide meaningful advice for a tech startup.",
+            "score2_description": "The advice identifies one or two general cultural considerations for the East Asian market but lacks specificity or depth in how these could be applied to product development and business strategies.",
+            "score3_description": "The response provides some relevant cultural considerations for the East Asian market with a basic explanation of their importance, but it could benefit from more detailed application strategies or examples.",
+            "score4_description": "The cultural considerations proposed are specifically relevant to East Asian markets, with practical suggestions on their integration into product development, though minor aspects may be overlooked.",
+            "score5_description": "The response provides a comprehensive and nuanced understanding of cultural considerations pivotal to succeeding in East Asian markets, offering specific, actionable strategies for integrating these insights into product development and business practices."
+        },
+        "atomic_checklist": [
+            "Does the advice address the importance of understanding and respecting hierarchy and formality in business interactions?",
+            "Is there mention of designing user interfaces and marketing materials that consider local languages and symbolic meanings?",
+            "Does the response include considerations for social norms and values specific to each country, such as collectivism in China and individualism in certain social contexts in Japan?",
+            "Are considerations for local festivals, holidays, and historical contexts included in marketing and product launch strategies?",
+            "Does the plan recommend partnerships with local companies or influencers to gain cultural credibility and insights?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "grounding",
+        "task": "simulator",
+        "instance_idx": 9,
+        "system_prompt": "You should act as a linguistic analysis tool, offering explanations and insights into language patterns, grammatical structures, and language evolution based on specific queries or texts.",
+        "input": "Analyze the evolution of the English language from Old English to Modern English. Highlight significant changes in phonology, grammar, and vocabulary that have occurred over the centuries.",
+        "reference_answer": "The evolution of the English language from Old English to Modern English features significant changes across phonology, grammar, and vocabulary. Phonologically, one of the most notable developments is the Great Vowel Shift, which dramatically altered vowel pronunciation from the 15th to 18th centuries and played a crucial role in differentiating Middle English from Modern English pronunciation. Grammatically, English underwent considerable simplification; for instance, the gender system of Old English, where nouns were masculine, feminine, or neutral, was replaced by a primarily non-gendered system. Moreover, the grammar became less inflectional, with a decrease in case endings for nouns and adjectives. In terms of vocabulary, the influence of Norman French post the Norman Conquest in 1066 introduced a vast number of Loanwords, expanding English lexicon, especially in areas like law, art, and cuisine. Additionally, the advent of the printing press in the 15th century standardized spelling and grammar, further distinguishing Modern English. These changes collectively facilitated English's transition into a more versatile and accessible language, setting the stage for its global spread.",
+        "score_rubric": {
+            "criteria": "Does the response accurately describe the evolution of the English language, with specific examples of phonological, grammatical, and vocabulary changes from Old English to Modern English?",
+            "score1_description": "The description of the evolution of English lacks detail, accuracy, or specificity, showing little understanding of linguistic changes over time.",
+            "score2_description": "The response mentions general changes in the English language but fails to provide specific examples or inaccurately describes the linguistic evolution from Old to Modern English.",
+            "score3_description": "The response provides a basic overview of linguistic changes with some correct examples of phonological, grammatical, or vocabulary developments, but lacks depth or breadth in explanation.",
+            "score4_description": "The answer accurately describes the evolution of the English language, including examples of phonological, grammatical, and vocabulary changes, with minor gaps in detail or clarity.",
+            "score5_description": "The response offers a detailed and accurate analysis of the linguistic evolution from Old English to Modern English, including specific and correct examples of changes in phonology, grammar, and vocabulary."
+        },
+        "atomic_checklist": [
+            "Does the response mention the simplification of grammar, such as the reduction of gendered nouns?",
+            "Is there an explanation of the Great Vowel Shift affecting phonology?",
+            "Does the answer highlight the influence of Norman French on vocabulary expansion?",
+            "Are examples of archaic grammar forms that have become obsolete in Modern English provided?",
+            "Does the explanation include the impact of printing and technology on the standardization of spelling and grammar?"
+        ],
+        "background_knowledge": []
+    }
+]

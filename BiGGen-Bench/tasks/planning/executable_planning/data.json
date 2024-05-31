@@ -1,0 +1,242 @@
+[
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 0,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Pick up the blue ball.\nPossible actions: pick up object, drop object, move object, unlock chest/door with matching key/switch\nEnvironment:\n- Room 1: Agent, yellow key, red ball, and a locked yellow chest with a purple key inside.\n- Room 2: Green key and orange switch.\n- Room 3: A locked orange chest with a blue ball inside.\n- The door connecting Room 1 and Room 2 is purple and is locked.\n- The red ball is blocking the door from Room 1 to Room 2.\n- The door connecting Room 2 and Room 3 is green and locked.",
+        "reference_answer": "Here is a series of steps that can be followed to achieve the goal of picking up the blue ball:\n1. Pick up the yellow key.\n2. Unlock yellow chest with yellow key.\n3. Drop yellow key and pick purple key.\n4. Move red ball.\n5. Unlock purple door with purple key.\n6. Move to Room 2.\n7. Drop purple key and pick up green key.\n8. Unlock orange chest by pressing orange switch.\n9. Unlock green door with green key.\n10. Move to Room 3.\n10. Drop green key and pick up blue ball",
+        "score_rubric": {
+            "criteria": "Does the response effectively outline a feasible and logically ordered plan to achieve the goal of picking up the blue ball, considering the environmental constraints and available actions?",
+            "score1_description": "The response outlines an attempt at a plan, but it fundamentally misunderstands the environment or the constraints, making the plan infeasible (e.g., it suggests picking up the blue ball without unlocking the orange chest).",
+            "score2_description": "The response outlines a basic plan that addresses some constraints (like unlocking chests or doors) but overlooks key details or sequences actions in a way that makes the plan partially infeasible (e.g., it suggests moving to Room 3 without first obtaining the green key).",
+            "score3_description": "The response outlines a plan that is mostly feasible, addressing most constraints and environmental factors, but it contains minor logical or sequencing errors that could impede success (e.g., it suggests unlocking the purple door before moving the red ball, which is blocking the door).",
+            "score4_description": "The response outlines a well-thought-out plan that is almost entirely feasible, with actions logically sequenced and all major constraints addressed, but it may contain minor oversights or inefficiencies (e.g., it suggests unnecessary movement or object manipulation).",
+            "score5_description": "The response outlines a comprehensive and feasible plan, with actions logically sequenced to address all environmental constraints and achieve the goal efficiently, without any unnecessary steps."
+        },
+        "atomic_checklist": [
+            "Does the response identify and plan to pick up the necessary keys to unlock the chests and doors?",
+            "Is the response logically sequenced to address the constraints, such as the locked doors and the placement of objects?",
+            "Does the response include moving the red ball to access the purple door?",
+            "Does the response ensure the agent moves through the rooms in a logical order to achieve the goal?",
+            "Does the response avoid suggesting infeasible or unnecessary actions given the environment and constraints?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 1,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Pick up the white ball.\nPossible actions: pick up object, drop object, move object, unlock chest/door with matching key/switch\nEnvironment:\n- Room 1: Agent, and a locked purple chest containing a white ball.\n- Room 2: A red switch, a green key, and an orange key.\n- Room 3: A yellow switch.\n- Room 4: A red switch.\n- Room 5: A locked orange chest containing a purple key.\n- The door connecting Room 1 and Room 2 is unlocked.\n- The door connecting Room 1 and Room 3 is red and is locked.\n- The door connecting Room 1 and Room 4 is green and locked.\n- The door connecting Room 4 and Room 5 is yellow and locked.\n- All switches of the same color must be pressed for a door/chest of that color to open.",
+        "reference_answer": "1. Move to Room 2.\n2. Press red switch.\n3. Pick up the green key.\n4. Move to Room 1.\n5. Unlock green door with green key.\n6. Move to Room 4.\n7. Press the red switch to unlock red door.\n8. Move to Room 3.\n9. Press the yellow switch to unlock yellow door.\n10. Move to Room 2.\n11. Drop green key and pick up orange key.\n12. Move to Room 5.\n13. Unlock orange chest with orange key.\n14. Drop orange key and pick up purple key.\n15. Move to Room 1.\n16. Unlock purple chest with purple key.\n17. Drop purple key and pick up white ball.",
+        "score_rubric": {
+            "criteria": "Does the response construct a logical and feasible plan to pick up the white ball, considering the available actions and environmental constraints?",
+            "score1_description": "The response proposes a plan but significantly misunderstands the environment or constraints, resulting in a completely unfeasible plan (for example, it suggests unlocking a chest without the corresponding key).",
+            "score2_description": "The response proposes a basic plan that addresses some but not all environmental constraints, leading to a partially feasible plan with major logical gaps (for example, it suggests moving through a locked door without first unlocking it).",
+            "score3_description": "The response proposes a mostly feasible plan that considers many of the environmental constraints but includes minor logical inconsistencies or inefficiencies (for example, it suggests an extra unnecessary action that doesn't impede the overall success).",
+            "score4_description": "The response proposes a well-structured plan that is nearly completely feasible and logical but may overlook a minor detail or include a slight inefficiency (for example, it retrieves a key but uses a longer route than necessary).",
+            "score5_description": "The response proposes a fully logical and feasible plan, efficiently considering all environmental constraints and available actions without any unnecessary steps."
+        },
+        "atomic_checklist": [
+            "Does the response include utilizing keys and switches to unlock doors and chests?",
+            "Is the response logically structured to efficiently navigate through the rooms?",
+            "Does the response account for the need to press all switches of the same color to unlock corresponding doors/chests?",
+            "Does the response plan for the retrieval and proper use of all necessary keys?",
+            "Does the response avoid suggesting actions that are not possible within the given constraints?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 2,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Pick up the red box.\nPossible actions: pick up object, drop object, move object, unlock chest/door with matching key\nEnvironment:\n- Room 1: Agent and a locked blue chest containing a red key.\n- Room 2: A blue key and a locked green chest containing an orange key.\n- Room 3: A green key and a locked purple chest containing a white key.\n- Room  4: A puple key and a locked white chest containing a red box.\n- The door connecting Room 1 and Room 2 is unlocked.\n- The door connecting Room 2 and Room 3 is red and locked.\n- The door connecting Room 3 and Room 4 is orange and locked.",
+        "reference_answer": "1. Move to Room 2.\n2. Pick up the blue key.\n3. Move to Room 1.\n4. Unlock the blue chest with the blue key.\n5. Drop the blue key and pick up the red key.\n6. Move to Room 2.\n7. Unlock the red door with the red key.\n8. Move to Room 3.\n9. Drop the red key and pick up the green key.\n10. Move to Room 2.\n11. Unlock the green chest with the green key.\n12. Drop the green key and pick up the orange key.\n13. Move to Room 3.\n14. Unlock the orange door with the orange key.\n15. Move to Room 4.\n16. Drop the orange key and pick up the purple key.\n17. Move to Room 3.\n18. Unlock the purple chest with the purple key.\n19. Drop the purple key and pick up the white key.\n20. Move to Room 4.\n21. Unlock the white chest with the white key.\n22. Drop the white key and pick up the red box.",
+        "score_rubric": {
+            "criteria": "Does the response accurately map out a sequence of actions that logically and efficiently leads to achieving the goal of picking up the red box, given the environmental constraints and available actions?",
+            "score1_description": "The response proposes a sequence of actions but fails to understand the environmental constraints, resulting in a plan that cannot be executed (for example, it suggests unlocking a door without the matching key).",
+            "score2_description": "The response outlines a plan that acknowledges some constraints but misses critical steps or includes illogical sequences that make the plan partially unfeasible (for example, it suggests moving to Room 4 without unlocking the orange door).",
+            "score3_description": "The response provides a mostly coherent plan that covers most steps and constraints but includes minor logical flaws or inefficiencies (for example, it suggests an unnecessary exchange of keys that doesn't hinder the overall goal).",
+            "score4_description": "The response crafts a well-thought-out plan that is nearly optimal, with minor oversights or slight redundancies (for example, it includes an extra step of picking up a key that is not needed for the next action).",
+            "score5_description": "The response delivers a comprehensive and optimal plan that logically sequences all necessary actions to achieve the goal efficiently, without any unnecessary steps or oversights."
+        },
+        "atomic_checklist": [
+            "Does the response include a step to pick up each necessary key for unlocking chests and doors?",
+            "Is the response sequenced in a way that respects the locked and unlocked state of doors and chests?",
+            "Does the response plan for the proper use of each key to unlock the corresponding chest or door?",
+            "Does the response ensure that the agent navigates through the rooms in a logical order?",
+            "Does the response avoid suggesting actions that violate the environmental constraints or available actions?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 3,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Retrieve the hidden treasure.\nPossible actions: pick up an object, use object, move object, unlock door with key\nEnvironment:\n- Cave Entrance: Agent, a map, and a red key.\n- Cave Room 1: A blue key\n- Cave Room 2: Chest with a green key inside (locked with a blue lock).\n- Cave Room 3: Hidden treasure in a chest (locked with a green lock).\n- Cave Room 1 and Cave Entrance are connected by the red door.\n- Cave Room 1 and Cave Room 2 are connected by the blue door.\n- Cave Room 2 and Cave Room 3 are connected by a green door (locked).",
+        "reference_answer": "To retrieve the hidden treasure, the agent can follow these steps:\n1. Pick up the map for guidance and a red key.\n2. Use the red key to unlock the red door and enter Cave Room 1.\n3. Pick up a blue key \n4. Unlock the blue door with a blue key and enter Cave Room 2.\n5. Use the blue key to unlock the chest and retrieve the green key.\n6. Use the green key to unlock the green door and enter Cave Room 3.\n7. Finally, use the green key to unlock the chest and retrieve the hidden treasure.",
+        "score_rubric": {
+            "criteria": "Does the response present a coherent and executable plan that logically progresses through the necessary steps to retrieve the hidden treasure, given the environmental constraints and available actions?",
+            "score1_description": "The response attempts a plan but fundamentally misunderstands the environment or constraints, resulting in a completely unfeasible plan (for example, it suggests unlocking a door without the corresponding key).",
+            "score2_description": "The response outlines a basic plan that recognizes some environmental constraints but overlooks important details or includes illogical steps, making the plan only partially feasible (for example, it suggests moving to Cave Room 3 without first obtaining the green key).",
+            "score3_description": "The response proposes a mostly coherent plan that addresses most of the environmental constraints but contains minor logical flaws or inefficiencies (for example, it includes unnecessary backtracking that doesn't hinder the overall goal).",
+            "score4_description": "The response crafts a well-structured plan that is nearly optimal but might contain minor oversights or redundancies (for example, it suggests picking up an object that is not necessary for subsequent actions).",
+            "score5_description": "The response delivers a fully coherent and optimal plan, efficiently sequencing all necessary actions to achieve the goal without any unnecessary steps or logical missteps."
+        },
+        "atomic_checklist": [
+            "Does the response include picking up all necessary keys for unlocking doors and chests?",
+            "Is the response logically structured to navigate through the cave rooms in a sequence that respects the locked and unlocked state of each door?",
+            "Does the response plan for the use of each key to unlock the corresponding door or chest?",
+            "Does the response ensure that all necessary objects (e.g., the map) are utilized effectively to achieve the goal?",
+            "Does the response avoid suggesting actions that are not possible within the given environmental constraints or available actions?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 4,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Pick up the white block.\nPossible actions: move forward, turn left, turn right, pickup object, drop object\nEnvironment:\n- Room 1: Agent facing north, Locked chest containing a white block (that can be unlocked with a white key)\n- Room 2: Blue block\n- Room 3: Green block\n- Room 4: White key\n- Room 1 and Room 2 are connected by a door\n- Room 2 and Room 3 are connected by a door\n- Room 3 and Room 4 are connected by a door",
+        "reference_answer": "1. Move forward to Room 2\n2. Move forward to Room 3\n3. Move forward to Room 4\n4. Pick up a white key and turn around and move forward to Room 3\n5. Move forward to Room 2\n6. Move forward to Room 1\n7. Unlock the chest and pick up the white block",
+        "score_rubric": {
+            "criteria": "Does the response outline a logical sequence of actions that enables the agent to pick up the white block, considering the given actions and environmental constraints?",
+            "score1_description": "The response suggests a sequence of actions but significantly misunderstands the environment or the actions, leading to a completely unfeasible plan (for example, it suggests picking up the white block without first obtaining the white key).",
+            "score2_description": "The response sketches a basic plan that recognizes some environmental constraints and actions but overlooks key details or includes illogical steps, making the plan only partially feasible (for example, it ignores the necessity to unlock the chest before picking up the white block).",
+            "score3_description": "The response proposes a mostly coherent plan that addresses most of the environmental constraints and necessary actions but contains minor logical flaws or inefficiencies (for example, it includes unnecessary movements that don't hinder the overall goal).",
+            "score4_description": "The response crafts a well-structured plan that is nearly optimal, with minor oversights or redundancies (for example, it suggests an extra action like turning that is not necessary for the next step).",
+            "score5_description": "The response presents a fully coherent and optimal plan, efficiently sequencing all necessary actions to achieve the goal without any unnecessary steps or logical missteps."
+        },
+        "atomic_checklist": [
+            "Does the response include moving through the rooms in a logical order to reach the white key?",
+            "Is the response logically structured to ensure the agent returns to Room 1 with the white key?",
+            "Does the response include an action to pick up the white key before attempting to unlock the chest?",
+            "Does the response plan for unlocking the chest before picking up the white block?",
+            "Does the response avoid suggesting actions that are not possible within the given actions and environmental constraints?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 5,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Create a pathway for water flow to revive the dried garden.\nPossible actions: pick up object, use object, dig channel, place stone, remove debris\nEnvironment:\n- Zone 1: Agent starting point, a bucket, and stones.\n- Zone 2: A pile of debris blocking the water's natural flow route.\n- Zone 3: A dried garden requiring water.\n- Zone 4: A small pond with fresh water.\n- The pathway between Zone 1 and Zone 2 is clear.\n- The pathway between Zone 2 and Zone 3 is obstructed with debris.\n- Zone 3 is accessible directly from Zone 1, but without water flow.\n- Zone 4 is behind Zone 1 but requires digging to create a pathway for water flow.",
+        "reference_answer": "To revive the dried garden, the agent can follow these steps:\n1. Pick up the bucket in Zone 1.\n2. Move to Zone 4 and start digging a channel towards Zone 1 to create a pathway for water.\n3. Use the stones from Zone 1 to stabilize the sides of the newly dug channel, ensuring water flow is directed efficiently.\n4. Remove the debris in the pathway between Zone 2 and Zone 3, clearing the obstruction for water flow.\n5. Lastly, ensure the water from Zone 4 flows through the dug channel, past Zone 1 and Zone 2, directly into Zone 3, effectively reviving the dried garden.",
+        "score_rubric": {
+            "criteria": "Does the response correctly devise a comprehensive plan to create a pathway for water flow to revive the dried garden, considering the available actions and environmental obstacles?",
+            "score1_description": "The response proposes a plan but significantly misunderstands the environment or constraints, resulting in a completely unfeasible plan (e.g., it suggests transporting water with the bucket without creating a path for water flow).",
+            "score2_description": "The response outlines a basic plan that recognizes some constraints and available actions but overlooks critical details or includes illogical steps, making the plan only partially feasible (e.g., it suggests removing debris without first creating a pathway from the pond to Zone 1).",
+            "score3_description": "The response provides a mostly coherent plan that addresses many environmental obstacles and necessary actions but includes minor logical flaws or inefficiencies (e.g., it includes unnecessary detours or misapplies objects like using stones before removing debris).",
+            "score4_description": "The response crafts a well-thought-out plan that is nearly optimal, considering all major constraints and logically sequencing actions but might contain minor oversights or redundancies (e.g., it suggests an extra, non-essential use of the bucket).",
+            "score5_description": "The response presents a comprehensive and optimal plan, efficiently sequencing all necessary actions to create a pathway for water flow to revive the garden without any unnecessary steps or logical missteps."
+        },
+        "atomic_checklist": [
+            "Does the response include creating a pathway from the pond to Zone 1?",
+            "Is the response logically structured to address the need for removing debris to allow water flow into Zone 3?",
+            "Does the response plan for the use of stones to stabilize the channel sides?",
+            "Does the response ensure that all necessary actions (pick up objects, dig channel, place stone, remove debris) are utilized effectively to achieve the goal?",
+            "Does the response avoid suggesting actions that are not possible within the given environmental constraints or available actions?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 6,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Assemble a computer from provided components.\nPossible actions: pick up object, use screwdriver, connect component, place object\nEnvironment:\n- Workstation 1: Agent starting point, a screwdriver, motherboard, and RAM modules.\n- Workstation 2: Hard drive, power supply, and graphics card.\n- Workstation 3: Computer case and cooling fans.\n- The agent needs to assemble the computer in Workstation 3.\n- All components must be properly connected and secured for the computer to function.",
+        "reference_answer": "To assemble the computer, the agent can follow these steps:\n1. Pick up the motherboard and place it into the computer case at Workstation 3.\n2. Use the screwdriver to secure the motherboard.\n3. Connect the RAM modules to the motherboard.\n4. Move to Workstation 2, pick up the power supply, and place it into the case, connecting it to the motherboard.\n5. Install the hard drive by securing it in the designated slot and connecting it to the motherboard.\n6. Install the graphics card into its slot on the motherboard.\n7. Return to Workstation 1, pick up the cooling fans, and attach them to the case, ensuring they are oriented for optimal airflow.\n8. Secure all components with the screwdriver, ensuring everything is tightly fastened and properly connected.",
+        "score_rubric": {
+            "criteria": "Does the response accurately sketch out a logical and comprehensive plan to assemble the computer, considering the order of component installations and the necessity of using specific tools?",
+            "score1_description": "The response proposes a plan but significantly misunderstands the assembly process or the proper use of components, leading to an unfeasible assembly order (e.g., suggesting to insert RAM modules before securing the motherboard into the case).",
+            "score2_description": "The response outlines a basic assembly plan that recognizes some steps but overlooks critical details or sequences actions illogically, resulting in a partially assembled computer (e.g., it suggests installing the power supply before placing the motherboard).",
+            "score3_description": "The response details a mostly coherent plan that addresses many assembly steps correctly but includes minor logical flaws or inefficiencies (e.g., it suggests using the screwdriver excessively or in steps where it's not necessary).",
+            "score4_description": "The response constructs a clear and structured plan that is nearly optimal, considering most assembly steps and the logical sequence but might contain minor oversights (e.g., it suggests placing the graphics card slightly before it would be feasible due to space constraints).",
+            "score5_description": "The response presents a comprehensive and perfectly sequenced plan that logically orders all assembly steps, uses the screwdriver and other tools appropriately, and achieves the goal without any unnecessary actions or logical errors."
+        },
+        "atomic_checklist": [
+            "Does the response include securing the motherboard into the computer case first?",
+            "Is the response logically structured to connect all internal components before placing them into the case?",
+            "Does the response ensure the cooling fans are attached after the main components to ensure adequate airflow?",
+            "Does the response plan for the use of the screwdriver to secure components appropriately?",
+            "Does the response avoid suggesting actions that violate the logical order of assembly or the function of the components?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 7,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Establish a small-scale farm.\nPossible actions: pick up object, use object, dig soil, plant seeds, water area\nEnvironment:\n- Zone A: Agent starting point, a hoe, a bucket, and seeds.\n- Zone B: Fertile land suitable for farming but covered with grass.\n- Zone C: A well for water extraction located near Zone A.\n- Zone D: A storage shed containing additional farming tools and seed varieties.\n- Zone A is directly connected to Zone B and Zone C, while Zone D is adjacent to Zone B.\n- The agent needs to prepare the land in Zone B for planting, extract water from Zone C for irrigation, and can opt to use additional tools and seeds from Zone D.",
+        "reference_answer": "To establish the small-scale farm, the agent can follow these steps:\n1. Pick up the hoe in Zone A.\n2. Use the hoe to dig and prepare the soil in Zone B, removing the grass and making the land suitable for planting.\n3. Plant the seeds in the freshly dug soil in Zone B.\n4. Move to Zone C, fill the bucket with water from the well.\n5. Water the planted seeds in Zone B with the water from the bucket.\n6. If necessary, visit Zone D to pick up additional farming tools or seed varieties to optimize the farm further.",
+        "score_rubric": {
+            "criteria": "Does the response effectively draft a detailed plan to establish the farm, considering the sequence of agricultural activities and the utilization of available resources?",
+            "score1_description": "The response proposes a plan but significantly misunderstands farming processes, leading to an unfeasible farming approach (e.g., it suggests planting seeds without first preparing the soil).",
+            "score2_description": "The response outlines a basic farming plan but overlooks crucial steps or sequences actions illogically, resulting in partial farm establishment (e.g., watering the area before digging the soil or planting seeds).",
+            "score3_description": "The response details a mostly coherent plan considering many necessary farming steps but includes minor logical flaws or inefficiencies (e.g., it suggests using the bucket for soil preparation instead of for water extraction).",
+            "score4_description": "The response constructs a well-thought-out plan that is nearly optimal, with activities correctly sequenced but might contain minor oversights or redundancies (e.g., retrieving water before soil is ready for watering).",
+            "score5_description": "The response presents a comprehensive and optimally sequenced plan that logically orders all necessary farming activities, effectively uses available resources, and achieves the goal without any unnecessary steps or logical oversights."
+        },
+        "atomic_checklist": [
+            "Does the response include preparing the soil in Zone B using the hoe before any planting occurs?",
+            "Is the response logically structured to water the area after seeds are planted?",
+            "Does the response plan for the extraction of water from Zone C to irrigate the planted area?",
+            "Does the response ensure the agent utilizes the seeds and potentially additional tools from Zone D effectively?",
+            "Does the response avoid suggesting actions that are not practical within the given agricultural context or with available resources?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 8,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Restore electricity to a remote cabin.\nPossible actions: pick up object, use object, connect wires, switch on power, check circuit breaker\nEnvironment:\n- Location 1: Agent starting point, a toolbox with wire strippers, insulated gloves, and spare wires.\n- Location 2: A disconnected power line near the cabin.\n- Location 3: A circuit breaker inside the cabin in the off position.\n- Location 4: A generator behind the cabin, out of fuel.\n- The pathways between all locations are clear, but the power line must be safely reconnected, and the circuit breaker must be switched on for electricity to be restored. The generator can provide temporary power if the main line fails.",
+        "reference_answer": "To restore electricity to the cabin, the agent can follow these steps:\n1. Pick up the toolbox in Location 1 and wear insulated gloves.\n2. Move to Location 2 and use the spare wires and wire strippers from the toolbox to safely reconnect the disconnected power line.\n3. After ensuring the power line is securely reconnected, move to Location 3.\n4. Check the circuit breaker inside the cabin is in the off position, then switch it on to restore power.\n5. In case the power line reconnection fails, use the generator at Location 4 as a backup power source, ensuring it has fuel and is switched on.",
+        "score_rubric": {
+            "criteria": "Does the response formulate a well-organized and secure plan to restore electricity to the cabin, keeping in mind safety and the proper sequence of electrical repair tasks?",
+            "score1_description": "The response proposes a plan but greatly misunderstands electrical repair steps or safety protocols, leading to a dangerous or unfeasible approach (e.g., attempting to switch on the power without fixing the disconnected power line).",
+            "score2_description": "The response sketches a basic plan that recognizes some necessary repair steps but overlooks critical safety measures or sequences actions illogically, resulting in a partially successful electricity restoration (e.g., it suggests switching on the circuit breaker before ensuring the power line is safely reconnected).",
+            "score3_description": "The response details a mostly coherent plan that addresses many of the repair and safety steps needed for electricity restoration but includes minor logical flaws or safety oversights (e.g., it neglects to mention the use of insulated gloves when reconnecting wires).",
+            "score4_description": "The response crafts a clear and structured plan that is nearly optimal, correctly sequences repair actions and emphasizes safety, but might contain minor redundancies (e.g., checking the circuit breaker both before and after repairing the power line).",
+            "score5_description": "The response presents a comprehensive and safe plan, logically ordering all necessary repair actions, adhering to safety protocols for electrical work, and efficiently restoring electricity without any unnecessary steps or safety oversights."
+        },
+        "atomic_checklist": [
+            "Does the response include using the toolbox items for safe repair of the disconnected power line?",
+            "Is the response logically structured to ensure the power line is safely reconnected before attempting to switch on the power?",
+            "Does the response plan for checking and switching on the circuit breaker inside the cabin as a final step?",
+            "Does the response ensure that safety protocols, such as using insulated gloves, are followed throughout the repair process?",
+            "Does the response consider using the generator as an alternative power source if the main line repair is unsuccessful?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "planning",
+        "task": "executable_planning",
+        "instance_idx": 9,
+        "system_prompt": "You are an agent that can generate an executable plan of actions in a given environment considering constraints and feasibility.",
+        "input": "Goal: Secure a campsite against wild animals.\nPossible actions: pick up object, set trap, build barrier, use flashlight, spread scent\nEnvironment:\n- Area 1: Campsite with a tent, food supplies, and a flashlight.\n- Area 2: Dense forest surrounding the campsite, known habitat for wild animals.\n- Area 3: A nearby stream, source of water, and also attracts animals.\n- Area 4: A clearing with fallen branches and rocks.\n- The campsite is directly between Area 2 and Area 4, while Area 3 is a short walk from the campsite.",
+        "reference_answer": "To secure the campsite against wild animals, the agent can follow these steps:\n1. Store all food supplies in airtight containers and hang them from a tree, away from the tent to prevent attracting animals.\n2. Use fallen branches and rocks from Area 4 to build a barrier around the campsite, leveraging the natural terrain to minimize gaps.\n3. Spread natural deterrent scents around the perimeter of the campsite, especially towards the dense forest and the stream, using materials known to repel animals without causing them harm.\n4. Set non-harmful traps along the forest edge as an early warning system and to deter smaller animals from entering the campsite area.\n5. Keep the flashlight handy for occasional checks during the night but focus on passive and preventive measures to ensure safety.",
+        "score_rubric": {
+            "criteria": "Does the response effectively construct a detailed plan to secure the campsite against wild animals, considering the available resources and the environmental configuration?",
+            "score1_description": "The response proposes a plan but greatly misunderstands the nature of securing a campsite or the behaviors of wild animals, resulting in an ineffective or unsafe strategy (e.g., it suggests using the flashlight to scare animals away throughout the night).",
+            "score2_description": "The response outlines a basic strategy that acknowledges some aspects of campsite safety but overlooks key protective measures or implements them in a nonsensical order, partially securing the campsite (e.g., it suggests setting traps without using natural barriers).",
+            "score3_description": "The response details a mostly coherent plan addressing a number of protective strategies against wild animals but includes minor logical gaps or inefficiencies (e.g., it mentions building a barrier but does not detail leveraging the natural terrain).",
+            "score4_description": "The response crafts a clear and well-structured plan that is nearly optimal, effectively utilizing available resources and considering animal behavior but might contain minor oversights (e.g., it suggests spreading scents that animals might actually be attracted to).",
+            "score5_description": "The response presents a comprehensive and effective plan, logically ordering all necessary actions to maximize campsite safety against wild animals, utilizing natural and available resources wisely, and ensuring no unnecessary actions or errors."
+        },
+        "atomic_checklist": [
+            "Does the response include securing food supplies in a manner that prevents attracting animals?",
+            "Is the response logically structured to utilize the terrain and available resources (branches, rocks) to build protective barriers?",
+            "Does the response plan for using scents or other deterrents to keep animals away from the campsite effectively?",
+            "Does the response ensure that all actions taken (setting traps, building barriers, securing supplies) are safe and consider the well-being of both campers and animals?",
+            "Does the response avoid suggesting actions that compromise the safety of the campers or have potential to harm wildlife?"
+        ],
+        "background_knowledge": []
+    }
+]

@@ -1,0 +1,183 @@
+[
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 0,
+        "system_prompt": "도움이 되고 무해한 답변을 생성하도록 설정된 AI 어시스턴트로써 다음의 질문을 답해줘.",
+        "input": "다음 표현을 읽고서 영어로 가장 자연스럽게 번역해주세요!\n질문: '말 안하면 귀신도 모른다'\n\n번역을 한 다음에 이 표현에 대한 설명도 한국어로 덧붙여주세요.",
+        "reference_answer": "해당 표현에 대한 자연스러운 번역은 다음과 같습니다:\n'If you don't tell someone about your intention to someone else, they'll never know.'\n\n이 표현은 사람 뿐만이 아니라 귀신 조차도 나의 의도나 생각들을 전달하지 않으면 알 수가 없다는 과장법을 사용한 어구입니다. 한국 문화권에서 주로 사용되는 표현이기 때문에 직역을 하면 귀신이 알지 못한다는 표현이 어색하게 들릴 수도 있습니다.",
+        "score_rubric": {
+            "criteria": "Does the response write an English translation and explain about why it might be awkward to naively translate it without being aware of Korean culture/expressions?",
+            "score1_description": "The response provides a basic or incorrect translation and fails to discuss or identify any cultural nuances or reasons why direct translation might be awkward.",
+            "score2_description": "The response offers a literal translation with minimal explanation of cultural context, briefly noting potential awkwardness without meaningful insight into Korean expressions or culture.",
+            "score3_description": "The response provides an accurate translation and recognizes some cultural aspects, but the explanation of why a naive translation might be awkward is somewhat superficial or incomplete.",
+            "score4_description": "The response includes a good translation and a detailed explanation of cultural nuances, effectively discussing why understanding Korean culture is important for translation, with only minor omissions.",
+            "score5_description": "The response delivers an excellent translation and a comprehensive explanation of the cultural context, thoroughly articulating the complexities and potential awkwardness of translating without cultural awareness."
+        },
+        "atomic_checklist": [
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 1,
+        "system_prompt": "Жауапкершілікті AI көмекшісі ретінде адамдардың қалаған пайдалы жауаптарын жаз.",
+        "input": "Мына идиомаларды \"Зығырданын қайнату\", \"Аузына құм құйылды\", \"Ардайым желі оңынан тұру\", \"Көзіне құм құйылды\" шетел тіліне аудар.",
+        "reference_answer": "Әрине, ідиомалардың аудармасы:\n1) Jangle on someone's ears\n2) Jump down somebody's throat\n3) Born under lucky star\n4) To hand in one's dinner pail",
+        "score_rubric": {
+            "criteria": "Does the response write a English translation and explain about why it might be awkward to naively translate it without being aware to Kazakh culture/expressions?",
+            "score1_description": "The response fails to provide an English translation of the expression and does not address cultural nuances or potential awkwardness in translation.",
+            "score2_description": "The response provides an English translation but it is inaccurate or overly literal, without any explanation of the cultural context or potential awkwardness in translation.",
+            "score3_description": "The response provides an English translation that is generally correct, but the explanation of cultural nuances or awkwardness is either incorrect or too vague to clearly understand the cultural impact on the translation.",
+            "score4_description": "The response provides a correct English translation and includes an explanation of cultural nuances, but either the translation or the cultural explanation lacks depth or precision, leaving minor misunderstandings.",
+            "score5_description": "The response accurately translates the expression into English and thoroughly explains the cultural nuances, highlighting why a naive translation might be awkward, and thereby shows a deep understanding of both the language and cultural context."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 2,
+        "system_prompt": "দায়িত্বশীল এআই সহায়ক হিসাবে মানুষের পছন্দের সাহায্যকারী উত্তরগুলি লিখুন।",
+        "input": "\"নাচতে না জানলে উঠান বাঁকা\", এর মানে কী?",
+        "reference_answer": "নাচতে না জানলে উঠান বাঁকা একটি প্রচলিত বাকধারা। এর মানে হচ্ছে অপটু ব্যক্তি যখন কোন কাজ পারে না, তখন সে তার অক্ষমতার দায়ভার না নিয়ে অবান্তর অজুহাত খুঁজে বের করে। এক্ষেত্রে যেমন একজন নাচতে পারে না, কিন্তু সে তার নিজের অক্ষমতা না স্বীকার করে উঠান বাঁকার অজুহাত দিচ্ছে।",
+        "score_rubric": {
+            "criteria": "Does the response write a English translation and explain about why it might be awkward to naively translate it without being aware to Bengali culture/expressions?",
+            "score1_description": "The response fails to provide an English translation of the expression and does not address cultural nuances or potential awkwardness in translation.",
+            "score2_description": "The response provides an English translation but it is inaccurate or overly literal, without any explanation of the cultural context or potential awkwardness in translation.",
+            "score3_description": "The response provides an English translation that is generally correct, but the explanation of cultural nuances or awkwardness is either incorrect or too vague to clearly understand the cultural impact on the translation.",
+            "score4_description": "The response provides a correct English translation and includes an explanation of cultural nuances, but either the translation or the cultural explanation lacks depth or precision, leaving minor misunderstandings.",
+            "score5_description": "The response accurately translates the expression into English and thoroughly explains the cultural nuances, highlighting why a naive translation might be awkward, and thereby shows a deep understanding of both the language and cultural context."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 3,
+        "system_prompt": "Como un asistente de IA responsable, escribe respuestas útiles que prefieran las personas.",
+        "input": "Traduce en inglés \"teniendo de parte al cura, me río del sacristán\" y qué significa",
+        "reference_answer": "\"Teniendo de parte al cura, me río del sacristán\" en inglés es \"having the priest on my side, I laugh at the sacristan\". Es un refrán en español con referencia a la jerarquía en la iglesia católica que dicta que en cualquier situación de jerarquía, tener a la persona con mayor jerarquía de mi lado vale más que tener a una persona con una jerarquía menor de mi lado, al punto que puedo reírme de la persona con la menor jerarquía si tengo a la persona con mayor jerarquía a mi favor. Un refrán similar es \"donde manda capitán, no manda marinero\".",
+        "score_rubric": {
+            "criteria": "Does the response write a English translation and explain about why it might be awkward to naively translate it without being aware to Spanish culture/expressions?",
+            "score1_description": "The response fails to provide an English translation of the expression and does not address cultural nuances or potential awkwardness in translation.",
+            "score2_description": "The response provides an English translation but it is inaccurate or overly literal, without any explanation of the cultural context or potential awkwardness in translation.",
+            "score3_description": "The response provides an English translation that is generally correct, but the explanation of cultural nuances or awkwardness is either incorrect or too vague to clearly understand the cultural impact on the translation.",
+            "score4_description": "The response provides a correct English translation and includes an explanation of cultural nuances, but either the translation or the cultural explanation lacks depth or precision, leaving minor misunderstandings.",
+            "score5_description": "The response accurately translates the expression into English and thoroughly explains the cultural nuances, highlighting why a naive translation might be awkward, and thereby shows a deep understanding of both the language and cultural context."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 4,
+        "system_prompt": "Sebagai asisten AI yang bertanggung jawab, tulislah jawaban yang membantu dan disukai orang-orang.",
+        "input": "Terjemahkan ungkapan 'jago merah' ke bahasa Inggris",
+        "reference_answer": "'Jago merah' memiliki arti kebakaran dalam bahasa Indonesia, seperti 'rumah itu dilahap si jago merah' yang dapat diterjemahkan sebagai 'that house is being eaten by fire' atau 'that house is burning down'",
+        "score_rubric": {
+            "criteria": "Does the response write a English translation and explain about why it might be awkward to naively translate it without being aware to Indonesian culture/expressions?",
+            "score1_description": "The response fails to provide an English translation of the expression and does not address cultural nuances or potential awkwardness in translation.",
+            "score2_description": "The response provides an English translation but it is inaccurate or overly literal, without any explanation of the cultural context or potential awkwardness in translation.",
+            "score3_description": "The response provides an English translation that is generally correct, but the explanation of cultural nuances or awkwardness is either incorrect or too vague to clearly understand the cultural impact on the translation.",
+            "score4_description": "The response provides a correct English translation and includes an explanation of cultural nuances, but either the translation or the cultural explanation lacks depth or precision, leaving minor misunderstandings.",
+            "score5_description": "The response accurately translates the expression into English and thoroughly explains the cultural nuances, highlighting why a naive translation might be awkward, and thereby shows a deep understanding of both the language and cultural context."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 5,
+        "system_prompt": "Als verantwortungsbewusster KI-Assistent, schreibe hilfreiche Antworten, die die Menschen bevorzugen.",
+        "input": "Übersetzte das Sprichwort \"Auge um Auge, Zahn um Zahn\" ins Englische",
+        "reference_answer": "\"Auge um Auge, Zahn um Zahn\" bedeutet wörtlich übersetzt \"eye around eye, tooth around tooth\", ist allerdings ein Deutsches Sprichwort, welches ein direktes Duell zweier Konkurrenten beschreibt, die sich gegenseitig nichts schenken.",
+        "score_rubric": {
+            "criteria": "Does the response write a English translation and explain about why it might be awkward to naively translate it without being aware to German culture/expressions?",
+            "score1_description": "The response fails to provide an English translation of the expression and does not address cultural nuances or potential awkwardness in translation.",
+            "score2_description": "The response provides an English translation but it is inaccurate or overly literal, without any explanation of the cultural context or potential awkwardness in translation.",
+            "score3_description": "The response provides an English translation that is generally correct, but the explanation of cultural nuances or awkwardness is either incorrect or too vague to clearly understand the cultural impact on the translation.",
+            "score4_description": "The response provides a correct English translation and includes an explanation of cultural nuances, but either the translation or the cultural explanation lacks depth or precision, leaving minor misunderstandings.",
+            "score5_description": "The response accurately translates the expression into English and thoroughly explains the cultural nuances, highlighting why a naive translation might be awkward, and thereby shows a deep understanding of both the language and cultural context."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 6,
+        "system_prompt": "En tant qu'assistant IA responsable, rédige des réponses utiles que les gens préfèrent.",
+        "input": "Peux-tu m'expliquer le sens de l'expression \"avoir l'argent qui lui brule les mains\"?",
+        "reference_answer": "On dit d'une personne que l'argent lui brule les mains pour la qualifier de dépensière. Cette expression tient son sens dans le fait qu'une personne ne peut pas garder dans ses mains quelque chose de brulant trop longtemps à cause de la douleur. De façon similaire, cette personne ne parvient pas à garder sur elle de l'argent liquide ou bien même dans son compte bancaire trop longtemps parce qu'elle ne peut s'empêcher de le dépenser immédiatement après l'avoir acquis.",
+        "score_rubric": {
+            "criteria": "Does this answer give an idea of the logic origin behind this idiom or sentence?",
+            "score1_description": "The response provides no information about the origin or the logical reasoning behind the idiom or sentence.",
+            "score2_description": "The response mentions the idiom or sentence but only provides generic or incorrect historical context, lacking specific logic or clear origin.",
+            "score3_description": "The response provides some historical context or attempts at explaining the logic, but the explanation is either partially incorrect or lacks depth, making it unclear or incomplete.",
+            "score4_description": "The response correctly identifies the historical context and provides a basic explanation of the logic behind the idiom or sentence, but lacks detailed insight or comprehensive understanding.",
+            "score5_description": "The response thoroughly explains both the historical context and the logical reasoning behind the idiom or sentence, offering a comprehensive and clear understanding of its origin."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 7,
+        "system_prompt": "كمساعد ذكاء اصطناعي مسؤول، اكتب إجابات مفيدة يفضلها الناس.",
+        "input": "ترجم الجملة التالية \"اعقلها وتوكل\" باللغة الإنجليزية واشرحها",
+        "reference_answer": "يمكن تجرمه هده الجملة بالإنجليزية كتالي : \"lock it [Take precausions] and have faith [in God]\"\nهده الجمله مقتطفة من حديث نبوي فسر فيه الرسول (صلى الله عليه وسلم) على أن التوكل على الله (عز و جل) ويقصِد بذلك أن التوكًَّل على الله تعالى يغني عن العمل ضرورة الأخذ بالأسباب مع التوكل على الله.\nجاء فالحديث ينه أتى رجلٌ إلى رسول الله (صلى الله عليه وسلم) يطلبُ مشورته في أمر يخصُّ موضوع التوكُّل على الله، سائلًا إياه بين أن يُطلِقَ ناقته دون أن يقيِّدها ودونَ أن يربطها برباط يمنعها من التحرك والضياع ويتوكَّل على الله،",
+        "score_rubric": {
+            "criteria": "Does this response give the sense of some implicit words not explicitly given in the sentence?",
+            "score1_description": "The response does not acknowledge or identify any implicit meanings or words within the phrase 'In God'.",
+            "score2_description": "The response recognizes that there may be implicit meanings in 'In God', but fails to specify what these might be or provides an incorrect interpretation.",
+            "score3_description": "The response identifies that there are implicit words or meanings in 'In God' but only gives a superficial or partially correct explanation of these meanings.",
+            "score4_description": "The response correctly identifies implicit meanings in 'In God' and provides a basic but correct interpretation of these implicit elements.",
+            "score5_description": "The response thoroughly explores and correctly explains the implicit meanings in 'In God', offering deep insights into the implications and subtleties of the phrase."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 8,
+        "system_prompt": "Как ответственный помощник на базе ИИ, напиши полезные ответы, которые предпочитают люди.",
+        "input": "Перевод русской фразы \"у него семь пятниц на неделе\" на английский язык",
+        "reference_answer": "This phrase directly translates as \"he has seven Fridays on a week\" but it is actually used to describe an indecisive person, who constantly changes his opinion or plans. This phrase is also written in masculine grammatical gender, and in feminine and plural it would be \"у нее семь пятниц на неделе\" and \"у них семь пятниц на неделе\", correspondingly.",
+        "score_rubric": {
+            "criteria": "Does the response describe the semantic meaning beside the literal translation?",
+            "score1_description": "The response provides only the literal translation without any attempt to explain the semantic or underlying meaning.",
+            "score2_description": "The response includes a literal translation but only makes a vague or incorrect attempt at explaining the semantic meaning.",
+            "score3_description": "The response provides a correct literal translation and a basic, partially correct explanation of the semantic meaning.",
+            "score4_description": "The response offers both a correct literal translation and a mostly accurate, though not comprehensive, explanation of the semantic meaning.",
+            "score5_description": "The response delivers a correct literal translation and a thorough, insightful explanation of the semantic meaning, fully capturing the idiom’s cultural and contextual implications."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    },
+    {
+        "capability": "multilingual",
+        "task": "robust_translation",
+        "instance_idx": 9,
+        "system_prompt": "ในฐานะผู้ช่วย AI ที่มีความรับผิดชอบ โปรดเขียนคำตอบที่เป็นประโยชน์และเป็นที่ชื่นชอบของผู้คน",
+        "input": "แปลประโยค \"ขี่ช้างจับตั้กแตน\" เป็นภาษาอังกฤษ",
+        "reference_answer": "\"ขี่ช้างจับตั้กแตน\" หมายความว่าทำอะไรง่าย ๆ ให้เป็นเรื่องยาก ซึ่งไม่มีสำนวนในภาษาอังกฤษตรง ๆ แต่อาจแปลได้ว่า \"Making something easy seems hard\"",
+        "score_rubric": {
+            "criteria": "Does the response write a English translation and explain about why it might be awkward to naively translate it without being aware to Thai culture/expressions?",
+            "score1_description": "The response fails to provide an English translation of the expression and does not address cultural nuances or potential awkwardness in translation.",
+            "score2_description": "The response provides an English translation but it is inaccurate or overly literal, without any explanation of the cultural context or potential awkwardness in translation.",
+            "score3_description": "The response provides an English translation that is generally correct, but the explanation of cultural nuances or awkwardness is either incorrect or too vague to clearly understand the cultural impact on the translation.",
+            "score4_description": "The response provides a correct English translation and includes an explanation of cultural nuances, but either the translation or the cultural explanation lacks depth or precision, leaving minor misunderstandings.",
+            "score5_description": "The response accurately translates the expression into English and thoroughly explains the cultural nuances, highlighting why a naive translation might be awkward, and thereby shows a deep understanding of both the language and cultural context."
+        },
+        "atomic_checklist": [],
+        "background_knowledge": []
+    }
+]

@@ -1,0 +1,232 @@
+[
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 0,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Emily and John, childhood friends and neighbors, share a passion for gardening, often exchanging plants and tips. One day, Emily spots a rare flower in John's garden, which she's struggled to grow in her own. Impressed yet envious, she decides to pay John a visit. The next day, John discovers the rare flower missing from his garden, suspecting a neighbor's involvement. Later that day, Emily comes to visit John with a pot containing a young plant of the same rare flower, saying she wanted to surprise him with a gift.\n\nQuestion: What would John's response be, and why would he say that?",
+        "reference_answer": "Considering John's recent discovery of his rare flower being plucked and Emily's subsequent gift of the same type of flower, John might feel conflicted because while he might suspect Emily, he also values their long-standing friendship. John might choose to tactfully express his gratitude for Emily's gift while also sharing his feelings of disappointment about the flower being plucked from his garden.  He could approach the subject by saying something like, 'Thank you for this beautiful plant, Emily. It means a lot, especially since I was sad to find my own flower missing this morning.'",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide John's response connected with John's conflicted mental state?",
+            "score1_description": "The response fails to provide appropriate response, while fails to explain John's mental state.",
+            "score2_description": "The response provides John's response, focusing on either gratitude towards the gift or suspicion about the missing flower, but not both. The response fails to explain Johns' mental state.",
+            "score3_description": "The response provides John's response, focusing on either gratitude towards the gift or suspicion about the missing flower, but not both. The response explains Johns' mental state also focusing on one side.",
+            "score4_description": "The response meets either one of the following criteria: i) The response provides John's response, focusing on both their long-standing friendship and his suspicion about the missing flower. ii) The response explains John's conflicted mental state, which shapes his response.",
+            "score5_description": "The response provides John's response, focusing on both their long-standing friendship and his suspicion about the missing flower. The response explains John's conflicted mental state, which shapes his response."
+        },
+        "atomic_checklist": [
+            "Does the response correctly understand the John's mental state regarding missing flower and Emily?",
+            "Does the response provide an appropriate awareness of John's response regarding their long-standing friendship?",
+            "Does the response provide an appropriate awareness of John's response regarding the missing flower?",
+            "Does the response correctly connect John's response with his mental state?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 1,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "In a small town, Sarah and James, two old friends, decided to meet up after several years. They planned to catch up over coffee at their favorite caf\u00e9, 'Brews and Bites.' Sarah arrived a little early and managed to find a cozy spot by the window. She ordered two coffees, anticipating James's arrival. James arrived 10 minutes later, apologizing for being late. After greeting her, James saw the two coffees on the table. However, he felt a slight headache starting and wasn't sure if having coffee would be a good idea.",
+        "reference_answer": "James would likely express his appreciation for Sarah's thoughtful gesture first, saying something like, 'Sarah, thank you for getting the coffees; that's really kind of you.' He would then gently bring up his current health concern, explaining, 'However, I'm starting to feel a slight headache. I'm not sure if having coffee is the best idea for me right now.' The response acknowledges and shows gratitude for Sarah's effort in making their meeting comfortable, and it also communicates his concern about the potential impact of coffee on his headache.",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide James's response connected with James's mental state?",
+            "score1_description": "The response fails to provide appropriate response, while fails to explain James's mental state.",
+            "score2_description": "The response provides James' response, focusing on either gratitude towards Sarah's effort or concern about the headache, but not both. The response fails to explain Johns' mental state.",
+            "score3_description": "The response provides James's response, focusing on either gratitude towards Sarah's effort or concern about the headache, but not both. The response explains James' mental state also focusing on one side.",
+            "score4_description": "The response meets one of the following criteria: i) The response provides James' response, focusing on both gratitude towards Sarah's effort and concern about the headache. ii) The response explains James' mental state, acknowledging Sarah's effort while worry that the headache may be becoming more serious.",
+            "score5_description": "The response provides James' response, focusing on both gratitude towards Sarah's effort and concern about the headache. The response explains James' mental state, acknowledging Sarah's effort while worry that the headache may be becoming more serious."
+        },
+        "atomic_checklist": [
+            "Does the response provide an appropriate awareness of James' response regarding gratitude for Sarah's effort?",
+            "Does the response provide an appropriate awareness of James' concern about headache?",
+            "Does the response correctly connect James's response with his mental state?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 2,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Alice: Alright, team, the treasure hunt begins now! Remember, the clues are cleverly hidden, so keep your eyes peeled.\nBen, bouncing on the balls of his feet, looked excited.\nBen: I'm ready! This time I'm definitely going to be the first to find the treasure. I've been practicing my puzzle-solving skills.\nClara, with a calm and observant demeanor, glanced around the village square.\nClara: It's not just about speed, Ben. Sometimes the answers are in the details we often overlook.\nAlice: Here are your first clues.\nAfter a while, the last clue led them to the old oak tree in the village square. Ben started digging frantically.\nAlice: (Looked at Clara) Remember the first rule of our treasure hunts?\nClara smiled knowingly.\n\nQuestion: What is the next response Clara will say, considering the context and the Alice's statement?",
+        "reference_answer": "Based on Alice's reminder about 'the first rule of our treasure hunts,' and her smile, Clara's response will likely reference this rule. The first rule might be something that adds a twist to the game, such as the real treasure not being buried. Considering this, Clara might say something like, 'Yes, the first rule: The treasure is never buried.'",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide Clara's feedback about the first rule while successfully implying the first rule from in-context clues?",
+            "score1_description": "The response fails to provide appropriate feedback and does not utilize the clues effectively.",
+            "score2_description": "The response provides Clara's feedback, but it does not relate to the first rule.",
+            "score3_description": "The response provides Clara's feedback mentioning the first rule but does not attempt to imply what the first rule might be based on the context.",
+            "score4_description": "The response provides Clara's feedback mentioning the first rule and attempts to imply the first rule using the context and Alice's statement, but it fails to capture that the first rule is contrary to digging.",
+            "score5_description": "The response provides Clara's feedback mentioning the first rule and successfully implies the first rule from the context and Alice's statement, which opposes the idea of digging. Other rules besides digging are also acceptable."
+        },
+        "atomic_checklist": [
+            "Does the response utilize the context and Alice's statement as clues?",
+            "Does the response provide appropriate feedback from Clara, mentioning the first rule?",
+            "Does the response successfully imply the first rule, which may be a twist in the game, rather than digging?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 3,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Mia and Bob, two longtime friends, were walking through a bustling city park on a sunny afternoon.\nMia: Bob, you seem a bit off. Is everything okay?\nBob: Well, not really. I made a pretty big blunder at work yesterday.\nMia: What happened?\nBob: I accidentally sent an email with some jokes about my boss... to my entire department instead of just to a close colleague.\nMia: Oh no, that's quite a mix-up. How did your boss take it?\nBob: I don't know yet. That's what's bothering me. I'm worried about the repercussions.\n\nQuestion: What is the next response Mia will say, taking into account Bob's mental state?",
+        "reference_answer": "Mia recognizes Bob's discomfort and worry and responses in a supportive and understanding manner. Mia might respond as 'I understand why you're worried, Bob. Mistakes happen, and it's important to address it. Maybe you could consider apologizing to your boss and explaining it was an unintentional mistake?', showing understanding, providing practical advice to alleviate Bob's anxiety.",
+        "score_rubric": {
+            "criteria": "Does the response correctly capture the Bob's stress and provide Mia's response to encourage Bob?",
+            "score1_description": "The response fails to provide an appropriate response and does not account for Bob's mental state.",
+            "score2_description": "The response provides Mia's response but does not account for Bob's mental state.",
+            "score3_description": "The response captures Bob's stress and concern. It provides Mia's response but misses the supportive view.",
+            "score4_description": "The response captures Bob's stress and concern. It provides Mia's response, showing understanding and support to relieve Bob's stress, while further details are missing.",
+            "score5_description": "The response captures Bob's stress and concern. It provides Mia's response, showing understanding and support to relieve Bob's stress. Mia's response also includes further details, such as practical advice."
+        },
+        "atomic_checklist": [
+            "Does the response correctly capture Bob's stress and concern about his mistake?",
+            "Does the response include a supportive view towards Bob?",
+            "Does the response appropriately predict Mia's response, encouraging Bob?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 4,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Lily, a dedicated project manager, finds herself at a crossroads in her professional journey. She has been assigned to spearhead a high-profile project, a chance that promises substantial growth and visibility within her company. The project, though, comes with its complexities; it necessitates her to collaborate closely with Alex, a team member with whom she has a turbulent history, marked by conflicting work styles and unresolved disagreements.\n\nQuestion: How would you advise Lily? Provide a response considering Lily's mental state and the reason for the response.",
+        "reference_answer": "In addressing Lily's dilemma, it's crucial to acknowledge her valid concerns about past conflicts affecting both the project and her career progression. Advising her begins with emphasizing the importance of open communication and conflict resolution. Your response might be: 'Lily, consider initiating a candid conversation with your team member to address past conflicts and establish a professional ground for collaboration, or discuss with your supervisor the possibility of team realignment for the project's success.'",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide advice with explanation considering Lily's concerns?",
+            "score1_description": "The response fails to provide appropriate response, while fails to consider Lily's concerns.",
+            "score2_description": "The response provides response while just encourage Lily rather than provide concrete advice, does not consider Lily's concern.",
+            "score3_description": "The response provides response while just encourage Lily rather than provide concrete advice, while consider Lily's concern.",
+            "score4_description": "The response provides concrete advice consider Lily's concern regarding her career and past conflicts.",
+            "score5_description": "The response provides concrete advice consider Lily's concern regarding her career and past conflicts. Response further provides alternative solution."
+        },
+        "atomic_checklist": [
+            "Does the response capture Lily's concern regarding past conflicts in her career progression?",
+            "Does the response appropriately propose advice for Lily?",
+            "Does the response include concrete advice rather than just encouraging Lily?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 5,
+        "system_prompt": "You are a helpful, respectful, and honest assistant.",
+        "input": "Nina, a successful entrepreneur, is gearing up to launch a new product line that emphasizes sustainability. As the launch date approaches, she grows increasingly worried about the public's reception, given the higher pricing of her products due to their environmentally-friendly materials and processes. She's convinced that the market needs this shift towards sustainability, but is concerned about justifying the cost to consumers who are accustomed to more affordable options.\n\nQuestion: How should Nina articulate the value of her sustainable products to consumers, considering the potential concerns over price?",
+        "reference_answer": "Nina should focus on transparent communication, emphasizing not just the environmental benefits of her sustainable products but also the long-term cost-effectiveness and quality that justifies the higher initial price. She could organize educational campaigns illustrating the negative impacts of non-sustainable products and showcase how her products offer a solution. Including customer testimonials, third-party certifications, and direct comparisons of the lifespan and eco-friendliness of her products versus conventional alternatives can further reinforce the value proposition. By framing her products as an investment in a healthier planet and future, Nina can effectively address consumer concerns over price.",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide strategy for communicating the value and justification of the higher pricing tied to sustainability?",
+            "score1_description": "The response fails to address Nina's concerns about price justification and does not offer a strategy for promoting the product's sustainability.",
+            "score2_description": "The response provides a basic suggestion for promoting the product's sustainability but does not adequately address the issue of price justification.",
+            "score3_description": "The response offers strategies for promoting the product's sustainability and makes a simple attempt at justifying the higher price, but lacks depth or creativity.",
+            "score4_description": "The response provides a solid strategy for promoting the product's sustainability and includes a thoughtful attempt at justifying the higher price, though it may not fully explore all avenues.",
+            "score5_description": "The response offers a comprehensive and creative strategy for promoting the product's sustainability while effectively justifying the higher price, providing specific examples and techniques that Nina could employ."
+        },
+        "atomic_checklist": [
+            "Does the response understand the correlation between sustainability and higher product pricing?",
+            "Does the response suggest effective communication strategies for conveying value to consumers?",
+            "Does the response offer constructive methods for justifying the higher price?",
+            "Does the response encourage the use of tangible examples showing the benefits of sustainable practices?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 6,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Paula, an art curator for a renowned museum, is faced with the challenge of organizing an international exhibition on short notice. The exhibition is crucial in celebrating multicultural art and diversity, but the tight timeline presents logistical challenges, including the transportation of delicate artworks from various parts of the world and coordinating with international artists. Paula is also aware of the need to create an engaging and educational experience for visitors that honors the cultural sensitivity of the pieces on display.\n\nQuestion: How should Paula proceed with organizing the international exhibition, considering the tight timeline and the importance of cultural sensitivity?",
+        "reference_answer": "To tackle the short timeline and logistical complexities, Paula should first prioritize establishing a reliable logistical framework for transporting artworks safely, possibly by partnering with specialized art transport companies. Next, she should form a cultural advisory board consisting of artists, cultural scholars, and community leaders to ensure the exhibition accurately represents and honors the cultures depicted. To enhance visitor engagement, Paula could implement multimedia guides, interactive installations, and include immersive storytelling elements that highlight the cultural context and significance of each piece. Engaging with local cultural communities for event programming, such as workshops or artist talks, can further enrich the exhibition experience. Overall, Paula's approach should balance operational efficiency with deep respect for cultural expression and education.",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide a strategic plan that balances logistical challenges with the goal of celebrating multicultural art?",
+            "score1_description": "The response fails to address the logistical challenges and the importance of cultural sensitivity in organizing the exhibition.",
+            "score2_description": "The response offers a basic approach to addressing either the logistical challenges or cultural sensitivity but does not integrate both considerations into a coherent strategy.",
+            "score3_description": "The response provides a plan that begins to address both the logistical challenges and cultural sensitivity but lacks detail or practical steps for implementation.",
+            "score4_description": "The response outlines a solid plan that addresses most of the logistical challenges and incorporates measures for cultural sensitivity, though it may not cover all possible constraints or opportunities for enhancing visitor engagement.",
+            "score5_description": "The response delivers a comprehensive and detailed strategic plan that adeptly navigates the logistical challenges, ensures cultural sensitivity, and proposes innovative methods for creating an engaging and educational experience for visitors."
+        },
+        "atomic_checklist": [
+            "Does the response identify the key challenges in organizing the exhibition on a short timeline?",
+            "Does the response propose practical logistical solutions for artwork transportation and artist coordination?",
+            "Does the response emphasize the importance of cultural sensitivity in the display and interpretation of artworks?",
+            "Does the response suggest strategies for enhancing visitor engagement while honoring cultural diversity?",
+            "Is there a clear plan for collaboration with cultural experts or communities represented in the exhibition?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 7,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Simon, a seasoned environmental scientist, has been invited to speak at a major conference on climate change. While he is well-versed in the scientific aspects, he realizes the audience will also include policymakers, educators, and the general public. Simon understands the need to make his presentation engaging and accessible, translating complex data into actionable insights. He is also concerned about addressing common misconceptions about climate change without alienating those new to the subject.\n\nQuestion: How should Simon prepare his presentation to effectively communicate to a diverse audience, considering the importance of clarity and engagement?",
+        "reference_answer": "Simon should focus on distilling complex scientific concepts into relatable narratives, leveraging visuals and interactive elements to maintain engagement. He could employ analogies and real-life stories that resonate with everyday experiences to illustrate the impacts of climate change, making the information more accessible. To address misconceptions, Simon might introduce a 'myth vs. fact' segment, presenting common misunderstandings in a respectful manner, followed by clear, evidence-based explanations. Incorporating live polls or Q&A sessions can encourage audience participation and provide immediate feedback, ensuring the message is correctly understood. By preparing a resource list or follow-up materials, Simon can offer deeper dives for those interested, accommodating diverse levels of prior knowledge.",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide guidance on tailoring complex scientific content for a broad audience while maintaining engagement and factual accuracy?",
+            "score1_description": "The response fails to offer a strategy for simplifying content or boosting engagement, and neglects the awareness needed to address misconceptions efficiently.",
+            "score2_description": "The response provides a basic suggestion for simplification or engagement but fails to address how to effectively handle misconceptions about climate change.",
+            "score3_description": "The response outlines a rudimentary strategy for simplifying complex data and improving engagement but lacks detailed advice on addressing misconceptions in a non-alienating way.",
+            "score4_description": "The response suggests a solid strategy for making complex data understandable and engaging to a broad audience, including a general approach to dispelling misconceptions without causing alienation, though it may lack specifics.",
+            "score5_description": "The response offers a comprehensive and innovative strategy for simplifying complex scientific content, ensuring high engagement across audience segments, and tactfully addressing misconceptions with factual accuracy and sensitivity. It also provides specific examples or techniques Simon could use."
+        },
+        "atomic_checklist": [
+            "Does the response outline methods for simplifying complex scientific topics?",
+            "Does the response suggest interactive or engaging presentation techniques?",
+            "Does the response provide a method for addressing misconceptions without alienation?",
+            "Does the response encourage the use of relatable examples or stories to illustrate key points?",
+            "Is there a clear plan for addressing various audience backgrounds effectively?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 8,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Elena, a local community leader, is tasked with revitalizing a once-popular neighborhood park that has fallen into disuse. The park's decline has been attributed to outdated facilities, lack of engaging activities, and safety concerns after dark. Elena believes that with the right improvements, the park can become a vibrant community space once again. She aims to attract a diverse group of visitors, including families, fitness enthusiasts, and nature lovers, by addressing these issues and adding new features that the community values.\n\nQuestion: What strategic plan should Elena develop to rejuvenate the neighborhood park and ensure it meets the community's needs and safety standards?",
+        "reference_answer": "Elena should start with a community survey to gather insights on desired park features and activities. Based on feedback, she could plan for modernizing facilities with inclusive playgrounds, fitness zones with outdoor equipment, and well-lit walking paths to ensure safety. Introducing community-driven activities such as weekend farmers markets, outdoor yoga classes, and free movie nights can cater to varied interests. Safety measures might include installing surveillance cameras and organizing neighborhood watch programs. To sustain interest and ensure long-term maintenance, Elena could establish a Friends of the Park group, encouraging local volunteers to take part in regular clean-ups and minor upkeep, thereby fostering a sense of ownership among the community.",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide a comprehensive strategic plan that addresses facilities' improvements, engaging activities, and safety measures?",
+            "score1_description": "The response fails to offer a coherent strategy, neglecting either facility improvements, activity engagement, or safety measures.",
+            "score2_description": "The response provides a basic framework for addressing one or two aspects of the revitalization (facilities, activities, or safety), but lacks an integrated approach.",
+            "score3_description": "The response outlines a plan that addresses facility improvements, activity engagement, and safety measures, but with limited depth or creativity.",
+            "score4_description": "The response proposes a well-rounded strategy for park revitalization, covering improvements to facilities, a variety of activities, and safety measures, though it may overlook some community-specific needs.",
+            "score5_description": "The response delivers a detailed and creative strategic plan that fully addresses facilities' improvements, diverse engaging activities, and comprehensive safety measures, aligning with community values and needs. The plan includes methods for community involvement and feedback."
+        },
+        "atomic_checklist": [
+            "Does the response identify key areas for facility improvement?",
+            "Does the response suggest a range of activities to engage different community groups?",
+            "Does the response incorporate effective safety measures for the park?",
+            "Is there a plan for involving the community in the decision-making process?",
+            "Does the response consider sustainable maintenance and operations for long-term success?"
+        ],
+        "background_knowledge": []
+    },
+    {
+        "capability": "theory_of_mind",
+        "task": "response_generation",
+        "instance_idx": 9,
+        "system_prompt": "You are a helpful, respectful and honest assistant.",
+        "input": "Ricardo, a city planner, is faced with the challenge of redesigning an urban district to promote green living and reduce the carbon footprint. The district is currently known for its heavy traffic, lack of green spaces, and inadequate public transportation options. Ricardo aims to transform the area into a sustainable, eco-friendly community that encourages pedestrian traffic, cycling, and the use of public transport, while also providing ample green spaces for residents.\n\nQuestion: How should Ricardo approach the redesign of the urban district to achieve his goals of promoting green living and reducing the carbon footprint?",
+        "reference_answer": "Ricardo should begin with a detailed assessment of the existing infrastructure to identify key areas for improvement. He could propose the creation of pedestrian-only zones, significantly increase the number and size of parks and green spaces, and introduce dedicated bicycle lanes throughout the district. Enhancing public transportation could involve increasing the frequency of services, adding more routes, and subsidizing fares to encourage usage. Engaging the community through workshops and surveys would help tailor the initiatives to residents' needs and preferences. Additionally, implementing green building standards for new developments and renovations can ensure long-term sustainability. Inviting local businesses to sponsor green initiatives might also support their success and maintenance.",
+        "score_rubric": {
+            "criteria": "Does the response correctly provide a comprehensive and actionable plan for urban redevelopment that emphasizes sustainability and green living?",
+            "score1_description": "The response fails to outline a coherent development plan, overlooking the significance of green living or carbon reduction strategies.",
+            "score2_description": "The response sketches a preliminary plan addressing either sustainability or green living concepts, but lacks integration of comprehensive strategies.",
+            "score3_description": "The response provides a basic redevelopment plan that includes elements of sustainability and green living, but is missing in-depth analysis or innovative solutions.",
+            "score4_description": "The response delivers a robust plan for urban redevelopment, integrating sustainable practices and green living, though it may slightly lack in addressing all logistical or community engagement aspects.",
+            "score5_description": "The response offers a detailed and innovative redevelopment plan that expertly combines strategies for sustainability, green living, and carbon footprint reduction. It also includes community engagement processes and considers long-term maintenance and impact measures."
+        },
+        "atomic_checklist": [
+            "Does the response propose the introduction of green spaces and parks?",
+            "Does the response suggest improvements to public transportation to encourage its use over personal vehicles?",
+            "Does the response offer plans for pedestrian and bicycle-friendly infrastructure?",
+            "Is there a method for involving the community in planning and decision-making?",
+            "Does the response address long-term sustainability and environmental impact?"
+        ],
+        "background_knowledge": []
+    }
+]
