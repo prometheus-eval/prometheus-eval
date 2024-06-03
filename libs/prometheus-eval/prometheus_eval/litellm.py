@@ -9,6 +9,35 @@ class LiteLLM:
     def __init__(self, name):
         """Initialize the LiteLLM with basic configurations."""
         self.name = name
+
+    def validate_litellm(self):
+        return True
+
+    def completions(self, messages, **kwargs):
+        """Generate completions for a list of messages using synchronous batch processing."""
+        assert isinstance(messages, list)  # Ensure messages are provided as a list
+        assert all(
+            isinstance(msg, dict) and set(msg.keys()) == {"role", "content"}
+            for msg in messages
+        ), "Message format error."
+
+        result_responses = []
+
+        for message in tqdm(messages):
+            assert isinstance(message, dict) and set(message.keys()) == {
+                "role",
+                "content",
+            }
+            response = completion(model=self.name, messages=message, **kwargs)
+            result_responses.append(response.choices[0].message.content.strip())
+
+        return result_responses
+
+
+class AsyncLiteLLM:
+    def __init__(self, name, batch_size: int = 100, requests_per_minute: int = 100):
+        """Initialize the LiteLLM with basic configurations."""
+        self.name = name
         self.batch_size = 100  # Define batch size for batch processing
         self.requests_per_minute = 100  # Rate limit: 100 requests per minute
         self.limiter = AsyncLimiter(
@@ -57,26 +86,6 @@ class LiteLLM:
                 ]
             )
             result_responses.extend(batch_responses)
-
-        return result_responses
-
-    def completions(self, messages, **kwargs):
-        """Generate completions for a list of messages using synchronous batch processing."""
-        assert isinstance(messages, list)  # Ensure messages are provided as a list
-        assert all(
-            isinstance(msg, dict) and set(msg.keys()) == {"role", "content"}
-            for msg in messages
-        ), "Message format error."
-
-        result_responses = []
-
-        for message in tqdm(messages):
-            assert isinstance(message, dict) and set(message.keys()) == {
-                "role",
-                "content",
-            }
-            response = completion(model=self.name, messages=message, **kwargs)
-            result_responses.append(response.choices[0].message.content.strip())
 
         return result_responses
 
