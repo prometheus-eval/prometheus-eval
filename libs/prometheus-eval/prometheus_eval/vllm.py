@@ -24,7 +24,6 @@ class VLLM:
         **vllm_kwargs,
     ) -> None:
         self.name: str = name
-        self.is_vllm_instance = True
 
         self.model: LLM = LLM(
             model=self.name,

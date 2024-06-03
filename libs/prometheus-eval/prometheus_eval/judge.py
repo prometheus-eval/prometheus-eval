@@ -9,21 +9,30 @@ from .prompts import (
     RELATIVE_PROMPT_WO_REF,
 )
 from .utils import batch_completions_with_retries
-from .vllm import VLLM
-from .mock import MockLLM
 import warnings
 
 
+# TODO: Add BaseLLM class for model type
 class PrometheusEval:
     def __init__(
         self,
-        model_id: str = "prometheus-eval/prometheus-7b-v2.0",
+        model,
         absolute_grade_template: str = ABSOLUTE_PROMPT_WO_REF,
         relative_grade_template: str = RELATIVE_PROMPT_WO_REF,
-        is_test: bool = False,  # For debugging purposes
-        **vllm_kwargs,
+        **kwargs,
     ):
-        self.model_id = model_id
+
+        if hasattr(model, "validate_vllm"):
+            from .vllm import VLLM
+        elif hasattr(model, "validate_litellm"):
+            from .litellm import LiteLLM
+        elif hasattr(model, "validate_mockllm"):
+            from .mock import MockLLM
+        else:
+            raise ValueError("Model does not have a valid LLM interface")
+
+        self.model = model
+
         if "###Reference Answer (Score 5):" not in absolute_grade_template:
             warnings.warn(
                 "Reference answer was not given in Absolute Grading mode. This might lead to nonoptimal performances."
@@ -35,14 +44,6 @@ class PrometheusEval:
 
         self.absolute_grade_template = absolute_grade_template
         self.relative_grade_template = relative_grade_template
-        self.model = (
-            VLLM(
-                model_id,
-                **vllm_kwargs,
-            )
-            if not is_test
-            else MockLLM()
-        )
 
     def _get_conversation_prompt(self, messages: List[Dict[str, str]]):
         """

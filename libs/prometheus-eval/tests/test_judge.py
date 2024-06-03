@@ -1,20 +1,27 @@
 import pytest
 
 from prometheus_eval import PrometheusEval  # Adjust the import path as necessary
+from prometheus_eval.mock import MockLLM
+from prometheus_eval.prompts import ABSOLUTE_PROMPT, RELATIVE_PROMPT
 
 
 @pytest.fixture(scope="module")
 def judge():
     # Initialize PrometheusEval once for all tests in this module
     print("Setting up PrometheusEval")
-    judge_instance = PrometheusEval(is_test=True, dtype="auto")
+    model = MockLLM()
+    judge_instance = PrometheusEval(
+        model=model,
+        absolute_grade_template=ABSOLUTE_PROMPT,
+        relative_grade_template=RELATIVE_PROMPT,
+    )
     yield judge_instance
     # If there's any cleanup needed, it can be done here
     print("Tearing down PrometheusEval")
 
 
 def test_init(judge):
-    assert hasattr(judge, "model_id")
+    assert hasattr(judge, "model")
     assert hasattr(judge, "absolute_grade_template") and hasattr(
         judge, "relative_grade_template"
     )
