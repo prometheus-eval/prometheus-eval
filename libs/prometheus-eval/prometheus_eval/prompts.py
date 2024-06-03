@@ -148,7 +148,6 @@ Score 5: The model consistently demonstrates advanced reasoning abilities, provi
 """.strip()
 
 
-
 def get_prompt_template(grading_format: str, include_reference: bool) -> str:
     """
     Get the prompt template based on grading format and whether to include a reference answer.

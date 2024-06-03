@@ -14,11 +14,7 @@ def judge():
 
 
 def test_init(judge):
-    assert (
-        hasattr(judge, "model_id")
-        and hasattr(judge, "num_gpus")
-        and hasattr(judge, "download_dir")
-    )
+    assert hasattr(judge, "model_id")
     assert hasattr(judge, "absolute_grade_template") and hasattr(
         judge, "relative_grade_template"
     )

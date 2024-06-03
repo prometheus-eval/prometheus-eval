@@ -8,22 +8,30 @@ from .prompts import (
     REL_SYSTEM_PROMPT,
     RELATIVE_PROMPT_WO_REF,
 )
-from .utils import batch_completions_with_retries
-from .vllm import VLLM
-from .mock import MockLLM
+from .utils import (
+    batch_absolute_grade,
+    batch_completions_with_retries,
+    batch_relative_grade,
+)
+from .vllm import VLLM, MockVLLM
 import warnings
+
+
+import litellm
 
 
 class PrometheusEval:
     def __init__(
         self,
-        model_id: str = "prometheus-eval/prometheus-7b-v2.0",
+        model,
+        num_gpus: int = 1,
+        download_dir: str = None,
         absolute_grade_template: str = ABSOLUTE_PROMPT_WO_REF,
         relative_grade_template: str = RELATIVE_PROMPT_WO_REF,
         is_test: bool = False,  # For debugging purposes
-        **vllm_kwargs,
+        dtype: str = "auto",
+        **kwargs,
     ):
-        self.model_id = model_id
         if "###Reference Answer (Score 5):" not in absolute_grade_template:
             warnings.warn(
                 "Reference answer was not given in Absolute Grading mode. This might lead to nonoptimal performances."
@@ -35,14 +43,6 @@ class PrometheusEval:
 
         self.absolute_grade_template = absolute_grade_template
         self.relative_grade_template = relative_grade_template
-        self.model = (
-            VLLM(
-                model_id,
-                **vllm_kwargs,
-            )
-            if not is_test
-            else MockLLM()
-        )
 
     def _get_conversation_prompt(self, messages: List[Dict[str, str]]):
         """
@@ -75,7 +75,7 @@ class PrometheusEval:
         :param response: The response to grade.
         :param rubric: The rubric to use for grading.
         :param reference_answer: Optional reference answer to aid in grading.
-        :param params: Additional parameters for the model completion requests. Refer to the vllm SamplingParmas class.
+        :param params: Additional parameters for the model completion requests.
         :return: A tuple containing the feedback and score.
         """
         feedbacks, scores = self.absolute_grade(
@@ -104,7 +104,7 @@ class PrometheusEval:
         :param response_B: Second response to compare.
         :param rubric: The rubric to use for grading.
         :param reference_answers: Optional tuple of reference answers for each response.
-        :param params: Additional parameters for the model completion requests. Refer to the vllm SamplingParmas class.
+        :param params: Additional parameters for the model completion requests.
         :return: A tuple containing the feedbacks and scores.
         """
         feedbacks, scores = self.relative_grade(
@@ -131,7 +131,7 @@ class PrometheusEval:
 
         :param instructions: List of instructions corresponding to each response.
         :param responses: List of responses to grade.
-        :param params: Parameters for the model completion requests. Refer to the vllm SamplingParmas class.
+        :param params: Parameters for the model completion requests.
         :return: A tuple containing lists of feedbacks and scores.
         """
         if len(instructions) != len(responses):
@@ -175,7 +175,7 @@ class PrometheusEval:
             ]
             input_ = self._get_conversation_prompt(messages)
             inputs.append(input_)
-
+        
         feedbacks, scores = batch_completions_with_retries(
             self.model,
             inputs,
@@ -201,7 +201,7 @@ class PrometheusEval:
         :param instructions: List of instructions for each paired responses.
         :param responses_A: List of first responses in each pair.
         :param responses_B: List of second responses in each pair.
-        :param params: Additional parameters for the model completion requests. Refer to the vllm SamplingParmas class.
+        :param params: Additional parameters for the model completion requests.
         :return: A tuple containing lists of feedbacks and scores.
         """
         if len(instructions) != len(responses_A) or len(responses_A) != len(
