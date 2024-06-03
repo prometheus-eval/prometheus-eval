@@ -7,7 +7,6 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-vllm = "^0.4.1"
 fastchat = "^0.1.0"
 litellm = "^1.40.0"
 aiolimiter = "^1.1.0"
@@ -17,7 +16,7 @@ aiolimiter = "^1.1.0"
 black = "^24.4.2"
 isort = "^5.13.2"
 autoflake = "^2.3.1"
-litellm = "^1.40.0"
+vllm = "^0.4.3"
 
 
 [tool.poetry.group.test.dependencies]

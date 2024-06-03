@@ -20,13 +20,13 @@ except ImportError as e:
 class VLLM:
     def __init__(
         self,
-        name: str,
+        model: str,
         **vllm_kwargs,
     ) -> None:
-        self.name: str = name
+        self.model: str = model
 
         self.model: LLM = LLM(
-            model=self.name,
+            model=self.model,
             **vllm_kwargs,
         )
 

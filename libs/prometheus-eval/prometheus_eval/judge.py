@@ -11,15 +11,16 @@ from .prompts import (
 from .utils import batch_completions_with_retries
 import warnings
 
-
 # TODO: Add BaseLLM class for model type
+# TODO: Add a general parameter class for all types of models
+
+
 class PrometheusEval:
     def __init__(
         self,
         model,
         absolute_grade_template: str = ABSOLUTE_PROMPT_WO_REF,
         relative_grade_template: str = RELATIVE_PROMPT_WO_REF,
-        **kwargs,
     ):
 
         if hasattr(model, "validate_vllm"):

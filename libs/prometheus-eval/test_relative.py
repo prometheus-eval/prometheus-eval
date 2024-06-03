@@ -1,11 +1,12 @@
 from prometheus_eval import PrometheusEval
 from prometheus_eval.prompts import RELATIVE_PROMPT
+from prometheus_eval.vllm import VLLM
 
+model = VLLM(model="prometheus-eval/prometheus-7b-v2.0")
 judge = PrometheusEval(
-    model_id="prometheus-eval/prometheus-7b-v2.0",
+    model=model,
     relative_grade_template=RELATIVE_PROMPT,
 )
-
 
 data = {
     "instruction": "A group of historians are conducting a debate on the factors that led to the fall of the Roman Empire. One historian argues that the primary reason for the fall was the constant pressure from barbarian invasions. Another one believes it was because of economic troubles and overreliance on slave labor. A third one suggests it was due to moral decay and political instability. Each historian needs to provide evidence to support their claims. How would the historian arguing for economic troubles and overreliance on slave labor present their case?",

@@ -2,8 +2,9 @@ from prometheus_eval import PrometheusEval
 from prometheus_eval.prompts import ABSOLUTE_PROMPT, SCORE_RUBRIC_TEMPLATE
 from prometheus_eval.vllm import VLLM
 
+model = VLLM(model="prometheus-eval/prometheus-7b-v2.0")
 judge = PrometheusEval(
-    model_id="prometheus-eval/prometheus-7b-v2.0",
+    model=model,
     absolute_grade_template=ABSOLUTE_PROMPT,
 )
 
