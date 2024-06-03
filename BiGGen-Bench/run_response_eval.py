@@ -30,6 +30,7 @@ from src.prompts import (
 
 DEBUG = True
 
+
 def prepare_inputs(tokenizer, records, model_name: str, is_refine=False, mode="bgb"):
     inputs = []
 
@@ -48,7 +49,7 @@ def prepare_inputs(tokenizer, records, model_name: str, is_refine=False, mode="b
                     orig_reference_answer=record["reference_answer"],
                 ).strip()
             else:
-                    content = ABSOLUTE_PROMPT.format(
+                content = ABSOLUTE_PROMPT.format(
                     orig_response=orig_response,
                     orig_instruction=orig_instruction,
                     score_rubric=score_rubric,
@@ -61,8 +62,10 @@ def prepare_inputs(tokenizer, records, model_name: str, is_refine=False, mode="b
                 orig_reference_answer=record["reference_answer"],
             ).strip()
         elif mode == "flask":
-            flask_score_rubric = get_flask_rubric(record['capability'], record['task'])
-            flask_score_rubric_str = SCORE_RUBRIC_TEMPLATE.format(**flask_score_rubric).strip()
+            flask_score_rubric = get_flask_rubric(record["capability"], record["task"])
+            flask_score_rubric_str = SCORE_RUBRIC_TEMPLATE.format(
+                **flask_score_rubric
+            ).strip()
             if is_refine:
                 content = ABS_REFINE_PROMPT.format(
                     orig_response=orig_response,
@@ -80,7 +83,9 @@ def prepare_inputs(tokenizer, records, model_name: str, is_refine=False, mode="b
         else:
             raise NotImplementedError(f"Mode {mode} not implemented")
 
-        import pdb; pdb.set_trace()
+        import pdb
+
+        pdb.set_trace()
 
         if "system" in tokenizer.chat_template:
             messages = [
@@ -112,9 +117,9 @@ def main(eval_model_id: str, num_gpus: int, shuffle: bool, mode: str):
         "prometheus-eval/prometheus-8x7b-v2.0-bgb": "responses_prometheus_8x7b_bgb_eval",
     }
     folder_name = folder_name_dict[eval_model_id]
-    
+
     assert mode in ["bgb", "mt-bench", "flask"]
-    
+
     if mode != "bgb":
         folder_name = folder_name + "_" + mode
 
@@ -123,12 +128,11 @@ def main(eval_model_id: str, num_gpus: int, shuffle: bool, mode: str):
     all_models = get_all_model_list()
 
     tokenizer = AutoTokenizer.from_pretrained(eval_model_id, cache_dir=CACHE_DIR)
-    
+
     if debug:
         model = None
     else:
         model = VLLM(eval_model_id, num_gpus=num_gpus, cache_dir=CACHE_DIR)
-    
 
     if shuffle:
         random.shuffle(all_models)
@@ -143,7 +147,7 @@ def main(eval_model_id: str, num_gpus: int, shuffle: bool, mode: str):
             / f"{folder_name}"
             / f"{response_model_name}_evaluation.json"
         )
-        
+
         if mode != "bgb":
             if response_model_name not in [
                 "Llama-2-13b-hf",
@@ -152,7 +156,6 @@ def main(eval_model_id: str, num_gpus: int, shuffle: bool, mode: str):
                 "gpt-3.5-turbo-0125",
             ]:
                 continue
-
 
         print(f"Model: {response_model_name}")
         if os.path.exists(response_file_path):
@@ -187,7 +190,9 @@ def main(eval_model_id: str, num_gpus: int, shuffle: bool, mode: str):
         inputs = []
         for uid in filtered_uids:
             record = response_data_dict[uid]
-            inputs.append(prepare_inputs(tokenizer, [record], eval_model_id, mode=mode)[0])
+            inputs.append(
+                prepare_inputs(tokenizer, [record], eval_model_id, mode=mode)[0]
+            )
 
         feedbacks, scores = batch_completions_with_retries(
             model, inputs, mode="absolute", debug=debug

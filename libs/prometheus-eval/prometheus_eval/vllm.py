@@ -11,7 +11,10 @@ class VLLMError(Exception):
 try:
     from vllm import LLM, SamplingParams
 except ImportError as e:
-    raise VLLMError(status_code=1, message="Failed to import 'vllm' package. Make sure it is installed correctly.") from e
+    raise VLLMError(
+        status_code=1,
+        message="Failed to import 'vllm' package. Make sure it is installed correctly.",
+    ) from e
 
 
 class VLLM:
@@ -27,7 +30,7 @@ class VLLM:
             model=self.name,
             **vllm_kwargs,
         )
-    
+
     def validate_vllm(self):
         return True
 

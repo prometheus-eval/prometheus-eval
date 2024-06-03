@@ -175,7 +175,7 @@ class PrometheusEval:
             ]
             input_ = self._get_conversation_prompt(messages)
             inputs.append(input_)
-        
+
         feedbacks, scores = batch_completions_with_retries(
             self.model,
             inputs,

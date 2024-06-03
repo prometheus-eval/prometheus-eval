@@ -250,8 +250,10 @@ def prepare_inputs(
                 orig_reference_answer=record["reference_answer"],
             ).strip()
         elif mode == "flask":
-            flask_score_rubric = get_flask_rubric(record['capability'], record['task'])
-            flask_score_rubric_str = SCORE_RUBRIC_TEMPLATE.format(**flask_score_rubric).strip()
+            flask_score_rubric = get_flask_rubric(record["capability"], record["task"])
+            flask_score_rubric_str = SCORE_RUBRIC_TEMPLATE.format(
+                **flask_score_rubric
+            ).strip()
             if is_refine:
                 content = ABS_REFINE_PROMPT_GPT4.format(
                     orig_response=orig_response,
@@ -380,13 +382,13 @@ async def main(model_name: str, rerun_invalid: bool = False, mode: str = "bgb"):
             record = response_data_dict[uid]
             # import pdb; pdb.set_trace()
             if "llm_judge" in record["id"]:
-                input_str = prepare_inputs(None, [record], model_name, is_refine=True, mode=mode)[
-                    0
-                ]
+                input_str = prepare_inputs(
+                    None, [record], model_name, is_refine=True, mode=mode
+                )[0]
             else:
-                input_str = prepare_inputs(None, [record], model_name, is_refine=False, mode=mode)[
-                    0
-                ]
+                input_str = prepare_inputs(
+                    None, [record], model_name, is_refine=False, mode=mode
+                )[0]
             inputs.append(input_str)
 
         if len(inputs) > 0:
@@ -417,7 +419,7 @@ async def main(model_name: str, rerun_invalid: bool = False, mode: str = "bgb"):
 
         with eval_file_path.open("w", encoding="utf-8") as file:
             file.write(json.dumps(eval_data_dict, indent=4))
-        
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run model inference.")

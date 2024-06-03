@@ -1,6 +1,6 @@
 import asyncio
 from aiolimiter import AsyncLimiter
-from litellm import acompletion
+from litellm import acompletion, completion
 from tqdm.asyncio import tqdm_asyncio
 from tqdm.auto import tqdm
 
@@ -14,11 +14,11 @@ class LiteLLM:
         self.limiter = AsyncLimiter(
             self.requests_per_minute, 60
         )  # Set up the rate limiter
-    
+
     def validate_litellm(self):
         return True
 
-    async def get_completion_text_async(self, message, **kwargs):
+    async def _get_completion_text_async(self, message, **kwargs):
         """Fetch completion text for a single message asynchronously."""
         async with self.limiter:  # Apply rate limiting
             try:
@@ -32,7 +32,7 @@ class LiteLLM:
                 print(f"Error during LiteLLM API call: {e}")
                 return ""
 
-    async def completions(self, messages, **kwargs):
+    async def acompletions(self, messages, **kwargs):
         """Generate completions for a list of messages using asynchronous batch processing."""
         assert isinstance(messages, list)  # Ensure messages are provided as a list
         assert all(
@@ -57,6 +57,26 @@ class LiteLLM:
                 ]
             )
             result_responses.extend(batch_responses)
+
+        return result_responses
+
+    def completions(self, messages, **kwargs):
+        """Generate completions for a list of messages using synchronous batch processing."""
+        assert isinstance(messages, list)  # Ensure messages are provided as a list
+        assert all(
+            isinstance(msg, dict) and set(msg.keys()) == {"role", "content"}
+            for msg in messages
+        ), "Message format error."
+
+        result_responses = []
+
+        for message in tqdm(messages):
+            assert isinstance(message, dict) and set(message.keys()) == {
+                "role",
+                "content",
+            }
+            response = completion(model=self.name, messages=message, **kwargs)
+            result_responses.append(response.choices[0].message.content.strip())
 
         return result_responses
 

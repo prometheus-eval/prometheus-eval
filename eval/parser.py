@@ -1,5 +1,6 @@
 import re
 
+
 def _parse_output_absolute(output):
     # Extended pattern to match more variations of result presentation
     # pattern = r"""
