@@ -64,15 +64,14 @@ def main(args):
     }
 
     # TODO: Support changing and setting the model parameters from the command line
-    # if model_name.endswith("AWQ"):
-    #     model = VLLM(model_name, tensor_parallel_size=1,  quantization="AWQ")
-    # elif model_name.endswith("GPTQ"):
-    #     model = VLLM(model_name, tensor_parallel_size=1,  quantization="GPTQ")
-    # else:
-    #     model = VLLM(model_name, tensor_parallel_size=1)
+    if model_name.endswith("AWQ"):
+        model = VLLM(model_name, tensor_parallel_size=1,  quantization="AWQ")
+    elif model_name.endswith("GPTQ"):
+        model = VLLM(model_name, tensor_parallel_size=1,  quantization="GPTQ")
+    else:
+        model = VLLM(model_name, tensor_parallel_size=1)
 
-    # outputs = model.completions(inputs, **params)
-    outputs = dummy_completions(inputs, **params)
+    outputs = model.completions(inputs, **params)
 
     result = {}
 
