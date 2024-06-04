@@ -8,8 +8,6 @@ import warnings
 from pathlib import Path
 
 import tiktoken
-from tqdm import tqdm
-
 from src.data_loader import BiGGenBenchLoader
 from src.llms.openai_utils import OpenAILLM
 from src.llms.openrouter_utils import LiteLLM
@@ -24,10 +22,11 @@ from src.prompts import (
     ABS_REFINE_PROMPT_GPT4,
     ABS_SYSTEM_PROMPT,
     ABSOLUTE_PROMPT_GPT4,
-    SCORE_RUBRIC_TEMPLATE,
     MT_BENCH_PROMPT,
+    SCORE_RUBRIC_TEMPLATE,
     get_flask_rubric,
 )
+from tqdm import tqdm
 
 DEBUG = False
 DUMMY = False

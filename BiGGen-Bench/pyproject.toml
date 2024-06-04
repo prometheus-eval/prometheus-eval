@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.11"
 fastchat = "^0.1.0"
 datasets = "^2.19.2"
+vllm = "^0.4.3"
+litellm = "^1.40.0"
+aiolimiter = "^1.1.0"
 
 
 [tool.poetry.group.dev.dependencies]
