@@ -3,62 +3,87 @@ import json
 import os
 from pathlib import Path
 
+import pandas as pd
 from datasets import load_dataset
-from dotenv import dotenv_values
-from prometheus_eval.vllm import VLLM
 from transformers import AutoTokenizer
 
-# from ..libs.prometheus_eval.prometheus_eval.vllm import VLLM
+from urial_conversation import get_conv_template
+
+# Run `source init.sh` to correctly import prometheus_eval
+from prometheus_eval.vllm import VLLM
 
 
-def apply_template_hf(tokenizer, records: list, model_name: str):
-    inputs = []
+def read_text(file_path):
+    try:
+        # Open the file in read mode
+        with open(file_path, 'r') as file:
+            # Read the entire content of the file
+            content = file.read()
+        return content
+    except FileNotFoundError:
+        return "The file was not found."
+    except Exception as e:
+        return f"An error occurred: {str(e)}"
 
-    for record in records:
-        if tokenizer.chat_template is not None and "system" in tokenizer.chat_template:
-            messages = [
-                {"role": "system", "content": record["system_prompt"]},
-                {"role": "user", "content": record["input"]},
-            ]
+
+URIAL_PROMPTS = {
+    "inst_1k_v4": read_text("urial_prompts/inst_1k_v4.txt"),
+    "inst_1k_v4.help": read_text("urial_prompts/inst_1k_v4.help.txt"),
+}
+
+
+def apply_template_base(record):
+    
+    if record['capability'] == 'safety':
+        urial_version = "inst_1k_v4"
+    else:
+        urial_version = "inst_1k_v4.help"
+    
+    urial_prompt = URIAL_PROMPTS[urial_version]
+
+    def map_to_conv(urial_version=None):
+        if "inst_help_v5" in urial_version:
+            conv = get_conv_template("urial_v5")
+        elif "inst_help_v6" in urial_version:
+            conv = get_conv_template("urial_v6")
         else:
-            messages = [
-                {
-                    "role": "user",
-                    "content": record["system_prompt"] + "\n\n" + record["input"],
-                }
-            ]
+            conv = get_conv_template("urial_backticks")
+        conv.set_system_message(urial_prompt)
+        return conv
 
-        input_str = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
-        inputs.append(input_str)
-    return inputs
+    conv = map_to_conv(urial_version)
+    conv.append_message(
+        conv.roles[0], record["system_prompt"] + "\n\n" + record["input"]
+    )
+    conv.append_message(conv.roles[1], None)
+    return conv.get_prompt()
 
 
 def dummy_completions(inputs, **kwargs):
     return ["dummy output"] * len(inputs)
 
 
-def prepare_inputs(tokenizer, records, model_name: str):
-    inputs = apply_template_hf(tokenizer, records, model_name)
-    return inputs
-
-
 def main(args):
-    model_name = args.model_name
-    save_file_path = args.save_file_path
+    model_name: str = args.model_name
+    save_file_path: str = args.save_file_path
 
-    tokenizer = AutoTokenizer.from_pretrained(args.model_name, trust_remote_code=True)
-    dataset = load_dataset("prometheus-eval/BiGGen-Bench")
+    dataset: pd.DataFrame = load_dataset(
+        "prometheus-eval/BiGGen-Bench", split="test"
+    ).to_pandas()
 
-    import pdb
-
-    pdb.set_trace()
-
+    # records: Full data that has all the information of BiGGen-Bench
+    # inputs: Inputs that will be fed to the model
+    records = []
     inputs = []
-    inputs.append(
-        prepare_inputs(tokenizer, [record], model_id, urial_prompts=urial_prompts)[0]
-    )
+    
+
+    for row in dataset.iterrows():
+        record = row[1].to_dict()
+        # Exclude multilingual tasks for base models
+        if record['capability'] == 'multilingual':
+            continue
+        records.append(record)
+        inputs.append(apply_template_base(record))
 
     params = {
         "max_tokens": 2048,
@@ -66,59 +91,47 @@ def main(args):
         "best_of": 1,
         "temperature": 1.0,
         "top_p": 0.9,
+        "use_tqdm": True,
     }
 
-    if "awq" in model_id.lower():
-        model = VLLM(
-            model_id, num_gpus=num_gpus, cache_dir=CACHE_DIR, quantization="AWQ"
-        )
-    elif "gptq" in model_id.lower():
-        model = VLLM(
-            model_id, num_gpus=num_gpus, cache_dir=CACHE_DIR, quantization="GPTQ"
-        )
-    else:
-        model = VLLM(model_id, num_gpus=num_gpus, cache_dir=CACHE_DIR)
+    # TODO: Support changing and setting the model parameters from the command line
+    # if model_name.endswith("AWQ"):
+    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
+    # elif model_name.endswith("GPTQ"):
+    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
+    # else:
+    #     model = VLLM(model_name, tensor_parallel_size=1)
 
-    outputs = model.completions(inputs, **params, use_tqdm=True)
-    for idx, output in enumerate(outputs):
-        if output == "":
-            outputs[idx] = "Too long input."
+    outputs = dummy_completions(inputs, **params)
 
-    # Parsing the output for base models (because of urial prompts)
-    if response_model_type == "base":
-        for idx, output in enumerate(outputs):
-            outputs[idx] = outputs[idx].split("```\n\n# Query:")[0].strip()
+    result = {}
 
-    for idx, uid in enumerate(filtered_uids):
-        response_data_dict[uid] = {
-            "capability": full_data_dict[uid]["capability"],
-            "task": full_data_dict[uid]["task"],
-            "response": outputs[idx].strip(),
-        }
+    for record, output in zip(records, outputs):
+        uid = record["id"]
 
-    response_output_dict = {}
-    for key, val in response_data_dict.items():
-        response_output_dict[key] = {
-            "capability": val["capability"],
-            "task": val["task"],
-            "response": val["response"].strip(),
-        }
+        result[uid] = record.copy()
+        result[uid]["response"] = output.strip()
+        result[uid]["response_model_name"] = model_name
 
-    response_file_path.parent.mkdir(parents=True, exist_ok=True)
-    response_output_dict = dict(sorted(response_output_dict.items()))
+    save_file_path = Path(save_file_path)
+    save_file_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with response_file_path.open("w", encoding="utf-8") as file:
-        file.write(json.dumps(response_output_dict, indent=4))
+    with save_file_path.open("w", encoding="utf-8") as file:
+        file.write(json.dumps(result, indent=4))
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run model inference.")
     parser.add_argument(
-        "--model_name", type=str, required=True, help="Name of the model to evaluate"
+        "--model_name",
+        type=str,
+        required=True,
+        help="Name of the model to evaluate. Has to be a valid Hugging Face model name.",
     )
     parser.add_argument(
         "--save_file_path", type=str, required=True, help="Path to save the output file"
     )
-    args = parser.parse_args()
 
+    args = parser.parse_args()
+    
     main(args)

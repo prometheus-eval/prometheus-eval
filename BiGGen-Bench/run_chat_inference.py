@@ -48,6 +48,8 @@ def main(args):
         "prometheus-eval/BiGGen-Bench", split="test"
     ).to_pandas()
 
+    # records: Full data that has all the information of BiGGen-Bench
+    # inputs: Inputs that will be fed to the model
     records = []
     inputs = []
 

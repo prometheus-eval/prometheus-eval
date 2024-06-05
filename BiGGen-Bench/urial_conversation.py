@@ -1,5 +1,5 @@
 """
-Modified from: https://github.com/lm-sys/FastChat/blob/main/fastchat/conversation.py
+Modified from: https://github.com/Re-Align/URIAL/blob/main/src/fastchat_conversation.py
 Conversation prompt templates.
 """
 
