@@ -149,10 +149,14 @@ class PrometheusEval:
         # If rubric is a list, check its length matches the length of instructions
         if isinstance(rubric, list) and len(rubric) != len(instructions):
             raise ValueError("Length of rubric must match the length of instructions")
-        else:
+        elif isinstance(rubric, list) and len(rubric) == len(instructions):
+            pass
+        elif isinstance(rubric, str):
             rubric = [rubric] * len(
                 instructions
             )  # Apply the same rubric to all if it's not a list
+        else:
+            raise ValueError("Rubric must be a string or a list of strings")
 
         # Handle reference answers
         if isinstance(reference_answers, list) and len(reference_answers) != len(
@@ -161,6 +165,8 @@ class PrometheusEval:
             raise ValueError(
                 "Length of reference answers must match the length of instructions"
             )
+        elif isinstance(reference_answers, list):
+            pass
         else:
             reference_answers = [None] * len(
                 instructions
@@ -231,8 +237,15 @@ class PrometheusEval:
         # Handle rubric and reference answers similar to absolute_grade
         if isinstance(rubric, list) and len(rubric) != len(instructions):
             raise ValueError("Length of rubric must match the length of instructions")
+        elif isinstance(rubric, list) and len(rubric) == len(instructions):
+            pass
+        elif isinstance(rubric, str):
+            rubric = [rubric] * len(
+                instructions
+            )  # Apply the same rubric to all if it's not a list
         else:
-            rubric = [rubric] * len(instructions)
+            raise ValueError("Rubric must be a string or a list of strings")
+
 
         if isinstance(reference_answers, list) and len(reference_answers) != len(
             instructions
@@ -240,6 +253,8 @@ class PrometheusEval:
             raise ValueError(
                 "Length of reference answers must match the length of instructions"
             )
+        elif isinstance(reference_answers, list):
+            pass
         else:
             reference_answers = [None] * len(instructions)
 
