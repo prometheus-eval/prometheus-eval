@@ -7,9 +7,10 @@ from tqdm.auto import tqdm
 
 
 class LiteLLM:
-    def __init__(self, name):
+    def __init__(self, name, api_base: str = None):
         """Initialize the LiteLLM with basic configurations."""
         self.name = name
+        self.api_base = api_base
 
     def validate_litellm(self):
         return True
@@ -34,14 +35,14 @@ class LiteLLM:
                 "role",
                 "content",
             }
-            response = completion(model=self.name, messages=message, **kwargs)
+            response = completion(model=self.name, api_base=self.api_base, messages=message, **kwargs)
             result_responses.append(response.choices[0].message.content.strip())
 
         return result_responses
 
 
 class AsyncLiteLLM:
-    def __init__(self, name, batch_size: int = 100, requests_per_minute: int = 100):
+    def __init__(self, name, batch_size: int = 100, requests_per_minute: int = 100, api_base: str = None):
         """Initialize the LiteLLM with basic configurations."""
         self.name = name
         self.batch_size = 100  # Define batch size for batch processing
@@ -58,7 +59,7 @@ class AsyncLiteLLM:
         async with self.limiter:  # Apply rate limiting
             try:
                 completion = await acompletion(
-                    model=self.name, messages=message, request_timeout=60
+                    model=self.name, api_base=self.api_base, messages=message, request_timeout=60
                 )
                 return completion.choices[
                     0

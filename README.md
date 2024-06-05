@@ -30,30 +30,59 @@
     - It achieves at least 80% of the evaluation statistics or performances of Prometheus 2 (8x7B) 
     - It requires only 16 GB of VRAM, making it suitable for running on consumer GPUs.
 
+## 🔧 Installation
+
+Installation with pip:
+
+```shell
+pip install prometheus-eval
+```
+
+Prometheus-Eval supports local inference through `vllm` and inference through LLM APIs with the help of `litellm`. 
+
+### Local Inference
+Install `vllm` if you want to run Prometheus in your local environment.
+
+```shell
+pip install vllm
+```
+
+### LLM APIs
+
+If you're interested in:
+1. Utilizing the Prometheus interface through the VLLM endpoint, Huggingface TGI, or other platforms
+2. Leveraging more powerful evaluator LLMs such as GPT-4
+
+You can also take advantage of Prometheus-Eval! For installation details for various providers, please refer to the [LiteLLM Provider Docs](https://docs.litellm.ai/docs/providers).
+
+
+```python
+from prometheus_eval.litellm import LiteLLM, AsyncLiteLLM
+
+model = LiteLLM('openai/prometheus-eval/prometheus-7b-v2.0') # VLLM endpoint
+model = LiteLLM('huggingface/prometheus-eval/prometheus-7b-v2.0') # Huggingface TGI
+model = AsyncLiteLLM('gpt-4-turbo', requests_per_minute=100) # GPT-4 API (async generation considering rate limit)
+
+judge = PrometheusEval(model=model)
+```
+
 
 ## ⏩ Quick Start
 
 *Note*: `prometheus-eval` library is currently in the beta stage. If you encounter any issues, please let us know by creating an issue on the repository.
 
 
-Installation with pip:
-
-- (Optional) We encourage you to install [flash attention](https://github.com/Dao-AILab/flash-attention) for efficient inference.
-
-```shell
-pip install flash-attn --no-build-isolation
-pip install prometheus-eval
-```
-
 > **With `prometheus-eval`, evaluating *any* instruction and response pair is as simple as:**
 
 ```python
 # Absolute Grading: Outputs score of 1 to 5
 
+from prometheus_eval.vllm import VLLM
 from prometheus_eval import PrometheusEval
 from prometheus_eval.prompts import ABSOLUTE_PROMPT, SCORE_RUBRIC_TEMPLATE
 
-judge = PrometheusEval(model_id="prometheus-eval/prometheus-7b-v2.0", absolute_grade_template=ABSOLUTE_PROMPT)
+model = VLLM(model="prometheus-eval/prometheus-7b-v2.0")
+judge = PrometheusEval(model=model, absolute_grade_template=ABSOLUTE_PROMPT)
 
 instruction = "Struggling with a recent break-up, a person opens up about the intense feelings of loneliness and sadness. They ask for advice on how to cope with the heartbreak and move forward in life.",
 response = "I'm genuinely sorry to hear about your break-up. This can be an immensely challenging time filled with intense emotions of loneliness and sorrow. It's important to remember that it's normal to experience these feelings; they are a testament to the deep connection you once had. Firstly, don't hesitate to embrace your emotions, let them flow freely. Ignoring them often complicates the healing process. It's natural to be upset, to shed tears, or to feel angry. This is all part of the journey towards healing. Self-care can be a healing balm in these tough times. This could mean indulging in your favourite book, journaling your thoughts, or even just a quiet cup of tea. Small acts of kindness to oneself can significantly improve your emotional well-being. Also, don't isolate yourself. Surround yourself with supportive individuals who can offer comfort and understanding. This might include friends, family, or even a mental health professional. They can provide much-needed emotional support and strategies to help you cope. Lastly, remember there's no set timeline for healing. It's different for everyone and it's okay to take as long as you need. Keep your focus on the future and the potential it holds. Though it may not seem possible now, you will emerge stronger from this experience. It's okay to ask for help, it's okay to grieve, and it's okay to take it one day at a time. You're not alone in this journey, and there are people ready and willing to help. It's okay to heal at your own pace.",
@@ -89,9 +118,11 @@ print("Score:", score)
 ```python
 # Relative Grading: Outputs A or B
 
+from prometheus_eval.vllm import VLLM
 from prometheus_eval import PrometheusEval
 from prometheus_eval.prompts import RELATIVE_PROMPT
 
+model = VLLM(model="prometheus-eval/prometheus-7b-v2.0")
 judge = PrometheusEval(model_id="prometheus-eval/prometheus-7b-v2.0", relative_grade_template=RELATIVE_PROMPT)
 
 
