@@ -9,6 +9,5 @@ from .prompts import (
     get_prompt_template,
     load_rubric,
 )
-from .vllm import VLLM
 
-__version__ = "0.1.13"
+__version__ = "0.1.14"

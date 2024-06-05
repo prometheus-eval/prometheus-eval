@@ -62,6 +62,7 @@ from prometheus_eval.litellm import LiteLLM, AsyncLiteLLM
 model = LiteLLM('openai/prometheus-eval/prometheus-7b-v2.0') # VLLM endpoint
 model = LiteLLM('huggingface/prometheus-eval/prometheus-7b-v2.0') # Huggingface TGI
 model = AsyncLiteLLM('gpt-4-turbo', requests_per_minute=100) # GPT-4 API (async generation considering rate limit)
+# And so much more!
 
 judge = PrometheusEval(model=model)
 ```
