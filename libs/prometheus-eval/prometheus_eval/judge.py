@@ -123,24 +123,8 @@ class PrometheusEval:
             params=params,
         )
         return feedbacks[0], scores[0]
-
-    def absolute_grade(
-        self,
-        *,
-        instructions: List[str],
-        responses: List[str],
-        rubric: List[str] | str,
-        reference_answers: List[str] = None,
-        params: Dict[str, Any] = {},
-    ) -> Tuple[List[str], List[int]]:
-        """
-        Grades a batch of responses absolutely based on the provided instructions and responses.
-
-        :param instructions: List of instructions corresponding to each response.
-        :param responses: List of responses to grade.
-        :param params: Parameters for the model completion requests. Refer to the vllm SamplingParmas class.
-        :return: A tuple containing lists of feedbacks and scores.
-        """
+    
+    def _check_inputs(self, instructions, responses, rubric, reference_answers):
         if len(instructions) != len(responses):
             raise ValueError(
                 "Length of instructions must match the length of responses"
@@ -171,7 +155,29 @@ class PrometheusEval:
             reference_answers = [None] * len(
                 instructions
             )  # Default to None if not provided
+        
+        return instructions, responses, rubric, reference_answers
 
+    def absolute_grade(
+        self,
+        *,
+        instructions: List[str],
+        responses: List[str],
+        rubric: List[str] | str,
+        reference_answers: List[str] = None,
+        params: Dict[str, Any] = {},
+    ) -> Tuple[List[str], List[int]]:
+        """
+        Grades a batch of responses absolutely based on the provided instructions and responses.
+
+        :param instructions: List of instructions corresponding to each response.
+        :param responses: List of responses to grade.
+        :param params: Parameters for the model completion requests. Refer to the vllm SamplingParmas class.
+        :return: A tuple containing lists of feedbacks and scores.
+        """
+        
+        instructions, responses, rubric, reference_answers = self._check_inputs(instructions, responses, rubric, reference_answers)
+        
         inputs = []
         for idx, (instruction, response) in enumerate(zip(instructions, responses)):
             rubric_ = rubric[idx]
@@ -186,7 +192,10 @@ class PrometheusEval:
                 {"role": "system", "content": ABS_SYSTEM_PROMPT},
                 {"role": "user", "content": content},
             ]
-            input_ = self._get_conversation_prompt(messages)
+            if hasattr(self.model, "validate_vllm"):
+                input_ = self._get_conversation_prompt(messages)
+            else:
+                input_ = messages
             inputs.append(input_)
 
         if self.is_async:
@@ -227,36 +236,8 @@ class PrometheusEval:
         :param params: Additional parameters for the model completion requests. Refer to the vllm SamplingParmas class.
         :return: A tuple containing lists of feedbacks and scores.
         """
-        if len(instructions) != len(responses_A) or len(responses_A) != len(
-            responses_B
-        ):
-            raise ValueError(
-                "Length of instructions, responses_A, and responses_B must all match"
-            )
-
-        # Handle rubric and reference answers similar to absolute_grade
-        if isinstance(rubric, list) and len(rubric) != len(instructions):
-            raise ValueError("Length of rubric must match the length of instructions")
-        elif isinstance(rubric, list) and len(rubric) == len(instructions):
-            pass
-        elif isinstance(rubric, str):
-            rubric = [rubric] * len(
-                instructions
-            )  # Apply the same rubric to all if it's not a list
-        else:
-            raise ValueError("Rubric must be a string or a list of strings")
-
-
-        if isinstance(reference_answers, list) and len(reference_answers) != len(
-            instructions
-        ):
-            raise ValueError(
-                "Length of reference answers must match the length of instructions"
-            )
-        elif isinstance(reference_answers, list):
-            pass
-        else:
-            reference_answers = [None] * len(instructions)
+        
+        instructions, responses, rubric, reference_answers = self._check_inputs(instructions, responses, rubric, reference_answers)
 
         inputs = []
         for idx, (instruction, response_a, response_b) in enumerate(
@@ -275,7 +256,10 @@ class PrometheusEval:
                 {"role": "system", "content": REL_SYSTEM_PROMPT},
                 {"role": "user", "content": content},
             ]
-            input_ = self._get_conversation_prompt(messages)
+            if hasattr(self.model, "validate_vllm"):
+                input_ = self._get_conversation_prompt(messages)
+            else:
+                input_ = messages
             inputs.append(input_)
 
         if self.is_async:

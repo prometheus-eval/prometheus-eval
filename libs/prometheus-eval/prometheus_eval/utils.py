@@ -94,7 +94,7 @@ async def async_batch_completions_with_retries(
     model,
     inputs,
     mode: str,
-    max_retries: int = 10,
+    max_retries: int = 5,
     params: dict = None,
 ):
     # Override default params

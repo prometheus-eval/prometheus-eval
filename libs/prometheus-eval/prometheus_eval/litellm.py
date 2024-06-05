@@ -16,10 +16,14 @@ class LiteLLM:
 
     def completions(self, messages, **kwargs):
         """Generate completions for a list of messages using synchronous batch processing."""
+        # messages: List of list of dictionaries containing messages
         assert isinstance(messages, list)  # Ensure messages are provided as a list
         assert all(
+            isinstance(message, list) for message in messages 
+        ), "Message format error."
+        assert all(
             isinstance(msg, dict) and set(msg.keys()) == {"role", "content"}
-            for msg in messages
+            for message in messages for msg in message
         ), "Message format error."
 
         result_responses = []
@@ -66,8 +70,11 @@ class AsyncLiteLLM:
         """Generate completions for a list of messages using asynchronous batch processing."""
         assert isinstance(messages, list)  # Ensure messages are provided as a list
         assert all(
+            isinstance(message, list) for message in messages 
+        ), "Message format error."
+        assert all(
             isinstance(msg, dict) and set(msg.keys()) == {"role", "content"}
-            for msg in messages
+            for message in messages for msg in message
         ), "Message format error."
 
         result_responses = []
@@ -82,7 +89,7 @@ class AsyncLiteLLM:
             # Fetch responses for all prompts in the current batch asynchronously
             batch_responses = await tqdm_asyncio.gather(
                 *[
-                    self.get_completion_text_async(prompt, **kwargs)
+                    self._get_completion_text_async(prompt, **kwargs)
                     for prompt in batch_prompts
                 ]
             )
