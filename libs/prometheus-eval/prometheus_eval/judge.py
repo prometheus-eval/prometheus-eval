@@ -1,3 +1,4 @@
+import warnings
 from typing import Any, Dict, List, Tuple, Union
 
 from fastchat.conversation import get_conv_template
@@ -9,11 +10,11 @@ from .prompts import (
     RELATIVE_PROMPT_WO_REF,
 )
 from .utils import batch_completions_with_retries
-import warnings
 
 # TODO: Add BaseLLM class for model type
 # TODO: Add a general parameter class for all types of models
 # TODO: Add support for AsyncLiteLLM
+
 
 class PrometheusEval:
     def __init__(

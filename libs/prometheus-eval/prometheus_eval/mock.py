@@ -1,5 +1,5 @@
-from typing import List, Union
 import asyncio
+from typing import List, Union
 
 
 class MockLLM:
@@ -21,7 +21,7 @@ class MockLLM:
             results = ["Hello [RESULT] 5"] * len(prompts)
         elif self.mode == "relative":
             results = ["Hello [RESULT] A"] * len(prompts)
-        else: # echo back the prompt
+        else:  # echo back the prompt
             results = ["Hello [RESULT] 5"] * len(prompts)
 
         return results
