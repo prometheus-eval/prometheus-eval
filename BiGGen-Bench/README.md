@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/prometheus-eval/prometheus-eval/bgb/BiGGen-Bench/assets/logo.png" alt="BiGGen-Bench-Logo" style="width: 15%; display: block; margin: auto;">
+  <img src="https://raw.githubusercontent.com/prometheus-eval/prometheus-eval/feat/bgb/BiGGen-Bench/assets/logo.png" alt="BiGGen-Bench-Logo" style="width: 15%; display: block; margin: auto;">
 </p>
 
 <h1 align="center"> BiGGen-Bench </h1>
