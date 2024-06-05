@@ -9,7 +9,7 @@ import pandas as pd
 from datasets import load_dataset
 from dotenv import dotenv_values, load_dotenv
 
-# Run `source init.sh` to correctly import prometheus_eval
+# Run `source init.sh` to use local prometheus_eval
 from prometheus_eval.mock import MockLLM
 from prometheus_eval.vllm import VLLM
 from transformers import AutoTokenizer

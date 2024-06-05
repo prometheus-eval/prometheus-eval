@@ -1,8 +1,18 @@
-# 🌟 BiGGen-Bench 🚀
+<p align="center">
+  <img src="https://raw.githubusercontent.com/prometheus-eval/prometheus-eval/bgb/assets/logo.png" alt="BiGGen-Bench-Logo" style="width: 15%; display: block; margin: auto;">
+</p>
+
+<h1 align="center"> 🄱🄸🄶🄶🄴🄽-🄱🄴🄽🄲🄷
+</h1>
+
+<a href="https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-ffd21e" alt="Hugging Face Datasets"></a>
+<a href="https://huggingface.co/prometheus-eval/prometheus-bgb-8x7b-v2.0"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-ff9d00" alt="Hugging Face Model"></a>
+<a href="https://huggingface.co/spaces/prometheus-eval/BiGGen-Bench-Leaderboard"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-orange" alt="Hugging Face Model"></a>
+
 
 BiGGen-Bench is a dedicated benchmarking platform designed to evaluate the nuanced capabilities of Large Language Models across a variety of complex and diverse tasks.
 
-## Features
+## 🚀 Features
 
 - **Evaluation Scope**: Covers nine key capabilities of LLMs across 77 tasks, with 765 unique instances tailored to test specific aspects of model performance.
 - **Scoring System**: Utilizes a detailed scoring rubric from 1 to 5, reflecting a range of outcomes based on instance-specific criteria closely aligned with the nuanced requirements of each task.
