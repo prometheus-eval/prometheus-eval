@@ -1,3 +1,4 @@
+import asyncio
 import warnings
 from typing import Any, Dict, List, Tuple, Union
 
@@ -9,11 +10,10 @@ from .prompts import (
     REL_SYSTEM_PROMPT,
     RELATIVE_PROMPT_WO_REF,
 )
-from .utils import batch_completions_with_retries
+from .utils import async_batch_completions_with_retries, batch_completions_with_retries
 
 # TODO: Add BaseLLM class for model type
 # TODO: Add a general parameter class for all types of models
-# TODO: Add support for AsyncLiteLLM
 
 
 class PrometheusEval:
@@ -23,12 +23,20 @@ class PrometheusEval:
         absolute_grade_template: str = ABSOLUTE_PROMPT_WO_REF,
         relative_grade_template: str = RELATIVE_PROMPT_WO_REF,
     ):
+        self.is_async = False  # Flag to indicate if the model is asynchronous
+
         if hasattr(model, "validate_vllm"):
             from .vllm import VLLM
         elif hasattr(model, "validate_litellm"):
-            from .litellm import LiteLLM
+            from .litellm import AsyncLiteLLM, LiteLLM
+
+            if isinstance(model, AsyncLiteLLM):
+                self.is_async = True
         elif hasattr(model, "validate_mockllm"):
-            from .mock import MockLLM
+            from .mock import AsyncMockLLM, MockLLM
+
+            if isinstance(model, AsyncMockLLM):
+                self.is_async = True
         else:
             raise ValueError("Model does not have a valid LLM interface")
 
@@ -178,12 +186,22 @@ class PrometheusEval:
             input_ = self._get_conversation_prompt(messages)
             inputs.append(input_)
 
-        feedbacks, scores = batch_completions_with_retries(
-            self.model,
-            inputs,
-            mode="absolute",
-            params=params,
-        )
+        if self.is_async:
+            feedbacks, scores = asyncio.run(
+                async_batch_completions_with_retries(
+                    self.model,
+                    inputs,
+                    mode="absolute",
+                    params=params,
+                )
+            )
+        else:
+            feedbacks, scores = batch_completions_with_retries(
+                self.model,
+                inputs,
+                mode="absolute",
+                params=params,
+            )
 
         return feedbacks, scores
 
@@ -248,11 +266,21 @@ class PrometheusEval:
             input_ = self._get_conversation_prompt(messages)
             inputs.append(input_)
 
-        feedbacks, scores = batch_completions_with_retries(
-            self.model,
-            inputs,
-            mode="relative",
-            params=params,
-        )
+        if self.is_async:
+            feedbacks, scores = asyncio.run(
+                async_batch_completions_with_retries(
+                    self.model,
+                    inputs,
+                    mode="relative",
+                    params=params,
+                )
+            )
+        else:
+            feedbacks, scores = batch_completions_with_retries(
+                self.model,
+                inputs,
+                mode="relative",
+                params=params,
+            )
 
         return feedbacks, scores

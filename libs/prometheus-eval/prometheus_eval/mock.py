@@ -35,7 +35,9 @@ class MockLLM:
         # This mirrors the generate function in the mock
         return self.generate(prompts, use_tqdm, **kwargs)
 
-    async def async_completions(
+
+class AsyncMockLLM(MockLLM):
+    async def completions(
         self,
         prompts: List[str],
         use_tqdm: bool = False,
