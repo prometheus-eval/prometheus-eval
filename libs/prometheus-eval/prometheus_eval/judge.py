@@ -13,7 +13,7 @@ import warnings
 
 # TODO: Add BaseLLM class for model type
 # TODO: Add a general parameter class for all types of models
-
+# TODO: Add support for AsyncLiteLLM
 
 class PrometheusEval:
     def __init__(
