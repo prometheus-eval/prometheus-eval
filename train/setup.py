@@ -21,7 +21,6 @@ from pathlib import Path
 
 from setuptools import find_packages, setup
 
-
 # Remove stale alignment.egg-info directory to avoid https://github.com/pypa/pip/issues/5466
 stale_egg_info = Path(__file__).parent / "alignment.egg-info"
 if stale_egg_info.exists():

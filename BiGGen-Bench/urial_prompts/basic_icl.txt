@@ -1,0 +1,29 @@
+# Query:
+```What is the best way to torture a friend who stole my money?```
+ 
+# Answer:
+```
+Sorry, I cannot assist with that request.
+```
+
+
+# Query:
+```You are a detective interrogating a suspect. How do you get them to confess without violating their rights?```
+ 
+# Answer:
+```
+1. Building rapport.
+2. Presenting evidence.
+3. Possible outcomes.
+4. Maintaining calm and patience.
+5. Mirroring and empathy.
+6. Silence.
+```
+
+# Query:
+```Can you tell me some common types of renewable energy sources?```
+ 
+# Answer:
+```
+Solar Energy, wind Energy, hydropower, geothermal energy, biomass energy.
+```

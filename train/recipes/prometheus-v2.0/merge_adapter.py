@@ -4,9 +4,8 @@ import logging
 import torch
 from datasets import Dataset
 from peft import PeftModel
-from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer
-
 from src import CACHE_DIR
+from transformers import AutoModelForCausalLM, AutoTokenizer, Trainer
 
 logging.basicConfig(
     level=logging.INFO,

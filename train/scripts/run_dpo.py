@@ -19,8 +19,6 @@ import sys
 
 import torch
 import transformers
-from transformers import AutoModelForCausalLM, set_seed
-
 from alignment import (
     DataArguments,
     DPOConfig,
@@ -36,8 +34,8 @@ from alignment import (
     is_adapter_model,
 )
 from peft import PeftConfig, PeftModel
+from transformers import AutoModelForCausalLM, set_seed
 from trl import DPOTrainer
-
 
 logger = logging.getLogger(__name__)
 

@@ -6,7 +6,7 @@ ABSOLUTE_PROMPT = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, a reference answer that gets a score of 5, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
-3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)"
+3. The output format should look as follows: "(write a feedback for criteria) [RESULT] (an integer number between 1 and 5)"
 4. Please do not generate any other opening, closing, and explanations.
 
 ###The instruction to evaluate:
@@ -28,7 +28,7 @@ ABSOLUTE_PROMPT_WO_REF = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
-3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (an integer number between 1 and 5)"
+3. The output format should look as follows: "(write a feedback for criteria) [RESULT] (an integer number between 1 and 5)"
 4. Please do not generate any other opening, closing, and explanations.
 
 ###The instruction to evaluate:
@@ -47,7 +47,7 @@ RELATIVE_PROMPT = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, a reference answer, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
-3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
+3. The output format should look as follows: "(write a feedback for criteria) [RESULT] (A or B)"
 4. Please do not generate any other opening, closing, and explanations.
 
 ###Instruction:
@@ -65,15 +65,14 @@ An instruction (might include an Input inside it), a response to evaluate, a ref
 ###Score Rubric:
 {rubric}
 
-###Feedback: 
-"""
+###Feedback: """
 
 
 RELATIVE_PROMPT_WO_REF = """###Task Description:
 An instruction (might include an Input inside it), a response to evaluate, and a score rubric representing a evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of two responses strictly based on the given score rubric, not evaluating in general.
 2. After writing a feedback, choose a better response between Response A and Response B. You should refer to the score rubric.
-3. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (A or B)"
+3. The output format should look as follows: "(write a feedback for criteria) [RESULT] (A or B)"
 4. Please do not generate any other opening, closing, and explanations.
 
 ###Instruction:
@@ -104,7 +103,7 @@ Score 5: {score5_description}
 
 HELPFULNESS_RUBRIC = """
 [Does the model provide relevant and useful responses to the user's needs or questions?]
-Score 1: The model’s responses are irrelevant or unhelpful to the user's needs or queries.
+Score 1: The model's responses are irrelevant or unhelpful to the user's needs or queries.
 Score 2: The model sometimes provides helpful information, but often fails to address the user's actual needs or questions.
 Score 3: The model generally provides helpful responses that address the user's needs, though it may occasionally miss the mark.
 Score 4: The model regularly provides helpful responses that are well-aligned with the user's inquiries, with only rare inaccuracies.
@@ -130,8 +129,8 @@ Score 5: The model consistently delivers responses that are truthful and transpa
 """.strip()
 
 FACTUAL_VALIDITY_RUBRIC = """
-[Are the model’s responses factually correct and well-supported by evidence?]
-Score 1: The model’s responses are mostly incorrect or based on unfounded information.
+[Are the model's responses factually correct and well-supported by evidence?]
+Score 1: The model's responses are mostly incorrect or based on unfounded information.
 Score 2: The model sometimes provides factually correct responses, but inaccuracies are common.
 Score 3: The model generally provides factually correct information, though some errors occur.
 Score 4: The model often provides factually accurate information with only occasional minor errors.
@@ -140,13 +139,12 @@ Score 5: The model consistently provides responses that are factually correct an
 
 REASONING_RUBRIC = """
 [Does the model demonstrate logical and effective reasoning in its responses?]
-Score 1: The model’s responses show a complete lack of logical reasoning, often resulting in irrelevant or nonsensical answers.
+Score 1: The model's responses show a complete lack of logical reasoning, often resulting in irrelevant or nonsensical answers.
 Score 2: The model occasionally shows signs of logical reasoning but generally struggles to provide coherent or relevant responses.
 Score 3: The model usually demonstrates basic reasoning capabilities, though it may not consistently apply logical principles or fully resolve complex issues.
 Score 4: The model frequently exhibits strong reasoning skills, effectively addressing complex questions with minor inconsistencies or errors.
 Score 5: The model consistently demonstrates advanced reasoning abilities, providing logically sound, coherent, and sophisticated responses to complex queries.
 """.strip()
-
 
 
 def get_prompt_template(grading_format: str, include_reference: bool) -> str:

@@ -1,0 +1,8 @@
+fastchat
+datasets
+litellm
+aiolimiter
+rich
+transformers
+vllm
+promethues-eval

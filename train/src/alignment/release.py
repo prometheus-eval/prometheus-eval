@@ -18,7 +18,6 @@ import re
 
 import packaging.version
 
-
 REPLACE_PATTERNS = {
     "init": (
         re.compile(r'^__version__\s+=\s+"([^"]+)"\s*$', re.MULTILINE),

@@ -15,8 +15,6 @@
 import unittest
 
 import torch
-from transformers import AutoTokenizer
-
 from alignment import (
     DataArguments,
     ModelArguments,
@@ -26,6 +24,7 @@ from alignment import (
     is_adapter_model,
 )
 from alignment.data import DEFAULT_CHAT_TEMPLATE
+from transformers import AutoTokenizer
 
 
 class GetQuantizationConfigTest(unittest.TestCase):

@@ -2,10 +2,9 @@ import os
 from collections import defaultdict
 from pathlib import Path
 
-from tqdm import tqdm
-
 from src.evaluation.run_evaluate import calculate_results
 from src.evaluation.utils import parse_filename
+from tqdm import tqdm
 
 
 def main():

@@ -1,7 +1,6 @@
 # prometheus_eval/__init__.py
 
 from .judge import PrometheusEval
-from .vllm import VLLM
 from .prompts import (
     ABSOLUTE_PROMPT,
     ABSOLUTE_PROMPT_WO_REF,
@@ -11,4 +10,4 @@ from .prompts import (
     load_rubric,
 )
 
-__version__ = "0.1.13"
+__version__ = "0.1.15"

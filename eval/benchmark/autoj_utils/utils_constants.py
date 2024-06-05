@@ -1,6 +1,7 @@
 import json
 import os
 from typing import Union
+
 from tqdm import tqdm
 
 scenario_group = {

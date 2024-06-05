@@ -4,7 +4,6 @@ import re
 import statistics
 
 from scipy.stats import kendalltau, pearsonr, spearmanr
-
 from src.evaluation.benchmark.autoj_utils.pairwise_eval import (
     evaluate_autoj_performance,
 )

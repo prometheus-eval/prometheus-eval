@@ -7,15 +7,14 @@ import warnings
 from collections import defaultdict
 from pathlib import Path
 
-from tqdm import tqdm
-from transformers import AutoTokenizer
-
 from src import CACHE_DIR
 from src.evaluation.benchmark import EvalDataLoader
 from src.evaluation.prompts import ABS_SYSTEM_PROMPT, REL_SYSTEM_PROMPT
 from src.evaluation.prompts import RELATIVE_PROMPT as R2R_PROMPT
 from src.evaluation.utils import calculate_results, get_mode
 from src.llms.vllm_utils import VLLM
+from tqdm import tqdm
+from transformers import AutoTokenizer
 
 DEBUG = False
 
