@@ -1,4 +1,3 @@
-import asyncio
 import warnings
 from typing import Any, Dict, List, Tuple, Union
 
@@ -10,11 +9,11 @@ from .prompts import (
     REL_SYSTEM_PROMPT,
     RELATIVE_PROMPT_WO_REF,
 )
-from .utils import async_batch_completions_with_retries, batch_completions_with_retries
+import asyncio
+from .utils import batch_completions_with_retries, async_batch_completions_with_retries
 
 # TODO: Add BaseLLM class for model type
 # TODO: Add a general parameter class for all types of models
-
 
 class PrometheusEval:
     def __init__(
@@ -28,13 +27,11 @@ class PrometheusEval:
         if hasattr(model, "validate_vllm"):
             from .vllm import VLLM
         elif hasattr(model, "validate_litellm"):
-            from .litellm import AsyncLiteLLM, LiteLLM
-
+            from .litellm import LiteLLM, AsyncLiteLLM
             if isinstance(model, AsyncLiteLLM):
                 self.is_async = True
         elif hasattr(model, "validate_mockllm"):
-            from .mock import AsyncMockLLM, MockLLM
-
+            from .mock import MockLLM, AsyncMockLLM
             if isinstance(model, AsyncMockLLM):
                 self.is_async = True
         else:
@@ -44,11 +41,11 @@ class PrometheusEval:
 
         if "###Reference Answer (Score 5):" not in absolute_grade_template:
             warnings.warn(
-                "Reference answer was not given in Absolute Grading mode. This might lead to nonoptimal performances."
+                "Reference answer was not given in Absolute Grading mode. This might lead to non-optimal performances."
             )
         if "###Reference Answer:" not in relative_grade_template:
             warnings.warn(
-                "Reference answer was not given in Relative Grading mode. This might lead to nonoptimal performances."
+                "Reference answer was not given in Relative Grading mode. This might lead to non-optimal performances."
             )
 
         self.absolute_grade_template = absolute_grade_template
