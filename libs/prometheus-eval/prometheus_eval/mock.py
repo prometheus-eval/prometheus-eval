@@ -3,8 +3,8 @@ from typing import List, Union
 
 
 class MockLLM:
-    def __init__(self, mode: str) -> None:
-        assert mode in ["absolute", "relative"]
+    def __init__(self, mode: str = None) -> None:
+        assert mode in ["absolute", "relative", None]
         self.mode = mode
         print("Mock LLM initialized")
 
@@ -21,8 +21,8 @@ class MockLLM:
             results = ["Hello [RESULT] 5"] * len(prompts)
         elif self.mode == "relative":
             results = ["Hello [RESULT] A"] * len(prompts)
-        else:  # echo back the prompt
-            results = ["Hello [RESULT] 5"] * len(prompts)
+        else:
+            results = ["Hello World!"] * len(prompts)
 
         return results
 
