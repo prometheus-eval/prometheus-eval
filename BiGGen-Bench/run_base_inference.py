@@ -16,7 +16,7 @@ from prometheus_eval.vllm import VLLM
 def read_text(file_path):
     try:
         # Open the file in read mode
-        with open(file_path, 'r') as file:
+        with open(file_path, "r") as file:
             # Read the entire content of the file
             content = file.read()
         return content
@@ -33,12 +33,11 @@ URIAL_PROMPTS = {
 
 
 def apply_template_base(record):
-    
-    if record['capability'] == 'safety':
+    if record["capability"] == "safety":
         urial_version = "inst_1k_v4"
     else:
         urial_version = "inst_1k_v4.help"
-    
+
     urial_prompt = URIAL_PROMPTS[urial_version]
 
     def map_to_conv(urial_version=None):
@@ -65,7 +64,7 @@ def dummy_completions(inputs, **kwargs):
 
 def main(args):
     model_name: str = args.model_name
-    save_file_path: str = args.save_file_path
+    output_file_path: str = args.output_file_path
 
     dataset: pd.DataFrame = load_dataset(
         "prometheus-eval/BiGGen-Bench", split="test"
@@ -75,12 +74,11 @@ def main(args):
     # inputs: Inputs that will be fed to the model
     records = []
     inputs = []
-    
 
     for row in dataset.iterrows():
         record = row[1].to_dict()
         # Exclude multilingual tasks for base models
-        if record['capability'] == 'multilingual':
+        if record["capability"] == "multilingual":
             continue
         records.append(record)
         inputs.append(apply_template_base(record))
@@ -113,10 +111,10 @@ def main(args):
         result[uid]["response"] = output.strip()
         result[uid]["response_model_name"] = model_name
 
-    save_file_path = Path(save_file_path)
-    save_file_path.parent.mkdir(parents=True, exist_ok=True)
+    output_file_path = Path(output_file_path)
+    output_file_path.parent.mkdir(parents=True, exist_ok=True)
 
-    with save_file_path.open("w", encoding="utf-8") as file:
+    with output_file_path.open("w", encoding="utf-8") as file:
         file.write(json.dumps(result, indent=4))
 
 
@@ -129,9 +127,12 @@ if __name__ == "__main__":
         help="Name of the model to evaluate. Has to be a valid Hugging Face model name.",
     )
     parser.add_argument(
-        "--save_file_path", type=str, required=True, help="Path to save the output file"
+        "--output_file_path",
+        type=str,
+        required=True,
+        help="Path to save the output response file",
     )
 
     args = parser.parse_args()
-    
+
     main(args)

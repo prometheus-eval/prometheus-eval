@@ -22,7 +22,6 @@ class PrometheusEval:
         absolute_grade_template: str = ABSOLUTE_PROMPT_WO_REF,
         relative_grade_template: str = RELATIVE_PROMPT_WO_REF,
     ):
-
         if hasattr(model, "validate_vllm"):
             from .vllm import VLLM
         elif hasattr(model, "validate_litellm"):

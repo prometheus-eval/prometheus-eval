@@ -135,9 +135,9 @@ class EvalDataLoader:
         elif self.data_name in ["autoj_pairwise"]:
             for record in self.records:
                 record["orig_instruction"] = record.pop("prompt")
-                record["score_rubric"] = (
-                    AUTOJ_COARSE_SCORE_RUBRIC  # Use the predefined score rubric
-                )
+                record[
+                    "score_rubric"
+                ] = AUTOJ_COARSE_SCORE_RUBRIC  # Use the predefined score rubric
 
                 if record["label"] == 0:
                     record["chosen_instruction"] = ABSOLUTE_PROMPT.format(
