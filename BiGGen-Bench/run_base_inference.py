@@ -3,11 +3,11 @@ import json
 import os
 import warnings
 from pathlib import Path
-from dotenv import load_dotenv, dotenv_values
 
-import pandas as pd
 import huggingface_hub
+import pandas as pd
 from datasets import load_dataset
+from dotenv import dotenv_values, load_dotenv
 
 # Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval.mock import MockLLM
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         required=True,
         help="Path to save the output response file",
     )
-    
+
     hf_token = dotenv_values(".env").get("HF_TOKEN", None)
     if hf_token is not None:
         huggingface_hub.login(token=hf_token)

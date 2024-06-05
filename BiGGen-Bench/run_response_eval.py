@@ -2,8 +2,9 @@ import argparse
 import json
 from pathlib import Path
 
-from dotenv import load_dotenv
 import pandas as pd
+from dotenv import load_dotenv
+
 # Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval import PrometheusEval
 from prometheus_eval.litellm import AsyncLiteLLM, LiteLLM
@@ -100,10 +101,22 @@ def main(args):
             reference_answers.append(record["reference_answer"])
             score_rubric = SCORE_RUBRIC_TEMPLATE.format(**record["score_rubric"])
             rubric.append(score_rubric)
-    
-    assert len(records) == len(instructions) == len(responses) == len(reference_answers) == len(rubric), "Data mismatch"
-    assert len(records_2) == len(instructions_2) == len(responses_2) == len(reference_answers_2) == len(rubric_2), "Data mismatch"
-    
+
+    assert (
+        len(records)
+        == len(instructions)
+        == len(responses)
+        == len(reference_answers)
+        == len(rubric)
+    ), "Data mismatch"
+    assert (
+        len(records_2)
+        == len(instructions_2)
+        == len(responses_2)
+        == len(reference_answers_2)
+        == len(rubric_2)
+    ), "Data mismatch"
+
     if is_prometheus:
         model = VLLM(eval_model_name, gpu_memory_utilization=0.9, max_model_len=8192)
         judge = PrometheusEval(model=model, absolute_grade_template=ABSOLUTE_PROMPT)
@@ -132,7 +145,7 @@ def main(args):
         records.extend(records_2)
         feedbacks.extend(feedbacks_2)
         scores.extend(scores_2)
-        
+
     result = {}
 
     for record, output in zip(records, zip(feedbacks, scores)):

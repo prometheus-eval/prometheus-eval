@@ -3,10 +3,12 @@ import json
 import os
 import warnings
 from pathlib import Path
+
 import huggingface_hub
-from dotenv import dotenv_values
 import pandas as pd
 from datasets import load_dataset
+from dotenv import dotenv_values
+
 # Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval.mock import MockLLM
 from prometheus_eval.vllm import VLLM
@@ -14,7 +16,6 @@ from transformers import AutoTokenizer
 
 
 def apply_template_hf(tokenizer, record):
-
     if tokenizer.chat_template is not None and "system" in tokenizer.chat_template:
         messages = [
             {"role": "system", "content": record["system_prompt"]},
@@ -109,7 +110,7 @@ if __name__ == "__main__":
         required=True,
         help="Path to save the output file",
     )
-    
+
     hf_token = dotenv_values(".env").get("HF_TOKEN", None)
     if hf_token is not None:
         huggingface_hub.login(token=hf_token)

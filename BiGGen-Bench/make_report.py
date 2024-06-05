@@ -1,8 +1,9 @@
-import json
 import argparse
+import json
+
+from rich import box
 from rich.console import Console
 from rich.table import Table
-from rich import box
 
 
 def read_json(file_path):
@@ -17,8 +18,7 @@ def main(args):
     feedback_file_path = args.feedback_file_path
     feedback_data = read_json(feedback_file_path)
     feedback_data_list = list(feedback_data.values())
-    
-    
+
     scores = {
         "grounding": [],
         "instruction_following": [],
@@ -30,16 +30,19 @@ def main(args):
         "tool_usage": [],
         "multilingual": [],
     }
-    
+
     response_model = feedback_data_list[0]["response_model_name"]
     eval_model = feedback_data_list[0]["eval_model_name"]
-    
-    for _, instance in feedback_data.items():    
+
+    for _, instance in feedback_data.items():
         capability = instance["capability"]
         scores[capability].append(instance["score"])
-    
+
     # Initialize table for output
-    table = Table(title=f"Performance Report for {response_model} graded by {eval_model}", box=box.ROUNDED)
+    table = Table(
+        title=f"Performance Report for {response_model} graded by {eval_model}",
+        box=box.ROUNDED,
+    )
     table.add_column("Capability", justify="left", style="cyan", no_wrap=True)
     table.add_column("Average Score", justify="right", style="green")
 
@@ -50,12 +53,16 @@ def main(args):
         else:
             table.add_row(capability, "N/A")
 
-    all_scores = [sum(score_list) / len(score_list) for score_list in scores.values() if score_list]
+    all_scores = [
+        sum(score_list) / len(score_list)
+        for score_list in scores.values()
+        if score_list
+    ]
     overall_average = sum(all_scores) / len(all_scores) if all_scores else 0
     table.add_row("Overall", f"{overall_average:.3f}", style="bold red")
 
     console.print(table)
-    
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Score the model")

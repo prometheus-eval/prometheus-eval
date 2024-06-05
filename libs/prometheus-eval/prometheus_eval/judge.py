@@ -1,3 +1,4 @@
+import asyncio
 import warnings
 from typing import Any, Dict, List, Tuple, Union
 
@@ -9,11 +10,11 @@ from .prompts import (
     REL_SYSTEM_PROMPT,
     RELATIVE_PROMPT_WO_REF,
 )
-import asyncio
-from .utils import batch_completions_with_retries, async_batch_completions_with_retries
+from .utils import async_batch_completions_with_retries, batch_completions_with_retries
 
 # TODO: Add BaseLLM class for model type
 # TODO: Add a general parameter class for all types of models
+
 
 class PrometheusEval:
     def __init__(
@@ -27,11 +28,13 @@ class PrometheusEval:
         if hasattr(model, "validate_vllm"):
             from .vllm import VLLM
         elif hasattr(model, "validate_litellm"):
-            from .litellm import LiteLLM, AsyncLiteLLM
+            from .litellm import AsyncLiteLLM, LiteLLM
+
             if isinstance(model, AsyncLiteLLM):
                 self.is_async = True
         elif hasattr(model, "validate_mockllm"):
-            from .mock import MockLLM, AsyncMockLLM
+            from .mock import AsyncMockLLM, MockLLM
+
             if isinstance(model, AsyncMockLLM):
                 self.is_async = True
         else:
@@ -123,7 +126,7 @@ class PrometheusEval:
             params=params,
         )
         return feedbacks[0], scores[0]
-    
+
     def _check_inputs(self, instructions, responses, rubric, reference_answers):
         if len(instructions) != len(responses):
             raise ValueError(
@@ -155,7 +158,7 @@ class PrometheusEval:
             reference_answers = [None] * len(
                 instructions
             )  # Default to None if not provided
-        
+
         return instructions, responses, rubric, reference_answers
 
     def absolute_grade(
@@ -175,9 +178,11 @@ class PrometheusEval:
         :param params: Parameters for the model completion requests. Refer to the vllm SamplingParmas class.
         :return: A tuple containing lists of feedbacks and scores.
         """
-        
-        instructions, responses, rubric, reference_answers = self._check_inputs(instructions, responses, rubric, reference_answers)
-        
+
+        instructions, responses, rubric, reference_answers = self._check_inputs(
+            instructions, responses, rubric, reference_answers
+        )
+
         inputs = []
         for idx, (instruction, response) in enumerate(zip(instructions, responses)):
             rubric_ = rubric[idx]
@@ -236,8 +241,10 @@ class PrometheusEval:
         :param params: Additional parameters for the model completion requests. Refer to the vllm SamplingParmas class.
         :return: A tuple containing lists of feedbacks and scores.
         """
-        
-        instructions, responses, rubric, reference_answers = self._check_inputs(instructions, responses, rubric, reference_answers)
+
+        instructions, responses, rubric, reference_answers = self._check_inputs(
+            instructions, responses, rubric, reference_answers
+        )
 
         inputs = []
         for idx, (instruction, response_a, response_b) in enumerate(

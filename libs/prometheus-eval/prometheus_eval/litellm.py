@@ -19,11 +19,12 @@ class LiteLLM:
         # messages: List of list of dictionaries containing messages
         assert isinstance(messages, list)  # Ensure messages are provided as a list
         assert all(
-            isinstance(message, list) for message in messages 
+            isinstance(message, list) for message in messages
         ), "Message format error."
         assert all(
             isinstance(msg, dict) and set(msg.keys()) == {"role", "content"}
-            for message in messages for msg in message
+            for message in messages
+            for msg in message
         ), "Message format error."
 
         result_responses = []
@@ -70,11 +71,12 @@ class AsyncLiteLLM:
         """Generate completions for a list of messages using asynchronous batch processing."""
         assert isinstance(messages, list)  # Ensure messages are provided as a list
         assert all(
-            isinstance(message, list) for message in messages 
+            isinstance(message, list) for message in messages
         ), "Message format error."
         assert all(
             isinstance(msg, dict) and set(msg.keys()) == {"role", "content"}
-            for message in messages for msg in message
+            for message in messages
+            for msg in message
         ), "Message format error."
 
         result_responses = []
