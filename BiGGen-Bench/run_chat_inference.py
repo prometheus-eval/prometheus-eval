@@ -44,7 +44,9 @@ def main(args):
     save_file_path: str = args.save_file_path
 
     tokenizer = AutoTokenizer.from_pretrained(args.model_name, trust_remote_code=True)
-    dataset: pd.DataFrame = load_dataset("prometheus-eval/BiGGen-Bench", split="test").to_pandas()
+    dataset: pd.DataFrame = load_dataset(
+        "prometheus-eval/BiGGen-Bench", split="test"
+    ).to_pandas()
 
     records = []
     inputs = []
@@ -65,9 +67,9 @@ def main(args):
 
     # TODO: Support changing and setting the model parameters from the command line
     if model_name.endswith("AWQ"):
-        model = VLLM(model_name, tensor_parallel_size=1,  quantization="AWQ")
+        model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
     elif model_name.endswith("GPTQ"):
-        model = VLLM(model_name, tensor_parallel_size=1,  quantization="GPTQ")
+        model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
     else:
         model = VLLM(model_name, tensor_parallel_size=1)
 
@@ -92,7 +94,10 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run model inference.")
     parser.add_argument(
-        "--model_name", type=str, required=True, help="Name of the model to evaluate. Has to be a valid Hugging Face model name."
+        "--model_name",
+        type=str,
+        required=True,
+        help="Name of the model to evaluate. Has to be a valid Hugging Face model name.",
     )
     parser.add_argument(
         "--save_file_path", type=str, required=True, help="Path to save the output file"
