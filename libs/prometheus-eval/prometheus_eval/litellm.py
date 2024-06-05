@@ -61,7 +61,7 @@ class AsyncLiteLLM:
                 print(f"Error during LiteLLM API call: {e}")
                 return ""
 
-    async def acompletions(self, messages, **kwargs):
+    async def completions(self, messages, **kwargs):
         """Generate completions for a list of messages using asynchronous batch processing."""
         assert isinstance(messages, list)  # Ensure messages are provided as a list
         assert all(
