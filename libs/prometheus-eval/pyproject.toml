@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "prometheus-eval"
-version = "0.1.14"
+version = "0.1.15"
 description = "A package for evaluating the performance of language models with Prometheus"
 authors = ["Juyoung Suk <juyoung@kaist.ac.kr>", "Seungone Kim <seungone@cmu.edu>"]
 readme = "README.md"
@@ -16,7 +16,6 @@ aiolimiter = "^1.1.0"
 black = "^24.4.2"
 isort = "^5.13.2"
 autoflake = "^2.3.1"
-vllm = "^0.4.3"
 
 
 [tool.poetry.group.test.dependencies]

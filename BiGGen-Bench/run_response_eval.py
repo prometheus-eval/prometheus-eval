@@ -5,7 +5,7 @@ from pathlib import Path
 import pandas as pd
 from dotenv import load_dotenv
 
-# Run `source init.sh` to correctly import prometheus_eval
+# Run `source init.sh` to use local prometheus_eval
 from prometheus_eval import PrometheusEval
 from prometheus_eval.litellm import AsyncLiteLLM, LiteLLM
 from prometheus_eval.mock import AsyncMockLLM, MockLLM

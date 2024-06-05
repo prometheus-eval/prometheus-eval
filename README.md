@@ -1,5 +1,6 @@
 <p align="center">
-  <img src="assets/logo.png" alt="Prometheus-Logo" style="width: 15%; display: block; margin: auto;">
+  <img src="https://raw.githubusercontent.com/prometheus-eval/prometheus-eval/main/assets/logo.png
+  " alt="Prometheus-Logo" style="width: 15%; display: block; margin: auto;">
 </p>
 
 <h1 align="center">🔥 Prometheus-Eval 🔥</h1>
