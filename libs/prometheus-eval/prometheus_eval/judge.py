@@ -123,9 +123,9 @@ class PrometheusEval:
         *,
         instructions: List[str],
         responses: List[str],
-        params: Dict[str, Any],
         rubric: List[str] | str,
         reference_answers: List[str] = None,
+        params: Dict[str, Any] = {},
     ) -> Tuple[List[str], List[int]]:
         """
         Grades a batch of responses absolutely based on the provided instructions and responses.
@@ -192,9 +192,9 @@ class PrometheusEval:
         instructions: List[str],
         responses_A: List[str],
         responses_B: List[str],
-        params: Dict[str, Any],
         rubric: List[str] | str,
         reference_answers: List[str] = None,
+        params: Dict[str, Any] = {},
     ) -> Tuple[List[str], List[int]]:
         """
         Grades a batch of responses relatively based on the provided instructions and paired responses.

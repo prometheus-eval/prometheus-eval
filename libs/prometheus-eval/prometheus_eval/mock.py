@@ -3,7 +3,9 @@ import asyncio
 
 
 class MockLLM:
-    def __init__(self) -> None:
+    def __init__(self, mode: str) -> None:
+        assert mode in ["absolute", "relative"]
+        self.mode = mode
         print("Mock LLM initialized")
 
     def validate_mockllm(self):
@@ -15,14 +17,13 @@ class MockLLM:
         use_tqdm: bool = False,
         **kwargs,
     ) -> List[str]:
-        results = []
-        for prompt in prompts:
-            if "A or B" in prompt:
-                results.append("Hello [RESULT] A")
-            elif "1 and 5" in prompt:
-                results.append("Hello [RESULT] 5")
-            else:
-                results.append("Response to: " + prompt)  # default fallback
+        if self.mode == "absolute":
+            results = ["Hello [RESULT] 5"] * len(prompts)
+        elif self.mode == "relative":
+            results = ["Hello [RESULT] A"] * len(prompts)
+        else: # echo back the prompt
+            results = ["Hello [RESULT] 5"] * len(prompts)
+
         return results
 
     def completions(
