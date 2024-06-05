@@ -3,10 +3,9 @@ import json
 from pathlib import Path
 
 import pandas as pd
+# Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval import PrometheusEval
 from prometheus_eval.litellm import AsyncLiteLLM, LiteLLM
-
-# Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval.mock import AsyncMockLLM, MockLLM
 from prometheus_eval.prompts import ABSOLUTE_PROMPT, SCORE_RUBRIC_TEMPLATE
 from prometheus_eval.vllm import VLLM
@@ -64,7 +63,7 @@ def main(args):
     if eval_model_name in [
         "prometheus-eval/prometheus-7b-v2.0",
         "prometheus-eval/prometheus-8x7b-v2.0",
-        "prometheus-eval/prometheus-8x7b-v2.0-bgb",
+        "prometheus-eval/prometheus-bgb-8x7b-v2.0",
     ]:
         is_prometheus = True
 

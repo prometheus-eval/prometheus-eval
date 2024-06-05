@@ -6,9 +6,8 @@ from pathlib import Path
 
 import pandas as pd
 from datasets import load_dataset
-from prometheus_eval.mock import MockLLM
-
 # Run `source init.sh` to correctly import prometheus_eval
+from prometheus_eval.mock import MockLLM
 from prometheus_eval.vllm import VLLM
 from transformers import AutoTokenizer
 
