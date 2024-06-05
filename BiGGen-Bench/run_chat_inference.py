@@ -3,7 +3,8 @@ import json
 import os
 import warnings
 from pathlib import Path
-
+import huggingface_hub
+from dotenv import dotenv_values
 import pandas as pd
 from datasets import load_dataset
 # Run `source init.sh` to correctly import prometheus_eval
@@ -12,28 +13,25 @@ from prometheus_eval.vllm import VLLM
 from transformers import AutoTokenizer
 
 
-def apply_template_hf(tokenizer, records: list, model_name: str):
-    inputs = []
+def apply_template_hf(tokenizer, record):
 
-    for record in records:
-        if tokenizer.chat_template is not None and "system" in tokenizer.chat_template:
-            messages = [
-                {"role": "system", "content": record["system_prompt"]},
-                {"role": "user", "content": record["input"]},
-            ]
-        else:
-            messages = [
-                {
-                    "role": "user",
-                    "content": record["system_prompt"] + "\n\n" + record["input"],
-                }
-            ]
+    if tokenizer.chat_template is not None and "system" in tokenizer.chat_template:
+        messages = [
+            {"role": "system", "content": record["system_prompt"]},
+            {"role": "user", "content": record["input"]},
+        ]
+    else:
+        messages = [
+            {
+                "role": "user",
+                "content": record["system_prompt"] + "\n\n" + record["input"],
+            }
+        ]
 
-        input_str = tokenizer.apply_chat_template(
-            messages, tokenize=False, add_generation_prompt=True
-        )
-        inputs.append(input_str)
-    return inputs
+    input_str = tokenizer.apply_chat_template(
+        messages, tokenize=False, add_generation_prompt=True
+    )
+    return input_str
 
 
 def dummy_completions(inputs, **kwargs):
@@ -57,7 +55,7 @@ def main(args):
     for row in dataset.iterrows():
         record = row[1]
         records.append(record.to_dict())
-        inputs.append(apply_template_hf(tokenizer, [record], model_name))
+        inputs.append(apply_template_hf(tokenizer, record))
 
     params = {
         "max_tokens": 2048,
@@ -69,13 +67,12 @@ def main(args):
     }
 
     # TODO: Support changing and setting the model parameters from the command line
-    model = MockLLM()
-    # if model_name.endswith("AWQ"):
-    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
-    # elif model_name.endswith("GPTQ"):
-    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
-    # else:
-    #     model = VLLM(model_name, tensor_parallel_size=1)
+    if model_name.endswith("AWQ"):
+        model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
+    elif model_name.endswith("GPTQ"):
+        model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
+    else:
+        model = VLLM(model_name, tensor_parallel_size=1)
 
     outputs = model.completions(inputs, **params)
 
@@ -112,6 +109,11 @@ if __name__ == "__main__":
         required=True,
         help="Path to save the output file",
     )
+    
+    hf_token = dotenv_values(".env").get("HF_TOKEN", None)
+    if hf_token is not None:
+        huggingface_hub.login(token=hf_token)
+
     args = parser.parse_args()
 
     main(args)

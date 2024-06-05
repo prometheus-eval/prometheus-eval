@@ -6,6 +6,7 @@ import litellm
 import pandas as pd
 from datasets import load_dataset
 from dotenv import load_dotenv
+import asyncio
 # Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval.litellm import AsyncLiteLLM, LiteLLM
 
@@ -30,7 +31,7 @@ def main(args):
     batch_size: int = args.batch_size
     requests_per_minute: int = args.requests_per_minute
 
-    model = LiteLLM(
+    model = AsyncLiteLLM(
         model_name, batch_size=batch_size, requests_per_minute=requests_per_minute
     )
     dataset: pd.DataFrame = load_dataset(
@@ -55,7 +56,7 @@ def main(args):
         "top_p": 0.9,
     }
 
-    outputs = model.completions(inputs, **params)
+    outputs = asyncio.run(model.completions(inputs, **params))
 
     result = {}
 

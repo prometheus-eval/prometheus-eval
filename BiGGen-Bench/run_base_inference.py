@@ -3,9 +3,12 @@ import json
 import os
 import warnings
 from pathlib import Path
+from dotenv import load_dotenv, dotenv_values
 
 import pandas as pd
+import huggingface_hub
 from datasets import load_dataset
+
 # Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval.mock import MockLLM
 from prometheus_eval.vllm import VLLM
@@ -92,14 +95,12 @@ def main(args):
         "use_tqdm": True,
     }
 
-    # TODO: Support changing and setting the model parameters from the command line
-    model = MockLLM()
-    # if model_name.endswith("AWQ"):
-    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
-    # elif model_name.endswith("GPTQ"):
-    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
-    # else:
-    #     model = VLLM(model_name, tensor_parallel_size=1)
+    if model_name.endswith("AWQ"):
+        model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
+    elif model_name.endswith("GPTQ"):
+        model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
+    else:
+        model = VLLM(model_name, tensor_parallel_size=1)
 
     outputs = model.completions(inputs, **params)
 
@@ -112,7 +113,8 @@ def main(args):
         uid = record["id"]
 
         result[uid] = record.copy()
-        result[uid]["response"] = output.strip()
+        # Parsing the output for base models (because of urial prompts)
+        result[uid]["response"] = output.split("```\n\n# Query:")[0].strip()
         result[uid]["response_model_name"] = model_name
 
     output_file_path = Path(output_file_path)
@@ -136,6 +138,10 @@ if __name__ == "__main__":
         required=True,
         help="Path to save the output response file",
     )
+    
+    hf_token = dotenv_values(".env").get("HF_TOKEN", None)
+    if hf_token is not None:
+        huggingface_hub.login(token=hf_token)
 
     args = parser.parse_args()
 

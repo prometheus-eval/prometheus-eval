@@ -12,6 +12,7 @@ datasets = "^2.19.2"
 vllm = "^0.4.3"
 litellm = "^1.40.0"
 aiolimiter = "^1.1.0"
+rich = "^13.7.1"
 
 
 [tool.poetry.group.dev.dependencies]
