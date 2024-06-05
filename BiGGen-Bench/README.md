@@ -1,9 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/prometheus-eval/prometheus-eval/bgb/assets/logo.png" alt="BiGGen-Bench-Logo" style="width: 15%; display: block; margin: auto;">
+  <img src="https://raw.githubusercontent.com/prometheus-eval/prometheus-eval/main/BiGGen-Bench/assets/logo.png" alt="BiGGen-Bench-Logo" style="width: 15%; display: block; margin: auto;">
 </p>
 
-<h1 align="center"> 🄱🄸🄶🄶🄴🄽-🄱🄴🄽🄲🄷
-</h1>
+<h1 align="center"> BIiGGen-Bench </h1>
 
 <a href="https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Dataset-ffd21e" alt="Hugging Face Datasets"></a>
 <a href="https://huggingface.co/prometheus-eval/prometheus-bgb-8x7b-v2.0"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-ff9d00" alt="Hugging Face Model"></a>
