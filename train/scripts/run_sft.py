@@ -28,8 +28,6 @@ import datasets
 import numpy as np
 import torch
 import transformers
-from transformers import AutoModelForCausalLM, DataCollatorForLanguageModeling, set_seed
-
 from alignment import (
     DataArguments,
     H4ArgumentParser,
@@ -43,8 +41,8 @@ from alignment import (
     get_quantization_config,
     get_tokenizer,
 )
+from transformers import AutoModelForCausalLM, DataCollatorForLanguageModeling, set_seed
 from trl import SFTTrainer
-
 
 warnings.filterwarnings("ignore", category=FutureWarning)
 

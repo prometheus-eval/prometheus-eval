@@ -3,13 +3,12 @@ import json
 import os
 from pathlib import Path
 
+# Run `source init.sh` to correctly import prometheus_eval
+import litellm
 import pandas as pd
 from datasets import load_dataset
 from dotenv import load_dotenv
-
-# Run `source init.sh` to correctly import prometheus_eval
-import litellm
-from prometheus_eval.litellm import LiteLLM, AsyncLiteLLM
+from prometheus_eval.litellm import AsyncLiteLLM, LiteLLM
 
 
 def dummy_completions(inputs, **kwargs):

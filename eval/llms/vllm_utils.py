@@ -5,9 +5,8 @@ This script produces completions for roughly any AutoModelForCausalLM.
 from typing import List
 
 import torch
-from vllm import LLM, SamplingParams
-
 from src import CACHE_DIR
+from vllm import LLM, SamplingParams
 
 
 class VLLM:

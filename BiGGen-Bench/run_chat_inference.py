@@ -1,10 +1,12 @@
 import argparse
 import json
 import os
+import warnings
 from pathlib import Path
 
 import pandas as pd
 from datasets import load_dataset
+from prometheus_eval.mock import MockLLM
 
 # Run `source init.sh` to correctly import prometheus_eval
 from prometheus_eval.vllm import VLLM
@@ -68,14 +70,18 @@ def main(args):
     }
 
     # TODO: Support changing and setting the model parameters from the command line
-    if model_name.endswith("AWQ"):
-        model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
-    elif model_name.endswith("GPTQ"):
-        model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
-    else:
-        model = VLLM(model_name, tensor_parallel_size=1)
+    model = MockLLM()
+    # if model_name.endswith("AWQ"):
+    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="AWQ")
+    # elif model_name.endswith("GPTQ"):
+    #     model = VLLM(model_name, tensor_parallel_size=1, quantization="GPTQ")
+    # else:
+    #     model = VLLM(model_name, tensor_parallel_size=1)
 
     outputs = model.completions(inputs, **params)
+
+    if len(outputs) != 765:
+        warnings.warn(f"Expected 765 outputs, got {len(outputs)}")
 
     result = {}
 

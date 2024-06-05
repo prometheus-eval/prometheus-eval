@@ -16,9 +16,6 @@ import unittest
 from copy import deepcopy
 
 import pytest
-from datasets import Dataset
-from transformers import AutoTokenizer
-
 from alignment import (
     DataArguments,
     ModelArguments,
@@ -27,6 +24,8 @@ from alignment import (
     get_tokenizer,
 )
 from alignment.data import maybe_insert_system_message
+from datasets import Dataset
+from transformers import AutoTokenizer
 
 
 class GetDatasetsTest(unittest.TestCase):

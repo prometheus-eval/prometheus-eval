@@ -1,5 +1,4 @@
 import pytest
-
 from prometheus_eval import PrometheusEval  # Adjust the import path as necessary
 from prometheus_eval.mock import MockLLM
 from prometheus_eval.prompts import ABSOLUTE_PROMPT, RELATIVE_PROMPT
