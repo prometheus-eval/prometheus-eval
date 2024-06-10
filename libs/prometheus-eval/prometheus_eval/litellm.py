@@ -31,10 +31,6 @@ class LiteLLM:
         result_responses = []
 
         for message in tqdm(messages):
-            assert isinstance(message, dict) and set(message.keys()) == {
-                "role",
-                "content",
-            }
             response = completion(model=self.name, api_base=self.api_base, messages=message, **kwargs)
             result_responses.append(response.choices[0].message.content.strip())
 
