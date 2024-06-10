@@ -30,6 +30,9 @@ class LiteLLM:
 
         result_responses = []
 
+        # LiteLLM throws an error if these params are provided
+        kwargs = {k:v for k,v in kwargs.items() if k not in ["best_of", "repetition_penalty", "use_tqdm"]}
+
         for message in tqdm(messages):
             response = completion(model=self.name, api_base=self.api_base, messages=message, **kwargs)
             result_responses.append(response.choices[0].message.content.strip())
