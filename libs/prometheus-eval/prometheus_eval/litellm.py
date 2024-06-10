@@ -41,11 +41,12 @@ class AsyncLiteLLM:
     def __init__(self, name, batch_size: int = 100, requests_per_minute: int = 100, api_base: str = None):
         """Initialize the LiteLLM with basic configurations."""
         self.name = name
-        self.batch_size = 100  # Define batch size for batch processing
-        self.requests_per_minute = 100  # Rate limit: 100 requests per minute
+        self.batch_size = batch_size  # Define batch size for batch processing
+        self.requests_per_minute = requests_per_minute  # Rate limit: 100 requests per minute
         self.limiter = AsyncLimiter(
             self.requests_per_minute, 60
         )  # Set up the rate limiter
+        self.api_base = api_base
 
     def validate_litellm(self):
         return True
