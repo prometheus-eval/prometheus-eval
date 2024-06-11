@@ -272,11 +272,9 @@ print(decoded[0])
 
 | Section | Description |
 |-|-|
-| [Documentation](docs/library.md) | WIP |
-| [Custom Benchmark Evaluation](docs/custom_eval.md) | WIP |
-| [Evaluation for Evaluator LMs](docs/eval_for_eval_lm.md) | WIP |
-| [Training Prometheus](docs/train_prometheus.md) | WIP |
-| [Collection of Prompts](docs/prompts.md) | WIP |
+| [Documentation](https://prometheus-eval.github.io/prometheus-eval/) | Overall Documentation |
+| [BiGGen-Bench Evaluation](BiGGen-Bench/README.md) | Instructions to evaluate your LM in BiGGen-Bench. You could also refer to the implementation for your own evaluation benchmark. |
+| [Training Prometheus](train/README.md) | Instructions to replicate Prometheus 2 models. Based on the [alignment-handbook](https://github.com/huggingface/alignment-handbook) repository. |
 
 ## 👏 Acknowledgements
 
