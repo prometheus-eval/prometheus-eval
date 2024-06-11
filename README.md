@@ -18,9 +18,9 @@
 
 **Latest News** 🔥
 
-- [2024/06] We release BiGGen-Bench and Prometheus 2 BGB (8x7B)!
+- [2024/06] We release **BiGGen-Bench** and **Prometheus 2 BGB (8x7B)**!
 
-  - Features 9 core capabilities, 77 tasks, and 765 meticulously crafted instances, each with specific evaluation criteria.
+  - BiGGen-Bench features 9 core capabilities, 77 tasks, and 765 meticulously crafted instances, each with specific evaluation criteria.
   - We evaluated 103 frontier language models by 5 state-of-the-art evaluator language models and analyzed the findings in our [paper](https://arxiv.org/abs/2406.05761).
   - We continually trained Prometheus 2 8x7B on BiGGen-Bench evaluation trace and built our most capable evaluator LM [Prometheus 2 BGB](https://huggingface.co/prometheus-eval/prometheus-bgb-8x7b-v2.0), even surpassing Claude-3-Opus on evaluation tasks.
   - Checkout our [dataset](https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench), [evaluation results](https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench-Results), [leaderboard](https://huggingface.co/spaces/prometheus-eval/BiGGen-Bench-Leaderboard), [interactive report](https://hub.zenoml.com/project/c84cfca5-71c9-4f89-aa0e-218c65c821e4/BiGGen\%20Bench\%20Results), and the [code](https://github.com/prometheus-eval/prometheus-eval/tree/main/BiGGen-Bench).
