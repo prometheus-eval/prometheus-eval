@@ -18,7 +18,7 @@
 
 **Latest News** 🔥
 
-- [2024/06] We release **BiGGen-Bench** and **Prometheus 2 BGB (8x7B)**!
+- [2024/06] We release the **BiGGen-Bench** and **Prometheus 2 BGB (8x7B)**!
 
   - BiGGen-Bench features 9 core capabilities, 77 tasks, and 765 meticulously crafted instances, each with specific evaluation criteria.
   - We evaluated 103 frontier language models by 5 state-of-the-art evaluator language models and analyzed the findings in our [paper](https://arxiv.org/abs/2406.05761).
