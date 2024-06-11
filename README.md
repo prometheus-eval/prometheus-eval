@@ -6,8 +6,7 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/2405.01535"><img src="https://img.shields.io/badge/arXiv-2405.01535-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://huggingface.co/datasets/prometheus-eval/Preference-Collection"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-ffd21e" alt="Hugging Face Datasets"></a>
-  <a href="https://huggingface.co/prometheus-eval/prometheus-8x7b-v2.0"><img src="https://img.shields.io/badge/Hugging%20Face-Model-ff9d00" alt="Hugging Face Model"></a>
+  <a href="https://huggingface.co/prometheus-eval"><img src="https://img.shields.io/badge/Hugging%20Face-Organization-ff9d00" alt="Hugging Face Organization"></a>
   <a href="https://github.com/prometheus-eval/prometheus-eval/blob/main/LICENSE"><img src="https://img.shields.io/github/license/prometheus-eval/prometheus-eval.svg" alt="License"></a>
   <a href="https://pypi.org/project/prometheus-eval/"><img src="https://badge.fury.io/py/prometheus-eval.svg" alt="PyPI version"></a>
 </p>
@@ -18,6 +17,13 @@
 
 
 **Latest News** 🔥
+
+- [2024/06] We release BiGGen-Bench and Prometheus 2 BGB (8x7B)!
+
+  - Features 9 core capabilities, 77 tasks, and 765 meticulously crafted instances, each with specific evaluation criteria.
+  - We evaluated 103 frontier language models by 5 state-of-the-art evaluator language models and analyzed the findings in our [paper](https://arxiv.org/abs/2406.05761).
+  - We continually trained Prometheus 2 8x7B on BiGGen-Bench evaluation trace and built our most capable evaluator LM [Prometheus 2 BGB](https://huggingface.co/prometheus-eval/prometheus-bgb-8x7b-v2.0), even surpassing Claude-3-Opus on evaluation tasks.
+  - Checkout our [dataset](https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench), [evaluation results](https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench-Results), [leaderboard](https://huggingface.co/spaces/prometheus-eval/BiGGen-Bench-Leaderboard), [interactive report](https://hub.zenoml.com/project/c84cfca5-71c9-4f89-aa0e-218c65c821e4/BiGGen\%20Bench\%20Results), and the [code](https://github.com/prometheus-eval/prometheus-eval/tree/main/BiGGen-Bench).
 
 - [2024/05] We release Prometheus 2 (7B & 8x7B) models!
 
