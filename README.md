@@ -272,9 +272,12 @@ print(decoded[0])
 
 | Section | Description |
 |-|-|
-| [Documentation](https://prometheus-eval.github.io/prometheus-eval/) | Overall Documentation |
+| [Documentation](https://prometheus-eval.github.io/prometheus-eval/) | Overall Documentation for using the library |
 | [BiGGen-Bench Evaluation](BiGGen-Bench/README.md) | Instructions to evaluate your LM in BiGGen-Bench. You could also refer to the implementation for your own evaluation benchmark. |
 | [Training Prometheus](train/README.md) | Instructions to replicate Prometheus 2 models. Based on the [alignment-handbook](https://github.com/huggingface/alignment-handbook) repository. |
+| [Using Prometheus as a data quality filter](https://huggingface.co/blog/burtenshaw/distilabel-prometheus-2) | Cookbook for using Prometheus 2 as a quality filter in synthetic data generation. Huge thanks to the distilabel team! 🙌 |
+| [Using Prometheus as an evaluator in RAG](https://docs.llamaindex.ai/en/latest/examples/cookbooks/prometheus2_cookbook/) | Cookbook for using Prometheus 2 RAG applications. Huge thanks to the LlamaIndex team! 🙌 | 
+
 
 ## 👏 Acknowledgements
 
