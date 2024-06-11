@@ -30,11 +30,10 @@ class LiteLLM:
 
         result_responses = []
 
+        # LiteLLM throws an error if these params are provided
+        kwargs = {k:v for k,v in kwargs.items() if k not in ["best_of", "repetition_penalty", "use_tqdm"]}
+
         for message in tqdm(messages):
-            assert isinstance(message, dict) and set(message.keys()) == {
-                "role",
-                "content",
-            }
             response = completion(model=self.name, api_base=self.api_base, messages=message, **kwargs)
             result_responses.append(response.choices[0].message.content.strip())
 
@@ -45,11 +44,12 @@ class AsyncLiteLLM:
     def __init__(self, name, batch_size: int = 100, requests_per_minute: int = 100, api_base: str = None):
         """Initialize the LiteLLM with basic configurations."""
         self.name = name
-        self.batch_size = 100  # Define batch size for batch processing
-        self.requests_per_minute = 100  # Rate limit: 100 requests per minute
+        self.batch_size = batch_size  # Define batch size for batch processing
+        self.requests_per_minute = requests_per_minute  # Rate limit: 100 requests per minute
         self.limiter = AsyncLimiter(
             self.requests_per_minute, 60
         )  # Set up the rate limiter
+        self.api_base = api_base
 
     def validate_litellm(self):
         return True
