@@ -130,7 +130,7 @@ from prometheus_eval import PrometheusEval
 from prometheus_eval.prompts import RELATIVE_PROMPT
 
 model = VLLM(model="prometheus-eval/prometheus-7b-v2.0")
-judge = PrometheusEval(model_id="prometheus-eval/prometheus-7b-v2.0", relative_grade_template=RELATIVE_PROMPT)
+judge = PrometheusEval(model=model, relative_grade_template=RELATIVE_PROMPT)
 
 
 data = {
