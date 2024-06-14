@@ -242,8 +242,8 @@ class PrometheusEval:
         :return: A tuple containing lists of feedbacks and scores.
         """
 
-        instructions, responses, rubric, reference_answers = self._check_inputs(
-            instructions, responses, rubric, reference_answers
+        instructions, _, rubric, reference_answers = self._check_inputs(
+            instructions, list(zip(responses_A, responses_B)), rubric, reference_answers
         )
 
         inputs = []
