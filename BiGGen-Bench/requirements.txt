@@ -5,4 +5,4 @@ aiolimiter
 rich
 transformers
 vllm
-promethues-eval
+prometheus-eval
