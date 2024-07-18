@@ -41,16 +41,6 @@ class PrometheusEval:
             raise ValueError("Model does not have a valid LLM interface")
 
         self.model = model
-
-        if "###Reference Answer (Score 5):" not in absolute_grade_template:
-            warnings.warn(
-                "Reference answer was not given in Absolute Grading mode. This might lead to non-optimal performances."
-            )
-        if "###Reference Answer:" not in relative_grade_template:
-            warnings.warn(
-                "Reference answer was not given in Relative Grading mode. This might lead to non-optimal performances."
-            )
-
         self.absolute_grade_template = absolute_grade_template
         self.relative_grade_template = relative_grade_template
 
@@ -155,6 +145,9 @@ class PrometheusEval:
         elif isinstance(reference_answers, list):
             pass
         else:
+            warnings.warn(
+                "Reference answer was not provided. This may result in suboptimal grading performance. Consider providing a reference answer for best results."
+            )       
             reference_answers = [None] * len(
                 instructions
             )  # Default to None if not provided
