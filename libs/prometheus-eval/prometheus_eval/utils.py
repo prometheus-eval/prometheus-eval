@@ -124,9 +124,7 @@ async def async_batch_completions_with_retries(
     while to_retry_inputs and retries < max_retries:
         retries += 1
         print(f"Retrying failed batches: Attempt {retries}/{max_retries}")
-        retry_outputs = await model.completions(
-            to_retry_inputs, **params, use_tqdm=True
-        )
+        retry_outputs = await model.completions(to_retry_inputs, **params, use_tqdm=True)
 
         new_to_retry_inputs = []
         new_to_retry_indices = []

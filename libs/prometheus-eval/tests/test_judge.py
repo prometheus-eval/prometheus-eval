@@ -1,4 +1,5 @@
 import pytest
+
 from prometheus_eval import PrometheusEval  # Adjust the import path as necessary
 from prometheus_eval.mock import MockLLM
 from prometheus_eval.prompts import ABSOLUTE_PROMPT, RELATIVE_PROMPT
@@ -35,16 +36,12 @@ def relative_judge():
 
 def test_absolute_judge_init(absolute_judge):
     assert hasattr(absolute_judge, "model")
-    assert hasattr(absolute_judge, "absolute_grade_template") and hasattr(
-        absolute_judge, "relative_grade_template"
-    )
+    assert hasattr(absolute_judge, "absolute_grade_template") and hasattr(absolute_judge, "relative_grade_template")
 
 
 def test_relative_judge_init(relative_judge):
     assert hasattr(relative_judge, "model")
-    assert hasattr(relative_judge, "absolute_grade_template") and hasattr(
-        relative_judge, "relative_grade_template"
-    )
+    assert hasattr(relative_judge, "absolute_grade_template") and hasattr(relative_judge, "relative_grade_template")
 
 
 def test_absolute_grade_with_valid_input(absolute_judge):
@@ -102,7 +99,6 @@ def test_relative_grade_with_valid_input(relative_judge):
     )
     assert len(feedbacks) == len(responses_A) and len(scores) == len(responses_A)
     assert all(isinstance(score, str) for score in scores)
-
 
 
 def test_relative_grade_with_missing_keys(relative_judge):
