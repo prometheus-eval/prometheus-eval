@@ -177,7 +177,7 @@ responses_from_b = [...]
 reference_answers = [...]  # List of reference answers
 rubric = "..."  # Rubric string
 
-feedbacks, scores = judge.absolute_grade(
+feedbacks, scores = judge.relative_grade(
     instructions=instructions,
     responses_A=responses_from_a,
     responses_B=responses_from_b,
