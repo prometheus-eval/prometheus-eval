@@ -4,12 +4,7 @@ from typing import Any, Dict, List, Tuple, Union
 
 from fastchat.conversation import get_conv_template
 
-from .prompts import (
-    ABS_SYSTEM_PROMPT,
-    ABSOLUTE_PROMPT_WO_REF,
-    REL_SYSTEM_PROMPT,
-    RELATIVE_PROMPT_WO_REF,
-)
+from .prompts import ABS_SYSTEM_PROMPT, ABSOLUTE_PROMPT_WO_REF, REL_SYSTEM_PROMPT, RELATIVE_PROMPT_WO_REF
 from .utils import async_batch_completions_with_retries, batch_completions_with_retries
 
 # TODO: Add BaseLLM class for model type
@@ -41,16 +36,6 @@ class PrometheusEval:
             raise ValueError("Model does not have a valid LLM interface")
 
         self.model = model
-
-        if "###Reference Answer (Score 5):" not in absolute_grade_template:
-            warnings.warn(
-                "Reference answer was not given in Absolute Grading mode. This might lead to non-optimal performances."
-            )
-        if "###Reference Answer:" not in relative_grade_template:
-            warnings.warn(
-                "Reference answer was not given in Relative Grading mode. This might lead to non-optimal performances."
-            )
-
         self.absolute_grade_template = absolute_grade_template
         self.relative_grade_template = relative_grade_template
 
@@ -129,9 +114,7 @@ class PrometheusEval:
 
     def _check_inputs(self, instructions, responses, rubric, reference_answers):
         if len(instructions) != len(responses):
-            raise ValueError(
-                "Length of instructions must match the length of responses"
-            )
+            raise ValueError("Length of instructions must match the length of responses")
 
         # If rubric is a list, check its length matches the length of instructions
         if isinstance(rubric, list) and len(rubric) != len(instructions):
@@ -139,25 +122,20 @@ class PrometheusEval:
         elif isinstance(rubric, list) and len(rubric) == len(instructions):
             pass
         elif isinstance(rubric, str):
-            rubric = [rubric] * len(
-                instructions
-            )  # Apply the same rubric to all if it's not a list
+            rubric = [rubric] * len(instructions)  # Apply the same rubric to all if it's not a list
         else:
             raise ValueError("Rubric must be a string or a list of strings")
 
         # Handle reference answers
-        if isinstance(reference_answers, list) and len(reference_answers) != len(
-            instructions
-        ):
-            raise ValueError(
-                "Length of reference answers must match the length of instructions"
-            )
+        if isinstance(reference_answers, list) and len(reference_answers) != len(instructions):
+            raise ValueError("Length of reference answers must match the length of instructions")
         elif isinstance(reference_answers, list):
             pass
         else:
-            reference_answers = [None] * len(
-                instructions
-            )  # Default to None if not provided
+            warnings.warn(
+                "Reference answer was not provided. This may result in suboptimal grading performance. Consider providing a reference answer for best results."
+            )
+            reference_answers = [None] * len(instructions)  # Default to None if not provided
 
         return instructions, responses, rubric, reference_answers
 
@@ -247,9 +225,7 @@ class PrometheusEval:
         )
 
         inputs = []
-        for idx, (instruction, response_a, response_b) in enumerate(
-            zip(instructions, responses_A, responses_B)
-        ):
+        for idx, (instruction, response_a, response_b) in enumerate(zip(instructions, responses_A, responses_B)):
             rubric_ = rubric[idx]
             reference_answer = reference_answers[idx]
             content = self.relative_grade_template.format(

@@ -157,6 +157,7 @@ print("Score:", score)
 ***Note***: If you have multiple responses to grade, don't use `single_absolute_grade` / `single_relative_grade` - instead, use `absolute_grade` and `relative_grade`! It will give you more than 10x speedup. Refer to the documentation [here](https://prometheus-eval.github.io/prometheus-eval/docs/advanced-usage.html#53-handling-large-datasets)! 
 
 ```python
+# batch absolute grade
 instructions = [...]  # List of instructions
 responses = [...]  # List of responses
 reference_answers = [...]  # List of reference answers
@@ -165,6 +166,21 @@ rubric = "..."  # Rubric string
 feedbacks, scores = judge.absolute_grade(
     instructions=instructions,
     responses=responses,
+    rubric=rubric,
+    reference_answers=reference_answers
+)
+
+# batch relative grade
+instructions = [...]  # List of instructions
+responses_from_a = [...]  # List of responses
+responses_from_b = [...]
+reference_answers = [...]  # List of reference answers
+rubric = "..."  # Rubric string
+
+feedbacks, scores = judge.absolute_grade(
+    instructions=instructions,
+    responses_A=responses_from_a,
+    responses_B=responses_from_b,
     rubric=rubric,
     reference_answers=reference_answers
 )
@@ -272,7 +288,6 @@ print(decoded[0])
 
 | Section | Description |
 |-|-|
-| [Documentation](https://prometheus-eval.github.io/prometheus-eval/) | Overall Documentation for using the library |
 | [BiGGen-Bench Evaluation](BiGGen-Bench/README.md) | Instructions to evaluate your LM in BiGGen-Bench. You could also refer to the implementation for your own evaluation benchmark. |
 | [Training Prometheus](train/README.md) | Instructions to replicate Prometheus 2 models. Based on the [alignment-handbook](https://github.com/huggingface/alignment-handbook) repository. |
 | [Using Prometheus as a data quality filter](https://huggingface.co/blog/burtenshaw/distilabel-prometheus-2) | Cookbook for using Prometheus 2 as a quality filter in synthetic data generation. Huge thanks to the distilabel team! 🙌 |

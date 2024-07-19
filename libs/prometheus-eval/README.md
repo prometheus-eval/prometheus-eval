@@ -6,8 +6,7 @@
 
 <p align="center">
   <a href="https://arxiv.org/abs/2405.01535"><img src="https://img.shields.io/badge/arXiv-2405.01535-b31b1b.svg" alt="arXiv"></a>
-  <a href="https://huggingface.co/datasets/prometheus-eval/Preference-Collection"><img src="https://img.shields.io/badge/Hugging%20Face-Dataset-ffd21e" alt="Hugging Face Datasets"></a>
-  <a href="https://huggingface.co/prometheus-eval/prometheus-8x7b-v2.0"><img src="https://img.shields.io/badge/Hugging%20Face-Model-ff9d00" alt="Hugging Face Model"></a>
+  <a href="https://huggingface.co/prometheus-eval"><img src="https://img.shields.io/badge/Hugging%20Face-Organization-ff9d00" alt="Hugging Face Organization"></a>
   <a href="https://github.com/prometheus-eval/prometheus-eval/blob/main/LICENSE"><img src="https://img.shields.io/github/license/prometheus-eval/prometheus-eval.svg" alt="License"></a>
   <a href="https://pypi.org/project/prometheus-eval/"><img src="https://badge.fury.io/py/prometheus-eval.svg" alt="PyPI version"></a>
 </p>
@@ -18,6 +17,13 @@
 
 
 **Latest News** 🔥
+
+- [2024/06] We release the **BiGGen-Bench** and **Prometheus 2 BGB (8x7B)**!
+
+  - BiGGen-Bench features 9 core capabilities, 77 tasks, and 765 meticulously crafted instances, each with specific evaluation criteria.
+  - We evaluated 103 frontier language models by 5 state-of-the-art evaluator language models and analyzed the findings in our [paper](https://arxiv.org/abs/2406.05761).
+  - We continually trained Prometheus 2 8x7B on BiGGen-Bench evaluation trace and built our most capable evaluator LM [Prometheus 2 BGB](https://huggingface.co/prometheus-eval/prometheus-bgb-8x7b-v2.0), even surpassing Claude-3-Opus on absolute grading tasks.
+  - Checkout our [dataset](https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench), [evaluation results](https://huggingface.co/datasets/prometheus-eval/BiGGen-Bench-Results), [leaderboard](https://huggingface.co/spaces/prometheus-eval/BiGGen-Bench-Leaderboard), [interactive report](https://hub.zenoml.com/project/c84cfca5-71c9-4f89-aa0e-218c65c821e4/BiGGen\%20Bench\%20Results), and the [code](https://github.com/prometheus-eval/prometheus-eval/tree/main/BiGGen-Bench)!
 
 - [2024/05] We release Prometheus 2 (7B & 8x7B) models!
 
@@ -124,7 +130,7 @@ from prometheus_eval import PrometheusEval
 from prometheus_eval.prompts import RELATIVE_PROMPT
 
 model = VLLM(model="prometheus-eval/prometheus-7b-v2.0")
-judge = PrometheusEval(model_id="prometheus-eval/prometheus-7b-v2.0", relative_grade_template=RELATIVE_PROMPT)
+judge = PrometheusEval(model=model, relative_grade_template=RELATIVE_PROMPT)
 
 
 data = {
@@ -151,6 +157,7 @@ print("Score:", score)
 ***Note***: If you have multiple responses to grade, don't use `single_absolute_grade` / `single_relative_grade` - instead, use `absolute_grade` and `relative_grade`! It will give you more than 10x speedup. Refer to the documentation [here](https://prometheus-eval.github.io/prometheus-eval/docs/advanced-usage.html#53-handling-large-datasets)! 
 
 ```python
+# batch absolute grade
 instructions = [...]  # List of instructions
 responses = [...]  # List of responses
 reference_answers = [...]  # List of reference answers
@@ -159,6 +166,21 @@ rubric = "..."  # Rubric string
 feedbacks, scores = judge.absolute_grade(
     instructions=instructions,
     responses=responses,
+    rubric=rubric,
+    reference_answers=reference_answers
+)
+
+# batch relative grade
+instructions = [...]  # List of instructions
+responses_from_a = [...]  # List of responses
+responses_from_b = [...]
+reference_answers = [...]  # List of reference answers
+rubric = "..."  # Rubric string
+
+feedbacks, scores = judge.absolute_grade(
+    instructions=instructions,
+    responses_A=responses_from_a,
+    responses_B=responses_from_b,
     rubric=rubric,
     reference_answers=reference_answers
 )
@@ -266,15 +288,15 @@ print(decoded[0])
 
 | Section | Description |
 |-|-|
-| [Documentation](docs/library.md) | WIP |
-| [Custom Benchmark Evaluation](docs/custom_eval.md) | WIP |
-| [Evaluation for Evaluator LMs](docs/eval_for_eval_lm.md) | WIP |
-| [Training Prometheus](docs/train_prometheus.md) | WIP |
-| [Collection of Prompts](docs/prompts.md) | WIP |
+| [BiGGen-Bench Evaluation](BiGGen-Bench/README.md) | Instructions to evaluate your LM in BiGGen-Bench. You could also refer to the implementation for your own evaluation benchmark. |
+| [Training Prometheus](train/README.md) | Instructions to replicate Prometheus 2 models. Based on the [alignment-handbook](https://github.com/huggingface/alignment-handbook) repository. |
+| [Using Prometheus as a data quality filter](https://huggingface.co/blog/burtenshaw/distilabel-prometheus-2) | Cookbook for using Prometheus 2 as a quality filter in synthetic data generation. Huge thanks to the distilabel team! 🙌 |
+| [Using Prometheus as an evaluator in RAG](https://docs.llamaindex.ai/en/latest/examples/cookbooks/prometheus2_cookbook/) | Cookbook for using Prometheus 2 RAG applications. Huge thanks to the LlamaIndex team! 🙌 | 
+
 
 ## 👏 Acknowledgements
 
-The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [vllm](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Huge thanks to all the contributors for these awesome repositories!! 🙌
+The underlying codebase for training originates from Huggingface's [Alignment Handbook](https://github.com/huggingface/alignment-handbook) and [Super Mario Merging](https://github.com/martyn/safetensors-merge-supermario) repository. Also, for inference, it heavily utilizes the [litellm](https://github.com/BerriAI/litellm), [vllm](https://github.com/vllm-project/vllm) and the [transformer](https://github.com/huggingface/transformers) library. Huge thanks to all the contributors for these awesome repositories!! 🙌
 
 
 ## ⭐ Star History
@@ -310,6 +332,16 @@ If you find our work useful, please consider citing our paper!
       author={Seongyun Lee and Seungone Kim and Sue Hyun Park and Geewook Kim and Minjoon Seo},
       year={2024},
       eprint={2401.06591},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+```bibtex
+@misc{kim2024biggen,
+      title={The BiGGen Bench: A Principled Benchmark for Fine-grained Evaluation of Language Models with Language Models}, 
+      author={Seungone Kim and Juyoung Suk and Ji Yong Cho and Shayne Longpre and Chaeeun Kim and Dongkeun Yoon and Guijin Son and Yejin Cho and Sheikh Shafayat and Jinheon Baek and Sue Hyun Park and Hyeonbin Hwang and Jinkyung Jo and Hyowon Cho and Haebin Shin and Seongyun Lee and Hanseok Oh and Noah Lee and Namgyu Ho and Se June Joo and Miyoung Ko and Yoonjoo Lee and Hyungjoo Chae and Jamin Shin and Joel Jang and Seonghyeon Ye and Bill Yuchen Lin and Sean Welleck and Graham Neubig and Moontae Lee and Kyungjae Lee and Minjoon Seo},
+      year={2024},
+      eprint={2406.05761},
       archivePrefix={arXiv},
       primaryClass={cs.CL}
 }

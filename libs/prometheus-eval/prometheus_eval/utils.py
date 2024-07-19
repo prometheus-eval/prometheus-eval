@@ -3,19 +3,7 @@ import warnings
 from typing import List
 
 from tqdm import tqdm
-
-
-def _parse_output(outputs, mode: str):
-    parts = outputs.split("[RESULT]")
-    if len(parts) == 2:
-        feedback, result = parts[0].strip(), parts[1].strip()
-        if mode == "absolute":
-            if result.isdigit() and result in ["1", "2", "3", "4", "5"]:
-                return feedback, int(result)
-        elif mode == "relative":
-            if result in ["A", "B"]:
-                return feedback, result
-    return None, None
+from .parser import parse_output
 
 
 def batch_completions_with_retries(
@@ -42,7 +30,7 @@ def batch_completions_with_retries(
     to_retry_inputs = []
     to_retry_indices = []
     for i, output in enumerate(batched_outputs):
-        feedback, score = _parse_output(output, mode=mode)
+        feedback, score = parse_output(output, mode=mode)
         if feedback is None:
             to_retry_inputs.append(inputs[i])
             to_retry_indices.append(i)
@@ -57,7 +45,7 @@ def batch_completions_with_retries(
         new_to_retry_inputs = []
         new_to_retry_indices = []
         for idx, (retry_idx, output) in enumerate(zip(to_retry_indices, retry_outputs)):
-            feedback, score = _parse_output(output, mode=mode)
+            feedback, score = parse_output(output, mode=mode)
             if feedback is None:  # Still failing
                 new_to_retry_inputs.append(to_retry_inputs[idx])
                 new_to_retry_indices.append(to_retry_indices[idx])
@@ -79,7 +67,7 @@ def batch_completions_with_retries(
     scores = []
 
     for output in tqdm(batched_outputs, desc="Finalizing"):
-        feedback, score = _parse_output(output, mode=mode)
+        feedback, score = parse_output(output, mode=mode)
         if feedback is not None:
             feedbacks.append(feedback)
             scores.append(score)
@@ -114,7 +102,7 @@ async def async_batch_completions_with_retries(
     to_retry_inputs = []
     to_retry_indices = []
     for i, output in enumerate(batched_outputs):
-        feedback, score = _parse_output(output, mode=mode)
+        feedback, score = parse_output(output, mode=mode)
         if feedback is None:
             to_retry_inputs.append(inputs[i])
             to_retry_indices.append(i)
@@ -124,14 +112,12 @@ async def async_batch_completions_with_retries(
     while to_retry_inputs and retries < max_retries:
         retries += 1
         print(f"Retrying failed batches: Attempt {retries}/{max_retries}")
-        retry_outputs = await model.completions(
-            to_retry_inputs, **params, use_tqdm=True
-        )
+        retry_outputs = await model.completions(to_retry_inputs, **params, use_tqdm=True)
 
         new_to_retry_inputs = []
         new_to_retry_indices = []
         for idx, (retry_idx, output) in enumerate(zip(to_retry_indices, retry_outputs)):
-            feedback, score = _parse_output(output, mode=mode)
+            feedback, score = parse_output(output, mode=mode)
             if feedback is None:  # Still failing
                 new_to_retry_inputs.append(to_retry_inputs[idx])
                 new_to_retry_indices.append(to_retry_indices[idx])
@@ -153,7 +139,7 @@ async def async_batch_completions_with_retries(
     scores = []
 
     for output in tqdm(batched_outputs, desc="Finalizing"):
-        feedback, score = _parse_output(output, mode=mode)
+        feedback, score = parse_output(output, mode=mode)
         if feedback is not None:
             feedbacks.append(feedback)
             scores.append(score)
