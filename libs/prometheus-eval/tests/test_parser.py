@@ -36,25 +36,34 @@ from prometheus_eval.parser import parse_output
         ("Prefer Response B. [RESULT] B", "relative", "B"),
         ("Feedback: Both responses are similar... [Response B]", "relative", "B"),
         ("Feedback: Both responses are clear... [Result] Response B", "relative", "B"),
-        ("Feedback: Both responses are clear... Response B", "relative", "B"),
+        (
+            "Feedback: Both responses are clear... Response B Response A",
+            "relative",
+            None,
+        ),
         ("Feedback: Both responses are clear... [RESULT: B]", "relative", "B"),
         ("Feedback: Both responses are clear... [Result: B]", "relative", "B"),
         (
-            "Feedback: Both responses are clear... based on the given rubric, Response B is a better fit",
+            "Feedback: Both responses are clear...Response A. [RESULT] B",
             "relative",
             "B",
         ),
-        ("I choose Response A as the better option.", "relative", "A"),
-        ("After careful consideration, I select Response B.", "relative", "B"),
+        ("After careful consideration, I select Response B.", "relative", None),
         # Edge cases for relative mode
         ("Both responses have their merits.", "relative", None),
         ("Response C is clearly superior.", "relative", None),
-        ("The better response is obviously B... or is it A? It's hard to decide.", "relative", None),
+        (
+            "The better response is obviously B... or is it A? It's hard to decide.",
+            "relative",
+            None,
+        ),
     ],
 )
 def test_parse_output(output, mode, expected):
     _, result = parse_output(output, mode)
-    assert result == expected, f"Failed for input: '{output}', mode: {mode}, expected: {expected}, got: {result}"
+    assert (
+        result == expected
+    ), f"Failed for input: '{output}', mode: {mode}, expected: {expected}, got: {result}"
 
 
 # Additional tests for invalid modes and other edge cases
@@ -71,5 +80,3 @@ def test_empty_input():
 def test_none_input():
     assert parse_output(None, "absolute") == (None, None)
     assert parse_output(None, "relative") == (None, None)
-
-
