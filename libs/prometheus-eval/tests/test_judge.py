@@ -36,12 +36,16 @@ def relative_judge():
 
 def test_absolute_judge_init(absolute_judge):
     assert hasattr(absolute_judge, "model")
-    assert hasattr(absolute_judge, "absolute_grade_template") and hasattr(absolute_judge, "relative_grade_template")
+    assert hasattr(absolute_judge, "absolute_grade_template") and hasattr(
+        absolute_judge, "relative_grade_template"
+    )
 
 
 def test_relative_judge_init(relative_judge):
     assert hasattr(relative_judge, "model")
-    assert hasattr(relative_judge, "absolute_grade_template") and hasattr(relative_judge, "relative_grade_template")
+    assert hasattr(relative_judge, "absolute_grade_template") and hasattr(
+        relative_judge, "relative_grade_template"
+    )
 
 
 def test_absolute_grade_with_valid_input(absolute_judge):
