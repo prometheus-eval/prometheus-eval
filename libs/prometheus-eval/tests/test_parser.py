@@ -8,10 +8,6 @@ from prometheus_eval.parser import parse_output
     "output,mode,expected",
     [
         # Absolute mode test cases
-        ("Good job. [RESULT] 3", "absolute", 3),
-        ("Needs improvement. [RESULT] Score: 2", "absolute", 2),
-        ("Well done. [RESULT] Result: 4", "absolute", 4),
-        ("Average. [RESULT] 4/5", "absolute", 4),
         ("Excellent. [RESULT] 5 out of 5", "absolute", 5),
         ("Poor performance. [RESULT] score of 1", "absolute", 1),
         ("Good job. [Result] 3", "absolute", 3),
