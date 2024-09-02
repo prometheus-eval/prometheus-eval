@@ -16,7 +16,8 @@ def _parse_output_absolute(output):
             (?:\)|\]|\s|$)|         # Allow closing brackets, whitespace, or end of string
             (?:/\s*5|               # Allow /5 with optional whitespace
                \s*out\s*of\s*5)     # or "out of 5" with flexible whitespace
-        )                           # End of non-capturing group
+        )?                          # End of non-capturing group
+        (?:\s*$)                    # Match from the end of string 
     """
     match = re.search(pattern, output, re.IGNORECASE | re.VERBOSE)
 
@@ -40,7 +41,8 @@ def _parse_output_relative(output):
         )                                   # End of non-capturing group
         \s*                                 # Allow any whitespace
         (A|B)                               # Capture A or B
-        (?:\]|\s|$)                         # Allow closing bracket, whitespace, or end of string
+        (?:\])?                             # Allow closing bracket, whitespace, or end of string
+        (?:\s*$)                            # Match from the end of string 
     """
     match = re.search(
         explicit_pattern, output, re.IGNORECASE | re.VERBOSE | re.MULTILINE

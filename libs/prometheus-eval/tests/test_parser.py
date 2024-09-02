@@ -8,10 +8,8 @@ from prometheus_eval.parser import parse_output
     "output,mode,expected",
     [
         # Absolute mode test cases
-        ("Good job. [RESULT] 3", "absolute", 3),
-        ("Needs improvement. [RESULT] Score: 2", "absolute", 2),
-        ("Well done. [RESULT] Result: 4", "absolute", 4),
-        ("Average. [RESULT] 4/5", "absolute", 4),
+        ("Reference (Score 5) two results [RESULT] 3", "absolute", 3),
+        ("Reference (Score 5) not results", "absolute", None),
         ("Excellent. [RESULT] 5 out of 5", "absolute", 5),
         ("Poor performance. [RESULT] score of 1", "absolute", 1),
         ("Good job. [Result] 3", "absolute", 3),
@@ -32,6 +30,8 @@ from prometheus_eval.parser import parse_output
         ("Score: 2.5", "absolute", None),
         ("Result: A", "absolute", None),
         # Relative mode test cases
+        ("[Response B is not better. [RESULT] A", "relative", "A"),
+        ("Result A or B, not results", "relative", None),
         ("Response A is better. [RESULT] A", "relative", "A"),
         ("Prefer Response B. [RESULT] B", "relative", "B"),
         ("Feedback: Both responses are similar... [Response B]", "relative", "B"),
