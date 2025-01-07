@@ -70,7 +70,7 @@ An instruction (might include an Input inside it), two responses to evaluate (de
 
 
 RELATIVE_PROMPT_WO_REF = """###Task Description:
-An instruction (might include an Input inside it), two responses to evaluate (denoted as Response A and Response B), a reference answer, and an evaluation criteria are given.
+An instruction (might include an Input inside it), two responses to evaluate (denoted as Response A and Response B), and an evaluation criteria are given.
 1. Write a detailed feedback that assess the quality of the two responses strictly based on the given evaluation criteria, not evaluating in general.
 2. Make comparisons between Response A, Response B, and the Reference Answer. Instead of examining Response A and Response B separately, go straight to the point and mention about the commonalities and differences between them.
 3. After writing the feedback, indicate the better response, either "A" or "B".
@@ -85,6 +85,52 @@ An instruction (might include an Input inside it), two responses to evaluate (de
 
 ###Response B:
 {response_B}
+
+###Score Rubric:
+{rubric}
+
+###Feedback: """
+
+ABSOLUTE_PROMPT_WO_REF_RAG = """###Task Description:
+An instruction (might include an Input inside it), a response to evaluate, a relevant context to support the evaluation (denoted as Relevant Context), and a score rubric representing a evaluation criteria are given.
+1. Write a detailed feedback that assess the quality of the response strictly based on the given score rubric, not evaluating in general. Refer to the given context when writing the feedback and making an assessment.
+2. After writing a feedback, write a score that is an integer between 1 and 5. You should refer to the score rubric.
+3. The output format should look as follows: "(write a feedback for criteria) [RESULT] (an integer number between 1 and 5)"
+4. Please do not generate any other opening, closing, and explanations.
+
+###The instruction to evaluate:
+{instruction}
+
+###Response to evaluate:
+{response}
+
+###Relevant Context:
+{relevant_context}
+
+###Score Rubrics:
+{rubric}
+
+###Feedback: """
+
+RELATIVE_PROMPT_WO_REF_RAG = """###Task Description:
+An instruction (might include an Input inside it), two responses to evaluate (denoted as Response A and Response B), a relevant context to support the evaluation (denoted as Relevant Context), and an evaluation criteria are given.
+1. Write a detailed feedback that assess the quality of the two responses strictly based on the given evaluation criteria, not evaluating in general. Refer to the given context when writing the feedback and making an assessment.
+2. Make comparisons between Response A, Response B, and the Reference Answer. Instead of examining Response A and Response B separately, go straight to the point and mention about the commonalities and differences between them.
+3. After writing the feedback, indicate the better response, either "A" or "B".
+4. The output format should look as follows: "Feedback: (write a feedback for criteria) [RESULT] (Either "A" or "B")"
+5. Please do not generate any other opening, closing, and explanations.
+
+###Instruction:
+{instruction}
+
+###Response A:
+{response_A}
+
+###Response B:
+{response_B}
+
+###Relevant Context:
+{relevant_context}
 
 ###Score Rubric:
 {rubric}
