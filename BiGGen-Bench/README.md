@@ -10,13 +10,14 @@
 <a href="https://huggingface.co/spaces/prometheus-eval/BiGGen-Bench-Leaderboard"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Leaderboard-orange" alt="Hugging Face Model"></a>
 
 
-BiGGen-Bench is a dedicated benchmarking platform designed to evaluate the nuanced capabilities of Large Language Models across a variety of complex and diverse tasks.
+BiGGen-Bench is a dedicated benchmarking platform designed to evaluate the nuanced capabilities of Large Language Models across a variety of complex and diverse tasks. 
 
 ## 🚀 Features
 
 - **Evaluation Scope**: Covers nine key capabilities of LLMs across 77 tasks, with 765 unique instances tailored to test specific aspects of model performance.
 - **Scoring System**: Utilizes a detailed scoring rubric from 1 to 5, reflecting a range of outcomes based on instance-specific criteria closely aligned with the nuanced requirements of each task.
 - **Transparency and Openness**: All codes, data, and detailed evaluation results are publicly available to foster transparency and enable community-driven enhancements and verifications.
+- **Comprehensive Task Documentation**: The ./tasks directory contains all 77 tasks, each with detailed documentation including examples, measurement objectives, motivation, data sources, design considerations, and related work to facilitate understanding and reproducibility.
 
 
 ## 📋 Prerequisites
