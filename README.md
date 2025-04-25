@@ -18,6 +18,13 @@
 
 **Latest News** 🔥
 
+- [2025/04] We release the latest iteration of Prometheus:  **[M-Promethues (3B, 7B, & 14B)](https://huggingface.co/collections/Unbabel/m-prometheus-67f3b17e6409b2550b698822)!**
+
+  - They outperform previous open LLM judges on multilingual meta-evaluation benchmarks ([MM-Eval](https://arxiv.org/abs/2410.17578) and [M-RewardBench](https://arxiv.org/abs/2410.15522)), and achieves exceptional results on [literary translation evaluation](https://arxiv.org/abs/2410.18697).
+  - The models also perform strongly in English, with the 7B and 14B models surpassing Prometheus 2 7B and 8x7B on [RewardBench](https://arxiv.org/abs/2403.13787), respectively.
+  - When used as judges at inference time, they significantly boost multilingual generation quality.
+  - Checkout our [paper](https://arxiv.org/abs/2504.04953), where we present extensive ablations to uncover the key factors behind effective multilingual judge training.
+
 - [2024/06] We release the **BiGGen-Bench** and **Prometheus 2 BGB (8x7B)**!
 
   - BiGGen-Bench features 9 core capabilities, 77 tasks, and 765 meticulously crafted instances, each with specific evaluation criteria.
