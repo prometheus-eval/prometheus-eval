@@ -18,7 +18,7 @@
 
 **Latest News** 🔥
 
-- [2025/04] We release the latest iteration of Prometheus:  **[M-Promethues (3B, 7B, & 14B)](https://huggingface.co/collections/Unbabel/m-prometheus-67f3b17e6409b2550b698822)!**
+- [2025/04] We release the latest iteration of Prometheus:  **[M-Prometheus (3B, 7B, & 14B)](https://huggingface.co/collections/Unbabel/m-prometheus-67f3b17e6409b2550b698822)!**
 
   - They outperform previous open LLM judges on multilingual meta-evaluation benchmarks ([MM-Eval](https://arxiv.org/abs/2410.17578) and [M-RewardBench](https://arxiv.org/abs/2410.15522)), and achieves exceptional results on [literary translation evaluation](https://arxiv.org/abs/2410.18697).
   - The models also perform strongly in English, with the 7B and 14B models surpassing Prometheus 2 7B and 8x7B on [RewardBench](https://arxiv.org/abs/2403.13787), respectively.
